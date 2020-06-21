@@ -1,24 +1,179 @@
-# README
+# table_setting
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## user
 
-Things you may want to cover:
+### table
 
-* Ruby version
+| name           | type   | option                     |
+| -------------- | ------ | -------------------------- |
+| nickname       | string | null: false                |
+| email          | string | null: false, uniquer: true |
+| password       | string | null: false                |
+| firstname      | string | null: false                |
+| lastname       | string | null: false                |
+| firstname_read | string | null: false                |
+| lastname_read  | string | null: false                |
+| birthday       | date   | null: false                |
 
-* System dependencies
+### association
 
-* Configuration
+- has_many :addresses, dependent: :destroy
+- has_many :creditcards, dependent: :destroy
+- has_many :items, dependent: :destroy
+- has_many :transactions, dependent: :destroy
 
-* Database creation
+## address
 
-* Database initialization
+### table
 
-* How to run the test suite
+| name           | type    | option            |
+| -------------- | ------- | ----------------- |
+| firstname      | string  | null: false       |
+| lastname       | string  | null: false       |
+| firstname_read | string  | null: false       |
+| lastname_read  | string  | null: false       |
+| zip            | integer | null: false       |
+| prefecture     | string  | null: false       |
+| city           | string  | null: false       |
+| address_line   | string  | null: false       |
+| building       | string  |                   |
+| room           | string  |                   |
+| telephone      | integer |                   |
+| user_id        | integer | foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### association
 
-* Deployment instructions
+- belongs_to :user
+- has_many :transactions
 
-* ...
+## creditcard
+
+### table
+
+| name             | type    | option            |
+| ---------------- | ------- | ----------------- |
+| cardholder       |         |                   |
+| card_number      |         |                   |
+| expiration_year  |         |                   |
+| expiration_month |         |                   |
+| security_code    |         |                   |
+| pin_code         |         |                   |
+| user_id          | integer | foreign_key: true |
+
+### association
+
+- belongs_to :user
+- has_many :transactions
+
+## item
+
+### table
+
+| name              | type    | option            |
+| ----------------- | ------- | ----------------- |
+| name              |         |                   |
+| explanation       |         |                   |
+| price             |         |                   |
+| shipping_fee      |         |                   |
+| brand             |         |                   |
+| user_id           | integer | foreign_key: true |
+| condition_id      | integer | foreign_key: true |
+| category_id       | integer | foreign_key: true |
+| subcategory_id    | integer | foreign_key: true |
+| subsubcategory_id | integer | foreign_key: true |
+| transaction_id    | integer | foreign_key: true |
+
+### association
+
+- belongs_to :user
+- belongs_to :transaction
+- belongs_to :condition
+- belongs_to :category
+- belongs_to :subcategory
+- belongs_to :subsubcategory
+- has_many :images, dependent: :destroy
+
+## image
+
+### table
+
+| name    | type    | option            |
+| ------- | ------- | ----------------- |
+| image   |         |                   |
+| item_id | integer | foreign_key: true |
+
+### association
+
+- belongs_to :item
+
+## condition
+
+### table
+
+| name      | type   | option                     |
+| --------- | ------ | -------------------------- |
+| condition | string | null: false, uniquer: true |
+
+### association
+
+- has_many :items
+
+## category
+
+### table
+
+| name | type | option |
+| ---- | ---- | ------ |
+| name |      |        |
+
+### association
+
+- has_many :items
+- has_many :subcategories
+
+## subcategory
+
+### table
+
+| name        | type    | option            |
+| ----------- | ------- | ----------------- |
+| name        |         |                   |
+| category_id | integer | foreign_key: true |
+
+### association
+
+- has_many :items
+- has_many :subsubcategories
+- belongs_to :category
+
+## subsubcategory
+
+### table
+
+| name           | type    | option            |
+| -------------- | ------- | ----------------- |
+| name           |         |                   |
+| subcategory_id | integer | foreign_key: true |
+
+### association
+
+- has_many :items
+- belongs_to :subcategory
+
+## transaction
+
+### table
+
+| name          | type    | option            |
+| ------------- | ------- | ----------------- |
+| item_id       | integer | foreign_key: true |
+| user_id       | integer | foreign_key: true |
+| address_id    | integer | foreign_key: true |
+| creditcard_id | integer | foreign_key: true |
+
+### association
+
+- belongs_to :user
+- belongs_to :item
+- belongs_to :address
+- belongs_to :creditcard
