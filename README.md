@@ -71,11 +71,11 @@
 
 | name              | type    | option            |
 | ----------------- | ------- | ----------------- |
-| name              |         |                   |
-| explanation       |         |                   |
-| price             |         |                   |
-| shipping_fee      |         |                   |
-| brand             |         |                   |
+| name              | string  | null: false       |
+| explanation       | text    | null: false       |
+| price             | integer | null: false       |
+| shipping_fee      | integer | null: false       |
+| brand             | string  |                   |
 | user_id           | integer | foreign_key: true |
 | condition_id      | integer | foreign_key: true |
 | category_id       | integer | foreign_key: true |
@@ -99,7 +99,7 @@
 
 | name    | type    | option            |
 | ------- | ------- | ----------------- |
-| image   |         |                   |
+| image   | string  | null :false       |
 | item_id | integer | foreign_key: true |
 
 ### association
