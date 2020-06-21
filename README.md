@@ -50,15 +50,15 @@
 
 ### table
 
-| name             | type    | option            |
-| ---------------- | ------- | ----------------- |
-| cardholder       |         |                   |
-| card_number      |         |                   |
-| expiration_year  |         |                   |
-| expiration_month |         |                   |
-| security_code    |         |                   |
-| pin_code         |         |                   |
-| user_id          | integer | foreign_key: true |
+| name             | type       | option                     |
+| ---------------- | ---------- | -------------------------- |
+| cardholder       | string     | null: false                |
+| card_number      | integer    | null: false, uniquer: true |
+| expiration_year  | integer    | null: false                |
+| expiration_month | integer    | null: false                |
+| security_code    | integer    | null: false                |
+| pin_code         | references | foreign_key: true          |
+| user_id          | integer    | foreign_key: true          |
 
 ### association
 
