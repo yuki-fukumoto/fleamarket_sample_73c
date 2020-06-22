@@ -4,7 +4,7 @@
 
 ### table
 
-| name           | type   | option                     |
+| column         | type   | option                     |
 | -------------- | ------ | -------------------------- |
 | nickname       | string | null: false                |
 | email          | string | null: false, uniquer: true |
@@ -26,7 +26,7 @@
 
 ### table
 
-| name           | type    | option            |
+| column         | type    | option            |
 | -------------- | ------- | ----------------- |
 | firstname      | string  | null: false       |
 | lastname       | string  | null: false       |
@@ -50,7 +50,7 @@
 
 ### table
 
-| name             | type       | option                     |
+| column           | type       | option                     |
 | ---------------- | ---------- | -------------------------- |
 | cardholder       | string     | null: false                |
 | card_number      | integer    | null: false, uniquer: true |
@@ -69,7 +69,7 @@
 
 ### table
 
-| name              | type    | option            |
+| column            | type    | option            |
 | ----------------- | ------- | ----------------- |
 | name              | string  | null: false       |
 | explanation       | text    | null: false       |
@@ -79,8 +79,6 @@
 | user_id           | integer | foreign_key: true |
 | condition_id      | integer | foreign_key: true |
 | category_id       | integer | foreign_key: true |
-| subcategory_id    | integer | foreign_key: true |
-| subsubcategory_id | integer | foreign_key: true |
 | transaction_id    | integer | foreign_key: true |
 
 ### association
@@ -89,15 +87,13 @@
 - belongs_to :transaction
 - belongs_to :condition
 - belongs_to :category
-- belongs_to :subcategory
-- belongs_to :subsubcategory
 - has_many :images, dependent: :destroy
 
 ## image
 
 ### table
 
-| name    | type    | option            |
+| column  | type    | option            |
 | ------- | ------- | ----------------- |
 | image   | string  | null :false       |
 | item_id | integer | foreign_key: true |
@@ -110,7 +106,7 @@
 
 ### table
 
-| name      | type   | option                     |
+| column    | type   | option                     |
 | --------- | ------ | -------------------------- |
 | condition | string | null: false, uniquer: true |
 
@@ -122,43 +118,13 @@
 
 ### table
 
-| name | type | option |
-| ---- | ---- | ------ |
-| name |      |        |
-
+| column   | type   | option      |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| ancestry | string |             |
 ### association
 
 - has_many :items
-- has_many :subcategories
-
-## subcategory
-
-### table
-
-| name        | type    | option            |
-| ----------- | ------- | ----------------- |
-| name        |         |                   |
-| category_id | integer | foreign_key: true |
-
-### association
-
-- has_many :items
-- has_many :subsubcategories
-- belongs_to :category
-
-## subsubcategory
-
-### table
-
-| name           | type    | option            |
-| -------------- | ------- | ----------------- |
-| name           |         |                   |
-| subcategory_id | integer | foreign_key: true |
-
-### association
-
-- has_many :items
-- belongs_to :subcategory
 
 ## transaction
 
