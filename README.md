@@ -26,20 +26,20 @@
 
 ### table
 
-| column         | type    | option            |
-| -------------- | ------- | ----------------- |
-| firstname      | string  | null: false       |
-| lastname       | string  | null: false       |
-| firstname_read | string  | null: false       |
-| lastname_read  | string  | null: false       |
-| zip            | integer | null: false       |
-| prefecture     | string  | null: false       |
-| city           | string  | null: false       |
-| address_line   | string  | null: false       |
-| building       | string  |                   |
-| room           | string  |                   |
-| telephone      | integer |                   |
-| user_id        | integer | foreign_key: true |
+| column         | type    | option                         |
+| -------------- | ------- | ------------------------------ |
+| firstname      | string  | null: false                    |
+| lastname       | string  | null: false                    |
+| firstname_read | string  | null: false                    |
+| lastname_read  | string  | null: false                    |
+| zip            | integer | null: false                    |
+| prefecture     | string  | null: false                    |
+| city           | string  | null: false                    |
+| address_line   | string  | null: false                    |
+| building       | string  |                                |
+| room           | string  |                                |
+| telephone      | integer |                                |
+| user_id        | integer | null: false, foreign_key: true |
 
 ### association
 
@@ -50,15 +50,15 @@
 
 ### table
 
-| column           | type       | option                     |
-| ---------------- | ---------- | -------------------------- |
-| cardholder       | string     | null: false                |
-| card_number      | integer    | null: false, uniquer: true |
-| expiration_year  | integer    | null: false                |
-| expiration_month | integer    | null: false                |
-| security_code    | integer    | null: false                |
-| pin_code         | references | foreign_key: true          |
-| user_id          | integer    | foreign_key: true          |
+| column           | type       | option                                  |
+| ---------------- | ---------- | --------------------------------------- |
+| cardholder       | string     | null: false                             |
+| card_number      | integer    | null: false, uniquer: true              |
+| expiration_year  | integer    | null: false                             |
+| expiration_month | integer    | null: false                             |
+| security_code    | integer    | null: false                             |
+| pin_code         | references | foreign_key: true                       |
+| user_id          | integer    | null: false, foreign_key: true          |
 
 ### association
 
@@ -69,17 +69,17 @@
 
 ### table
 
-| column            | type    | option            |
-| ----------------- | ------- | ----------------- |
-| name              | string  | null: false       |
-| explanation       | text    | null: false       |
-| price             | integer | null: false       |
-| shipping_fee      | integer | null: false       |
-| brand             | string  |                   |
-| user_id           | integer | foreign_key: true |
-| condition_id      | integer | foreign_key: true |
-| category_id       | integer | foreign_key: true |
-| transaction_id    | integer | foreign_key: true |
+| column            | type    | option                         |
+| ----------------- | ------- | ------------------------------ |
+| name              | string  | null: false                    |
+| explanation       | text    | null: false                    |
+| price             | integer | null: false                    |
+| shipping_fee      | integer | null: false                    |
+| brand             | string  |                                |
+| user_id           | integer | null: false, foreign_key: true |
+| condition_id      | integer | null: false, foreign_key: true |
+| category_id       | integer | null: false, foreign_key: true |
+| transaction_id    | integer | null: false, foreign_key: true |
 
 ### association
 
@@ -93,10 +93,10 @@
 
 ### table
 
-| column  | type    | option            |
-| ------- | ------- | ----------------- |
-| image   | string  | null :false       |
-| item_id | integer | foreign_key: true |
+| column  | type    | option                         |
+| ------- | ------- | ------------------------------ |
+| image   | string  | null :false                    |
+| item_id | integer | null: false, foreign_key: true |
 
 ### association
 
@@ -130,12 +130,12 @@
 
 ### table
 
-| name          | type    | option            |
-| ------------- | ------- | ----------------- |
-| item_id       | integer | foreign_key: true |
-| user_id       | integer | foreign_key: true |
-| address_id    | integer | foreign_key: true |
-| creditcard_id | integer | foreign_key: true |
+| name          | type    | option                         |
+| ------------- | ------- | ------------------------------ |
+| item_id       | integer | null: false, foreign_key: true |
+| user_id       | integer | null: false, foreign_key: true |
+| address_id    | integer | null: false, foreign_key: true |
+| creditcard_id | integer | null: false, foreign_key: true |
 
 ### association
 
