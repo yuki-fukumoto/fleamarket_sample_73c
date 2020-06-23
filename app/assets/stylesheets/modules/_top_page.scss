@@ -2,3 +2,27 @@
   box-sizing: border-box;
 }
 
+.top__page{
+  padding: 0 60px;
+  color:#dddd;
+
+  &__header{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+  
+  &__inner{
+    position: relative;
+    display: flex;
+    align-items: center;
+  
+  &__main{
+    position: relative;
+    display: flex;
+    align-items: center;
+      }
+    }
+  }
+}
