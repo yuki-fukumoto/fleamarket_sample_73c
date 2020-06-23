@@ -144,4 +144,4 @@
 - belongs_to :address
 - belongs_to :creditcard
 
-https://user-images.githubusercontent.com/62494531/85397499-9780b700-b58e-11ea-9182-87e474e64ae3.jpg
+er図はこちら → https://user-images.githubusercontent.com/62494531/85397499-9780b700-b58e-11ea-9182-87e474e64ae3.jpg
