@@ -71,10 +71,10 @@
 | explanation         | text    | null: false                    |
 | price               | integer | null: false                    |
 | shipping_fee        | integer | null: false                    |
-| brand               | string  |                                |
 | user_id             | integer | null: false, foreign_key: true |
 | condition_id        | integer | null: false, foreign_key: true |
 | category_id         | integer | null: false, foreign_key: true |
+| brand_id            | integer | foreign_key: true              |
 | item_purchase_id    | integer | null: false, foreign_key: true |
 
 ### association
@@ -83,6 +83,7 @@
 - belongs_to :item_purchase
 - belongs_to :condition
 - belongs_to :category
+- belongs_to :brand_id
 - has_many :images, dependent: :destroy
 
 ## images
@@ -118,6 +119,17 @@
 | -------- | ------ | ----------- |
 | name     | string | null: false |
 | ancestry | string |             |
+### association
+
+- has_many :items
+
+## brands
+
+### table
+
+| column   | type   | option      |
+| -------- | ------ | ----------- |
+| name     | string |             |
 ### association
 
 - has_many :items
