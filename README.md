@@ -152,4 +152,4 @@
 - belongs_to :address
 - belongs_to :creditcard
 
-ER図はこちら → https://user-images.githubusercontent.com/62494531/85397499-9780b700-b58e-11ea-9182-87e474e64ae3.jpg
+![fleamarket_sample_73c (4)](https://user-images.githubusercontent.com/64318733/85542287-e3496400-b653-11ea-8993-9ce79086ea54.jpg)
