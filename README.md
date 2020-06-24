@@ -1,6 +1,6 @@
 # table_setting
 
-## user
+## users
 
 ### table
 
@@ -20,9 +20,9 @@
 - has_many :addresses, dependent: :destroy
 - has_many :creditcards, dependent: :destroy
 - has_many :items, dependent: :destroy
-- has_many :transactions, dependent: :destroy
+- has_many :item_purchases, dependent: :destroy
 
-## address
+## addresses
 
 ### table
 
@@ -44,52 +44,48 @@
 ### association
 
 - belongs_to :user
-- has_many :transactions
+- has_many :item_purchases
 
-## creditcard
+## creditcards
 
 ### table
 
 | column           | type       | option                                  |
 | ---------------- | ---------- | --------------------------------------- |
-| cardholder       | string     | null: false                             |
-| card_number      | integer    | null: false, uniquer: true              |
-| expiration_year  | integer    | null: false                             |
-| expiration_month | integer    | null: false                             |
-| security_code    | integer    | null: false                             |
-| pin_code         | references | foreign_key: true                       |
+| custamer_id      | string     | null: false                             |
+| card_id          | string     | null: false                             |
 | user_id          | integer    | null: false, foreign_key: true          |
 
 ### association
 
 - belongs_to :user
-- has_many :transactions
+- has_many :item_purchases
 
-## item
+## items
 
 ### table
 
-| column            | type    | option                         |
-| ----------------- | ------- | ------------------------------ |
-| name              | string  | null: false                    |
-| explanation       | text    | null: false                    |
-| price             | integer | null: false                    |
-| shipping_fee      | integer | null: false                    |
-| brand             | string  |                                |
-| user_id           | integer | null: false, foreign_key: true |
-| condition_id      | integer | null: false, foreign_key: true |
-| category_id       | integer | null: false, foreign_key: true |
-| transaction_id    | integer | null: false, foreign_key: true |
+| column              | type    | option                         |
+| ------------------- | ------- | ------------------------------ |
+| name                | string  | null: false                    |
+| explanation         | text    | null: false                    |
+| price               | integer | null: false                    |
+| shipping_fee        | integer | null: false                    |
+| brand               | string  |                                |
+| user_id             | integer | null: false, foreign_key: true |
+| condition_id        | integer | null: false, foreign_key: true |
+| category_id         | integer | null: false, foreign_key: true |
+| item_purchase_id    | integer | null: false, foreign_key: true |
 
 ### association
 
 - belongs_to :user
-- belongs_to :transaction
+- belongs_to :item_purchase
 - belongs_to :condition
 - belongs_to :category
 - has_many :images, dependent: :destroy
 
-## image
+## images
 
 ### table
 
@@ -102,7 +98,7 @@
 
 - belongs_to :item
 
-## condition
+## conditions
 
 ### table
 
@@ -114,7 +110,7 @@
 
 - has_many :items
 
-## category
+## categories
 
 ### table
 
@@ -126,7 +122,7 @@
 
 - has_many :items
 
-## transaction
+## item_purchases
 
 ### table
 
@@ -144,4 +140,4 @@
 - belongs_to :address
 - belongs_to :creditcard
 
-er図はこちら → https://user-images.githubusercontent.com/62494531/85397499-9780b700-b58e-11ea-9182-87e474e64ae3.jpg
+ER図はこちら → https://user-images.githubusercontent.com/62494531/85397499-9780b700-b58e-11ea-9182-87e474e64ae3.jpg
