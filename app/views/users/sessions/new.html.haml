@@ -1,0 +1,17 @@
+%main.wrapper__sign-in
+  %h2.wrapper__sign-in--title ログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    %hr
+    .wrapper__sign-in__form-area
+      .wrapper__sign-in__form-area__name
+        メールアドレス
+      .wrapper__sign-in__form-area__form
+        =f.email_field :email, class: "wrapper__sign-in__form-area__form--style"
+    %hr
+    .wrapper__sign-in__form-area
+      .wrapper__sign-in__form-area__name
+        パスワード
+      .wrapper__sign-in__form-area__form
+        =f.password_field :password, class: "wrapper__sign-in__form-area__form--style"
+    %hr
+    = f.submit "ログイン", class: "wrapper__sign-in--btn"

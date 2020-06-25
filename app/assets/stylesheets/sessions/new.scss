@@ -1,0 +1,52 @@
+@mixin form_basic_style {
+  background-color: #eeeeee;
+  border: 0px;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+.wrapper {
+  &__sign-in {
+    padding: 20px;
+    &--title {
+      color: #3ccace;
+      font-size: 24px;
+      font-family: "M PLUS 1p", sans-serif;
+    }
+    &__form-area {
+      padding: 3px 10px;
+      display: flex;
+      align-items: center;
+      &__name {
+        width: 170px;
+      }
+      &__form {
+        width: calc(100% - 170px - 42px);
+        padding: 0 10px 0 20px;
+        display: flex;
+        &--style {
+          height: 28px;
+          width: 100%;
+
+          @include form_basic_style();
+        }
+      }
+    }
+    &--btn {
+      height: 42px;
+      width: 100%;
+      margin: 35px 0;
+      border-radius: 4px;
+      background-color: #3ccace;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      box-shadow: (1px 1px 3px black);
+      &:active {
+        transform: translate(1px, 1px);
+        box-shadow: none;
+      }
+    }
+  }
+}
