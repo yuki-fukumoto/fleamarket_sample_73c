@@ -1,17 +1,19 @@
-%main.wrapper__sign-in
-  %h2.wrapper__sign-in--title ログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    %hr
-    .wrapper__sign-in__form-area
-      .wrapper__sign-in__form-area__name
-        メールアドレス
-      .wrapper__sign-in__form-area__form
-        =f.email_field :email, class: "wrapper__sign-in__form-area__form--style"
-    %hr
-    .wrapper__sign-in__form-area
-      .wrapper__sign-in__form-area__name
-        パスワード
-      .wrapper__sign-in__form-area__form
-        =f.password_field :password, class: "wrapper__sign-in__form-area__form--style"
-    %hr
-    = f.submit "ログイン", class: "wrapper__sign-in--btn"
+%main.wrapper-sign-in
+  %article.wrapper-sign-in__article
+    %h1.wrapper-sign-in__article--page-title ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      %section.wrapper-sign-in__article__section
+        %hr
+        .wrapper-sign-in__article__section__form-area
+          .wrapper-sign-in__article__section__form-area__name
+            メールアドレス
+          .wrapper-sign-in__article__section__form-area__form
+            =f.email_field :email, class: "wrapper-sign-in__article__section__form-area__form--style"
+        %hr
+        .wrapper-sign-in__article__section__form-area
+          .wrapper-sign-in__article__section__form-area__name
+            パスワード
+          .wrapper-sign-in__article__section__form-area__form
+            =f.password_field :password, class: "wrapper-sign-in__article__section__form-area__form--style"
+        %hr
+        = f.submit "ログイン", class: "wrapper-sign-in__article__section--btn"

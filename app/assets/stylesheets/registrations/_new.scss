@@ -11,100 +11,111 @@
   padding: 0 10px;
 }
 
-.wrapper {
-  &__sign-up {
-    padding: 20px;
-    &--title {
-      color: #3ccace;
-      font-size: 24px;
-      font-family: "M PLUS 1p", sans-serif;
-    }
-    &__form-area {
-      padding: 3px 10px;
-      display: flex;
-      align-items: center;
-      &__name {
-        width: 170px;
-      }
-      &__attribute {
-        &--box {
-          height: 22px;
-          width: 42px;
+.wrapper-sign-up {
+  padding: 40px;
+  &--page-title {
+    color: #3ccace;
+    font-size: 36px;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: bold;
+  }
+  &__article {
+    margin: 30px auto;
+    max-width: 1000px;
 
-          background-color: #ce403c;
-          border-radius: 3px;
-          text-align: center;
-          line-height: 22px;
-          font-size: 12px;
-          color: white;
-        }
-        &--optional {
-          background-color: #3ccace;
-        }
+    &__section {
+      &--title {
+        color: #3ccace;
+        font-size: 24px;
+        font-family: "M PLUS 1p", sans-serif;
       }
-      &__form {
-        width: calc(100% - 170px - 42px);
-        padding: 0 10px 0 20px;
+      &__form-area {
+        padding: 3px 10px;
         display: flex;
-        &__divide {
-          display: flex;
-          width: 50%;
-          &__text {
-            width: 80px;
-            line-height: 28px;
+        align-items: center;
+        &__name {
+          width: 170px;
+        }
+        &__attribute {
+          &--box {
+            height: 22px;
+            width: 42px;
+
+            background-color: #ce403c;
+            border-radius: 3px;
             text-align: center;
+            line-height: 22px;
+            font-size: 12px;
+            color: white;
+          }
+          &--optional {
+            background-color: #3ccace;
           }
         }
-        &--style {
-          height: 28px;
-          width: 100%;
+        &__form {
+          width: calc(100% - 170px - 42px);
+          padding: 0 10px 0 20px;
+          display: flex;
+          &__divide {
+            display: flex;
+            width: 50%;
+            &__text {
+              width: 80px;
+              line-height: 28px;
+              text-align: center;
+            }
+          }
+          &--style {
+            height: 28px;
+            width: 100%;
 
-          @include form_basic_style();
-        }
-        &--zip-first {
-          width: 39%;
-        }
-        &--zip-divide {
-          width: 9%;
-          padding: 0 10px;
-          font-size: 20px;
+            @include form_basic_style();
+          }
+          &--zip-first {
+            width: 39%;
+          }
+          &--zip-divide {
+            width: 9%;
+            padding: 0 10px;
+            font-size: 20px;
 
-          text-align: center;
-          line-height: 28px;
-        }
-        &--zip-second {
-          width: 52%;
-        }
-        &--tel-two {
-          width: 32%;
-        }
-        &--tel-four {
-          width: 64%;
-        }
-        &--tel-divide {
-          width: 10%;
-          padding: 0 10px;
-          font-size: 20px;
+            text-align: center;
+            line-height: 28px;
+          }
+          &--zip-second {
+            width: 52%;
+          }
+          &--tel-two {
+            width: 32%;
+          }
+          &--tel-four {
+            width: 64%;
+          }
+          &--tel-divide {
+            width: 10%;
+            padding: 0 10px;
+            font-size: 20px;
 
-          text-align: center;
-          line-height: 28px;
+            text-align: center;
+            line-height: 28px;
+          }
         }
       }
-    }
-    &--btn {
-      height: 42px;
-      width: 100%;
-      margin: 35px 0;
-      border-radius: 4px;
-      background-color: #3ccace;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-      border: none;
-      box-shadow: (1px 1px 3px black);
-      &:active {
-        transform: translate(1px, 1px);
-        box-shadow: none;
+      &--btn {
+        height: 42px;
+        width: 100%;
+        margin: 35px 0;
+        border-radius: 4px;
+        background-color: #3ccace;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+        box-shadow: (1px 1px 3px black);
+        &:active {
+          transform: translate(1px, 1px);
+          box-shadow: none;
+        }
       }
     }
   }
