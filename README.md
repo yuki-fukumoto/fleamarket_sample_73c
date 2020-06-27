@@ -1,19 +1,23 @@
 # table_setting
 
+## ER diagram
+
+![ER diagram](https://user-images.githubusercontent.com/62494531/85916203-4c65ed00-b889-11ea-9436-a83aa16e07ae.jpg)
+
 ## users
 
 ### table
 
-| column         | type   | option                     |
-| -------------- | ------ | -------------------------- |
-| nickname       | string | null: false                |
-| email          | string | null: false, uniquer: true |
-| password       | string | null: false                |
-| firstname      | string | null: false                |
-| lastname       | string | null: false                |
-| firstname_read | string | null: false                |
-| lastname_read  | string | null: false                |
-| birthday       | date   | null: false                |
+| column         | type   | option                    |
+| -------------- | ------ | ------------------------- |
+| nickname       | string | null: false               |
+| email          | string | null: false, unique: true |
+| password       | string | null: false               |
+| firstname      | string | null: false               |
+| lastname       | string | null: false               |
+| firstname_read | string | null: false               |
+| lastname_read  | string | null: false               |
+| birthday       | date   | null: false               |
 
 ### association
 
@@ -50,11 +54,11 @@
 
 ### table
 
-| column           | type       | option                                  |
-| ---------------- | ---------- | --------------------------------------- |
-| custamer_id      | string     | null: false                             |
-| card_id          | string     | null: false                             |
-| user_id          | integer    | null: false, foreign_key: true          |
+| column      | type    | option                         |
+| ----------- | ------- | ------------------------------ |
+| custamer_id | string  | null: false                    |
+| card_id     | string  | null: false                    |
+| user_id     | integer | null: false, foreign_key: true |
 
 ### association
 
@@ -65,17 +69,17 @@
 
 ### table
 
-| column              | type    | option                         |
-| ------------------- | ------- | ------------------------------ |
-| name                | string  | null: false                    |
-| explanation         | text    | null: false                    |
-| price               | integer | null: false                    |
-| shipping_fee        | integer | null: false                    |
-| user_id             | integer | null: false, foreign_key: true |
-| condition_id        | integer | null: false, foreign_key: true |
-| category_id         | integer | null: false, foreign_key: true |
-| brand_id            | integer | foreign_key: true              |
-| item_purchase_id    | integer | null: false, foreign_key: true |
+| column           | type    | option                         |
+| ---------------- | ------- | ------------------------------ |
+| name             | string  | null: false                    |
+| explanation      | text    | null: false                    |
+| price            | integer | null: false                    |
+| shipping_fee     | integer | null: false                    |
+| condition        | integer | null: false                    |
+| user_id          | integer | null: false, foreign_key: true |
+| category_id      | integer | null: false, foreign_key: true |
+| brand_id         | integer | foreign_key: true              |
+| item_purchase_id | integer | null: false, foreign_key: true |
 
 ### association
 
@@ -99,18 +103,6 @@
 
 - belongs_to :item
 
-## conditions
-
-### table
-
-| column    | type   | option                     |
-| --------- | ------ | -------------------------- |
-| condition | string | null: false, uniquer: true |
-
-### association
-
-- has_many :items
-
 ## categories
 
 ### table
@@ -119,6 +111,7 @@
 | -------- | ------ | ----------- |
 | name     | string | null: false |
 | ancestry | string |             |
+
 ### association
 
 - has_many :items
@@ -127,9 +120,10 @@
 
 ### table
 
-| column   | type   | option      |
-| -------- | ------ | ----------- |
-| name     | string |             |
+| column | type   | option |
+| ------ | ------ | ------ |
+| name   | string |        |
+
 ### association
 
 - has_many :items
@@ -151,5 +145,3 @@
 - belongs_to :item
 - belongs_to :address
 - belongs_to :creditcard
-
-![fleamarket_sample_73c (4)](https://user-images.githubusercontent.com/64318733/85542287-e3496400-b653-11ea-8993-9ce79086ea54.jpg)
