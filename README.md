@@ -24,7 +24,7 @@
 - has_many :addresses, dependent: :destroy
 - has_many :creditcards, dependent: :destroy
 - has_many :items, dependent: :destroy
-- has_many :item_purchases, dependent: :destroy
+- has_many :purchases, dependent: :destroy
 
 ## addresses
 
@@ -48,7 +48,7 @@
 ### association
 
 - belongs_to :user
-- has_many :item_purchases
+- has_many :purchases
 
 ## creditcards
 
@@ -56,35 +56,35 @@
 
 | column      | type    | option                         |
 | ----------- | ------- | ------------------------------ |
-| custamer_id | string  | null: false                    |
+| customer_id | string  | null: false                    |
 | card_id     | string  | null: false                    |
 | user_id     | integer | null: false, foreign_key: true |
 
 ### association
 
 - belongs_to :user
-- has_many :item_purchases
+- has_many :purchases
 
 ## items
 
 ### table
 
-| column           | type    | option                         |
-| ---------------- | ------- | ------------------------------ |
-| name             | string  | null: false                    |
-| explanation      | text    | null: false                    |
-| price            | integer | null: false                    |
-| shipping_fee     | integer | null: false                    |
-| condition        | integer | null: false                    |
-| user_id          | integer | null: false, foreign_key: true |
-| category_id      | integer | null: false, foreign_key: true |
-| brand_id         | integer | foreign_key: true              |
-| item_purchase_id | integer | null: false, foreign_key: true |
+| column       | type    | option                         |
+| ------------ | ------- | ------------------------------ |
+| name         | string  | null: false                    |
+| explanation  | text    | null: false                    |
+| price        | integer | null: false                    |
+| shipping_fee | integer | null: false                    |
+| condition    | integer | null: false                    |
+| user_id      | integer | null: false, foreign_key: true |
+| category_id  | integer | null: false, foreign_key: true |
+| brand_id     | integer | foreign_key: true              |
+| purchase_id  | integer | null: false, foreign_key: true |
 
 ### association
 
 - belongs_to :user
-- belongs_to :item_purchase
+- belongs_to :purchase
 - belongs_to :category
 - belongs_to :brand
 - has_many :images, dependent: :destroy
@@ -119,15 +119,15 @@
 
 ### table
 
-| column | type   | option |
-| ------ | ------ | ------ |
-| name   | string |        |
+| column | type   | option      |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
 
 ### association
 
 - has_many :items
 
-## item_purchases
+## purchases
 
 ### table
 
