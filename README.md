@@ -85,9 +85,8 @@
 
 - belongs_to :user
 - belongs_to :item_purchase
-- belongs_to :condition
 - belongs_to :category
-- belongs_to :brand_id
+- belongs_to :brand
 - has_many :images, dependent: :destroy
 
 ## images
