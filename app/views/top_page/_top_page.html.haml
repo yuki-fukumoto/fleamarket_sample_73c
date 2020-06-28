@@ -1,0 +1,121 @@
+.top__page
+  .top__page__header
+    .top__page__header__inner
+      %h1{class:"icon"}
+        %a{href:"/"}
+          %img{src:"/assets/logo.png"}
+      .top__page__header__inner__seach__box
+        %form{}
+          %input{class:"search__input", placeholder:"キーワードを入力してください"}
+          %button{type:"submit"}
+            %div{class:"submit--icon"}
+        %ul{class:"search--result"}
+    .list
+      %ul{class:"list__left"}
+        %li{class:"list__left__item"}
+          %a{id:"category--btn",href:"#"}カテゴリー
+        %li{class:"list__left__item__brand"}
+          %a{id:"brand--btn",href:"#"}ブランド
+
+      %ul{class:"list__right"}
+        %li{class:"list__right__item"}
+          %a{href:"#"}ログイン
+        %li{class:"list__right__item__new"}
+          %a{href:"#"}新規会員登録
+
+.top__view
+  %section{class:"top__view__visual"}
+    %div{class:"contens"}
+      %h2{class:"contens__title"}人生を変えるフリマアプリ 
+      %p{class:"contens__subtitle"}FURIMAはだれでもかんたんに出品・購入できるフリマアプリです
+      %div{class:"cntens__btn"}
+        %a{class:"appbtn", href:"#"}
+          %img{src:"/assets/appstore.png"}
+        %div{class:"google__btn", href:"#"}
+          %img{src:"/assets/googlestore.png"}
+    %div{class:"view"}
+
+  %section{class:"three__reason"}
+    %h2{class:"reason__title"}FURIMAが選ばれる３つの理由
+    %ul{class:"reason__lists"}
+      %li{class:"lists"}
+        %div{class:"lists__picture"}
+          %span{class:"number"}1
+          %img{src:"/assets/pict-reason-01.jpg"}
+        %h3{class:"lists__text"}３分
+        ですぐに出品
+        %p{class:"lists__descri"}スマホで入力するだけで出品できる！
+
+      %li{class:"lists"}
+        %div{class:"lists__picture"}
+          %span{class:"number"}2
+          %img{src:"/assets/pict-reason-02.jpg"}
+        %h3{class:"lists__text"}
+          .span シンプル
+          で使いやすい
+        %p{class:"lists__descri"}めんどくさい入力は必要なく、検索も購入もスムーズ！
+
+      %li{class:"lists__last"}
+        %div{class:"lists__picture"}
+          %span{class:"number"}3
+          %img{src:"/assets/pict-reason-03.jpg"}
+        %h3{class:"lists__text"}
+          .span 手数料
+          業界最安
+        %p{class:"lists__descri"}最大3%でお得に出品&購入！
+
+  %section{class:"middelview"}
+    %div{class:"middelview__inner"}
+      %h2{class:"subtitle"}会員登録数日本一
+      %p{class:"text"}
+      FURIMAは、フリマアプリで最も人気。
+      %br
+      出品・購入回数も業界最多です！
+      %br
+      ほしかったあの商品に出会えるかもしれません。
+    %div{class:"btn"}
+      %a{href:"#"}
+        %img{class:"appbtn",src:"/assets/appstore.png"}
+      %a{href:"#"}
+        %img{class:"googlebtn",src:"/assets/googlestore.png"}
+
+  %section{class:"buyAndsell"}
+    %h2{class:"buyAndsell__head"}FURIMAの特徴
+    %div{class:"buyAndsell__items"}
+      %section{class:"item"}
+        %figure{class:"item__image"}
+          %img{src:"/assets/icon-01.png"}
+        %h3{class:"item__subutitle"}簡単に売り買いできる
+        %p{class:"item__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+
+      %section{class:"item"}
+        %figure{class:"item__image"}
+          %img{src:"/assets/icon-03.png"}
+        %h3{class:"item__subutitle"}売上金は即日振込みに対応
+        %p{class:"item__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+
+      %section{class:"item"}
+        %figure{class:"item__image"}
+          %img{src:"/assets/icon-04.png"}
+        %h3{class:"item__subutitle"}様々な支払いに対応
+        %p{class:"item__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  %section{class:"topicContents"}
+    %h2{class:"topic__head"}ピックアップカテゴリー
+    %div{class:"topicBox"}
+      %div{class:"topicBox__head"}
+        %a{href:"#"}
+          %h3{class:"title"}新規投稿商品
+    %div{class:"topicLists"}
+      %div{class:"topiclist"}
+        %a{href:"#"}
+          %figure{class:"topiclist__img"}
+            %img{src:"#"}
+          %div{class:"topiclist__body"}
+            %h3{class:"name"} dd
+            %div{class:"place"}
+              %ul
+                %li 1000円
+                %li
+                  %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
