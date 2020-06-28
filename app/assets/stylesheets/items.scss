@@ -13,31 +13,17 @@ body{
   background-color: rgb(255, 255, 255);
 }
 
-.item1{
+.item{
   padding: 40px 50px;
 }
 
-.item2{
-  padding: 40px 50px;
-}
 
-.item3{
-  padding: 40px 50px;
-}
 
-.item4{
-  padding: 40px 50px;
-}
-
-.item5{
-  padding: 40px 50px;
-}
-
-.item6{
+.button_area{
   margin: 30px 170px 32px;
 }
 
-.item7{
+.notice{
   height: 96px;
   margin: 0 40px;
   font-size: 12px;
@@ -131,19 +117,14 @@ body{
   margin: 0;
 }
 
-input{
+.text_box{
   height: 100%;
   width: 100%;
   padding: 0 16px;
   border: #c5c4c4 solid 1px;
 }
 
-.price_text input{
-  text-align: right;
-  margin-left: 10px;
-}
-
-textarea{
+.big_text_box{
   height: 154px;
   width: 100%;
   margin: 16px 0 0;
@@ -151,11 +132,9 @@ textarea{
   border: #c5c4c4 solid 1px;
 }
 
-select{
-  height: 100%;
-  width: 100%;
-  padding: 0 16px;
-  border: #c5c4c4 solid 1px;
+.price_text .text_box{
+  text-align: right;
+  margin-left: 10px;
 }
 
 button{

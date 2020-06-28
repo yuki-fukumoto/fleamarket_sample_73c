@@ -1,5 +1,5 @@
 .contents
-  .item1
+  .item
     .title
       .title__header
         出品画像
@@ -12,23 +12,23 @@
         = icon('fas', 'camera')
         %input{type: "file"}
   %hr
-  .item2
+  .item
     .title
       .title__header
         商品名
       .title__require
         必須
     .item_text
-      %input{name: "item", placeholder: "40文字まで", type: "text", value: ""}      
+      %input{name: "item", class: "text_box", placeholder: "40文字まで", type: "text", maxlength: "40", value: ""}      
     .title    
       .title__header
         商品の説明
       .title__require
         必須
     .explanation_text
-      %textarea{name: "explanation", placeholder: "商品の説明（必須1000文字以内）", type: "text", value: ""}     
+      %textarea{name: "explanation", class: "big_text_box", placeholder: "商品の説明（必須1000文字以内）", maxlength: "1000", type: "text", value: ""}     
   %hr
-  .item3
+  .item
     .title
       .title__nav  
         商品の詳細 
@@ -39,7 +39,7 @@
         .title__require
           必須
       .column
-        %select{required: ""}
+        %select{required: "", class: "text_box"}
           %option{hidden: "", value: ""} 選択してください
           %option{value: "1"} 
     .container 
@@ -49,7 +49,7 @@
         .title__any
           任意
       .column
-        %input{name: "brand_id", placeholder: "例） シャネル", type: "text", value: ""}    
+        %input{name: "brand_id", class: "text_box",placeholder: "例） シャネル", type: "text", value: ""}    
     .container.bottom_container
       .title    
         .title__header
@@ -57,14 +57,14 @@
         .title__require
           必須
       .column
-        %select{required: ""}
+        %select{required: "", class: "text_box"}
           %option{hidden: "", value: ""} 選択してください
           %option{value: "1"} 新品
           %option{value: "2"} 美中古
           %option{value: "3"} 中古
           %option{value: "4"} JUNK
   %hr
-  .item4
+  .item
     .title
       .title__nav  
         配送について 
@@ -75,7 +75,7 @@
         .title__require
           必須
       .column
-        %select{required: ""}
+        %select{required: "", class: "text_box",}
           %option{hidden: "", value: ""} 選択してください
           %option{value: "1"} 出品者負担
           %option{value: "2"} 購入者負担   
@@ -86,7 +86,7 @@
         .title__require
           必須
       .column
-        %select{required: ""}
+        %select{required: "", class: "text_box",}
           %option{hidden: "", value: ""} 選択してください
           %option{value: "1"} 北海道
           %option{value: "2"} 青森県
@@ -143,13 +143,13 @@
         .title__require
           必須
       .column
-        %select{required: ""}
+        %select{required: "", class: "text_box",}
           %option{hidden: "", value: ""} 選択してください
           %option{value: "1"} 1~2日で発送
           %option{value: "2"} 3~4日で発送   
           %option{value: "3"} 5~7日で発送   
   %hr
-  .item5
+  .item
     .title
       .title__nav  
         価格（¥300〜9,999,999）
@@ -161,14 +161,14 @@
           必須
       .price_text
         ¥
-        %input{ name: "price", placeholder: "0", type: "number", value: ""}     
-  .item6
+        %input{ name: "price",class: "text_box", placeholder: "0", type: "number", min: "300", max: "9999999", value: ""}     
+  .button_area
     .puts_up_btn
       %button{ onclick: "#", type: "submit", value: ""}出品する
     .save_btn
       %button{ onclick: "#", type: "submit", value: ""}下書きに保存
     .return
       %a{href: "/"} もどる
-  .item7
+  .notice
     禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
