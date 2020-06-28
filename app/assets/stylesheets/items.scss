@@ -1,3 +1,214 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #eeeeee;
+  padding: 40px;
+}
+
+.contents{
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.item1{
+  padding: 40px 50px;
+}
+
+.item2{
+  padding: 40px 50px;
+}
+
+.item3{
+  padding: 40px 50px;
+}
+
+.item4{
+  padding: 40px 50px;
+}
+
+.item5{
+  padding: 40px 50px;
+}
+
+.item6{
+  margin: 30px 170px 32px;
+}
+
+.item7{
+  height: 96px;
+  margin: 0 40px;
+  font-size: 12px;
+}
+
+.title{
+  display: flex;
+  &__header{
+    font-size: 14px;
+    font-weight: 600;
+  }
+  &__require{
+    margin-left: 8px;
+    font-size: 12px;
+    background-color: #CE403C;
+    color: white;
+    height: 22px;
+    width: 42px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 3px;
+  }
+  &__any{
+    margin-left: 8px;
+    font-size: 12px;
+    background-color: #3CCACE ;
+    color: white;
+    height: 22px;
+    width: 42px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 3px;
+  }  
+  &__nav{
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 24px;
+  }
+}
+
+.image_upload{
+  height: 150px;
+  background-color: #eeeeee;
+  border-radius: 5px;
+  border: dashed 1px rgb(204, 204, 204);
+  line-height: 150px;
+  text-align: center;
+  margin: 16px 0 0;
+}
+
+.image_upload .input-image{
+  font-size: 30px;
+}
+
+.image_upload .input-image input{
+  display: none;
+}
+
+.item_text{
+  height: 48px;
+  width: 100%;
+  margin: 16px 0 16px;
+}
+
+.explanation_text{
+}
+
+.column{
+  height: 48px;
+  width: 50%;
+  margin-top: -12px;
+  display: flex;
+  line-height: 48px;
+}
+
+.price_text{
+  height: 48px;
+  width: 50%;
+  margin-top: -12px;
+  display: flex;
+  line-height: 48px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.container.bottom_container{
+  margin: 0;
+}
+
+input{
+  height: 100%;
+  width: 100%;
+  padding: 0 16px;
+  border: #c5c4c4 solid 1px;
+}
+
+.price_text input{
+  text-align: right;
+  margin-left: 10px;
+}
+
+textarea{
+  height: 154px;
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 16px;
+  border: #c5c4c4 solid 1px;
+}
+
+select{
+  height: 100%;
+  width: 100%;
+  padding: 0 16px;
+  border: #c5c4c4 solid 1px;
+}
+
+button{
+  border: none;
+}
+
+.puts_up_btn button{
+  height: 48px;
+  width: 100%;
+  background-color: #CE403C;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: (1px 1px 3px black);
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }  
+}
+
+.save_btn button{
+  height: 48px;
+  width: 100%;
+  background-color: #cccccc;
+  color: black;
+  font-size: 17px;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-weight: 600;
+  margin-top: 24px;
+  border-radius: 4px;
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+}
+
+.return{
+  text-align: center;
+  margin-top: 24px;
+}
+
+a{
+  text-decoration: none;
+}
+
+p{
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+hr{
+  width: calc(100% - 80px);
+  border: #c5c4c4 solid 1px;
+}
