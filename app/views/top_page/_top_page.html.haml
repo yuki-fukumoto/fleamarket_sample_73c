@@ -5,10 +5,10 @@
         %a{href:"/"}
           %img{src:"/assets/logo.png"}
       .search_box
-        %form{}
-          %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
-          %button{type:"submit", class: "search_box__btn"}
-            %i.fas.fa-search{class: "search_box__btn__icon"}
+        -# %form{}
+        %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
+        %button{type:"submit", class: "search_box__btn"}
+          %i.fas.fa-search{class: "search_box__btn__icon"}
         %ul{class:"search--result"}
     .list
       %ul{class:"list__left"}
@@ -41,25 +41,26 @@
     %ul{class:"reason__lists"}
       %li{class:"list"}
         %div{class:"list__picture1"}
-          %span{class:"number"}1
-        %h3{class:"list__text"}３分
-        ですぐに出品
+          .number 1
+        %h3{class:"list__text"}
+          %span ３分
+          ですぐに出品
         %p{class:"list__descri"}スマホで入力するだけで出品できる！
 
       %li{class:"list"}
         %div{class:"list__picture2"}
-          %span{class:"number"}2
+          .number 2
         %h3{class:"list__text"}
-          .span シンプル
+          %span シンプル
           で使いやすい
         %p{class:"list__descri"}めんどくさい入力は必要なく、検索も購入もスムーズ！
 
       %li{class:"list"}
         %div{class:"list__picture3"}
-          %span{class:"number"}3
+          .number 3
         %h3{class:"list__text"}
-          .span 手数料
-          業界最安
+          手数料
+          %span 業界最安
         %p{class:"list__descri"}最大3%でお得に出品&購入！
 
   %section{class:"middle_view"}
@@ -81,18 +82,18 @@
     %h2{class:"buyAndsell__title"}FURIMAの特徴
     %div{class:"buyAndsell__lists"}
       %section{class:"list"}
-        %figure{class:"list__image1"}
-        %h3{class:"list__subutitle"}簡単に売り買いできる
+        %div{class:"list__image1"}
+        %h3{class:"list__subtitle"}簡単に売り買いできる
         %p{class:"list__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
       %section{class:"list"}
-        %figure{class:"list__image2"}
-        %h3{class:"list__subutitle"}売上金は即日振込みに対応
+        %div{class:"list__image2"}
+        %h3{class:"list__subtitle"}売上金は即日振込みに対応
         %p{class:"list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
       %section{class:"list"}
-        %figure{class:"list__image3"}
-        %h3{class:"list__subutitle"}様々な支払いに対応
+        %div{class:"list__image3"}
+        %h3{class:"list__subtitle"}様々な支払いに対応
         %p{class:"list__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
   %section{class:"topic_contents"}
@@ -104,7 +105,7 @@
       %div{class:"topiclists"}
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -117,7 +118,7 @@
 
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -130,7 +131,7 @@
 
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -143,7 +144,7 @@
 
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -163,7 +164,7 @@
       %div{class:"topiclists"}
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -172,11 +173,11 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                  %p （税込） 
+                %p （税込） 
 
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -185,11 +186,11 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                  %p （税込） 
+                %p （税込） 
 
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -198,11 +199,11 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                  %p （税込） 
+                %p （税込） 
 
         %div{class:"topiclist"}
           %a{href:"#"}
-            %figure{class:"topiclist__img"}
+            %div{class:"topiclist__img"}
               %img{src:"#"}
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
@@ -210,23 +211,23 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
-                  %p （税込） 
+                    %i{class:"fa fa-star likeicon"}0  
+                %p （税込） 
 
   %aside{class:"banner"}
     %div{class:"foot"}
       %h2{class:"foot__title"}だれでもかんたん、人生を変えるフリマアプリ
       %p{class:"foot__text"}今すぐ無料ダウンロード！
-      %div{class:"foot__icon"}
-      %a{href:"#"}
-        %img{class:"footicon_appbtn",src:"/assets/appstore.png"}
-      %a{href:"#"}
-        %img{class:"footicon_googlebtn",src:"/assets/googlestore.png"}
+      %div{class:"foot__btn"}
+        %a{href:"#"}
+          %img{class:"app_btn",src:"/assets/appstore.png"}
+        %a{href:"#"}
+          %img{class:"google_btn",src:"/assets/googlestore.png"}
 
   %div{class:"footer"}
     %ul{class:"footer__contens"}
-      %li{class:"footer__content"}
-        %h2{class:"footer__content__head"}FURIMAについて
+      %li{class:"footer__contents__content"}
+        %h2{class:"footer__contents__content__head"}FURIMAについて
         %ul
           %li 
             %a{href:"#"}会社概要（運営会社）
@@ -254,11 +255,15 @@
             %a{href:"#"}FURIMAロゴ利用ガイドライン
           %li 
             %a{href:"#"}お知らせ
-    %div{class:"FURIMA__LOGO"}
+    %div{class:"FURIMA_LOGO"}
       %a{href:"/"}
-        %img{src:"/assets/logo-white.png"}
+        
     %p© FURIMA
   %a{href:"#"}
-    %div{class:"schrollbtn"}
-      %span{class:"schrollbtn__text"}出品する
-      %img{class:"schrollbtn__icon",src:"/assets/icon_camera.png"}
+    -# %div{class:"schrollbtn"}
+    -#   %span{class:"schrollbtn__text"}出品する
+    -#   %img{class:"schrollbtn__icon",src:"/assets/icon_camera.png"}
+    .puts_up
+      .puts_up__text
+        出品する
+        = icon('fas', 'camera', class: 'puts_up__icon')
