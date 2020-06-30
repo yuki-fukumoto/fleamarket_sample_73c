@@ -323,9 +323,9 @@
           &__body{
             padding: 16px;
             font-size: 16px;
-            .name{
+            //.name{
               
-            }
+            //}
             .place{
               ul{
                 display: flex;
@@ -340,14 +340,9 @@
 
   .banner{
     background-image: url(/assets/bg-appBanner-pict.jpg);
-    // background-position: bottom right;
     height: 400px;
     background-size: cover;
     padding: 100px 40px;
-    // display: flex;
-    // align-items: center;
-    // padding: 0 23.5px;
-    // position: relative;
     .foot{
       color: #fff;
       text-align: center;
@@ -361,12 +356,7 @@
         font-size: 35px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }  
-      // &__icon{
-      //   width: 100%;
-      //   display: flex;
-      //   justify-content: center;
-      //   margin: 20px auto 0;
-      // }
+
       &__btn{
         display: flex;
         margin-top: 18px;
@@ -396,24 +386,9 @@
       display: flex;
       justify-content: space-between;
       &__content{
-        // display: flex;
-        // flex-direction: column;
-        // width: calc(1 / 3 * 100%);
-        // margin: 0 2% 0 0;
-        // &__head{
-        //   margin-bottom: 20px;
-        //   font-size: 80px;
-        //   font-weight: 800;
-        // }  
-        // ul{
-        //   list-style: none;
-        //   li{
-        //     color: #fff;
-        //     text-decoration: none;
-        //     font-size: 12px;
-        //     line-height: 32px;
-        //   }
-        // }
+
+        &__head{
+
       }
     }
   }
@@ -429,11 +404,7 @@
   a{
     color: #333;
     text-decoration: none;
-    // line-height: 32px;
-    // background-position: center right;
-    // background-repeat: no-repeat;
-    // background-size: 18px;
-    // padding-right: 30px;
+ 
   }
 
   .footer a{
@@ -479,5 +450,3 @@
       margin-top: 5px;
     }
   }
-
-  
