@@ -6,22 +6,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-    # super
-  end
+  # def new
+  #   @user = User.new
+  # end
 
   # POST /resource
   def create
-    binding.pry
-    User.create(post_params)
-    # super
+    binding.pry 
+    super
   end
 
 
-  private
-  def post_params
-    params.permit(:nickname, :email, :encrypted_password, :firstname, :lastname, :firstname_read, :lastname_read, :birthday).merge(birthday: params[:birthday(1i)] + params[:birthday(2i)] + params[:birthday(3i)]
-  end
+  # private
+  # def user_params
+  #   params.permit(:nickname, :email, :password, :password_confirmation, :firstname, :lastname, :firstname_read, :lastname_read, :birthday).merge(birthday: params[:birthday(1i)] + params[:birthday(2i)] + params[:birthday(3i)]
+  # end
+
+  
 end  
   # GET /resource/edit
   # def edit
