@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :move_to_index, except: [:index, :show]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -11,9 +12,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    binding.pry
+    User.create(post_params)
     # super
   end
 
+
+  private
+  def post_params
+    params.permit(:nickname, :email, :encrypted_password, :firstname, :lastname, :firstname_read, :lastname_read, :birthday).merge(birthday: params[:birthday(1i)] + params[:birthday(2i)] + params[:birthday(3i)]
+  end
+end  
   # GET /resource/edit
   # def edit
   #   super
