@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body{
+	min-width: 940px;
+}
+
 .top_page{
   padding: 0 60px;
   &__header{
@@ -117,13 +121,15 @@
     &__title{
       text-align: center;
       height: 50px;
-      font-size: 35px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
     &__lists{
       display: flex;
       justify-content: space-between;
+      max-width: 1020px;
+      margin: 0 auto;
       .list{
         width: 300px;
         &__picture1{
@@ -164,6 +170,9 @@
         &__descri{
           margin-top: 20px;
           font-size: 18px;
+        }
+        .last{
+          text-align: center;
         }
       }
     }
@@ -213,13 +222,15 @@
     &__title{
       text-align: center;
       height: 50px;
-      font-size: 35px;
-      font-weight: 600;
-      margin-bottom: 20px;
+      font-size: 27px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
     &__lists{
       display: flex;
       justify-content: space-between;
+      max-width: 1020px;
+      margin: 0 auto;
       .list{
         width: 300px;
         padding: 0 20px;
@@ -280,8 +291,9 @@
           &__body{
             padding: 16px;
             font-size: 16px;
-            .name{
-            }
+            //.name{
+              
+            //}
             .place{
               ul{
                 display: flex;
@@ -385,14 +397,21 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      &__content{
-
+      .content{
+        
         &__head{
-
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+        ul{
+          font-size: 12px;
+          line-height: 32px;
+        }
       }
     }
   }
-  
+
   .FURIMA_LOGO{
     margin: 0 auto;
     background-image: url(/assets/logo-white.png);
@@ -404,7 +423,13 @@
   a{
     color: #333;
     text-decoration: none;
- 
+  }
+
+  hr{
+    height: 4px;
+    width: 70px;
+    background-color: #3CCACE;
+    margin-bottom: 25px;
   }
 
   .footer a{
@@ -422,12 +447,6 @@
   .topiclist__img img{
     height: 100%;
     width: 100%;
-  }
-
-  .footer__contents__content__head h2{
-    margin-bottom: 20px;
-    font-size: 80px;
-    font-weight: 800;
   }
 
   .puts_up{
