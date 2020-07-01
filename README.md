@@ -79,7 +79,7 @@
 | user_id      | integer | null: false, foreign_key: true |
 | category_id  | integer | null: false, foreign_key: true |
 | brand_id     | integer | foreign_key: true              |
-| purchase_id  | integer | null: false, foreign_key: true |
+| purchase_id  | integer | foreign_key: true              |
 
 ### association
 

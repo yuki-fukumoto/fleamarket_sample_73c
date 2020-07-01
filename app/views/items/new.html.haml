@@ -1,0 +1,26 @@
+=form_with method: :post, local: true do |f|
+  .form
+    商品名
+    = f.text_field :name, autocomplete:"off"
+  .form
+    説明文
+    = f.text_area :explanation, autocomplete:"off"
+  .form
+    価格
+    = f.number_field :price
+  .form
+    送料
+    = f.number_field :shipping_fee
+  .form
+    商品の状態
+    = f.select :condition, [["新品", 0],["未使用に近い", 1],["目立った傷や汚れなし", 2],["やや傷や汚れあり", 3],["傷や汚れあり", 4]]
+  .form
+    ブランド
+    = f.collection_select(:brand_id, @brands, :id, :name, prompt: "ブランドを選ぶ")
+  .form
+    .form_parent
+      カテゴリー
+      = f.collection_select(:category_id, @categories, :id, :name, prompt: "メインカテゴリを選ぶ", class: "category")
+    .form_child
+    .form_grandchild
+

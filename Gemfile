@@ -91,3 +91,4 @@ end
   gem 'ancestry'
   gem 'carrierwave'
   gem 'fog'
+  gem 'jquery-turbolinks'
