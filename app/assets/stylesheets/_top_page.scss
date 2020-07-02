@@ -80,9 +80,7 @@ body{
     }  
   }
 }  
-.top_view{
-  
-}
+
   .top_visual{
     background-image: url(bg-mainVisual-pict_pc.jpg);
     background-size: cover;
@@ -100,10 +98,6 @@ body{
       &__btn{
         display: flex;
         margin-top: 18px;
-        .app_btn{
-          width: 180px;
-          margin-right: 16px;
-        }
         .google_btn{
           width: 180px;
         }
@@ -203,10 +197,6 @@ body{
       &__btn{
         display: flex;
         margin-top: 18px;
-        .app_btn{
-          width: 180px;
-          margin-right: 16px;
-        }
         .google_btn{
           width: 180px;
         }
@@ -291,9 +281,6 @@ body{
           &__body{
             padding: 16px;
             font-size: 16px;
-            //.name{
-              
-            //}
             .place{
               ul{
                 display: flex;
@@ -335,9 +322,6 @@ body{
           &__body{
             padding: 16px;
             font-size: 16px;
-            //.name{
-              
-            //}
             .place{
               ul{
                 display: flex;
@@ -373,10 +357,6 @@ body{
         display: flex;
         margin-top: 18px;
         justify-content: center;
-        .app_btn{
-          width: 180px;
-          margin-right: 16px;
-        }
         .google_btn{
           width: 180px;
         }
