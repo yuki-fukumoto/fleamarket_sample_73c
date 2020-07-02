@@ -1,25 +1,35 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :move_to_index, except: [:index, :show]
-  # before_action :configure_sign_up_params, only: [:create]
+  # before_action :move_to_index, except: [:index, :show]
+  before_action :configure_permitted_parameters, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   @user = User.new
-  # end
+  def new
+    @user = User.new
+    @addresses = @user.addresses
+  end
 
   # POST /resource
   def create
-    binding.pry 
+    binding.pry
     super
+    @user = User.new
+    @user.save
   end
 
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
+  end
+
   # private
-  # def user_params
-  #   params.permit(:nickname, :email, :password, :password_confirmation, :firstname, :lastname, :firstname_read, :lastname_read, :birthday).merge(birthday: params[:birthday(1i)] + params[:birthday(2i)] + params[:birthday(3i)]
+
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
   # end
 
   
@@ -51,8 +61,8 @@ end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -69,4 +79,4 @@ end
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-end
+# end
