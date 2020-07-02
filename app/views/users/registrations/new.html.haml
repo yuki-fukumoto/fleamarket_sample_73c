@@ -79,10 +79,10 @@
             .wrapper-sign-up__article__section__form-area__form
               .wrapper-sign-up__article__section__form-area__form__divide
                 .wrapper-sign-up__article__section__form-area__form__divide__text 姓
-                =address_f.text_field :last_name, class: "wrapper-sign-up__article__section__form-area__form--style"
+                =address_f.text_field :lastname, class: "wrapper-sign-up__article__section__form-area__form--style"
               .wrapper-sign-up__article__section__form-area__form__divide
                 .wrapper-sign-up__article__section__form-area__form__divide__text 名
-                =address_f.text_field :first_name, class: "wrapper-sign-up__article__section__form-area__form--style"
+                =address_f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
             .wrapper-sign-up__article__section__form-area__name
               ふりがな
@@ -101,9 +101,9 @@
               .wrapper-sign-up__article__section__form-area__name__attribute--box
                 必須
             .wrapper-sign-up__article__section__form-area__form
-              =address_f.text_field :zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-first"
+              =address_f.text_field :first_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-first"
               .wrapper-sign-up__article__section__form-area__form--zip-divide - 
-              =address_f.text_field :zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second"
+              =address_f.text_field :last_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second"
           .wrapper-sign-up__article__section__form-area
             .wrapper-sign-up__article__section__form-area__name
               都道府県
@@ -146,10 +146,10 @@
               .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
                 任意
             .wrapper-sign-up__article__section__form-area__form  
-              =address_f.text_field :telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-two"
+              =address_f.text_field :first_telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-two"
               .wrapper-sign-up__article__section__form-area__form--tel-divide - 
-              =address_f.text_field :telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four"
+              =address_f.text_field :second_telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four"
               .wrapper-sign-up__article__section__form-area__form--tel-divide - 
-              =address_f.text_field :telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four"
+              =address_f.text_field :third_telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four"
           %hr
       = f.submit "登録", class: "wrapper-sign-up__article__section--btn"  
