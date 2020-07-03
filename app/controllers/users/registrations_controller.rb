@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     binding.pry
     User.create(post_params)
+    redirect_to_ root_path
     # super
   end
 
