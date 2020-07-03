@@ -171,14 +171,15 @@
         }
       }
     .commentBox{
-      padding: 24px;
+      padding: 24px 40px 40px;
       background-color: #fff;
-      margin: 10px;
+      margin-top: 10px;
       text-align: center;
       #comment_body{
-         width: 100%;
+        width: 100%;
         min-height: 104px;
         padding: 10px;
+        border-color: #3ccace ;
       }
       .noticeMsg{
         padding: 8px;
