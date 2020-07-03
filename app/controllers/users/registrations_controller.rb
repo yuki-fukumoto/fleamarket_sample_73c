@@ -1,27 +1,30 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :move_to_index, except: [:index, :show]
-  # before_action :configure_sign_up_params, only: [:create]
+  # before_action :move_to_index, except: [:index, :show]
+  before_action :configure_permitted_parameters, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
-    # super
+    @user = User.new
+    @addresses = @user.addresses
   end
 
   # POST /resource
   def create
+    super
+    @address = Address.new(address_params)
     binding.pry
     User.create(post_params)
     redirect_to_ root_path
     # super
   end
 
-
   private
-  def post_params
-    params.permit(:nickname, :email, :encrypted_password, :firstname, :lastname, :firstname_read, :lastname_read, :birthday).merge(birthday: params[:birthday(1i)] + params[:birthday(2i)] + params[:birthday(3i)]
+
+  def address_params
+    params.permit(address: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone])[:address].merge(user_id: @user.id)
   end
 end  
   # GET /resource/edit
@@ -51,8 +54,8 @@ end
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -69,4 +72,4 @@ end
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-end
+# end
