@@ -3,7 +3,8 @@
 }
 
 body{
-	min-width: 940px;
+  min-width: 940px;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
 .top_page{
@@ -41,22 +42,24 @@ body{
       display: flex;
       margin-bottom: 10px;
       justify-content: space-between;
+      height: 32px;
+      line-height: 32px;
       &__left{
         position: relative;
         display: flex;
         padding: 0;
         &__category{
-          color: #333;
-          line-height: 32px;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
+          // color: #333;
+          // line-height: 32px;
+          // background-position: center right;
+          // background-repeat: no-repeat;
+          // background-size: 18px;
           padding-right: 30px;
         }
         &__brand{
           display: flex;
-          line-height: 38px;
-          padding: 0 0 0 16px;
+          // line-height: 38px;
+          padding-left: 16px;
         }
       }
       &__right{
@@ -64,17 +67,17 @@ body{
         display: flex;
         padding: 0;
         &__log_in{
-          color: #333;
-          line-height: 32px;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
+          // color: #333;
+          // line-height: 32px;
+          // background-position: center right;
+          // background-repeat: no-repeat;
+          // background-size: 18px;
           padding-right: 30px;
         }
         &__new{
           display: flex;
-          line-height: 38px;
-          padding: 0 0 0 16px;
+          // line-height: 38px;
+          padding-left: 16px;
         }
       }
     }  
@@ -94,16 +97,11 @@ body{
       }
       &__subtitle{
         font-size: 18px;
+        margin-top: 16px;
       }
       &__btn{
         display: flex;
         margin-top: 18px;
-        .google_btn{
-          width: 180px;
-        }
-        img{
-          width: 180px;
-        }
       }
     }
   }
@@ -126,26 +124,20 @@ body{
       margin: 0 auto;
       .list{
         width: 300px;
-        &__picture1{
+        &__picture{
+          background-size: cover;
+          height: 300px;
+          width: 300px;
+          margin-bottom: 20px;
+        }
+        .no1{
           background-image: url(/assets/pict-reason-01.jpg);
-          background-size: cover;
-          height: 300px;
-          width: 300px;
-          margin-bottom: 20px;
         }
-        &__picture2{
+        .no2{
           background-image: url(/assets/pict-reason-02.jpg);
-          background-size: cover;
-          height: 300px;
-          width: 300px;
-          margin-bottom: 20px;
         }
-        &__picture3{
+        .no3{
           background-image: url(/assets/pict-reason-03.jpg);
-          background-size: cover;
-          height: 300px;
-          width: 300px;
-          margin-bottom: 20px;
         }
         .number{
           background-color: #3CCACE;
@@ -160,6 +152,7 @@ body{
         &__text{
           font-size: 24px;
           text-align: center;
+          font-weight: bold;
         }
         &__descri{
           margin-top: 20px;
@@ -174,12 +167,12 @@ body{
 
   .middle_view{
     background-image: url(/assets/bg-topMiddleDl-pict.jpg);
-    background-position: bottom right;
-    height: 500px;
+    // background-position: bottom right;
+    height: 400px;
     background-size: cover;
-    display: flex;
-    align-items: center;
-    padding: 0 23.5px;
+    // display: flex;
+    // align-items: center;
+    padding: 0 76.5px;
     position: relative;
     .contents{
       position: absolute;
@@ -189,20 +182,15 @@ body{
       color: white;
       text-shadow: 1px 2px 3px #808080; 
       &__title{
-       font-size: 60px;
+       font-size: 27px;
       }
       &__subtitle{
         font-size: 18px;
+        margin: 20px 0 30px;
       }
       &__btn{
         display: flex;
         margin-top: 18px;
-        .google_btn{
-          width: 180px;
-        }
-        img{
-          width: 180px;
-        }
       }
     }
   }
@@ -222,26 +210,26 @@ body{
       max-width: 1020px;
       margin: 0 auto;
       .list{
-        width: 300px;
+        width: 331px;
         padding: 0 20px;
-        &__image1{
+        margin-bottom: 40px;
+        &__image{
+          background-size: cover;
+          height: 313.5px;
+          width: 203px;
+        }
+        .no1{
           background-image: url(/assets/icon-01.png);
-          background-size: cover;
-          height: 300px;
         }
-        &__image2{
+        .no2{
           background-image: url(/assets/icon-03.png);
-          background-size: cover;
-          height: 300px;
         }
-        &__image3{
+        .no3{
           background-image: url(/assets/icon-04.png);
-          background-size: cover;
-          height: 300px;
         }
         &__subtitle{
           font-size: 19px;
-          font-weight: 600;
+          font-weight: bold;
           margin: 38px 0 10px;
           text-align: center;
         }
@@ -254,52 +242,16 @@ body{
 
   .topic_contents{
     background-color: #EEEEEE;
-    padding: 80px 0;
-    .topic_head{
-      text-align: center;
-      font-size: 28px;
-      font-weight: 600;
-    }
-    .topicBox{
-      &__head{
-        text-align: center;
-        font-size: 24px;
-        .title{
-          color: #3CCACE;
-        }
-      }
-      .topiclists{
-        display: flex;
-        width: 760px;
-        margin: 26px auto;
-        .topiclist{
-          width: 220px;
-          background-color: #fff;
-          &__img{
-            height: 150px;
-          }
-          &__body{
-            padding: 16px;
-            font-size: 16px;
-            .place{
-              ul{
-                display: flex;
-                justify-content: space-between;
-              }
-            }
-          }
-        }
-      }
-    }
+    padding-top: 80px;
   }
-
   .topic_brand{
     background-color: #EEEEEE;
     padding: 80px 0;
+  }  
     .topic_head{
       text-align: center;
       font-size: 28px;
-      font-weight: 600;
+      font-weight: bold;
     }
     .topicBox{
       &__head{
@@ -307,17 +259,21 @@ body{
         font-size: 24px;
         .title{
           color: #3CCACE;
+          font-weight: bold;
+          margin-bottom: 26px;
         }
       }
       .topiclists{
         display: flex;
-        width: 760px;
-        margin: 26px auto;
+        width: 780px;
+        margin: 0 auto;
+        justify-content: space-around;
         .topiclist{
           width: 220px;
           background-color: #fff;
           &__img{
             height: 150px;
+            width: 220px;
           }
           &__body{
             padding: 16px;
@@ -332,11 +288,52 @@ body{
         }
       }
     }
-  }
+  
+
+  // .topic_brand{
+  //   background-color: #EEEEEE;
+  //   padding: 80px 0;
+    // .topic_head{
+    //   text-align: center;
+    //   font-size: 28px;
+    //   font-weight: 600;
+    // }
+    // .topicBox{
+    //   &__head{
+    //     text-align: center;
+    //     font-size: 24px;
+    //     .title{
+    //       color: #3CCACE;
+    //     }
+    //   }
+    //   .topiclists{
+    //     display: flex;
+    //     width: 760px;
+    //     margin: 26px auto;
+    //     .topiclist{
+    //       width: 220px;
+    //       background-color: #fff;
+    //       &__img{
+    //         height: 150px;
+    //       }
+    //       &__body{
+    //         padding: 16px;
+    //         font-size: 16px;
+    //         .place{
+    //           ul{
+    //             display: flex;
+    //             justify-content: space-between;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+  // }
 
   .banner{
     background-image: url(/assets/bg-appBanner-pict.jpg);
-    height: 400px;
+    height: 359.33px;
     background-size: cover;
     padding: 100px 40px;
     .foot{
@@ -352,17 +349,10 @@ body{
         font-size: 35px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
       }  
-
       &__btn{
         display: flex;
-        margin-top: 18px;
+        margin-top: 8px;
         justify-content: center;
-        .google_btn{
-          width: 180px;
-        }
-        img{
-          width: 180px;
-        }
       }
     }
   }
@@ -378,7 +368,6 @@ body{
       display: flex;
       justify-content: space-between;
       .content{
-        
         &__head{
           font-size: 16px;
           font-weight: 600;
@@ -410,6 +399,7 @@ body{
     width: 70px;
     background-color: #3CCACE;
     margin-bottom: 25px;
+    border: none;
   }
 
   .footer a{
@@ -422,6 +412,14 @@ body{
 
   .list__text span{
     color: #3CCACE;
+  }
+
+  .app_btn img{
+    width: 180px;
+    margin-top: 13px;
+  } 
+  .google_btn img{
+    width: 202px;
   }
 
   .topiclist__img img{
