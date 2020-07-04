@@ -15,10 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     @address = Address.new(address_params)
-    binding.pry
-    User.create(post_params)
-    redirect_to_ root_path
-    # super
+    if @address.save
+    else
+      alert = @address.errors.full_messages
+    end
   end
 
   private
