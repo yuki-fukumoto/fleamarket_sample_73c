@@ -49,16 +49,10 @@ body{
         display: flex;
         padding: 0;
         &__category{
-          // color: #333;
-          // line-height: 32px;
-          // background-position: center right;
-          // background-repeat: no-repeat;
-          // background-size: 18px;
           padding-right: 30px;
         }
         &__brand{
           display: flex;
-          // line-height: 38px;
           padding-left: 16px;
         }
       }
@@ -67,16 +61,10 @@ body{
         display: flex;
         padding: 0;
         &__log_in{
-          // color: #333;
-          // line-height: 32px;
-          // background-position: center right;
-          // background-repeat: no-repeat;
-          // background-size: 18px;
           padding-right: 30px;
         }
         &__new{
           display: flex;
-          // line-height: 38px;
           padding-left: 16px;
         }
       }
@@ -151,7 +139,7 @@ body{
         }
         &__text{
           font-size: 24px;
-          text-align: center;
+          text-align: left;
           font-weight: bold;
         }
         &__descri{
@@ -167,11 +155,8 @@ body{
 
   .middle_view{
     background-image: url(/assets/bg-topMiddleDl-pict.jpg);
-    // background-position: bottom right;
     height: 400px;
     background-size: cover;
-    // display: flex;
-    // align-items: center;
     padding: 0 76.5px;
     position: relative;
     .contents{
@@ -231,7 +216,7 @@ body{
           font-size: 19px;
           font-weight: bold;
           margin: 38px 0 10px;
-          text-align: center;
+          text-align: left;
         }
         &__apile{
           font-size: 17px;
@@ -289,48 +274,6 @@ body{
       }
     }
   
-
-  // .topic_brand{
-  //   background-color: #EEEEEE;
-  //   padding: 80px 0;
-    // .topic_head{
-    //   text-align: center;
-    //   font-size: 28px;
-    //   font-weight: 600;
-    // }
-    // .topicBox{
-    //   &__head{
-    //     text-align: center;
-    //     font-size: 24px;
-    //     .title{
-    //       color: #3CCACE;
-    //     }
-    //   }
-    //   .topiclists{
-    //     display: flex;
-    //     width: 760px;
-    //     margin: 26px auto;
-    //     .topiclist{
-    //       width: 220px;
-    //       background-color: #fff;
-    //       &__img{
-    //         height: 150px;
-    //       }
-    //       &__body{
-    //         padding: 16px;
-    //         font-size: 16px;
-    //         .place{
-    //           ul{
-    //             display: flex;
-    //             justify-content: space-between;
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-  // }
-
   .banner{
     background-image: url(/assets/bg-appBanner-pict.jpg);
     height: 359.33px;
@@ -361,7 +304,7 @@ body{
     padding: 60px 0;
     color: #fff;
     background-color: #272727;
-    text-align: center;
+    text-align: left;
     &__contens{
       max-width: 840px;
       margin: 0 auto;
@@ -376,6 +319,9 @@ body{
         ul{
           font-size: 12px;
           line-height: 32px;
+      p{
+        text-align: center;
+          }
         }
       }
     }
