@@ -1,6 +1,17 @@
-// icon
+//icon
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 @import "reset";
 @import "top_page"
+
+
+.notice {
+  color: #ffffff;
+  background-color: #00FFFF;
+  }
+
+.alert {
+  color: #ffffff;
+  background-color: #FF0000;
+  }
