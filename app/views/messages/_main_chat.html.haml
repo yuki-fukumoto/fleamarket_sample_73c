@@ -1,5 +1,13 @@
 .header-menu
   .header-menu__top
     %h1.header-menu__logo
-  .header-menu__searchform
+    .header-menu__searchform
     アイコン
+  .header-menu__under
+    %nav.header-menu__nav.header__nav--left
+      %ul.header__navList.clearfix
+        %li.header__navItem.header__navItem--left
+          %a.ga-class.ga-navbar-category.ga-loggedin{:href => "https://fril.jp/category", :onclick => "gaReduceDimension(\"click_navbar_search_category\")"} カテゴリから探す
+        %li.header__navItem.header__navItem--right
+          %a.ga-class.ga-navbar-brand.ga-loggedin{:href => "https://fril.jp/brand", :onclick => "gaReduceDimension(\"click_navbar_search_brand\")"} ブランドから探す
+
