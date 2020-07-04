@@ -13,9 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    binding.pry
     @user = User.new(user_params)
     if @user.save
+      sign_in @user
       redirect_to root_path, notice: "ユーザ登録が完了しました"
     else
       render :new
@@ -31,7 +31,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def user_params
     params.require(:user).permit(:nickname, :email, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, addresses_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone]).merge(encrypted_password: Devise::Encryptor.digest(User, params[:user][:password]))
-    # params.require(:user).permit(:nickname, :email, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, addresses_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone])
   end
 end  
   # GET /resource/edit
