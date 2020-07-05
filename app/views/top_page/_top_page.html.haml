@@ -25,15 +25,19 @@
 .top_view
   %section.top_visual
     .contents
-      %h2.contents__title人生を変えるフリマアプリ 
+      = image_tag 'bg-mainVisual-pict_pc.jpg', alt: 'main', height: '100%', width: '100%', class: 'visual'
+      %h2.contents__title 人生を変えるフリマアプリ 
       %p.contents__subtitle
         FURIMAはだれでもかんたんに出品・購入できる 
         %br フリマアプリです
       .contents__btn
         %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
+          //%img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
+          = image_tag 'https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps', alt: 'picture2', height: '67%', width: '100%', class: 'reason2'
         %link_to{class:"google_btn", href:"#"}
-          %img{src:"/assets/google-play-badge.png"}
+          //%img{src:"/assets/google-play-badge.png"}
+          = image_tag 'google-play-badge.png', alt: 'picture2', height: '67%', width: '100%', class: 'reason2'
+
 
   %section.reason
     %h2.reason__title FURIMAが選ばれる３つの理由
@@ -51,6 +55,7 @@
 
       %li.list
         .list__picture__no2
+          = image_tag 'pict-reason-02.jpg', alt: 'picture2', height: '100%', width: '100%', class: 'reason2'
           .number 2
         %h3.list__text
           %span シンプル
@@ -60,6 +65,7 @@
 
       %li.list
         .list__picture__no3
+          = image_tag 'pict-reason-03.jpg', alt: 'picture3', height: '100%', width: '100%', class: 'reason3'
           .number 3
         %h3.list__text
           手数料
@@ -77,9 +83,12 @@
         ほしかったあの商品に出会えるかもしれません。
       %div.contents__btn
         %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
+          //%img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
+          = image_tag 'https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps', alt: 'app', height: '67%', width: '100%', class: 'appbtn'
+
         %link_to{class:"google_btn", href:"#"}
-          %img{src:"/assets/google-play-badge.png"}
+          //%img{src:"/assets/google-play-badge.png"}
+          = image_tag 'google-play-badge.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
 
   %section.buyAndsell
     %h2.buyAndsell__title FURIMAの特徴
@@ -87,16 +96,19 @@
     .buyAndsell__lists
       %section.list
         .list__image__no1
+          = image_tag 'icon-01.png', alt: 'main', height: '100%', width: '100%', class: 'visual'
         %h3.list__subtitle 簡単に売り買いできる
         %p.list__apile スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
       %section.list
         .list__image__no2
-        %h3.list__subtitle"}売上金は即日振込みに対応
-        %p.list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+          = image_tag 'icon-02.png', alt: 'main', height: '100%', width: '100%', class: 'visual'
+        %h3.list__subtitle 売上金は即日振込みに対応
+        %p.list__apile 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
       %section.list
         .list__image__no3
+          = image_tag 'icon-03.png', alt: 'main', height: '100%', width: '100%', class: 'visual'
         %h3.list__subtitle 様々な支払いに対応
         %p.list__apile お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
@@ -110,7 +122,9 @@
         .topiclist
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/molts.png"}
+              //%img{src:"/assets/molts.png"}
+              = image_tag 'molts.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
             .topiclist__body
               %h3.name dd
               .place
@@ -123,7 +137,10 @@
         .topiclist
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/a004.png"}
+              //%img{src:"/assets/a004.png"}
+              = image_tag 'a004.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
+              
             .topiclist__body
               %h3.name dd
               .place
@@ -136,7 +153,9 @@
         .topiclist
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/a006.png"}
+              //%img{src:"/assets/a006.png"}
+              = image_tag 'a006.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
             .topiclist__body
               %h3.name dd
               .place
@@ -149,7 +168,9 @@
         .topiclist
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/a007.png"}
+              //%img{src:"/assets/a007.png"}
+              = image_tag 'a007.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
             .topiclist__body
               %h3.name dd
               .place
@@ -169,7 +190,9 @@
         .topiclist 
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/a004.png"}
+              //%img{src:"/assets/a004.png"}
+              = image_tag 'a004.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
             .topiclist__body
               %h3.name dd
               .place
@@ -182,7 +205,10 @@
         .topiclist
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/a006.png"}
+              //%img{src:"/assets/a006.png"}
+              = image_tag 'a006.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
+
             .topiclist__body
               %h3.name dd
               .place
@@ -195,7 +221,9 @@
         .topiclist
           %link_to{href:"/assets/a007.png"}
             .topiclist__img
-              %img{src:"/assets/molts.png"}
+              //%img{src:"/assets/molts.png"}
+              = image_tag 'molts.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
             .topiclist__body
               %h3.name dd
               .place
@@ -208,7 +236,10 @@
         .topiclist
           %link_to{href:"#"}
             .topiclist__img
-              %img{src:"/assets/a004.png"}
+              //%img{src:"/assets/a004.png"}
+              = image_tag 'a004.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
+
             .topiclist__body
               %h3.name dd
               .place
@@ -220,6 +251,8 @@
 
   %link_toside.banner
     .foot
+      = image_tag 'bg-appBanner-pict.jpg', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+
       %h2.foot__title だれでもかんたん、人生を変えるフリマアプリ
       %p.foot__text 今すぐ無料ダウンロード！
       .foot__btn
