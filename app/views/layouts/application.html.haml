@@ -9,6 +9,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .notice
+      =notice
+    .alert
+      =alert
+
     = yield
     %footer
       =link_to "トップページ", root_path

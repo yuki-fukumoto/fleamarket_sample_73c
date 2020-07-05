@@ -8,23 +8,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-    @addresses = @user.addresses
+    @addresses = @user.addresses.build
   end
 
   # POST /resource
   def create
-    super
-    @address = Address.new(address_params)
-    binding.pry
-    User.create(post_params)
-    redirect_to_ root_path
-    # super
+    @user = User.new(user_params)
+    if @user.save
+      sign_in @user
+      redirect_to root_path, notice: "ユーザ登録が完了しました"
+    else
+      render :new
+    end
+
   end
 
   private
 
   def address_params
     params.permit(address: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone])[:address].merge(user_id: @user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, addresses_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone]).merge(encrypted_password: Devise::Encryptor.digest(User, params[:user][:password]))
   end
 end  
   # GET /resource/edit
