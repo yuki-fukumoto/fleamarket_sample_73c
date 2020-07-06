@@ -5,6 +5,16 @@
 body{
   background-color: #eeeeee;
   padding: 40px;
+  min-width: 700px;
+}
+
+.top_icon img{
+  height: 40px;
+}
+
+.top_icon{
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .contents{
@@ -130,6 +140,7 @@ body{
   margin: 16px 0 0;
   padding: 16px;
   border: #c5c4c4 solid 1px;
+  resize: none;
 }
 
 .price_text .text_box{
