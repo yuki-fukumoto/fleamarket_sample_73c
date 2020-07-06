@@ -30,6 +30,6 @@ class ItemsController < ApplicationController
 
   def item_params
     # ログイン機能未実装のためuser_id = 0としてmerge。ログイン機能実装後、current_user.idに置き換えること
-    params.require(:item).permit(:name, :explanation, :price, :shipping_fee, :condition, :category_id, :brand_id).merge(user_id: 0, purchase_id: nil)
+    params.require(:item).permit(:name, :explanation, :price, :shipping_fee, :condition, :category_id, :brand_id).merge(user_id: 83)
   end
 end
