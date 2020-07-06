@@ -2,8 +2,237 @@
   box-sizing: border-box;
 }
 
-side-menu {
-  background-color: red;
-  height: 300px;
-  width: 100%;
+
+
+body{
+  background-color: #f5f5f5;
 }
+.side-box{
+  display: flex;
+  margin: 20px 150px ;
+  padding: 20px;  
+}
+
+.side-menu{
+  padding: 8px 0 0;
+  font-size: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 4px;
+  padding-right: 20px;
+  width: 210px;
+  max-width: 1000;
+  margin-right: auto;
+
+
+
+
+  &__title{
+    margin: 0 0 8px;
+    padding: 0 8px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+
+  .group-list{
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+
+  a{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    line-height: 1.7;
+  }
+}
+
+
+
+
+
+
+.top_page{
+  padding: 0 60px;
+  &__header{
+    &__inner{
+      display: flex;
+      padding-top: 15px;
+      img{
+        height: 40px;
+        margin-right: 30px;
+      }
+      .search_box{
+        display: flex;
+        width: 100%;
+        &__input{
+          height: 36px;
+          width: 100%;
+          padding-left: 5px;
+        }
+        &__btn{
+          height: 37px;
+          width: 37px;
+          background-color: #3CCACE;
+          border: none;
+          &__icon{
+            color: white;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .list{
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      height: 32px;
+      line-height: 32px;
+      &__left{
+        position: relative;
+        display: flex;
+        padding: 0;
+        &__category{
+          padding-right: 30px;
+        }
+        &__brand{
+          display: flex;
+          padding-left: 16px;
+        }
+      }
+      &__right{
+        position: relative;
+        display: flex;
+        padding: 0;
+        &__log_in{
+          padding-right: 30px;
+        }
+        &__new{
+          display: flex;
+          padding-left: 16px;
+        }
+      }
+    }  
+  }
+}  
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.main {
+  background: #fcc;
+  margin-bottom: 10px;
+}
+.side {
+  background: #fea;
+}
+.main,
+.side {
+  padding: 2%;
+  border-radius: 10px
+}
+
+
+.main-box {
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  font-weight: bold;
+  color: black;
+  background: #FFF;
+  border: solid 3px#3CCACE;
+  border-radius: 10px;
+  // width:calc(100% - 200px);
+
+  .main-box__title {
+    margin: 16px 0;
+    padding: 0 8px 8px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .main-box__notice {
+    margin-bottom: 22px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    
+    .main-box__subtitle {
+      padding: 10px 15px;
+      border-bottom: 1px solid transparent;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      background-color: #f5f5f5;
+    
+
+      h3 {
+        font-weight: bold;
+        color: #757575;
+      }
+    }
+    .main-box__body {
+      padding: 15px;
+      border: 1px solid #e5e5e5;
+
+      .main-box__inbox {
+        padding-top: 0px 10px 0px 0px;
+        
+
+        .main-box__left {
+          display: table-cell;
+          vertical-align: to
+
+          img {
+            border-radius: 50%;
+            padding-right: 10px;
+          }
+
+          h4 {
+            font-weight: bold;
+            margin-top: 4px;
+            //display: table-cell;
+          }
+        }
+      }
+    }
+    .main-box__recently {
+      //margin-bottom: 22px;
+      background-color: #fff;
+      //border: 1px solid transparent;
+      border-radius: 4px;
+      /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05); */
+      box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+
+      .main-box__space {
+        padding: 30px;
+      }
+
+      .main-box__subsubtitle { 
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color: #f5f5f5;
+        color: #757575;
+      }
+
+      .main-box__body2 {
+        padding: 55px;
+        border: 1px solid #e5e5e5;
+
+        p {
+          text-align: center;
+          color: #757575;
+        }
+      }
+    }
+  }
+}
+ 

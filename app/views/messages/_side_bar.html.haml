@@ -1,26 +1,75 @@
-.side-menu
-  %group
-    %h2.side-menu__title マイページメニュー
-    .group-list
-    %a.group-list__notice お知らせ
-    %a.group-list__likes いいねした商品
-  %group
-    %h2.side-menu__title 商品を出品する
-    .group-list
-    %a.group-list__item 商品を出品
-    %a.group-list__sellitem 出品した商品
-    %a.group-list__shop 自分のショップを見る
-  %group
-    %h2.side-menu__title 商品を購入する
-    .group-list
-    %a.group-list__buy 購入した商品
-    %a.group-list__watch 最近見た商品
-    %a.group-list__comment コメントした商品
-  %group
-    %h2.side-menu__title 設定・ヘルプ・その他
-    .group-list
-    %a.group-list__inquiry お問い合わせ
-    %a.group-list__credit クレジットカード登録
-    %a.group-list__management ポイント管理
-    %a.group-list__logout ログアウト
+.top_page
+  .top_page__header
+    .top_page__header__inner
+      %h1{class:"icon"}
+        %a{href:"/"}
+          %img{src:"/assets/logo.png"}
+      .search_box
+        %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
+        %button{type:"submit", class: "search_box__btn"}
+          %i.fas.fa-search{class: "search_box__btn__icon"}
+        %ul{class:"search--result"}
+    .list
+      %ul{class:"list__left"}
+        %li{class:"list__left__category"}
+          %a{id:"category--btn",href:"#"}カテゴリー
+        %li{class:"list__left__brand"}
+          %a{id:"brand--btn",href:"#"}ブランド
+
+      %ul{class:"list__right"}
+        %li{class:"list__right__log_in"}
+          %a{href:"#"}ログイン
+        %li{class:"list__right__new"}
+          %a{href:"#"}新規会員登録
+    
+
+
+.side-box
+  .side-menu
+    %group
+      %h2.side-menu__title マイページメニュー
+      .group-list
+        %a.group-list__notice お知らせ
+        %a.group-list__likes いいねした商品
+    %group
+      %h2.side-menu__title 商品を出品する
+      .group-list
+        %a.group-list__item 商品を出品
+        %a.group-list__sellitem 出品した商品
+        %a.group-list__shop 自分のショップを見る
+    %group
+      %h2.side-menu__title 商品を購入する
+      .group-list
+        %a.group-list__buy 購入した商品
+        %a.group-list__watch 最近見た商品
+        %a.group-list__comment コメントした商品
+    %group
+      %h2.side-menu__title 設定・ヘルプ・その他
+      .group-list
+        %a.group-list__inquiry お問い合わせ
+        %a.group-list__credit クレジットカード登録
+        %a.group-list__management ポイント管理
+        %a.group-list__logout ログアウト
+
+
+  .main-box
+    %h2.main-box__title 佐藤さんのマイページ
+    .main-box__notice
+      .main-box__subtitle 
+        %h3.main-box__important 重要なお知らせ
+      .main-box__body
+        .main-box__inbox
+          .main-box__left
+            %img.main-box__object{:alt => "", :height => "31", :src => "https://asset.fril.jp/assets/new_web/icon_fril-97af0f192f84d4c9b11a13e51473f60125be6cd4be3e611fb074eb876ffe36a0.png", :width => "31"}/
+            %h4.main-box__streetaddres 住所の設定を行ってください。<br>
+            スムーズに購入を進めるために住所の設定を行ってください。
+      .main-box__recently
+        .main-box__space
+        .main-box__subsubtitle 最近見た商品
+        .main-box__body2 
+          %p.main-box__center
+            %p.main-box__text 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
+
+
+  
 
