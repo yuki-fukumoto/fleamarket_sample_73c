@@ -7,13 +7,13 @@
         出品画像
       .title__require
         必須
-    %p.comments
+    .comments
       最大10枚までアップロードできます    
     .image_upload
       %label{class: "input-image"}
         = icon('fas', 'camera')
         %input{type: "file"}
-  %hr
+  %hr{class: "bar1"}
   .item
     .title
       .title__header
@@ -29,7 +29,7 @@
         必須
     .explanation_text
       %textarea{name: "explanation", class: "big_text_box", placeholder: "商品の説明（必須1000文字以内）", maxlength: "1000", type: "text", value: ""}     
-  %hr
+  %hr{class: "bar1"}
   .item
     .title
       .title__nav  
@@ -65,7 +65,7 @@
           %option{value: "2"} 美中古
           %option{value: "3"} 中古
           %option{value: "4"} JUNK
-  %hr
+  %hr{class: "bar1"}
   .item
     .title
       .title__nav  
@@ -150,7 +150,7 @@
           %option{value: "1"} 1~2日で発送
           %option{value: "2"} 3~4日で発送   
           %option{value: "3"} 5~7日で発送   
-  %hr
+  %hr{class: "bar1"}
   .item
     .title
       .title__nav  
@@ -170,7 +170,9 @@
     .save_btn
       %button{ onclick: "#", type: "submit", value: ""}下書きに保存
     .return
-      %a{href: "/"} もどる
+      =link_to "もどる"
   .notice
     禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+
+.bottom_area
 

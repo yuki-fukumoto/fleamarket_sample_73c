@@ -4,7 +4,6 @@
 
 body{
   background-color: #eeeeee;
-  padding: 40px;
   min-width: 700px;
 }
 
@@ -14,7 +13,8 @@ body{
 
 .top_icon{
   text-align: center;
-  margin-bottom: 20px;
+  padding: 40px 0 20px;
+  background-color: #eeeeee;
 }
 
 .contents{
@@ -25,18 +25,6 @@ body{
 
 .item{
   padding: 40px 50px;
-}
-
-
-
-.button_area{
-  margin: 30px 170px 32px;
-}
-
-.notice{
-  height: 96px;
-  margin: 0 40px;
-  font-size: 12px;
 }
 
 .title{
@@ -72,6 +60,11 @@ body{
     color: #888888;
     margin-bottom: 24px;
   }
+}
+
+.comments{
+  font-size: 12px;
+  margin-top: 16px;
 }
 
 .image_upload{
@@ -184,21 +177,30 @@ button{
   }
 }
 
+.button_area{
+  margin: 30px 170px 32px;
+}
+
 .return{
   text-align: center;
   margin-top: 24px;
 }
 
-a{
+.notice{
+  height: 96px;
+  margin: 0 40px;
+  font-size: 12px;
+}
+
+.bottom_area{
+  height: 40px;
+}
+
+.return a{
   text-decoration: none;
 }
 
-p{
-  font-size: 12px;
-  margin-top: 16px;
-}
-
-hr{
+.bar1{
   width: calc(100% - 80px);
   border: #c5c4c4 solid 1px;
 }
