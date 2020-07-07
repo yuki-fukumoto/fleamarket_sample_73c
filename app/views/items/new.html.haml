@@ -174,6 +174,13 @@
 
 =form_with model: @item, method: :post, local: true do |f|
   .form
+    画像
+    = f.file_field :image, multiple: true
+    = f.hidden_field :image_cache
+    -# = f.fields_for :image, @image do|image_f|
+    -#   = image_f.file_field :image, multiple: true, class: "image_field"
+    -#   = image_f.hidden_field :image_cache
+  .form
     商品名
     = f.text_field :name, autocomplete:"off"
   .form
