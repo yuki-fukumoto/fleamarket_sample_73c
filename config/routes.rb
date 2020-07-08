@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   resources :purchases do
     collection do
-      get :confirm
-      # post :confirm ←あとでこっちにする
+      post :confirm 
     end
   end
 end
