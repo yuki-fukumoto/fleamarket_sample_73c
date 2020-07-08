@@ -4,4 +4,10 @@ Rails.application.routes.draw do
   resources :items, expect: :index
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :items, only: [:new] 
+
+  resources :purchases do
+    collection do
+      post :confirm 
+    end
+  end
 end
