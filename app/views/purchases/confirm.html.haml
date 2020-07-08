@@ -1,0 +1,61 @@
+.top_icon
+  =image_tag "logo.png"
+.confirm_contents
+  .content_top_message
+    購入内容の確認
+  .items
+    .items__image
+      = image_tag "images.jpeg"
+    .items__title
+      .items__title__bar
+        vintage1920年代martinウクレレstyle3k
+      .items__title__price
+        .items__title__price__board
+          ¥7000 
+        .items__title__price__comment
+          (送料込) 
+  %hr
+  .payment_amount
+    .payment_amount__title
+      支払い金額
+    .payment_amount__price
+      ¥7000
+  %hr
+  .payment_method
+    .payment_method__title
+      .payment_method__title__bar
+        クレジットカード
+      =link_to "変更する >", class: "change"
+    .credit_card
+      .credit_card__no
+        1234567890
+      .credit_card__expiration
+        .credit_card__expiration__title
+          有効期限
+        .credit_card__expiration__date
+          12/23
+      .credit_card__company
+        VISA
+  %hr      
+  .confirm_adress
+    .confirm_adress__title  
+      .confirm_adress__title__bar
+        配送先
+      =link_to "変更する >", class: "change"
+    .confirm_adress__zip_code
+      〒123-4567
+    .confirm_adress__code
+      兵庫県芦屋市六麓荘19-16
+    .confirm_adress__name
+      矢沢永吉
+  %hr
+  .content_bottom  
+    郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。    
+  
+  .confirm_btn
+    .confirm_btn__buy
+      %button{ onclick: "#", type: "submit", value: ""}購入する
+    .confirm_btn__cancel 
+      =link_to "やめる", root_path
+
+.bottom_area
