@@ -72,6 +72,7 @@
         %p.list__descri__last 最大3%でお得に出品&購入！
 
   %section{class:"middle_view"}
+    = image_tag 'bg-topMiddleDl-pict.jpg', alt: 'middle', height: '100%', width: '100%', class: 'middleimg'
     %div{class:"Contents"}
       %h2{class:"Contents__title"}会員登録数日本一
       %p{class:"Contents__subtitle"}
@@ -82,7 +83,8 @@
         ほしかったあの商品に出会えるかもしれません。
       %div{class:"Contents__btn"}
         %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
+          //%img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
+          = image_tag 'https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps', alt: 'app', height: '100%', width: '100%', class: 'appbtn'
         %link_to{class:"google_btn", href:"#"}
           //%img{src:"/assets/google-play-badge.png"}
           = image_tag 'google-play-badge.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
@@ -92,16 +94,19 @@
     %hr
     %div{class:"buyAndsell__lists"}
       %section{class:"list"}
+        = image_tag 'icon-01.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
         %div{class:"list__image no1"}
         %h3{class:"list__subtitle"}簡単に売り買いできる
         %p{class:"list__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
       %section{class:"list"}
+        = image_tag 'icon-02.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
         %div{class:"list__image no2"}
         %h3{class:"list__subtitle"}売上金は即日振込みに対応
         %p{class:"list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
       %section{class:"list"}
+        = image_tag 'icon-03.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
         %div{class:"list__image no3"}
         %h3{class:"list__subtitle"}様々な支払いに対応
         %p{class:"list__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
@@ -182,7 +187,8 @@
         %div{class:"topiclist"}
           %a{href:"#"}
             %div{class:"topiclist__img"}
-              %img{src:"/assets/a004.png"}
+              //%img{src:"/assets/a004.png"}
+              = image_tag 'a004.png', alt: 'topic', height: '100%', width: '100%', class: 'topicimg'
             %div{class:"topiclist__body"}
               %h3{class:"name"} dd
               %div{class:"place"}
