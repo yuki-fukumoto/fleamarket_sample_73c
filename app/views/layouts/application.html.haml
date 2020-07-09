@@ -9,8 +9,12 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .notice
-      =notice
-    .alert
-      =alert
+    -# .notice
+    -#   =notice
+    -# .alert
+    -#   =alert
     = yield
+    -# %footer
+    -#   =link_to "トップページ", root_path
+    -#   =link_to "ログイン", new_user_session_path
+    -#   =link_to "ユーザー登録", new_user_registration_path
