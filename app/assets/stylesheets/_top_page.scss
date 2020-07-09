@@ -77,7 +77,7 @@ body{
     background-size: cover;
     height: 560px;
     padding: 200px 60px 0;
-    .contents{
+    .Contents{
       color: white;
       text-shadow: 1px 2px 3px #808080; 
       &__title{
@@ -119,15 +119,7 @@ body{
           width: 300px;
           margin-bottom: 20px;
         }
-        // &__no1{
-        //   background-image: url(/assets/pict-reason-01.jpg);
-        // }
-        // .no2{
-        //   background-image: url(/assets/pict-reason-02.jpg);
-        // }
-        //.no3{
-          //background-image: url(/assets/pict-reason-03.jpg);
-        //}
+
         .number{
           background-color: #3CCACE;
           font-size: 30px;
@@ -161,7 +153,7 @@ body{
     background-size: cover;
     padding: 0 76.5px;
     position: relative;
-    .contents{
+    .Contents{
       position: absolute;
       top: 50%;
       -webkit-transform : translateY(-50%);
@@ -206,15 +198,7 @@ body{
           height: 313.5px;
           width: 203px;
         }
-        // .no1{
-        //   background-image: url(/assets/icon-01.png);
-        // }
-        // .no2{
-        //   background-image: url(/assets/icon-03.png);
-        // }
-        // .no3{
-        //   background-image: url(/assets/icon-04.png);
-        // }
+
         &__subtitle{
           font-size: 19px;
           font-weight: bold;

@@ -23,20 +23,19 @@
           %link_to{href:"#"}新規会員登録
 
 .top_view
-  %section.top_visual
-    .contents
-      = image_tag 'bg-mainVisual-pict_pc.jpg', alt: 'main', height: '100%', width: '100%', class: 'visual'
-      %h2.contents__title 人生を変えるフリマアプリ 
-      %p.contents__subtitle
+  %section{class:"top_visual"}
+    = image_tag 'bg-mainVisual-pict_pc.jpg', alt: 'main', height: '100%', width: '100%', class: 'topview'
+
+    %div{class:"Contents"}
+      %h2{class:"Contents__title"}人生を変えるフリマアプリ 
+      %p{class:"Contents__subtitle"}
         FURIMAはだれでもかんたんに出品・購入できる 
         %br フリマアプリです
-      .contents__btn
+      %div{class:"Contents__btn"}
         %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          //%img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
-          = image_tag 'https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps', alt: 'picture2', height: '67%', width: '100%', class: 'reason2'
+          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
         %link_to{class:"google_btn", href:"#"}
-          //%img{src:"/assets/google-play-badge.png"}
-          = image_tag 'google-play-badge.png', alt: 'picture2', height: '67%', width: '100%', class: 'reason2'
+          %img{src:"/assets/google-play-badge.png"}
 
 
   %section.reason
@@ -72,20 +71,18 @@
           %span 業界最安
         %p.list__descri__last 最大3%でお得に出品&購入！
 
-  %section.middle_view
-    %div.contents
-      %h2.contents__title 会員登録数日本一
-      %p.contents__subtitle
+  %section{class:"middle_view"}
+    %div{class:"Contents"}
+      %h2{class:"Contents__title"}会員登録数日本一
+      %p{class:"Contents__subtitle"}
         FURIMAは、フリマアプリで最も人気。
         %br
         出品・購入回数も業界最多です！
         %br
         ほしかったあの商品に出会えるかもしれません。
-      %div.contents__btn
+      %div{class:"Contents__btn"}
         %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          //%img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
-          = image_tag 'https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps', alt: 'app', height: '67%', width: '100%', class: 'appbtn'
-
+          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
         %link_to{class:"google_btn", href:"#"}
           //%img{src:"/assets/google-play-badge.png"}
           = image_tag 'google-play-badge.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
@@ -93,41 +90,36 @@
   %section.buyAndsell
     %h2.buyAndsell__title FURIMAの特徴
     %hr
-    .buyAndsell__lists
-      %section.list
-        .list__image__no1
-          = image_tag 'icon-01.png', alt: 'main', height: '100%', width: '100%', class: 'visual'
-        %h3.list__subtitle 簡単に売り買いできる
-        %p.list__apile スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+    %div{class:"buyAndsell__lists"}
+      %section{class:"list"}
+        %div{class:"list__image no1"}
+        %h3{class:"list__subtitle"}簡単に売り買いできる
+        %p{class:"list__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
-      %section.list
-        .list__image__no2
-          = image_tag 'icon-02.png', alt: 'main', height: '100%', width: '100%', class: 'visual'
-        %h3.list__subtitle 売上金は即日振込みに対応
-        %p.list__apile 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %section{class:"list"}
+        %div{class:"list__image no2"}
+        %h3{class:"list__subtitle"}売上金は即日振込みに対応
+        %p{class:"list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
-      %section.list
-        .list__image__no3
-          = image_tag 'icon-03.png', alt: 'main', height: '100%', width: '100%', class: 'visual'
-        %h3.list__subtitle 様々な支払いに対応
-        %p.list__apile お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+      %section{class:"list"}
+        %div{class:"list__image no3"}
+        %h3{class:"list__subtitle"}様々な支払いに対応
+        %p{class:"list__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-  %section.topic_contents
-    %h2.topic_head ピックアップカテゴリー
-    .topicBox
-      .topicBox__head
-        %link_to{href:"#"}
-          %h3.title 新規投稿商品
-      .topiclists
-        .topiclist
-          %link_to{href:"#"}
-            .topiclist__img
-              //%img{src:"/assets/molts.png"}
-              = image_tag 'molts.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
-
-            .topiclist__body
-              %h3.name dd
-              .place
+  %section{class:"topic_contents"}
+    %h2{class:"topic_head"}ピックアップカテゴリー
+    %div{class:"topicBox"}
+      %div{class:"topicBox__head"}
+        %a{href:"#"}
+          %h3{class:"Title"}新規投稿商品
+      %div{class:"topiclists"}
+        %div{class:"topiclist"}
+          %a{href:"#"}
+            %div{class:"topiclist__img"}
+              %img{src:"/assets/molts.png"}
+            %div{class:"topiclist__body"}
+              %h3{class:"name"} dd
+              %div{class:"place"}
                 %ul
                   %li 1000円
                   %li
@@ -180,22 +172,20 @@
                     %i{class:"fa fa-star likeicon"}0
                 %p （税込） 
 
-  %section.topic_brand
-    %h2.topic_head ピックアップブランド
-    .topicBox
-      .topicBox__head
-        %link_to{href:"#"}
-          %h3.title アーカイバー
-      .topiclists
-        .topiclist 
-          %link_to{href:"#"}
-            .topiclist__img
-              //%img{src:"/assets/a004.png"}
-              = image_tag 'a004.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
-
-            .topiclist__body
-              %h3.name dd
-              .place
+  %section{class:"topic_brand"}
+    %h2{class:"topic_head"}ピックアップブランド
+    %div{class:"topicBox"}
+      %div{class:"topicBox__head"}
+        %a{href:"#"}
+          %h3{class:"Title"}アーカイバー
+      %div{class:"topiclists"}
+        %div{class:"topiclist"}
+          %a{href:"#"}
+            %div{class:"topiclist__img"}
+              %img{src:"/assets/a004.png"}
+            %div{class:"topiclist__body"}
+              %h3{class:"name"} dd
+              %div{class:"place"}
                 %ul
                   %li 1000円
                   %li
