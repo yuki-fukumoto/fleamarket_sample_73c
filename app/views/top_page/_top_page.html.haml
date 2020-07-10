@@ -2,8 +2,9 @@
   .top_page__header
     .top_page__header__inner
       %h1.icon
-        %link_to{href:"/"}
-          = image_tag 'logo.png', alt: 'logo', height: '100px', width: '100px', class: 'img'
+        -# =link_to image_tag ('logo.png'), 'http://google.co.jp' do
+        =link_to "/" do
+          = image_tag 'logo.png', alt: 'logo', class: 'img'
       .search_box
         %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
         %button{type:"submit", class: "search_box__btn"}
@@ -12,39 +13,43 @@
     .list
       %ul.list__left
         %li.list__left__category
-          %link_to{id:"category--btn",href:"#"}カテゴリー
+          -# %link_to{id:"category--btn",href:"#"}カテゴリー
+          =link_to "カテゴリー", 'http://google.co.jp'
         %li.list__left__brand
-          %link_to{id:"brand--btn",href:"#"}ブランド
-
+          -# %link_to{id:"brand--btn",href:"#"}ブランド
+          =link_to "ブランド", 'http://google.co.jp'
       %ul.list__right
         %li.list__right__log_in
-          %link_to{href:"#"}ログイン
+          -# %link_to{href:"#"}ログイン
+          =link_to "ログイン", '/users/sign_in'
         %li.list__right__new
-          %link_to{href:"#"}新規会員登録
+          -# %link_to{href:"#"}新規会員登録
+          =link_to "新規会員登録", '/users/sign_up'
 
 .top_view
   %section{class:"top_visual"}
-    = image_tag 'bg-mainVisual-pict_pc.jpg', alt: 'main', height: '100%', width: '100%', class: 'topview'
+    -# = image_tag 'bg-mainVisual-pict_pc.jpg', alt: 'main', height: '100%', width: '100%', class: 'topview'
 
-    %div{class:"Contents"}
+    .Contents
       %h2{class:"Contents__title"}人生を変えるフリマアプリ 
       %p{class:"Contents__subtitle"}
         FURIMAはだれでもかんたんに出品・購入できる 
         %br フリマアプリです
-      %div{class:"Contents__btn"}
-        %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
-        %link_to{class:"google_btn", href:"#"}
-          %img{src:"/assets/google-play-badge.png"}
+      .Contents__btn
+        =link_to "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8" do
+          =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
+        =link_to "https://play.google.com/store" do
+          =image_tag "google-play-badge.png", class: 'google_btn'
 
 
   %section.reason
     %h2.reason__title FURIMAが選ばれる３つの理由
-    %hr
+    %hr.under_bar
     %ul.reason__lists
       %li.list
-        .list__picture__no1
-          = image_tag 'pict-reason-01.jpg', alt: 'picture1', height: '100%', width: '100%', class: 'reason1'
+        .list__picture.no1
+          -# .no1
+            -# = image_tag 'pict-reason-01.jpg', alt: 'picture1', height: '100%', width: '100%', class: 'reason1'
           .number 1
         %h3.list__text
           %span ３分
@@ -53,8 +58,9 @@
         出品できる！
 
       %li.list
-        .list__picture__no2
-          = image_tag 'pict-reason-02.jpg', alt: 'picture2', height: '100%', width: '100%', class: 'reason2'
+        .list__picture.no2
+          -# .no2
+            -# = image_tag 'pict-reason-02.jpg', alt: 'picture2', height: '100%', width: '100%', class: 'reason2'
           .number 2
         %h3.list__text
           %span シンプル
@@ -63,17 +69,18 @@
         検索も購入もスムーズ！
 
       %li.list
-        .list__picture__no3
-          = image_tag 'pict-reason-03.jpg', alt: 'picture3', height: '100%', width: '100%', class: 'reason3'
+        .list__picture.no3
+          -# .no3
+            -# = image_tag 'pict-reason-03.jpg', alt: 'picture3', height: '100%', width: '100%', class: 'reason3'
           .number 3
         %h3.list__text
           手数料
           %span 業界最安
-        %p.list__descri__last 最大3%でお得に出品&購入！
+        %p.list__descri 最大3%でお得に出品&購入！
 
   %section{class:"middle_view"}
-    = image_tag 'bg-topMiddleDl-pict.jpg', alt: 'middle', height: '100%', width: '100%', class: 'middleimg'
-    %div{class:"Contents"}
+    -# = image_tag 'bg-topMiddleDl-pict.jpg', alt: 'middle', height: '100%', width: '100%', class: 'middleimg'
+    .Contents
       %h2{class:"Contents__title"}会員登録数日本一
       %p{class:"Contents__subtitle"}
         FURIMAは、フリマアプリで最も人気。
@@ -81,50 +88,49 @@
         出品・購入回数も業界最多です！
         %br
         ほしかったあの商品に出会えるかもしれません。
-      %div{class:"Contents__btn"}
-        %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          //%img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
-          = image_tag 'https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps', alt: 'app', height: '100%', width: '100%', class: 'appbtn'
-        %link_to{class:"google_btn", href:"#"}
-          //%img{src:"/assets/google-play-badge.png"}
-          = image_tag 'google-play-badge.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+      .Contents__btn
+        =link_to "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8" do
+          =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
+        =link_to "https://play.google.com/store" do
+          =image_tag "google-play-badge.png", class: 'google_btn'
+
 
   %section.buyAndsell
     %h2.buyAndsell__title FURIMAの特徴
-    %hr
-    %div{class:"buyAndsell__lists"}
+    %hr.under_bar
+    .buyAndsell__lists
       %section{class:"list"}
-        = image_tag 'icon-01.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
-        %div{class:"list__image no1"}
+        -# = image_tag 'icon-01.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
+        .list__image.no1
         %h3{class:"list__subtitle"}簡単に売り買いできる
         %p{class:"list__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
       %section{class:"list"}
-        = image_tag 'icon-02.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
-        %div{class:"list__image no2"}
+        -# = image_tag 'icon-02.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
+        .list__image.no2
         %h3{class:"list__subtitle"}売上金は即日振込みに対応
         %p{class:"list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
       %section{class:"list"}
-        = image_tag 'icon-03.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
-        %div{class:"list__image no3"}
+        -# = image_tag 'icon-03.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
+        .list__image.no3
         %h3{class:"list__subtitle"}様々な支払いに対応
         %p{class:"list__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
-  %section{class:"topic_contents"}
+  .topic_contents
     %h2{class:"topic_head"}ピックアップカテゴリー
-    %div{class:"topicBox"}
-      %div{class:"topicBox__head"}
-        %a{href:"#"}
+    .topicBox
+      .topicBox__head
+        =link_to "/" do
           %h3{class:"Title"}新規投稿商品
-      %div{class:"topiclists"}
-        %div{class:"topiclist"}
-          %a{href:"#"}
-            %div{class:"topiclist__img"}
+      .topiclists
+        .topiclist
+          =link_to "/" do
+            .topiclist__img
               %img{src:"/assets/molts.png"}
-            %div{class:"topiclist__body"}
+            .topiclist__body
               %h3{class:"name"} dd
-              %div{class:"place"}
+              .place
                 %ul
                   %li 1000円
                   %li
@@ -132,10 +138,10 @@
                 %p （税込） 
 
         .topiclist
-          %link_to{href:"#"}
+          =link_to "/" do
             .topiclist__img
               //%img{src:"/assets/a004.png"}
-              = image_tag 'a004.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+              = image_tag 'a004.png'
 
               
             .topiclist__body
@@ -148,10 +154,10 @@
                 %p （税込） 
 
         .topiclist
-          %link_to{href:"#"}
+          =link_to "/" do
             .topiclist__img
               //%img{src:"/assets/a006.png"}
-              = image_tag 'a006.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+              = image_tag 'a006.png'
 
             .topiclist__body
               %h3.name dd
@@ -163,10 +169,10 @@
                 %p （税込） 
 
         .topiclist
-          %link_to{href:"#"}
+          =link_to "/" do
             .topiclist__img
               //%img{src:"/assets/a007.png"}
-              = image_tag 'a007.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+              = image_tag 'a007.png'
 
             .topiclist__body
               %h3.name dd
@@ -179,19 +185,19 @@
 
   %section{class:"topic_brand"}
     %h2{class:"topic_head"}ピックアップブランド
-    %div{class:"topicBox"}
-      %div{class:"topicBox__head"}
-        %a{href:"#"}
+    .topicBox
+      .topicBox__head
+        =link_to "/" do
           %h3{class:"Title"}アーカイバー
-      %div{class:"topiclists"}
-        %div{class:"topiclist"}
-          %a{href:"#"}
-            %div{class:"topiclist__img"}
+      .topiclists
+        .topiclist
+          =link_to "/" do
+            .topiclist__img
               //%img{src:"/assets/a004.png"}
-              = image_tag 'a004.png', alt: 'topic', height: '100%', width: '100%', class: 'topicimg'
-            %div{class:"topiclist__body"}
+              = image_tag 'a004.png'
+            .topiclist__body
               %h3{class:"name"} dd
-              %div{class:"place"}
+              .place
                 %ul
                   %li 1000円
                   %li
@@ -199,10 +205,10 @@
                 %p （税込） 
 
         .topiclist
-          %link_to{href:"#"}
+          =link_to "/" do
             .topiclist__img
               //%img{src:"/assets/a006.png"}
-              = image_tag 'a006.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+              = image_tag 'a006.png'
 
 
             .topiclist__body
@@ -215,10 +221,10 @@
                 %p （税込） 
 
         .topiclist
-          %link_to{href:"/assets/a007.png"}
+          =link_to "/" do
             .topiclist__img
               //%img{src:"/assets/molts.png"}
-              = image_tag 'molts.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+              = image_tag 'molts.png'
 
             .topiclist__body
               %h3.name dd
@@ -230,10 +236,10 @@
                 %p （税込） 
 
         .topiclist
-          %link_to{href:"#"}
+          =link_to "/" do
             .topiclist__img
               //%img{src:"/assets/a004.png"}
-              = image_tag 'a004.png', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+              = image_tag 'a004.png'
 
 
             .topiclist__body
@@ -245,17 +251,18 @@
                     %i{class:"fa fa-star likeicon"}0  
                 %p （税込） 
 
-  %link_toside.banner
+  .banner
     .foot
-      = image_tag 'bg-appBanner-pict.jpg', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
+      -# = image_tag 'bg-appBanner-pict.jpg', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
 
       %h2.foot__title だれでもかんたん、人生を変えるフリマアプリ
       %p.foot__text 今すぐ無料ダウンロード！
       .foot__btn
-        %link_to{class:"app_btn",href: "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8"}
-          %img{src:"https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps"}
-        %link_to{class:"google_btn", href:"#"}
-          %img{src:"/assets/google-play-badge.png"}
+        =link_to "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8" do
+          =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
+        =link_to "https://play.google.com/store" do
+          =image_tag "google-play-badge.png", class: 'google_btn'
+
 
   .footer
     %ul.footer__contens
@@ -263,37 +270,48 @@
         %h2.content__head FURIMAについて
         %ul
           %li 
-            %link_to{href:"#"}会社概要（運営会社）
+            =link_to "/" do
+              会社概要（運営会社）
           %li 
-            %link_to{href:"#"}プライバシーポリシー
+            =link_to "/" do
+              プライバシーポリシー
           %li 
-            %link_to{href:"#"}FURIMA利用規約
+            =link_to "/" do
+              FURIMA利用規約
           %li 
-            %link_to{href:"#"}ポイントに関する特約
+            =link_to "/" do
+              ポイントに関する特約
 
       %li.content
         %h2.content__head FURIMAを見る
         %ul
           %li 
-            %link_to{href:"#"}カテゴリー一覧
+            =link_to "/" do
+              カテゴリー一覧
           %li 
-            %link_to{href:"#"}ブランド一覧
+            =link_to "/" do
+              ブランド一覧
 
       %li.content
         %h2.content__head  ヘルプ＆ガイド
         %ul
           %li 
-            %link_to{href:"#"}FURIMAガイド
+            =link_to "/" do
+              FURIMAガイド
           %li 
-            %link_to{href:"#"}FURIMAロゴ利用ガイドライン
+            =link_to "/" do
+              FURIMAロゴ利用ガイドライン
           %li 
-            %link_to{href:"#"}お知らせ
+            =link_to "/" do
+              お知らせ
     .FURIMA_LOGO
-      %link_to{href:"/"}
+      =link_to "/" do
+        = image_tag '/assets/logo-white.png', alt: 'logo', class: 'img'
         
-    %p© FURIMA
+    %p.copyright © FURIMA
+
     .puts_up
-      %link_to{href:"#"}
+      =link_to "/" do
         .puts_up__text
           出品する
           = icon('fas', 'camera', class: 'puts_up__icon')

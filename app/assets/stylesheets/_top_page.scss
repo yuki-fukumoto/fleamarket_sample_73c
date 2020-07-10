@@ -1,20 +1,21 @@
 * {
   box-sizing: border-box;
 }
-
 body{
   min-width: 940px;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
-
 .top_page{
   padding: 0 60px;
   &__header{
+    max-width: 1040px;
+    margin: 0 auto;
     &__inner{
       display: flex;
       padding-top: 15px;
       img{
         height: 40px;
+        width: 140px;
         margin-right: 30px;
       }
       .search_box{
@@ -71,10 +72,10 @@ body{
     }  
   }
 }  
-
   .top_visual{
-    //background-image: url(bg-mainVisual-pict_pc.jpg);
+    background-image: url(bg-mainVisual-pict_pc.jpg);
     background-size: cover;
+    background-position: top center;
     height: 560px;
     padding: 200px 60px 0;
     .Contents{
@@ -94,9 +95,6 @@ body{
       }
     }
   }
-
-
-
   .reason{
     padding: 60px 20px;
     &__title{
@@ -119,7 +117,15 @@ body{
           width: 300px;
           margin-bottom: 20px;
         }
-
+        .no1{
+          background-image: url(/assets/pict-reason-01.jpg);
+        }
+        .no2{
+          background-image: url(/assets/pict-reason-02.jpg);
+        }
+        .no3{
+          background-image: url(/assets/pict-reason-03.jpg);
+        }
         .number{
           background-color: #3CCACE;
           font-size: 30px;
@@ -140,17 +146,14 @@ body{
           font-size: 18px;
           text-align: left;
         }
-        .last{
-          text-align: left;
-        }
       }
     }
   }
-
   .middle_view{
-    //background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+    background-image: url(/assets/bg-topMiddleDl-pict.jpg);
     height: 400px;
     background-size: cover;
+    background-position: bottom right;
     padding: 0 76.5px;
     position: relative;
     .Contents{
@@ -174,7 +177,6 @@ body{
       }
     }
   }
-
   .buyAndsell{
     padding: 60px 100px;
     &__title{
@@ -198,7 +200,15 @@ body{
           height: 313.5px;
           width: 203px;
         }
-
+        .no1{
+          background-image: url(/assets/icon-01.png);
+        }
+        .no2{
+          background-image: url(/assets/icon-03.png);
+        }
+        .no3{
+          background-image: url(/assets/icon-04.png);
+        }
         &__subtitle{
           font-size: 19px;
           font-weight: bold;
@@ -212,7 +222,6 @@ body{
       }
     }
   }
-
   .topic_contents{
     background-color: #EEEEEE;
     padding-top: 80px;
@@ -230,7 +239,7 @@ body{
       &__head{
         text-align: center;
         font-size: 24px;
-        .title{
+        .Title{
           color: #3CCACE;
           font-weight: bold;
           margin-bottom: 26px;
@@ -244,13 +253,15 @@ body{
         .topiclist{
           width: 220px;
           background-color: #fff;
-          &__img{
+          &__img img{
             height: 150px;
             width: 220px;
+            object-fit: contain;
           }
           &__body{
             padding: 16px;
             font-size: 16px;
+            color:#333333;
             .place{
               ul{
                 display: flex;
@@ -259,13 +270,17 @@ body{
             }
           }
         }
+        .topiclist:hover{
+          opacity: 0.7;
+        }
       }
     }
   
   .banner{
-    //background-image: url(/assets/bg-appBanner-pict.jpg);
+    background-image: url(/assets/bg-appBanner-pict.jpg);
     height: 359.33px;
     background-size: cover;
+    background-position: center;
     padding: 100px 40px;
     .foot{
       color: #fff;
@@ -287,7 +302,6 @@ body{
       }
     }
   }
-
   .footer{
     padding: 60px 0;
     color: #fff;
@@ -311,57 +325,61 @@ body{
       }
     }
   }
-
   .FURIMA_LOGO{
-    margin: 0 auto;
-    background-image: url(/assets/logo-white.png);
-    height: 46px;
+    text-align: center;
+  }
+  .FURIMA_LOGO img{
     width: 160px;
-    background-size: cover;
+  }
+
+  .copyright{
+    text-align: center;
   }
 
   a{
-    color: #333;
     text-decoration: none;
   }
+  
+  .list a{
+    color: #333;
+  }
 
-  p{
-    text-align: center;
-      }
-
-  hr{
+  hr.under_bar{
     height: 4px;
     width: 70px;
     background-color: #3CCACE;
     margin-bottom: 25px;
     border: none;
   }
-
-  .footer a{
+  .content a{
     color: white;
   }
-
+  .content a:hover{
+    border-bottom: solid 1px #fff;
+  }
   .place p{
     font-size: 10px;
   }
-
   .list__text span{
     color: #3CCACE;
   }
-
-  .app_btn img{
+  .app_btn {
     width: 180px;
     margin-top: 13px;
   } 
-  .google_btn img{
+  .app_btn:hover{
+    opacity: 0.5;
+  }
+  .google_btn {
     width: 202px;
   }
-
+  .google_btn:hover{
+    opacity: 0.5;
+  }
   .topiclist__img img{
     height: 100%;
     width: 100%;
   }
-
   .puts_up{
     height: 120px;
     width: 116px;
@@ -381,4 +399,7 @@ body{
       color: #fff;
       margin-top: 5px;
     }
+  }
+  .puts_up:hover{
+    opacity: 0.9;
   }
