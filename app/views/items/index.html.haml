@@ -1,2 +1,8 @@
 %h1 Items#index
 %p Find me in app/views/items/index.html.erb
+- @items.each do |item|
+  .item
+    - item.image.each do |image|
+      =image_tag(image.url)
+      =image_tag(image.thumb.url)
+

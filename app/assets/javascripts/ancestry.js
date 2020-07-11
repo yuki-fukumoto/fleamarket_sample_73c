@@ -1,4 +1,4 @@
-$(function () {
+$(document).on("turbolinks:load", function () {
   // When selected main category, this method start.
   $("select[name='item[category_id]']").change(function () {
     $(".form_category").eq(2).remove();
@@ -15,14 +15,14 @@ $(function () {
     }).done(function (categories) {
       var html = "";
 
-      html += `<div class="form_category">カテゴリー1<select name="item[category_id]" id="item[category_id]" class="category_1"><option value>サブカテゴリを選ぶ</option>`;
+      html += `<div class="container category_1__container"><div class="title"></div><div class="column form_category"><select name="item[category_id]" id="item[category_id]" class="category_1 text_box"><option value="${ancestry}">サブカテゴリを選ぶ</option>`;
 
       $.each(categories, function (i, category) {
         html += `<option value="${category.id}" ancestry="${category.ancestry}">${category.name}</option>`;
       });
 
-      html += `</select></div>`;
-      $(".form_categories").append(html);
+      html += `</select></div></div>`;
+      $(".category_0__container").after(html);
       $(".form_category").eq(1).hide().fadeIn(300);
     });
   });
@@ -30,7 +30,7 @@ $(function () {
   // When selected sub category, this method start.
   $(document).on("change", ".category_1", function () {
     $(".form_category").eq(2).remove();
-
+    var parent = $(this).find("option:selected").val();
     var ancestry =
       $(this).find("option:selected").attr("ancestry") +
       "/" +
@@ -46,14 +46,13 @@ $(function () {
     }).done(function (categories) {
       var html = "";
 
-      html += `<div class="form_category">カテゴリー2<select name="item[category_id]" id="item[category_id]" class="category_2"><option value>サブカテゴリを選ぶ</option>`;
-
+      html += `<div class="container category_2__container"><div class="title"></div><div class="column form_category"><div class="form_category"><select name="item[category_id]" id="item[category_id]" class="category_2 text_box"><option value="${parent}">サブカテゴリを選ぶ</option>`;
       $.each(categories, function (i, category) {
         html += `<option value="${category.id}" ancestry="${category.ancestry}">${category.name}</option>`;
       });
 
-      html += `</select></div>`;
-      $(".form_categories").append(html);
+      html += `</select></div></div></div>`;
+      $(".category_1__container").after(html);
       $(".form_category").eq(2).hide().fadeIn(300);
     });
   });
