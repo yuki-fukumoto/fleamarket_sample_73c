@@ -3,7 +3,8 @@
     .top_page__header__inner
       %h1{class:"icon"}
         %a{href:"/"}
-          %img{src:"/assets/logo.png"}
+          //%img{src:"app/assets/images/logo.png"}
+          %img{:alt => "フリマロゴ", :src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
       .search_box
         %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
         %button{type:"submit", class: "search_box__btn"}
@@ -71,17 +72,17 @@
             %p.main-box__text 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
     .main-box__group
       .main-box__brand
-        %h1.main-box__menutitle 注目ブランド
-        %p.main-box__ NIKE
-        %p.main-box__gu GU
-        %p.main-box__zara ZARA
+        %h1.main-box__menutitle1 注目ブランド
+        %p.main-box__brand1 NIKE
+        %p.main-box__brand2 GU
+        %p.main-box__brand3 ZARA
       .main-box__brand
-        %h2.main-box__menutitle コンテンツ
+        %h2.main-box__menutitle2 コンテンツ
         %p.main-box__brandmenu ブランド一覧
-        %p.main-box__category カテゴリ一覧
-        %p.main-box__category キーワード一覧
+        %p.main-box__category1 カテゴリ一覧
+        %p.main-box__category2 キーワード一覧
       .main-box__brand
-        %h3.main-box__guide ガイド
+        %h3.main-box__menutitle3 ガイド
         %p.main-box__guide 公式ガイド
         %p.main-box__beginner 初めての方へ
         %p.main-box__notice お知らせ
