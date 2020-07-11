@@ -3,15 +3,9 @@
 @import "font-awesome";
 
 @import "reset";
-@import "top_page"
-
-
-//.notice {
-//  color: #ffffff;
-//  background-color: #00FFFF;
-//  }
-
-//.alert {
-//  color: #ffffff;
-//  background-color: #FF0000;
-//  }
+@import "top_page";
+@import "modules/items";
+@import "items/new.scss";
+@import "users/registration.scss";
+@import "users/session.scss";
+@import "purchases/confirm";
