@@ -8,13 +8,13 @@
         .title__require
           必須
       %p.comments
-        最大10枚までアップロードできます
-      .image_upload
-        =f.label :image do
-          = icon('fas', 'camera')
-          = f.file_field :image, multiple: true
-        = f.hidden_field :image_cache
+        最大5枚までアップロードできます
       .img
+      =f.label :image do
+        = f.file_field :image, multiple: true, class: "blind"
+        = f.hidden_field :image_cache
+        .image_upload.image_area
+          %p= icon('fas', 'camera')
 
     %hr
     .item
@@ -44,7 +44,7 @@
           .title__require
             必須
         .column.form_category
-          = f.collection_select(:category_id, @categories, :id, :name, prompt: "メインカテゴリを選ぶ", class: "category_0 text_box")
+          = f.collection_select :category_id, @categories, :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
       .container
         .title
           .title__header
@@ -52,7 +52,7 @@
           .title__any
             任意
         .column
-          = f.collection_select(:brand_id, @brands, :id, :name, prompt: "ブランドを選ぶ", class: "text_box")
+          = f.collection_select :brand_id, @brands, :id, :name, {prompt: "ブランドを選ぶ"}, {class: "text_box"}
       .container.bottom_container
         .title
           .title__header
@@ -60,98 +60,98 @@
           .title__require
             必須
         .column
-          = f.select :condition, [["新品", :brand_new],["未使用に近い", :mint],["目立った傷や汚れなし", :bit_damaged],["やや傷や汚れあり", :slight_damaged],["傷や汚れあり", :damaged]], class: "text_box"
-    %hr
-    .item
-      .title
-        .title__nav
-          配送について
-      .container
-        .title
-          .title__header
-            配送料の負担
-          .title__require
-            必須
-        .column
-          %select{required: "", class: "text_box",}
-            %option{hidden: "", value: ""} 選択してください
-            %option{value: "1"} 出品者負担
-            %option{value: "2"} 購入者負担
-      .container
-        .title
-          .title__header
-            発送元の地域
-          .title__require
-            必須
-        .column
-          %select{required: "", class: "text_box",}
-            %option{hidden: "", value: ""} 選択してください
-            %option{value: "1"} 北海道
-            %option{value: "2"} 青森県
-            %option{value: "3"} 岩手県
-            %option{value: "4"} 宮城県
-            %option{value: "5"} 秋田県
-            %option{value: "6"} 山形県
-            %option{value: "7"} 福島県
-            %option{value: "8"} 茨城県
-            %option{value: "9"} 栃木県
-            %option{value: "10"} 群馬県
-            %option{value: "11"} 埼玉県
-            %option{value: "12"} 千葉県
-            %option{value: "13"} 東京都
-            %option{value: "14"} 神奈川県
-            %option{value: "15"} 新潟県
-            %option{value: "16"} 富山県
-            %option{value: "17"} 石川県
-            %option{value: "18"} 福井県
-            %option{value: "19"} 山梨県
-            %option{value: "20"} 長野県
-            %option{value: "21"} 岐阜県
-            %option{value: "22"} 静岡県
-            %option{value: "23"} 愛知県
-            %option{value: "24"} 三重県
-            %option{value: "25"} 滋賀県
-            %option{value: "26"} 京都府
-            %option{value: "27"} 大阪府
-            %option{value: "28"} 兵庫県
-            %option{value: "29"} 奈良県
-            %option{value: "30"} 和歌山県
-            %option{value: "31"} 鳥取県
-            %option{value: "32"} 島根県
-            %option{value: "33"} 岡山県
-            %option{value: "34"} 広島県
-            %option{value: "35"} 山口県
-            %option{value: "36"} 徳島県
-            %option{value: "37"} 香川県
-            %option{value: "38"} 愛媛県
-            %option{value: "39"} 高知県
-            %option{value: "40"} 福岡県
-            %option{value: "41"} 佐賀県
-            %option{value: "42"} 長崎県
-            %option{value: "43"} 熊本県
-            %option{value: "44"} 大分県
-            %option{value: "45"} 宮崎県
-            %option{value: "46"} 鹿児島県
-            %option{value: "47"} 沖縄県
-            %option{value: "99"} 未定
-      .container.bottom_container
-        .title
-          .title__header
-            発送までの日数
-          .title__require
-            必須
-        .column
-          %select{required: "", class: "text_box",}
-            %option{hidden: "", value: ""} 選択してください
-            %option{value: "1"} 1~2日で発送
-            %option{value: "2"} 3~4日で発送
-            %option{value: "3"} 5~7日で発送
-    %hr
+          = f.select :condition, [["新品", :brand_new],["未使用に近い", :mint],["目立った傷や汚れなし", :bit_damaged],["やや傷や汚れあり", :slight_damaged],["傷や汚れあり", :damaged]], {}, class: "text_box"
+    -# %hr
+    -# .item
+    -#   .title
+    -#     .title__nav
+    -#       配送について
+    -#   .container
+    -#     .title
+    -#       .title__header
+    -#         配送料の負担
+    -#       .title__require
+    -#         必須
+    -#     .column
+    -#       %select{required: "", class: "text_box",}
+    -#         %option{hidden: "", value: ""} 選択してください
+    -#         %option{value: "1"} 出品者負担
+    -#         %option{value: "2"} 購入者負担
+    -#   .container
+    -#     .title
+    -#       .title__header
+    -#         発送元の地域
+    -#       .title__require
+    -#         必須
+    -#     .column
+    -#       %select{required: "", class: "text_box",}
+    -#         %option{hidden: "", value: ""} 選択してください
+    -#         %option{value: "1"} 北海道
+    -#         %option{value: "2"} 青森県
+    -#         %option{value: "3"} 岩手県
+    -#         %option{value: "4"} 宮城県
+    -#         %option{value: "5"} 秋田県
+    -#         %option{value: "6"} 山形県
+    -#         %option{value: "7"} 福島県
+    -#         %option{value: "8"} 茨城県
+    -#         %option{value: "9"} 栃木県
+    -#         %option{value: "10"} 群馬県
+    -#         %option{value: "11"} 埼玉県
+    -#         %option{value: "12"} 千葉県
+    -#         %option{value: "13"} 東京都
+    -#         %option{value: "14"} 神奈川県
+    -#         %option{value: "15"} 新潟県
+    -#         %option{value: "16"} 富山県
+    -#         %option{value: "17"} 石川県
+    -#         %option{value: "18"} 福井県
+    -#         %option{value: "19"} 山梨県
+    -#         %option{value: "20"} 長野県
+    -#         %option{value: "21"} 岐阜県
+    -#         %option{value: "22"} 静岡県
+    -#         %option{value: "23"} 愛知県
+    -#         %option{value: "24"} 三重県
+    -#         %option{value: "25"} 滋賀県
+    -#         %option{value: "26"} 京都府
+    -#         %option{value: "27"} 大阪府
+    -#         %option{value: "28"} 兵庫県
+    -#         %option{value: "29"} 奈良県
+    -#         %option{value: "30"} 和歌山県
+    -#         %option{value: "31"} 鳥取県
+    -#         %option{value: "32"} 島根県
+    -#         %option{value: "33"} 岡山県
+    -#         %option{value: "34"} 広島県
+    -#         %option{value: "35"} 山口県
+    -#         %option{value: "36"} 徳島県
+    -#         %option{value: "37"} 香川県
+    -#         %option{value: "38"} 愛媛県
+    -#         %option{value: "39"} 高知県
+    -#         %option{value: "40"} 福岡県
+    -#         %option{value: "41"} 佐賀県
+    -#         %option{value: "42"} 長崎県
+    -#         %option{value: "43"} 熊本県
+    -#         %option{value: "44"} 大分県
+    -#         %option{value: "45"} 宮崎県
+    -#         %option{value: "46"} 鹿児島県
+    -#         %option{value: "47"} 沖縄県
+    -#         %option{value: "99"} 未定
+    -#   .container.bottom_container
+    -#     .title
+    -#       .title__header
+    -#         発送までの日数
+    -#       .title__require
+    -#         必須
+    -#     .column
+    -#       %select{required: "", class: "text_box",}
+    -#         %option{hidden: "", value: ""} 選択してください
+    -#         %option{value: "1"} 1~2日で発送
+    -#         %option{value: "2"} 3~4日で発送
+    -#         %option{value: "3"} 5~7日で発送
+    -# %hr
     .item
       .title
         .title__nav
           価格（¥300〜9,999,999）
-      .container.bottom_container
+      .container
         .title
           .title__header
             販売価格
@@ -173,10 +173,9 @@
     .button_area
       .puts_up_btn
         =f.submit "出品する"
-        %button{ onclick: "#", type: "submit", value: ""}出品する
-      .save_btn
-        %button{ onclick: "#", type: "submit", value: ""}下書きに保存
+      -# .save_btn
+      -#   %button{ onclick: "#", type: "submit", value: ""}下書きに保存
       .return
-        %a{href: "/"} もどる
+        =link_to "もどる", root_path
     .notice
       禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。

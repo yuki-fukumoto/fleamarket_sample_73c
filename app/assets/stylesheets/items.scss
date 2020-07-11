@@ -7,6 +7,10 @@ body {
   padding: 40px;
 }
 
+.blind {
+  display: none;
+}
+
 .contents {
   max-width: 700px;
   margin: 0 auto;
@@ -62,14 +66,34 @@ body {
   }
 }
 
-.image_upload {
+.image_area {
   height: 150px;
-  background-color: #eeeeee;
+  width: 100%;
   border-radius: 5px;
+}
+
+.image_upload {
+  background-color: #eeeeee;
   border: dashed 1px rgb(204, 204, 204);
-  line-height: 150px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 16px 0 0;
+
+  & p {
+    width: 36px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 36px;
+  }
+  & :hover {
+    cursor: pointer;
+  }
+}
+
+.image_message {
+  height: 20px;
 }
 
 .image_upload .input-image {
@@ -77,7 +101,6 @@ body {
 }
 
 .image_upload .input-image input {
-  display: none;
 }
 
 .item_text {
@@ -134,7 +157,7 @@ body {
   margin-left: 10px;
 }
 
-button {
+input {
   border: none;
 }
 

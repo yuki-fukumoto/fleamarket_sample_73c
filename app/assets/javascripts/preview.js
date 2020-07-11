@@ -1,10 +1,14 @@
 $(document).on("turbolinks:load", function () {
   $("input[type=file]").change(function () {
     $(".img").html("");
+    $(".image_message").remove();
+
     var files = $(this).prop("files");
 
     var image_count = 1;
     var file_type = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
+    var img_message = `<div class="image_message">画像を変更する</div>`;
+    $(".image_upload").append(img_message);
 
     $(files).each(function (i, file) {
       if (image_count > 5) {
@@ -23,11 +27,11 @@ $(document).on("turbolinks:load", function () {
       var img_src = `<img width="200" height="200">`;
 
       reader.onload = function () {
-        img_src = `<img src="${reader.result}" width="200" height="200">`;
+        img_src = `<img src="${reader.result}" class="image_area">`;
         $(".img").append(img_src);
       };
 
-      image_count = image_count;
+      image_count = image_count + 1;
     });
   });
 });
