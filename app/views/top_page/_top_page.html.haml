@@ -2,7 +2,6 @@
   .top_page__header
     .top_page__header__inner
       %h1.icon
-        -# =link_to image_tag ('logo.png'), 'http://google.co.jp' do
         =link_to "/" do
           = image_tag 'logo.png', alt: 'logo', class: 'img'
       .search_box
@@ -13,26 +12,21 @@
     .list
       %ul.list__left
         %li.list__left__category
-          -# %link_to{id:"category--btn",href:"#"}カテゴリー
           =link_to "カテゴリー", 'http://google.co.jp'
         %li.list__left__brand
-          -# %link_to{id:"brand--btn",href:"#"}ブランド
           =link_to "ブランド", 'http://google.co.jp'
       %ul.list__right
         %li.list__right__log_in
-          -# %link_to{href:"#"}ログイン
           =link_to "ログイン", '/users/sign_in'
         %li.list__right__new
-          -# %link_to{href:"#"}新規会員登録
           =link_to "新規会員登録", '/users/sign_up'
 
 .top_view
-  %section{class:"top_visual"}
-    -# = image_tag 'bg-mainVisual-pict_pc.jpg', alt: 'main', height: '100%', width: '100%', class: 'topview'
+  %section.top_visual
 
     .Contents
-      %h2{class:"Contents__title"}人生を変えるフリマアプリ 
-      %p{class:"Contents__subtitle"}
+      %h2.Contents__title 人生を変えるフリマアプリ 
+      %p.Contents__subtitle
         FURIMAはだれでもかんたんに出品・購入できる 
         %br フリマアプリです
       .Contents__btn
@@ -48,8 +42,6 @@
     %ul.reason__lists
       %li.list
         .list__picture.no1
-          -# .no1
-            -# = image_tag 'pict-reason-01.jpg', alt: 'picture1', height: '100%', width: '100%', class: 'reason1'
           .number 1
         %h3.list__text
           %span ３分
@@ -59,8 +51,6 @@
 
       %li.list
         .list__picture.no2
-          -# .no2
-            -# = image_tag 'pict-reason-02.jpg', alt: 'picture2', height: '100%', width: '100%', class: 'reason2'
           .number 2
         %h3.list__text
           %span シンプル
@@ -70,19 +60,16 @@
 
       %li.list
         .list__picture.no3
-          -# .no3
-            -# = image_tag 'pict-reason-03.jpg', alt: 'picture3', height: '100%', width: '100%', class: 'reason3'
           .number 3
         %h3.list__text
           手数料
           %span 業界最安
         %p.list__descri 最大3%でお得に出品&購入！
 
-  %section{class:"middle_view"}
-    -# = image_tag 'bg-topMiddleDl-pict.jpg', alt: 'middle', height: '100%', width: '100%', class: 'middleimg'
+  %section.middle_view
     .Contents
-      %h2{class:"Contents__title"}会員登録数日本一
-      %p{class:"Contents__subtitle"}
+      %h2.Contents__title 会員登録数日本一
+      %p.Contents__subtitle
         FURIMAは、フリマアプリで最も人気。
         %br
         出品・購入回数も業界最多です！
@@ -99,48 +86,44 @@
     %h2.buyAndsell__title FURIMAの特徴
     %hr.under_bar
     .buyAndsell__lists
-      %section{class:"list"}
-        -# = image_tag 'icon-01.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
+      %section.list
         .list__image.no1
-        %h3{class:"list__subtitle"}簡単に売り買いできる
-        %p{class:"list__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        %h3.list__subtitle"}簡単に売り買いできる
+        %p.list__apile"}スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
 
-      %section{class:"list"}
-        -# = image_tag 'icon-02.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
+      %section.list
         .list__image.no2
-        %h3{class:"list__subtitle"}売上金は即日振込みに対応
-        %p{class:"list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+        %h3.list__subtitle"}売上金は即日振込みに対応
+        %p.list__apile"}午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
 
-      %section{class:"list"}
-        -# = image_tag 'icon-03.png', alt: 'list', height: '100%', width: '100%', class: 'listimg'
+      %section.list
         .list__image.no3
-        %h3{class:"list__subtitle"}様々な支払いに対応
-        %p{class:"list__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+        %h3.list__subtitle"}様々な支払いに対応
+        %p.list__apile"}お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
   .topic_contents
-    %h2{class:"topic_head"}ピックアップカテゴリー
+    %h2.topic_head ピックアップカテゴリー
     .topicBox
       .topicBox__head
         =link_to "/" do
-          %h3{class:"Title"}新規投稿商品
+          %h3.Title 新規投稿商品
       .topiclists
         .topiclist
           =link_to "/" do
             .topiclist__img
-              %img{src:"/assets/molts.png"}
+              =image_tag 'molts.png'
             .topiclist__body
-              %h3{class:"name"} dd
+              %h3.name dd
               .place
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
+                    %i{class:"fa-star likeicon"}0
                 %p （税込） 
 
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/a004.png"}
               = image_tag 'a004.png'
 
               
@@ -150,13 +133,12 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
+                    %i{class:"fa-star likeicon"}0
                 %p （税込） 
 
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/a006.png"}
               = image_tag 'a006.png'
 
             .topiclist__body
@@ -165,13 +147,12 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
+                    %i{class:"fa-star likeicon"}0
                 %p （税込） 
 
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/a007.png"}
               = image_tag 'a007.png'
 
             .topiclist__body
@@ -183,31 +164,29 @@
                     %i{class:"fa fa-star likeicon"}0
                 %p （税込） 
 
-  %section{class:"topic_brand"}
-    %h2{class:"topic_head"}ピックアップブランド
+  %section.topic_brand
+    %h2.topic_head"}ピックアップブランド
     .topicBox
       .topicBox__head
         =link_to "/" do
-          %h3{class:"Title"}アーカイバー
+          %h3.Title"}アーカイバー
       .topiclists
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/a004.png"}
               = image_tag 'a004.png'
             .topiclist__body
-              %h3{class:"name"} dd
+              %h3.name"} dd
               .place
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
+                    %i{class:"fa-star likeicon"}0
                 %p （税込） 
 
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/a006.png"}
               = image_tag 'a006.png'
 
 
@@ -217,13 +196,12 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
+                    %i{class:"fa-star likeicon"}0
                 %p （税込） 
 
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/molts.png"}
               = image_tag 'molts.png'
 
             .topiclist__body
@@ -232,13 +210,12 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0
+                    %i{class:"fa-star likeicon"}0
                 %p （税込） 
 
         .topiclist
           =link_to "/" do
             .topiclist__img
-              //%img{src:"/assets/a004.png"}
               = image_tag 'a004.png'
 
 
@@ -248,13 +225,11 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0  
+                    %i{class:"fa-star likeicon"}0  
                 %p （税込） 
 
   .banner
     .foot
-      -# = image_tag 'bg-appBanner-pict.jpg', alt: 'google', height: '100%', width: '100%', class: 'googlebtn'
-
       %h2.foot__title だれでもかんたん、人生を変えるフリマアプリ
       %p.foot__text 今すぐ無料ダウンロード！
       .foot__btn
