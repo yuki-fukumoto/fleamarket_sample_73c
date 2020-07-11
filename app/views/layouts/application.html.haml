@@ -17,6 +17,10 @@
     = yield
     %footer
       =link_to "トップページ", root_path
-      =link_to "ログイン", new_user_session_path
-      =link_to "ユーザー登録", new_user_registration_path
-      =link_to "ログアウト", destroy_user_session_path, method: :delete
+      - if user_signed_in? 
+        = link_to "ログアウト", destroy_user_session_path, method: :delete 
+      - else 
+        =link_to "ログイン", new_user_session_path
+        =link_to "ユーザー登録", new_user_registration_path
+        
+      

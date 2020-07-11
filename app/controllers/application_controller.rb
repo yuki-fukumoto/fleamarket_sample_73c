@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth , if: :production?
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  # before_action :authenticate_user!
   private
 
   def production?
@@ -15,6 +15,18 @@ class ApplicationController < ActionController::Base
       password == Rails.application.credentials[:basic_auth][:pass]
     end
   end
+
+
+
+
+  # def create
+  #   @product = Product.new(product_params)
+  #   if @product.save
+  #     redirect_to controller: :products, action: :index
+  #   else
+  #     render "new"
+  #   end
+  # end
 
   protected
   def configure_permitted_parameters
