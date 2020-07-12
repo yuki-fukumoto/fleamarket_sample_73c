@@ -16,9 +16,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-
-
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to @event, notice: 'Event was successfully created.'
+    else
+      render :new
+    end
+  end
+  
   # def create
   #   @product = Product.new(product_params)
   #   if @product.save
