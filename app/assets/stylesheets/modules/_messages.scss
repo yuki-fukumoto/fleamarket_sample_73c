@@ -2,18 +2,101 @@
   box-sizing: border-box;
 }
 
-
-
-body{
+body {
   background-color: #f5f5f5;
 }
-.side-box{
+
+.top_page {
+  padding: 0 60px;
+
+  &__header {
+
+    &__inner {
+      display: flex;
+      padding-top: 15px;
+
+      img {
+        height: 40px;
+        width: 140px;
+        margin-right: 20px;
+      }
+
+      .search_box {
+        display: flex;
+        width: 100%;
+
+        &__input {
+          height: 36px;
+          width: 100%;
+          padding-left: 5px;
+        }
+
+        &__btn {
+          height: 37px;
+          width: 37px;
+          background-color: #3CCACE;
+          border: none;
+
+          &__icon {
+            color: white;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .list {
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: space-between;
+      height: 32px;
+      line-height: 32px;
+
+        a {
+        text-decoration: none;
+        color: #333;
+        }
+
+      &__left {
+        position: relative;
+        display: flex;
+        padding: 0;
+
+        &__category {
+          padding-right: 30px;
+        }
+
+        &__brand {
+          display: flex;
+          padding-left: 16px;
+        }
+      }
+
+      &__right {
+        position: relative;
+        display: flex;
+        padding: 0;
+        
+        &__log_in {
+          padding-right: 30px;
+        }
+
+        &__new {
+          display: flex;
+          padding-left: 16px;
+        }
+      }
+    }  
+  }
+}  
+
+.side-box {
   display: flex;
   margin: 20px 150px ;
   padding: 20px;  
 }
 
-.side-menu{
+.side-menu {
   padding: 8px 0 0;
   font-size: 15px;
   position: relative;
@@ -24,10 +107,7 @@ body{
   max-width: 1000;
   margin-right: auto;
 
-
-
-
-  &__title{
+  &__title {
     margin: 0 0 8px;
     padding: 0 8px 8px;
     font-size: 16px;
@@ -35,12 +115,12 @@ body{
     box-sizing: border-box;
   }
 
-  .group-list{
+  .group-list {
     margin-bottom: 20px;
     padding-left: 0;
   }
 
-  .group-list p{
+  .group-list p {
     position: relative;
     display: block;
     padding: 10px 15px;
@@ -51,96 +131,6 @@ body{
   }
 }
 
-
-
-
-
-
-.top_page{
-  padding: 0 60px;
-  &__header{
-    &__inner{
-      display: flex;
-      padding-top: 15px;
-      img{
-        height: 40px;
-        width: 140px;
-        margin-right: 20px;
-      }
-      .search_box{
-        display: flex;
-        width: 100%;
-        &__input{
-          height: 36px;
-          width: 100%;
-          padding-left: 5px;
-        }
-        &__btn{
-          height: 37px;
-          width: 37px;
-          background-color: #3CCACE;
-          border: none;
-          &__icon{
-            color: white;
-            font-size: 20px;
-          }
-        }
-      }
-    }
-    .list{
-      font-size: 14px;
-      display: flex;
-      margin-bottom: 10px;
-      justify-content: space-between;
-      height: 32px;
-      line-height: 32px;
-      &__left{
-        position: relative;
-        display: flex;
-        padding: 0;
-        &__category{
-          padding-right: 30px;
-        }
-        &__brand{
-          display: flex;
-          padding-left: 16px;
-        }
-      }
-      &__right{
-        position: relative;
-        display: flex;
-        padding: 0;
-        &__log_in{
-          padding-right: 30px;
-        }
-        &__new{
-          display: flex;
-          padding-left: 16px;
-        }
-      }
-    }  
-  }
-}  
-
-a{
-  color: #333;
-  text-decoration: none;
-}
-
-.main {
-  background: #fcc;
-  margin-bottom: 10px;
-}
-.side {
-  background: #fea;
-}
-.main,
-.side {
-  padding: 2%;
-  border-radius: 10px
-}
-
-
 .main-box {
   padding: 0.5em 1em;
   margin: 1em 0;
@@ -149,7 +139,6 @@ a{
   background: #FFF;
   border: solid 3px#3CCACE;
   border-radius: 10px;
-  // width:calc(100% - 200px);
 
   h2.main-box__title {
     margin: 16px 0;
@@ -172,7 +161,6 @@ a{
       border-top-left-radius: 3px;
       background-color: #f5f5f5;
     
-
       h3.main-box__important {
         font-weight: bold;
         color: #757575;
@@ -185,7 +173,6 @@ a{
       .main-box__inbox {
         padding-top: 0px 10px 0px 0px;
         
-
         .main-box__left {
           display: table-cell;
           vertical-align: to
@@ -198,15 +185,12 @@ a{
           h4.main-box__streetaddres {
             font-weight: bold;
             margin-top: 4px;
-            //display: table-cell;
           }
         }
       }
     }
     .main-box__recently {
-      //margin-bottom: 22px;
       background-color: #fff;
-      //border: 1px solid transparent;
       border-radius: 4px;
       /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05); */
       box-shadow: 0 1px 1px rgba(0,0,0,0.05);
@@ -228,7 +212,7 @@ a{
         padding: 55px;
         border: 1px solid #e5e5e5;
 
-        p {
+        p.main-box__text {
           text-align: center;
           color: #757575;
         }
@@ -240,7 +224,6 @@ a{
     margin: 0 0 8px;
     padding: 0 8px 8px;
     font-size: 16px;
-    //font-weight: bold;
     box-sizing: border-box;
 
 
@@ -256,16 +239,6 @@ a{
     .main-box__brand1 {
       margin-bottom: 20px;
       padding-left: 25px;
-
-      // p.main-box__brand1,p.main-box__brand2,p.main-box__brand3 {
-      //   position: relative;
-      //   display: block;
-      //   padding: 10px 15px;
-      //   margin-bottom: -1px;
-      //   background-color: #fff;
-      //   border: 1px solid #e5e5e5;
-      //   line-height: 1.7;
-      // }
     }
 
     h2.main-box__menutitle2 {
@@ -281,17 +254,6 @@ a{
       margin-bottom: 20px;
       padding-left: 25;
       display: inline-block;
-
-      // p.main-box__brandmenu,p.main-box__category1,p.main-box__category2 {
-      //   position: relative;
-      //   display: block;
-      //   padding: 10px 15px;
-      //   margin-bottom: -1px;
-      //   background-color: #fff;
-      //   border: 1px solid #e5e5e5bd;
-      //   line-height: 1.7;
-      //   font-size: 15px;
-      //  }
     }
 
     h3.main-box__menutitle3 {
