@@ -1,7 +1,7 @@
 class Address < ApplicationRecord
-  validates :firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :address_line, presence: {message: "が空欄です"}
+  validates :firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, presence: {message: "が空欄です"}
   validates :zip, length: {is: 7}
-  validates :firstname, :lastname, :firstname_read, :lastname_read, :prefecture, :city, format: { with: /\p{Hiragana}/, message: "は全角で入力してください"}
+  validates :firstname, :lastname, :firstname_read, :lastname_read, :prefecture, :city, format: { with: /\A[一-龥ぁ-ん]/, message: "は全角で入力してください"}
   
 
 
