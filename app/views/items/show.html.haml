@@ -21,8 +21,10 @@
             .itemBox__price-detail
               %span (税込)
               %span 送料込
+          -# - if user_signed_in? && current_user.id != item.user_id     
           .btn-block    
             =link_to "購入画面に進む", "/", class: "btn-block__purchase"
+          -# - if user_signed_in? && current_user.id == item.user_id  
             -# =link_to "商品を編集する", "/", method: :get, class: "btn-block__edit"
             -# =link_to "商品を削除する", "/", method: :delete, class: "btn-block__delete"  
 
