@@ -46,12 +46,12 @@ $(document).on("turbolinks:load", function () {
     }).done(function (categories) {
       var html = "";
 
-      html += `<div class="container category_2__container"><div class="title"></div><div class="column form_category"><div class="form_category"><select name="item[category_id]" id="item[category_id]" class="category_2 text_box"><option value="${parent}">サブカテゴリを選ぶ</option>`;
+      html += `<div class="container category_2__container"><div class="title"></div><div class="column form_category"><select name="item[category_id]" id="item[category_id]" class="category_2 text_box"><option value="${parent}">サブカテゴリを選ぶ</option>`;
       $.each(categories, function (i, category) {
         html += `<option value="${category.id}" ancestry="${category.ancestry}">${category.name}</option>`;
       });
 
-      html += `</select></div></div></div>`;
+      html += `</select></div></div>`;
       $(".category_1__container").after(html);
       $(".form_category").eq(2).hide().fadeIn(300);
     });
