@@ -146,6 +146,7 @@ body {
     font-size: 18px;
     font-weight: bold;
   }
+  
   &__notice {
     margin-bottom: 22px;
     background-color: #fff;
@@ -165,6 +166,7 @@ body {
         font-weight: bold;
         color: #757575;
       }
+
     }
     .main-box__body {
       padding: 15px;
@@ -176,23 +178,18 @@ body {
         .main-box__left {
           display: table-cell;
           vertical-align: to
-
-          img {
-            border-radius: 50%;
-            padding-right: 10px;
-          }
+        }
 
           h4.main-box__streetaddres {
             font-weight: bold;
             margin-top: 4px;
           }
-        }
+        
       }
     }
     .main-box__recently {
       background-color: #fff;
       border-radius: 4px;
-      /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05); */
       box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 
       .main-box__space {
