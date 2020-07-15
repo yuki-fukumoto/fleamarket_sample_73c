@@ -8,8 +8,11 @@ body {
 
 .top_page {
   padding: 0 60px;
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
 
   &__header {
+    
 
     &__inner {
       display: flex;
@@ -29,6 +32,8 @@ body {
           height: 36px;
           width: 100%;
           padding-left: 5px;
+          background-color: #f5f5f5;
+          border: 1px solid #e5e5e5;
         }
 
         &__btn {
@@ -120,7 +125,7 @@ body {
     padding-left: 0;
   }
 
-  .group-list p {
+  .group-list li {
     position: relative;
     display: block;
     padding: 10px 15px;
@@ -269,7 +274,7 @@ body {
       display: inline-block;
       margin-left: 25px;
 
-      p.main-box__brandmenu,p.main-box__category1,p.main-box__category2,p.main-box__brand1,p.main-box__brand2,p.main-box__brand3,p.main-box__guide,p.main-box__beginner,p.main-box__notice {
+      li.main-box__brandmenu,li.main-box__category1,li.main-box__category2,li.main-box__brand1,li.main-box__brand2,li.main-box__brand3,li.main-box__guide,li.main-box__beginner,li.main-box__notice {
         position: relative;
         display: block;
         padding: 10px 15px;
@@ -279,8 +284,13 @@ body {
         line-height: 1.7;
         width: 200px;
         font-weight: 25;
+
       }
     }
   } 
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}

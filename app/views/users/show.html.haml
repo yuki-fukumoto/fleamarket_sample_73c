@@ -25,27 +25,39 @@
     %group
       %h2.side-menu__title マイページメニュー
       .group-list
-        %p.group-list__notice お知らせ
-        %p.group-list__likes いいねした商品
+        %li.group-list__notice 
+          =link_to "お知らせ"
+        %li.group-list__likes 
+          =link_to "いいねした商品"
     %group
       %h2.side-menu__title 商品を出品する
       .group-list
-        %p.group-list__item 商品を出品
-        %p.group-list__sellitem 出品した商品
-        %p.group-list__shop 自分のショップを見る
+        %li.group-list__item 
+          =link_to "商品を出品"
+        %li.group-list__sellitem 
+          =link_to "出品した商品"
+        %li.group-list__shop 
+          = link_to "自分のショップを見る"
     %group
       %h2.side-menu__title 商品を購入する
       .group-list
-        %p.group-list__buy 購入した商品
-        %p.group-list__watch 最近見た商品
-        %p.group-list__comment コメントした商品
+        %li.group-list__buy 
+          =link_to "購入した商品"
+        %li.group-list__watch  
+          =link_to "最近見た商品"         
+        %li.group-list__comment 
+          =link_to "コメントした商品"
     %group
       %h2.side-menu__title 設定・ヘルプ・その他
       .group-list
-        %p.group-list__inquiry お問い合わせ
-        %p.group-list__credit クレジットカード登録
-        %p.group-list__management ポイント管理
-        %p.group-list__logout ログアウト
+        %li.group-list__inquiry 
+          =link_to "お問い合わせ"
+        %li.group-list__credit 
+          =link_to "クレジットカード登録"
+        %li.group-list__management 
+          =link_to "ポイント管理"
+        %li.group-list__logout 
+          =link_to "ログアウト"
 
   .main-box
     %h2.main-box__title 佐藤さんのマイページ
@@ -68,16 +80,25 @@
       .main-box__brand
         %h1.main-box__menutitle1 注目ブランド
         %p.main-box__box__brand
-        %p.main-box__brand1 NIKE
-        %p.main-box__brand2 GU
-        %p.main-box__brand3 ZARA
+        %li.main-box__brand1 
+          =link_to "NIKE"
+        %li.main-box__brand2 
+          =link_to "GU"
+        %li.main-box__brand3 
+          =link_to "ZARA"
       .main-box__brand
         %h2.main-box__menutitle2 コンテンツ
-        %p.main-box__brandmenu ブランド一覧
-        %p.main-box__category1 カテゴリ一覧
-        %p.main-box__category2 キーワード一覧
+        %li.main-box__brandmenu 
+          =link_to "ブランド一覧"
+        %li.main-box__category1 
+          =link_to "カテゴリ一覧"
+        %li.main-box__category2 
+          =link_to "キーワード一覧"
       .main-box__brand
         %h3.main-box__menutitle3 ガイド
-        %p.main-box__guide 公式ガイド
-        %p.main-box__beginner 初めての方へ
-        %p.main-box__notice お知らせ
+        %li.main-box__guide 
+          =link_to "公式ガイド"
+        %li.main-box__beginner 
+          =link_to "初めての方へ"
+        %li.main-box__notice 
+          =link_to "お知らせ"
