@@ -18,9 +18,12 @@
     %footer
       =link_to "トップページ", root_path
       - if user_signed_in? 
-        = link_to "ログアウト", destroy_user_session_path, method: :delete 
+        ”マイページ”
+        = link_to "＃", destroy_user_session_path, method: :delete 
       - else 
-        =link_to "ログイン", new_user_session_path
-        =link_to "ユーザー登録", new_user_registration_path
+        ”ログイン"
+        =link_to "#", new_user_session_path
+        "新規登録"
+        =link_to "＃", new_user_registration_path
         
       
