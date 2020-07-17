@@ -38,21 +38,21 @@ $(document).on("turbolinks:load", function () {
 
 $(function(){
   $('#submit').on('click', function(){
-    // if($('.image_area').val() === ''){
+    // if($('.blind').val() === ''){
     //   alert('画像を1枚以上入力してください！');
     //   $(this).focus();
     //   return false;
     // }
-    if($('.titlename').val() === ''){
-      alert('商品名を入力してください！');
-      $(this).focus();
-      return false;
-    }
-    if($('.explanation').val() === ''){
-      alert('説明を入力してください！');
-      $(this).focus();
-      return false;
-    }
+    // if($('.titlename').val() === ''){
+    //   alert('商品名を入力してください！');
+    //   $(this).focus();
+    //   return false;
+    // }
+    // if($('.explanation').val() === ''){
+    //   alert('説明を入力してください！');
+    //   $(this).focus();
+    //   return false;
+    // }
     // if($('.category_0').val() === ''){
     //   alert('カテゴリーを選択してください！');
     //   $(this).focus();
@@ -84,5 +84,6 @@ $(function(){
       return false;
     }
     alert('出品完了！');
+    // ↑本来出品確認ページへいくためいらない。あとで消す。
   });
 });
