@@ -26,14 +26,14 @@
         .title__require
           必須
       .item_text
-        = f.text_field :name, autocomplete:"off", class: "text_box", placeholder: "40文字まで", type: "text", maxlength: "40"
+        = f.text_field :name, autocomplete:"off", class: "titlename text_box", placeholder: "40文字まで", type: "text", maxlength: "40"
       .title
         .title__header
           商品の説明
         .title__require
           必須
       .explanation_text
-        = f.text_area :explanation, autocomplete:"off", class: "big_text_box", placeholder: "商品の説明（必須1000文字以内）", maxlength: "1000"
+        = f.text_area :explanation, autocomplete:"off", class: "explanation big_text_box", placeholder: "商品の説明（必須1000文字以内）", maxlength: "1000"
     %hr
     .item
       .title
@@ -62,7 +62,7 @@
           .title__require
             必須
         .column
-          = f.select :condition, Item.conditions_i18n.keys.map{|k| [I18n.t("enum.item.condition.#{k}"), k] }, {}, class: "text_box"
+          = f.select :condition, Item.conditions_i18n.keys.map{|k| [I18n.t("enum.item.condition.#{k}"), k] }, {}, class: "condition text_box"
     %hr
     .item
       .title
@@ -75,7 +75,7 @@
           .title__require
             必須
         .column
-          =f.select :shipping_pay, Item.shipping_pays_i18n.keys.map{|k| [I18n.t("enum.item.shipping_pay.#{k}"), k] }, {}, class: "text_box"
+          =f.select :shipping_pay, Item.shipping_pays_i18n.keys.map{|k| [I18n.t("enum.item.shipping_pay.#{k}"), k] }, {}, class: "shipping_pay text_box"
       .container
         .title
           .title__header
@@ -83,7 +83,7 @@
           .title__require
             必須
         .column
-          = f.select :shipping_area, Item.shipping_areas_i18n.keys.map{|k| [I18n.t("enum.item.shipping_area.#{k}"), k] }, {prompt: "発送元の地域を選ぶ"}, class: "text_box"
+          = f.select :shipping_area, Item.shipping_areas_i18n.keys.map{|k| [I18n.t("enum.item.shipping_area.#{k}"), k] }, {prompt: "発送元の地域を選ぶ"}, class: "shipping_area text_box"
       .container.bottom_container
         .title
           .title__header
@@ -91,7 +91,7 @@
           .title__require
             必須
         .column
-          =f.select :shipping_period, Item.shipping_periods_i18n.keys.map{|k| [I18n.t("enum.item.shipping_period.#{k}"), k] }, {}, class: "text_box"
+          =f.select :shipping_period, Item.shipping_periods_i18n.keys.map{|k| [I18n.t("enum.item.shipping_period.#{k}"), k] }, {}, class: "shipping_period text_box"
     %hr
     .item
       .title
@@ -105,10 +105,10 @@
             必須
         .price_text
           ¥
-          = f.number_field :price, class: "text_box", placeholder: "0", type: "number"
+          = f.number_field :price, class: "price text_box", placeholder: "0", type: "number"
     .button_area
       .puts_up_btn
-        =f.submit "出品する"
+        =f.submit "出品する", id: "submit"
       -# .save_btn
       -#   =f.submit "下書きに保存", name: "draft"
       -# .save_btn
