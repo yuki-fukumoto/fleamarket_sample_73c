@@ -19,6 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to root_path, notice: "ユーザ登録が完了しました"
     else
       render :new
+      # redirect_to new_user_registration_path
     end
 
 
