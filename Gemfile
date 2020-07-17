@@ -50,6 +50,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'
   gem 'rspec'
 end
 
@@ -59,7 +60,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -75,6 +75,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 # 以下全てをGemfile下部にコピー
@@ -83,6 +84,9 @@ group :production do
 end
 
   gem 'haml-rails'
+
+  gem 'font-awesome-sass'
+  gem 'carrierwave'
   gem 'devise'
   gem 'payjp'
   gem 'font-awesome-sass'
