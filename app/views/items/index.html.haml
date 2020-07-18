@@ -31,9 +31,9 @@
   %section.top_visual
 
     .Contents
-      %h2.Contents__title 人生を変えるフリマアプリ
+      %h2.Contents__title 人生を変えるフリマアプリ 
       %p.Contents__subtitle
-        FURIMAはだれでもかんたんに出品・購入できる
+        FURIMAはだれでもかんたんに出品・購入できる 
         %br フリマアプリです
       .Contents__btn
         =link_to "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8" do
@@ -115,7 +115,7 @@
           %h3.Title 新規投稿商品
       .topiclists
         .topiclist
-          =link_to "/" do
+          =link_to item_path(4), method: :get do
             .topiclist__img
               =image_tag 'molts.png'
             .topiclist__body
@@ -124,26 +124,26 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
 
         .topiclist
-          =link_to "/" do
+          =link_to item_path(3), method: :get do
             .topiclist__img
               = image_tag 'a004.png'
 
-
+              
             .topiclist__body
               %h3.name dd
               .place
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
 
         .topiclist
-          =link_to "/" do
+          =link_to item_path(2), method: :get do
             .topiclist__img
               = image_tag 'a006.png'
 
@@ -153,11 +153,11 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
 
         .topiclist
-          =link_to "/" do
+          =link_to item_path(1), method: :get do
             .topiclist__img
               = image_tag 'a007.png'
 
@@ -168,7 +168,7 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                %p （税込）
+                %p （税込） 
 
   %section.topic_brand
     %h2.topic_head ピックアップブランド
@@ -178,20 +178,20 @@
           %h3.Title アーカイバー
       .topiclists
         .topiclist
-          =link_to "/" do
+          =link_to item_path(4), method: :get do
             .topiclist__img
               = image_tag 'a004.png'
             .topiclist__body
-              %h3.name"} dd
+              %h3.name dd
               .place
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
 
         .topiclist
-          =link_to "/" do
+          =link_to item_path(3), method: :get do
             .topiclist__img
               = image_tag 'a006.png'
 
@@ -202,11 +202,11 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
 
         .topiclist
-          =link_to "/" do
+          =link_to item_path(2), method: :get do
             .topiclist__img
               = image_tag 'molts.png'
 
@@ -216,11 +216,11 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込） 
 
         .topiclist
-          =link_to "/" do
+          =link_to item_path(1), method: :get do
             .topiclist__img
               = image_tag 'a004.png'
 
@@ -231,8 +231,8 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
+                    %i{class:"fa fa-star likeicon"}0  
+                %p （税込） 
 
   .banner
     .foot
@@ -250,45 +250,45 @@
       %li.content
         %h2.content__head FURIMAについて
         %ul
-          %li
+          %li 
             =link_to "/" do
               会社概要（運営会社）
-          %li
+          %li 
             =link_to "/" do
               プライバシーポリシー
-          %li
+          %li 
             =link_to "/" do
               FURIMA利用規約
-          %li
+          %li 
             =link_to "/" do
               ポイントに関する特約
 
       %li.content
         %h2.content__head FURIMAを見る
         %ul
-          %li
+          %li 
             =link_to "/" do
               カテゴリー一覧
-          %li
+          %li 
             =link_to "/" do
               ブランド一覧
 
       %li.content
         %h2.content__head  ヘルプ＆ガイド
         %ul
-          %li
+          %li 
             =link_to "/" do
               FURIMAガイド
-          %li
+          %li 
             =link_to "/" do
               FURIMAロゴ利用ガイドライン
-          %li
+          %li 
             =link_to "/" do
               お知らせ
     .FURIMA_LOGO
       =link_to "/" do
-        = image_tag '/assets/logo-white.png', alt: 'logo'
-
+        = image_tag '/assets/logo-white.png', alt: 'logo', class: 'img'
+        
     %p.copyright © FURIMA
 
     .puts_up
