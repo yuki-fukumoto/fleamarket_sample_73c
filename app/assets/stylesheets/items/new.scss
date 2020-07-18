@@ -7,11 +7,11 @@ body {
   min-width: 700px;
 }
 
-.top_icon img{
+.top_icon img {
   height: 40px;
 }
 
-.top_icon{
+.top_icon {
   text-align: center;
   padding: 40px 0 20px;
   background-color: #eeeeee;
@@ -76,18 +76,18 @@ body {
   }
 }
 
-.comments{
+.comments {
   font-size: 12px;
   margin-top: 16px;
 }
 
-.image_upload{
-  height: 150px;
+.image_area {
+  height: 200px;
   width: 100%;
-  border-radius: 5px;
 }
 
 .image_upload {
+  border-radius: 5px;
   background-color: #eeeeee;
   border: dashed 1px rgb(204, 204, 204);
   display: flex;
@@ -209,11 +209,11 @@ input {
   }
 }
 
-.button_area{
+.button_area {
   margin: 30px 170px 32px;
 }
 
-.return{
+.return {
   text-align: center;
   margin-top: 24px;
 }
@@ -239,21 +239,21 @@ hr {
 .img img {
   object-fit: cover;
 }
-.notice{
+.notice {
   height: 96px;
   margin: 0 40px;
   font-size: 12px;
 }
 
-.bottom_area{
+.bottom_area {
   height: 40px;
 }
 
-.return a{
+.return a {
   text-decoration: none;
 }
 
-.bar1{
+.bar1 {
   width: calc(100% - 80px);
   border: #c5c4c4 solid 1px;
 }

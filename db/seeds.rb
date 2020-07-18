@@ -1,10 +1,3 @@
-# Brand.create(id: 1, name: "Apple", created_at: "2020-08-18 00:00:00", updated_at: "2020-08-18 00:00:00")
-# Brand.create(id: 2, name: "Martin", created_at: "2020-08-18 00:00:00", updated_at: "2020-08-18 00:00:00")
-# Brand.create(id: 3, name: "Gibson", created_at: "2020-08-18 00:00:00", updated_at: "2020-08-18 00:00:00")
-# Brand.create(id: 4, name: "Fender", created_at: "2020-08-18 00:00:00", updated_at: "2020-08-18 00:00:00")
-# Brand.create(id: 5, name: "Sugar Dream", created_at: "2020-08-18 00:00:00", updated_at: "2020-08-18 00:00:00")
-# Purchase.create(id: 0)
-
 Category.create(name: "シャワーヘッド")
 Category.create(name: "浴槽")
 toilet = Category.create(name: "便器")

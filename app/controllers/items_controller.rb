@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path, notice: '商品を出品しました'
     else
-      # flash.now[:notice] = @item.errors.full_messages
       render :new
     end
   end
@@ -25,7 +24,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    # ログイン機能未実装のためuser_id = 固定値としてmerge。ログイン機能実装後、current_user.idに置き換えること
-    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, image: []).merge(user_id: 83)
+    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, image: []).merge(user_id: current_user.id)
   end
 end

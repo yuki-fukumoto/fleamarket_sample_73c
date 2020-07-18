@@ -35,7 +35,7 @@ $(document).on("turbolinks:load", function () {
     });
   });
   $("#submit").on("click", function () {
-    if ($(".blind").val() === "") {
+    if ($(".blind").val() === "" && $(".image_cache").val() === "") {
       alert("画像を1枚以上入力してください！");
       $(this).focus();
       return false;
@@ -55,7 +55,6 @@ $(document).on("turbolinks:load", function () {
       $(this).focus();
       return false;
     }
-    console.log($(".category_0").val() === "");
     if ($(".condition").val() === "yyy") {
       alert("コンディションを選択してください！");
       $(this).focus();

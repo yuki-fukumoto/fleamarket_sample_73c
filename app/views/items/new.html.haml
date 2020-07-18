@@ -14,7 +14,7 @@
       .img
       =f.label :image do
         = f.file_field :image, multiple: true, class: "blind"
-        = f.hidden_field :image_cache
+        = f.hidden_field :image_cache, class: "image_cache"
         .image_upload.image_area
           %p= icon('fas', 'camera')
     %hr

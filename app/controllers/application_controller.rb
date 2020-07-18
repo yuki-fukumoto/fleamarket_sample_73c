@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth , if: :production?
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  # before_action :authenticate_user!
   private
 
   def production?
@@ -24,22 +23,14 @@ class ApplicationController < ActionController::Base
       render :new
     end
   end
-  
-  # def create
-  #   @product = Product.new(product_params)
-  #   if @product.save
-  #     redirect_to controller: :products, action: :index
-  #   else
-  #     render "new"
-  #   end
-  # end
+
 
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
   end
 
-  
+
 end
 
 
