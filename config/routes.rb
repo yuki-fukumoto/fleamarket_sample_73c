@@ -10,6 +10,22 @@ Rails.application.routes.draw do
   resources :purchases do
     collection do
       post :confirm 
+
+      resources :categories, only: [:index] do
+        member do
+          get 'parent'
+          get 'child'
+          get 'grandchild'
+
+  resources :items do 
+  #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'category/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
+      get 'category/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
+            end
+          end
+        end
+      end
     end
   end
 end

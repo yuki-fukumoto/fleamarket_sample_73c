@@ -1,3 +1,92 @@
-// Place all the styles related to the categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.category__header{
+  padding: 10px 100px;
+  border: 1px solid $lightgray;
+  .back__btn{
+    font-size: 13px;
+    color: gray;
+    letter-spacing: 2px;
+    @include hover(gray, 0.8);
+  }
+  .right__arrow{
+    color: gray;
+    margin: 0 5px;
+  }
+  h5{
+    display: inline;
+    letter-spacing: 2px;
+  }
+}
+
+.category__container{
+  width: 100%;
+  height: 100%;
+  background-color: $whitesmoke;
+  padding-bottom: 1px;
+  &--top{
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    h3{
+      font-size: 20px;
+      letter-spacing: 1px;
+      padding: 40px 0 15px;
+    }
+    .box__parent--link{
+      font-size: 15px;
+      display: inline-block;
+      padding: 10px 30px;
+      margin: 0 10px 10px 0;
+      background-color: white;
+      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+      color: black;
+      border-radius: 3px;
+      transition: 0.2s;
+      @include hover__color(white, $mainblueColor, 1);
+    }
+  }
+  &--box{
+    width: 700px;
+    margin: 0 auto;
+    background-color: $mainWhiteColor;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 40px;
+    &--title{
+      width: 100%;
+      background-color: $mainblueColor;
+      border-radius: 4px 4px 0 0;
+      color: white;
+      padding: 5px 30px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .category__box--child{
+      padding: 30px;
+      .category__link--btn{
+        color: #000066;
+        font-weight: unset;
+        font-size: 14px;
+        letter-spacing: 1px;
+        @include hover(#000066, 0.6);
+      }
+      .category__box--child--all{
+        margin-bottom: 15px;
+      }
+      .child__box{
+        &--name{
+          font-size: 13px;
+          font-weight: bold;
+        }
+        .grandchild__box{
+          padding: 5px 25px 10px;
+          .grandchild__link{
+            width: 290px;
+            height: 20px;
+            display: inline-flex;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+

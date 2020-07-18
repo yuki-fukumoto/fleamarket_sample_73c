@@ -1,0 +1,30 @@
+.category__container
+    .category__container--top
+      %h3
+        カテゴリー一覧
+      - @parents.each_with_index do |parent, i|
+        - unless parent.name.include?("カテゴリー一覧")
+          = link_to "##{i}", class: "box__parent--link" do
+            = parent.name
+    - @parents.each_with_index do |parent, i|
+      - unless parent.name.include?("カテゴリー一覧")
+        .category__container--box
+          .category__container--box--title{id: "#{i}"}
+            = parent.name
+          .category__box--child
+            .category__box--child--all
+              = link_to "#", class: "category__link--btn" do
+                すべて
+            - parent.children.each do |child|
+              .child__box
+                .child__box--name
+                  = child.name  
+                .grandchild__box
+                  .grandchild__link
+                    = link_to "#", class: "category__link--btn" do
+                      すべて
+                  - child.children.each do |grandchild,|
+                    .grandchild__link
+                      - unless grandchild.name.include?("すべて")
+                        = link_to "#", class: "category__link--btn" do
+                          = grandchild.name
