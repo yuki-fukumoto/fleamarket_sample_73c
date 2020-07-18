@@ -170,15 +170,15 @@ RSpec.describe User, type: :model do
           FactoryBot.create(:user, email: "shokason@school.com")
           user.valid?
         end
-        it {is_expected.to include("は既に登録されています")}
+        it {is_expected.to include("はすでに存在します")}
       end
       context "@が含まれていない" do
         let(:email) {"sokason.school.com"}
-        it {is_expected.to include("を入力してください")}
+        it {is_expected.to include("は不正な値です")}
       end
       context "ドメインがない" do
         let(:email) {"sokason@"}
-        it {is_expected.to include("を入力してください")}
+        it {is_expected.to include("は不正な値です")}
       end
     end
   end
