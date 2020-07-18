@@ -16,6 +16,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
