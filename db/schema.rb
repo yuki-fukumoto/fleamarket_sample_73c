@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_15_224412) do
+ActiveRecord::Schema.define(version: 2020_07_18_074328) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "firstname", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_224412) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "ancestry", null: false
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,29 +52,23 @@ ActiveRecord::Schema.define(version: 2020_07_15_224412) do
     t.index ["user_id"], name: "index_creditcards_on_user_id"
   end
 
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "explanation", null: false
     t.integer "price", null: false
-    t.integer "shipping_fee", null: false
     t.integer "condition", null: false
     t.bigint "user_id"
     t.bigint "category_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "purchase_id"
+    t.text "image", null: false
+    t.integer "shipping_pay", default: 0, null: false
+    t.integer "shipping_area", default: 0, null: false
+    t.integer "shipping_period", default: 0, null: false
+    t.integer "status", default: 0, null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
-    t.index ["purchase_id"], name: "index_items_on_purchase_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -111,10 +105,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_224412) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "creditcards", "users"
-  add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
-  add_foreign_key "items", "purchases"
   add_foreign_key "items", "users"
   add_foreign_key "purchases", "addresses"
   add_foreign_key "purchases", "creditcards"

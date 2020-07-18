@@ -9,3 +9,7 @@
 @import "users/registration.scss";
 @import "users/session.scss";
 @import "purchases/confirm";
+
+.field_with_errors {
+  display: contents;
+}
