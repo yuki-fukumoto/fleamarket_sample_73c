@@ -1,15 +1,15 @@
 class ItemsController < ApplicationController
   def index
-    # @items = Item.all
+    @items = Item.all
   end
 
   def new
-    # @item = Item.new
+    @item = Item.new
   end
 
   def create
-    # Item.create(item_params)
-    # redirect_to root_path
+    Item.create(item_params)
+    redirect_to root_path
   end
 
   def show
