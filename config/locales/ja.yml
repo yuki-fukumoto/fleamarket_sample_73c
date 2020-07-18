@@ -6,6 +6,27 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      user:
+        nickname: ニックネーム
+        firstname: お名前(名)
+        lastname: お名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        birthday: 誕生日
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認入力パスワード
+      addresses:
+        firstname: 送付先のお名前(名)
+        lastname: 送付先のお名前(姓)
+        firstname_read: 送付先のふりがな(名)
+        lastname_read: 送付先のふりがな(姓)
+        zip: 送付先の郵便番号
+        telephone: 送付先の電話番号
+        prefecture: 都道府県
+        city: 市区町村
+        address_line: 番地
   date:
     abbr_day_names:
       - 日
@@ -211,6 +232,7 @@ ja:
       unconfirmed: "本登録を行ってください"
       locked: "アカウントはロックされています"
       invalid: "メールアドレスまたはパスワードが違います"
+      not_found_in_database: "メールアドレスもしくはパスワードが違います"
       invalid_token: "認証キーが不正です"
       timeout: "一定時間が経過したため、再度ログインが必要です"
       inactive: "アカウントがまだ有効になっていません"
