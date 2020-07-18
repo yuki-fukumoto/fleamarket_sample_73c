@@ -3,7 +3,7 @@
     .top_page__header__inner
       %h1.icon
         =link_to "/" do
-          = image_tag 'logo.png', alt: 'logo', class: 'img'
+          = image_tag(asset_path('logo.png'), alt: 'logo', class: 'img')
       .search_box
         %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
         %button{type:"submit", class: "search_box__btn"}
@@ -117,7 +117,7 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              =image_tag 'molts.png'
+              = image_tag(asset_path('molts.png'))
             .topiclist__body
               %h3.name dd
               .place
@@ -130,22 +130,8 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              = image_tag 'a004.png'
+              = image_tag(asset_path('a004.png'))
 
-
-            .topiclist__body
-              %h3.name dd
-              .place
-                %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa-star likeicon"}0
-                %p （税込）
-
-        .topiclist
-          =link_to "/" do
-            .topiclist__img
-              = image_tag 'a006.png'
 
             .topiclist__body
               %h3.name dd
@@ -159,7 +145,21 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              = image_tag 'a007.png'
+              = image_tag(asset_path('a006.png'))
+
+            .topiclist__body
+              %h3.name dd
+              .place
+                %ul
+                  %li 1000円
+                  %li
+                    %i{class:"fa-star likeicon"}0
+                %p （税込）
+
+        .topiclist
+          =link_to "/" do
+            .topiclist__img
+              = image_tag(asset_path('a007.png'))
 
             .topiclist__body
               %h3.name dd
@@ -180,9 +180,9 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              = image_tag 'a004.png'
+              = image_tag(asset_path('a004.png'))
             .topiclist__body
-              %h3.name"} dd
+              %h3.name dd
               .place
                 %ul
                   %li 1000円
@@ -193,7 +193,7 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              = image_tag 'a006.png'
+              = image_tag(asset_path('a006.png'))
 
 
             .topiclist__body
@@ -208,7 +208,7 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              = image_tag 'molts.png'
+              = image_tag(asset_path('molts.png'))
 
             .topiclist__body
               %h3.name dd
@@ -222,7 +222,7 @@
         .topiclist
           =link_to "/" do
             .topiclist__img
-              = image_tag 'a004.png'
+              = image_tag(asset_path('a004.png'))
 
 
             .topiclist__body
@@ -287,7 +287,7 @@
               お知らせ
     .FURIMA_LOGO
       =link_to "/" do
-        = image_tag '/assets/logo-white.png', alt: 'logo'
+        = image_tag(asset_path('/assets/logo-white.png', alt: 'logo'))
 
     %p.copyright © FURIMA
 

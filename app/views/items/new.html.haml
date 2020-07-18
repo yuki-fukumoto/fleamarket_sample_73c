@@ -1,5 +1,5 @@
 .top_icon
-  =image_tag "logo.png"
+  =image_tag(asset_path("logo.png"))
 .contents
   =form_with model: @item, method: :post, local: true do |f|
     .item
