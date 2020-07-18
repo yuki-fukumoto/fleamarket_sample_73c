@@ -122,7 +122,7 @@ body {
         background-image: url(asset-path("/images/pict-reason-01.jpg"));
       }
       .no2 {
-        background-image: url(/assets/pict-reason-02.jpg);
+        background-image: url(asset-path("pict-reason-02.jpg"));
       }
       .no3 {
         background-image: url(/assets/pict-reason-03.jpg);
