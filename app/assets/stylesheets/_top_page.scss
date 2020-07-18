@@ -1,405 +1,406 @@
 * {
   box-sizing: border-box;
 }
-body{
+body {
   min-width: 940px;
-  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
+    "メイリオ", "Meiryo", sans-serif;
 }
-.top_page{
+.top_page {
   padding: 0 60px;
-  &__header{
+  &__header {
     max-width: 1040px;
     margin: 0 auto;
-    &__inner{
+    &__inner {
       display: flex;
       padding-top: 15px;
-      img{
+      img {
         height: 40px;
         width: 140px;
         margin-right: 30px;
       }
-      .search_box{
+      .search_box {
         display: flex;
         width: 100%;
-        &__input{
+        &__input {
           height: 36px;
           width: 100%;
           padding-left: 5px;
         }
-        &__btn{
+        &__btn {
           height: 37px;
           width: 37px;
-          background-color: #3CCACE;
+          background-color: #3ccace;
           border: none;
-          &__icon{
+          &__icon {
             color: white;
             font-size: 20px;
           }
         }
       }
     }
-    .list{
+    .list {
       font-size: 14px;
       display: flex;
       margin-bottom: 10px;
       justify-content: space-between;
       height: 32px;
       line-height: 32px;
-      &__left{
+      &__left {
         position: relative;
         display: flex;
         padding: 0;
-        &__category{
+        &__category {
           padding-right: 30px;
         }
-        &__brand{
+        &__brand {
           display: flex;
           padding-left: 16px;
         }
       }
-      &__right{
+      &__right {
         position: relative;
         display: flex;
         padding: 0;
-        &__log_in{
+        &__log_in {
           padding-right: 30px;
         }
-        &__new{
+        &__new {
           display: flex;
           padding-left: 16px;
         }
       }
-    }  
-  }
-}  
-  .top_visual{
-    background-image: url(bg-mainVisual-pict_pc.jpg);
-    background-size: cover;
-    background-position: top center;
-    height: 560px;
-    padding: 200px 60px 0;
-    .Contents{
-      color: white;
-      text-shadow: 1px 2px 3px #808080; 
-      &__title{
-       font-size: 60px;
-      }
-      &__subtitle{
-        font-size: 18px;
-        margin-top: 16px;
-        text-align: left;
-      }
-      &__btn{
-        display: flex;
-        margin-top: 18px;
-      }
     }
   }
-  .reason{
-    padding: 60px 20px;
-    &__title{
-      text-align: center;
-      height: 50px;
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    &__lists{
-      display: flex;
-      justify-content: space-between;
-      max-width: 1020px;
-      margin: 0 auto;
-      .list{
-        width: 300px;
-        &__picture{
-          background-size: cover;
-          height: 300px;
-          width: 300px;
-          margin-bottom: 20px;
-        }
-        .no1{
-          background-image: url(/assets/pict-reason-01.jpg);
-        }
-        .no2{
-          background-image: url(/assets/pict-reason-02.jpg);
-        }
-        .no3{
-          background-image: url(/assets/pict-reason-03.jpg);
-        }
-        .number{
-          background-color: #3CCACE;
-          font-size: 30px;
-          color: white;
-          height: 55px;
-          width: 55px;
-          line-height: 55px;
-          text-align: center;
-          border-radius: 4%;
-        }
-        &__text{
-          font-size: 24px;
-          text-align: left;
-          font-weight: bold;
-        }
-        &__descri{
-          margin-top: 20px;
-          font-size: 18px;
-          text-align: left;
-        }
-      }
-    }
-  }
-  .middle_view{
-    background-image: url(/assets/bg-topMiddleDl-pict.jpg);
-    height: 400px;
-    background-size: cover;
-    background-position: bottom right;
-    padding: 0 76.5px;
-    position: relative;
-    .Contents{
-      position: absolute;
-      top: 50%;
-      -webkit-transform : translateY(-50%);
-      transform : translateY(-50%);
-      color: white;
-      text-shadow: 1px 2px 3px #808080; 
-      &__title{
-       font-size: 27px;
-      }
-      &__subtitle{
-        font-size: 18px;
-        margin: 20px 0 30px;
-        text-align: left;
-      }
-      &__btn{
-        display: flex;
-        margin-top: 18px;
-      }
-    }
-  }
-  .buyAndsell{
-    padding: 60px 100px;
-    &__title{
-      text-align: center;
-      height: 50px;
-      font-size: 27px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    &__lists{
-      display: flex;
-      justify-content: space-between;
-      max-width: 1020px;
-      margin: 0 auto;
-      .list{
-        width: 331px;
-        padding: 0 20px;
-        margin-bottom: 40px;
-        &__image{
-          background-size: cover;
-          height: 313.5px;
-          width: 203px;
-        }
-        .no1{
-          background-image: url(/assets/icon-01.png);
-        }
-        .no2{
-          background-image: url(/assets/icon-03.png);
-        }
-        .no3{
-          background-image: url(/assets/icon-04.png);
-        }
-        &__subtitle{
-          font-size: 19px;
-          font-weight: bold;
-          margin: 38px 0 10px;
-          text-align: left;
-        }
-        &__apile{
-          font-size: 17px;
-          text-align: left;
-        }
-      }
-    }
-  }
-  .topic_contents{
-    background-color: #EEEEEE;
-    padding-top: 80px;
-  }
-  .topic_brand{
-    background-color: #EEEEEE;
-    padding: 80px 0;
-  }  
-    .topic_head{
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .topicBox{
-      &__head{
-        text-align: center;
-        font-size: 24px;
-        .Title{
-          color: #3CCACE;
-          font-weight: bold;
-          margin-bottom: 26px;
-        }
-      }
-      .topiclists{
-        display: flex;
-        width: 780px;
-        margin: 0 auto;
-        justify-content: space-around;
-        .topiclist{
-          width: 220px;
-          background-color: #fff;
-          &__img img{
-            height: 150px;
-            width: 220px;
-            object-fit: contain;
-          }
-          &__body{
-            padding: 16px;
-            font-size: 16px;
-            color:#333333;
-            .place{
-              ul{
-                display: flex;
-                justify-content: space-between;
-              }
-            }
-          }
-        }
-        .topiclist:hover{
-          opacity: 0.7;
-        }
-      }
-    }
-  
-  .banner{
-    background-image: url(/assets/bg-appBanner-pict.jpg);
-    height: 359.33px;
-    background-size: cover;
-    background-position: center;
-    padding: 100px 40px;
-    .foot{
-      color: #fff;
-      text-align: center;
-      &__title{
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-        font-size: 24px;
-        font-weight: bold;
-        line-height: 1.4;
-      }  
-      &__text{
-        font-size: 35px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      }  
-      &__btn{
-        display: flex;
-        margin-top: 8px;
-        justify-content: center;
-      }
-    }
-  }
-  .footer{
-    padding: 60px 0;
-    color: #fff;
-    background-color: #272727;
-    text-align: left;
-    &__contens{
-      max-width: 840px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      .content{
-        &__head{
-          font-size: 16px;
-          font-weight: 600;
-          margin-bottom: 20px;
-        }
-        ul{
-          font-size: 12px;
-          line-height: 32px;
-        }
-      }
-    }
-  }
-  .FURIMA_LOGO{
-    text-align: center;
-  }
-  .FURIMA_LOGO img{
-    width: 160px;
-  }
-
-  .copyright{
-    text-align: center;
-  }
-
-  a{
-    text-decoration: none;
-  }
-  
-  .list a{
-    color: #333;
-  }
-
-  hr.under_bar{
-    height: 4px;
-    width: 70px;
-    background-color: #3CCACE;
-    margin-bottom: 25px;
-    border: none;
-  }
-  .content a{
+}
+.top_visual {
+  background-image: url(/images/bg-mainVisual-pict_pc.jpg);
+  background-size: cover;
+  background-position: top center;
+  height: 560px;
+  padding: 200px 60px 0;
+  .Contents {
     color: white;
-  }
-  .content a:hover{
-    border-bottom: solid 1px #fff;
-  }
-  .place p{
-    font-size: 10px;
-  }
-  .list__text span{
-    color: #3CCACE;
-  }
-  .app_btn {
-    width: 180px;
-    margin-top: 13px;
-  } 
-  .app_btn:hover{
-    opacity: 0.5;
-  }
-  .google_btn {
-    width: 202px;
-  }
-  .google_btn:hover{
-    opacity: 0.5;
-  }
-  .topiclist__img img{
-    height: 100%;
-    width: 100%;
-  }
-  .puts_up{
-    height: 120px;
-    width: 116px;
-    background-color: #3CCACE;
-    position: fixed;
-    bottom:50px;
-    right: 50px;
-    border-radius: 4%;
-    padding: 15px;
-    text-align: center;
-    &__text{
-      color: #fff;
+    text-shadow: 1px 2px 3px #808080;
+    &__title {
+      font-size: 60px;
+    }
+    &__subtitle {
       font-size: 18px;
+      margin-top: 16px;
+      text-align: left;
     }
-    &__icon{
-      font-size: 54px;
-      color: #fff;
-      margin-top: 5px;
+    &__btn {
+      display: flex;
+      margin-top: 18px;
     }
   }
-  .puts_up:hover{
-    opacity: 0.9;
+}
+.reason {
+  padding: 60px 20px;
+  &__title {
+    text-align: center;
+    height: 50px;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1020px;
+    margin: 0 auto;
+    .list {
+      width: 300px;
+      &__picture {
+        background-size: cover;
+        height: 300px;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+      .no1 {
+        background-image: url(asset-path("/images/pict-reason-01.jpg"));
+      }
+      .no2 {
+        background-image: url(/assets/pict-reason-02.jpg);
+      }
+      .no3 {
+        background-image: url(/assets/pict-reason-03.jpg);
+      }
+      .number {
+        background-color: #3ccace;
+        font-size: 30px;
+        color: white;
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+        text-align: center;
+        border-radius: 4%;
+      }
+      &__text {
+        font-size: 24px;
+        text-align: left;
+        font-weight: bold;
+      }
+      &__descri {
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: left;
+      }
+    }
+  }
+}
+.middle_view {
+  background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+  height: 400px;
+  background-size: cover;
+  background-position: bottom right;
+  padding: 0 76.5px;
+  position: relative;
+  .Contents {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: white;
+    text-shadow: 1px 2px 3px #808080;
+    &__title {
+      font-size: 27px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      margin: 20px 0 30px;
+      text-align: left;
+    }
+    &__btn {
+      display: flex;
+      margin-top: 18px;
+    }
+  }
+}
+.buyAndsell {
+  padding: 60px 100px;
+  &__title {
+    text-align: center;
+    height: 50px;
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1020px;
+    margin: 0 auto;
+    .list {
+      width: 331px;
+      padding: 0 20px;
+      margin-bottom: 40px;
+      &__image {
+        background-size: cover;
+        height: 313.5px;
+        width: 203px;
+      }
+      .no1 {
+        background-image: url(/assets/icon-01.png);
+      }
+      .no2 {
+        background-image: url(/assets/icon-03.png);
+      }
+      .no3 {
+        background-image: url(/assets/icon-04.png);
+      }
+      &__subtitle {
+        font-size: 19px;
+        font-weight: bold;
+        margin: 38px 0 10px;
+        text-align: left;
+      }
+      &__apile {
+        font-size: 17px;
+        text-align: left;
+      }
+    }
+  }
+}
+.topic_contents {
+  background-color: #eeeeee;
+  padding-top: 80px;
+}
+.topic_brand {
+  background-color: #eeeeee;
+  padding: 80px 0;
+}
+.topic_head {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+.topicBox {
+  &__head {
+    text-align: center;
+    font-size: 24px;
+    .Title {
+      color: #3ccace;
+      font-weight: bold;
+      margin-bottom: 26px;
+    }
+  }
+  .topiclists {
+    display: flex;
+    width: 780px;
+    margin: 0 auto;
+    justify-content: space-around;
+    .topiclist {
+      width: 220px;
+      background-color: #fff;
+      &__img img {
+        height: 150px;
+        width: 220px;
+        object-fit: contain;
+      }
+      &__body {
+        padding: 16px;
+        font-size: 16px;
+        color: #333333;
+        .place {
+          ul {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+    .topiclist:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.banner {
+  background-image: url(asset_path("bg-appBanner-pict.jpg"));
+  height: 359.33px;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 40px;
+  .foot {
+    color: #fff;
+    text-align: center;
+    &__title {
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__text {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+    &__btn {
+      display: flex;
+      margin-top: 8px;
+      justify-content: center;
+    }
+  }
+}
+.footer {
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: left;
+  &__contens {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .content {
+      &__head {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      ul {
+        font-size: 12px;
+        line-height: 32px;
+      }
+    }
+  }
+}
+.FURIMA_LOGO {
+  text-align: center;
+}
+.FURIMA_LOGO img {
+  width: 160px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list a {
+  color: #333;
+}
+
+hr.under_bar {
+  height: 4px;
+  width: 70px;
+  background-color: #3ccace;
+  margin-bottom: 25px;
+  border: none;
+}
+.content a {
+  color: white;
+}
+.content a:hover {
+  border-bottom: solid 1px #fff;
+}
+.place p {
+  font-size: 10px;
+}
+.list__text span {
+  color: #3ccace;
+}
+.app_btn {
+  width: 180px;
+  margin-top: 13px;
+}
+.app_btn:hover {
+  opacity: 0.5;
+}
+.google_btn {
+  width: 202px;
+}
+.google_btn:hover {
+  opacity: 0.5;
+}
+.topiclist__img img {
+  height: 100%;
+  width: 100%;
+}
+.puts_up {
+  height: 120px;
+  width: 116px;
+  background-color: #3ccace;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 4%;
+  padding: 15px;
+  text-align: center;
+  &__text {
+    color: #fff;
+    font-size: 18px;
+  }
+  &__icon {
+    font-size: 54px;
+    color: #fff;
+    margin-top: 5px;
+  }
+}
+.puts_up:hover {
+  opacity: 0.9;
+}
