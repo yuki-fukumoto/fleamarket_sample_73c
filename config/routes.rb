@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :purchases do
     collection do
-      post :confirm 
+      get :confirm
     end
   end
 end
