@@ -73,8 +73,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
-  gem 'rspec-rails', '~> 3.6.0'
-  gem 'factory_bot_rails', '~> 4.10.0'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 # 以下全てをGemfile下部にコピー
@@ -83,6 +83,9 @@ group :production do
 end
 
   gem 'haml-rails'
+
+  gem 'font-awesome-sass'
+  gem 'carrierwave'
   gem 'devise'
   gem 'payjp'
   gem 'font-awesome-sass'

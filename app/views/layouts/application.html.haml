@@ -9,11 +9,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-
+    .notice
+      =notice
+    .alert
+      =alert
 
     = yield
     %footer
       =link_to "トップページ", root_path
-      =link_to "ログイン", new_user_session_path
-      =link_to "ユーザー登録", new_user_registration_path
-      =link_to "商品出品", new_item_path
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "マイページ", "#"
+      - else
+        =link_to "ログイン", new_user_session_path
+        =link_to "新規登録", new_user_registration_path
+
+
+

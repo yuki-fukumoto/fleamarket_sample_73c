@@ -1,3 +1,5 @@
+
+=render 'layouts/error_messages', model: @user
 %main.wrapper-sign-up
   %article.wrapper-sign-up__article
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -17,29 +19,28 @@
             メールアドレス
             .wrapper-sign-up__article__section__form-area__name__attribute--box
               必須
-          .wrapper-sign-up__article__section__form-area__form   
+          .wrapper-sign-up__article__section__form-area__form
             =f.email_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
         .wrapper-sign-up__article__section__form-area
           .wrapper-sign-up__article__section__form-area__name
             パスワード
             .wrapper-sign-up__article__section__form-area__name__attribute--box
               必須
-          .wrapper-sign-up__article__section__form-area__form   
+          .wrapper-sign-up__article__section__form-area__form
             =f.password_field :password, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "7文字以上"
         .wrapper-sign-up__article__section__form-area
           .wrapper-sign-up__article__section__form-area__name
             パスワード(確認用)
             .wrapper-sign-up__article__section__form-area__name__attribute--box
               必須
-          .wrapper-sign-up__article__section__form-area__form 
+          .wrapper-sign-up__article__section__form-area__form
             =f.password_field :password_confirmation, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "7文字以上"
         %hr
-
       %section.wrapper-sign-up__article__section
         %h2.wrapper-sign-up__article__section--title 本人確認情報
         .wrapper-sign-up__article__section__form-area
           .wrapper-sign-up__article__section__form-area__name
-            名前 
+            名前
             .wrapper-sign-up__article__section__form-area__name__attribute--box
               必須
           .wrapper-sign-up__article__section__form-area__form
@@ -56,7 +57,7 @@
               必須
           .wrapper-sign-up__article__section__form-area__form
             .wrapper-sign-up__article__section__form-area__form__divide
-              .wrapper-sign-up__article__section__form-area__form__divide__text 性
+              .wrapper-sign-up__article__section__form-area__form__divide__text 姓
               =f.text_field :lastname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角"
             .wrapper-sign-up__article__section__form-area__form__divide
               .wrapper-sign-up__article__section__form-area__form__divide__text 名
@@ -71,85 +72,85 @@
         %hr
       %section.wrapper-sign-up__article__section
         %h2.wrapper-sign-up__article__section--title 商品送付先
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            名前
-            .wrapper-sign-up__article__section__form-area__name__attribute--box
-              必須
-          .wrapper-sign-up__article__section__form-area__form
-            .wrapper-sign-up__article__section__form-area__form__divide
-              .wrapper-sign-up__article__section__form-area__form__divide__text 姓
-              =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-            .wrapper-sign-up__article__section__form-area__form__divide
-              .wrapper-sign-up__article__section__form-area__form__divide__text 名
-              =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            ふりがな
-            .wrapper-sign-up__article__section__form-area__name__attribute--box
-              必須
-          .wrapper-sign-up__article__section__form-area__form    
-            .wrapper-sign-up__article__section__form-area__form__divide
-              .wrapper-sign-up__article__section__form-area__form__divide__text 性
-              =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-            .wrapper-sign-up__article__section__form-area__form__divide
-              .wrapper-sign-up__article__section__form-area__form__divide__text 名
-              =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            郵便番号
-            .wrapper-sign-up__article__section__form-area__name__attribute--box
-              必須
-          .wrapper-sign-up__article__section__form-area__form
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-first"
-            .wrapper-sign-up__article__section__form-area__form--zip-divide - 
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            都道府県
-            .wrapper-sign-up__article__section__form-area__name__attribute--box
-              必須
-          .wrapper-sign-up__article__section__form-area__form  
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            市区町村
-            .wrapper-sign-up__article__section__form-area__name__attribute--box
-              必須
-          .wrapper-sign-up__article__section__form-area__form  
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            番地
-            .wrapper-sign-up__article__section__form-area__name__attribute--box
-              必須
-          .wrapper-sign-up__article__section__form-area__form    
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name 
-            建物名
-            .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
-              任意
-          .wrapper-sign-up__article__section__form-area__form   
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            部屋番号
-            .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
-              任意
-          .wrapper-sign-up__article__section__form-area__form 
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
-
-        .wrapper-sign-up__article__section__form-area
-          .wrapper-sign-up__article__section__form-area__name
-            TEL
-            .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
-              任意
-          .wrapper-sign-up__article__section__form-area__form  
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-two"
-            .wrapper-sign-up__article__section__form-area__form--tel-divide - 
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four"
-            .wrapper-sign-up__article__section__form-area__form--tel-divide - 
-            =f.text_field :email, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four"
-        %hr
-        = f.submit "登録", class: "wrapper-sign-up__article__section--btn"
+        =f.fields_for :addresses, @address do |address_f|
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              名前
+              .wrapper-sign-up__article__section__form-area__name__attribute--box
+                必須
+            .wrapper-sign-up__article__section__form-area__form
+              .wrapper-sign-up__article__section__form-area__form__divide
+                .wrapper-sign-up__article__section__form-area__form__divide__text 姓
+                =address_f.text_field :lastname, class: "wrapper-sign-up__article__section__form-area__form--style"
+              .wrapper-sign-up__article__section__form-area__form__divide
+                .wrapper-sign-up__article__section__form-area__form__divide__text 名
+                =address_f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              ふりがな
+              .wrapper-sign-up__article__section__form-area__name__attribute--box
+                必須
+            .wrapper-sign-up__article__section__form-area__form
+              .wrapper-sign-up__article__section__form-area__form__divide
+                .wrapper-sign-up__article__section__form-area__form__divide__text 姓
+                =address_f.text_field :lastname_read, class: "wrapper-sign-up__article__section__form-area__form--style"
+              .wrapper-sign-up__article__section__form-area__form__divide
+                .wrapper-sign-up__article__section__form-area__form__divide__text 名
+                =address_f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              郵便番号
+              .wrapper-sign-up__article__section__form-area__name__attribute--box
+                必須
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :first_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-first", maxlength: "3"
+              .wrapper-sign-up__article__section__form-area__form--zip-divide -
+              =address_f.text_field :last_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second", maxlength: "4"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              都道府県
+              .wrapper-sign-up__article__section__form-area__name__attribute--box
+                必須
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :prefecture, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              市区町村
+              .wrapper-sign-up__article__section__form-area__name__attribute--box
+                必須
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :city, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              番地
+              .wrapper-sign-up__article__section__form-area__name__attribute--box
+                必須
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :address_line, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              建物名
+              .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
+                任意
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :building, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              部屋番号
+              .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
+                任意
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :room, class: "wrapper-sign-up__article__section__form-area__form--style"
+          .wrapper-sign-up__article__section__form-area
+            .wrapper-sign-up__article__section__form-area__name
+              TEL
+              .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
+                任意
+            .wrapper-sign-up__article__section__form-area__form
+              =address_f.text_field :first_telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-two", maxlength: "2"
+              .wrapper-sign-up__article__section__form-area__form--tel-divide -
+              =address_f.text_field :second_telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four", maxlength: "4"
+              .wrapper-sign-up__article__section__form-area__form--tel-divide -
+              =address_f.text_field :third_telephone, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--tel-four", maxlength: "4"
+          %hr
+      = f.submit "登録", class: "wrapper-sign-up__article__section--btn"
