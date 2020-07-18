@@ -34,31 +34,29 @@ $(document).on("turbolinks:load", function () {
       image_count = image_count + 1;
     });
   });
-});
-
-$(function(){
   $('#submit').on('click', function(){
-    // if($('.blind').val() === ''){
-    //   alert('画像を1枚以上入力してください！');
-    //   $(this).focus();
-    //   return false;
-    // }
-    // if($('.titlename').val() === ''){
-    //   alert('商品名を入力してください！');
-    //   $(this).focus();
-    //   return false;
-    // }
-    // if($('.explanation').val() === ''){
-    //   alert('説明を入力してください！');
-    //   $(this).focus();
-    //   return false;
-    // }
-    // if($('.category_0').val() === ''){
-    //   alert('カテゴリーを選択してください！');
-    //   $(this).focus();
-    //   return false;
-    // }
-    if($('.condition').val() === ''){
+    if($('.blind').val() === ''){
+      alert('画像を1枚以上入力してください！');
+      $(this).focus();
+      return false;
+    }
+    if($('.titlename').val() === ''){
+      alert('商品名を入力してください！');
+      $(this).focus();
+      return false;
+    }
+    if($('.explanation').val() === ''){
+      alert('説明を入力してください！');
+      $(this).focus();
+      return false;
+    }
+    if($('.category_0').val() === ''){
+      alert('カテゴリーを選択してください！');
+      $(this).focus();
+      return false;
+    }
+    console.log($('.category_0').val() === '')
+    if($('.condition').val() === 'yyy'){
       alert('コンディションを選択してください！');
       $(this).focus();
       return false;
@@ -68,7 +66,7 @@ $(function(){
       $(this).focus();
       return false;
     }
-    if($('.shipping_area').val() === ''){
+    if($('.shipping_area').val() === 'xxx'){
       alert('発送元の地域を選択してください！');
       $(this).focus();
       return false;
@@ -87,3 +85,7 @@ $(function(){
     // ↑本来出品確認ページへいくためいらない。あとで消す。
   });
 });
+
+// $(function(){
+  
+// });
