@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   validates :image, presence: {message: "は1枚以上は登録してください"}
   validates :name, presence: {message: "が空欄です"}, length: {maximum: 40, message: "は40文字以内で入力してください"}
   validates :explanation, presence: {message: "が空欄です"}, length: {maximum: 1000, message: "は1000文字以内で入力してください"}
-  validates :category, presence: {message: "は少なくともメイングループから1つ選択してください"}
+  validates :category_id, presence: {message: "は少なくともメイングループから1つ選択してください"}
   validates :condition, presence: {message: "が空欄です：システムエラーのため管理者に連絡してください"}, exclusion: {in: %w(yyy), message: "が選択されていません"}
   validates :shipping_area, presence: {message: "が空欄です：システムエラーのため管理者に連絡してください"}, exclusion: {in: %w(xxx), message: "が選択されていません"}
   validates :shipping_pay, :shipping_period, presence: {message: "が空欄です：システムエラーのため管理者に連絡してください"}

@@ -109,4 +109,117 @@ RSpec.describe Item, type: :model do
       end
     end
   end
+
+  describe "conditionのバリデーション" do
+    let(:item) {FactoryBot.build(:item, condition: condition)}
+    context "登録される" do
+      subject{item}
+      context "conditionが入力されている" do
+        let(:condition) {"bit_damaged"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{item.errors[:condition]}
+      before do
+        item.valid?
+      end
+      context "conditionが空欄である" do
+        let(:condition) {nil}
+        it {is_expected.to include("が空欄です：システムエラーのため管理者に連絡してください")}
+      end
+      context "conditionが選択されていない" do
+        let(:condition) {"yyy"}
+        it {is_expected.to include("が選択されていません")}
+      end
+    end
+  end
+  describe "shipping_areaのバリデーション" do
+    let(:item) {FactoryBot.build(:item, shipping_area: shipping_area)}
+    context "登録される" do
+      subject{item}
+      context "shipping_areaが入力されている" do
+        let(:shipping_area) {"yamaguchi"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{item.errors[:shipping_area]}
+      before do
+        item.valid?
+      end
+      context "shipping_areaが空欄である" do
+        let(:shipping_area) {nil}
+        it {is_expected.to include("が空欄です：システムエラーのため管理者に連絡してください")}
+      end
+      context "shipping_areaが選択されていない" do
+        let(:shipping_area) {"xxx"}
+        it {is_expected.to include("が選択されていません")}
+      end
+    end
+  end
+  describe "shipping_payのバリデーション" do
+    let(:item) {FactoryBot.build(:item, shipping_pay: shipping_pay)}
+    context "登録される" do
+      subject{item}
+      context "shipping_payが入力されている" do
+        let(:shipping_pay) {"customer"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{item.errors[:shipping_pay]}
+      before do
+        item.valid?
+      end
+      context "shipping_payが入力されていない" do
+        let(:shipping_pay) {nil}
+        it {is_expected.to include("が空欄です：システムエラーのため管理者に連絡してください")}
+      end
+    end
+  end
+
+  describe "priceのバリデーション" do
+    let(:item) {FactoryBot.build(:item, price: price)}
+    context "登録される" do
+      subject{item}
+      context "価格が300" do
+        let(:price) {"300"}
+        it {is_expected.to be_valid}
+      end
+      context "価格が9,999,999" do
+        let(:price) {"9999999"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{item.errors[:price]}
+      before do
+        item.valid?
+      end
+      context "priceがない" do
+        let(:price) {nil}
+        it {is_expected.to include("を入力してください")}
+      end
+      context "価格が299" do
+        let(:price) {"299"}
+        it {is_expected.to include("価格は¥300~9,999,999の範囲で設定してください")}
+      end
+      context "価格が10,000,000" do
+        let(:price) {"10000000"}
+        it {is_expected.to include("価格は¥300~9,999,999の範囲で設定してください")}
+      end
+    end
+  end
+
+  describe "brandのバリデーション" do
+    let(:item) {FactoryBot.build(:item, brand_id: brand_id)}
+    context "登録される" do
+      subject{item}
+      context "brandが入力されていない" do
+        let(:brand_id) {nil}
+        it {is_expected.to be_valid}
+      end
+    end
+  end
 end
