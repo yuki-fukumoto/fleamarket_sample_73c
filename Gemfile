@@ -94,3 +94,4 @@ end
   gem 'ancestry'
   gem 'carrierwave'
   gem 'fog'
+  
