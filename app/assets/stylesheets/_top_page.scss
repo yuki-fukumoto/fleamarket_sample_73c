@@ -74,7 +74,7 @@ body {
   }
 }
 .top_visual {
-  background-image: url(/images/bg-mainVisual-pict_pc.jpg);
+  background-image: asset-url("bg-mainVisual-pict_pc.jpg");
   background-size: cover;
   background-position: top center;
   height: 560px;
@@ -119,13 +119,13 @@ body {
         margin-bottom: 20px;
       }
       .no1 {
-        background-image: url(asset-path("/images/pict-reason-01.jpg"));
+        background-image: asset_url("pict-reason-01.jpg");
       }
       .no2 {
         background-image: asset-url("pict-reason-02.jpg");
       }
       .no3 {
-        background-image: url(/assets/pict-reason-03.jpg);
+        background-image: asset-url("pict-reason-03.jpg");
       }
       .number {
         background-color: #3ccace;
@@ -151,7 +151,7 @@ body {
   }
 }
 .middle_view {
-  background-image: url(/assets/bg-topMiddleDl-pict.jpg);
+  background-image: asset-url("bg-topMiddleDl-pict.jpg");
   height: 400px;
   background-size: cover;
   background-position: bottom right;
@@ -202,13 +202,13 @@ body {
         width: 203px;
       }
       .no1 {
-        background-image: url(/assets/icon-01.png);
+        background-image: asset-url("icon-01.png");
       }
       .no2 {
-        background-image: url(/assets/icon-03.png);
+        background-image: asset-url("icon-03.png");
       }
       .no3 {
-        background-image: url(/assets/icon-04.png);
+        background-image: asset-url("icon-04.png");
       }
       &__subtitle {
         font-size: 19px;
@@ -278,7 +278,7 @@ body {
 }
 
 .banner {
-  background-image: url(asset_path("bg-appBanner-pict.jpg"));
+  background-image: asset-url("bg-appBanner-pict.jpg");
   height: 359.33px;
   background-size: cover;
   background-position: center;
