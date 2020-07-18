@@ -9,6 +9,7 @@ ja:
     models:
       item: 商品
       brand: ブランド
+      address: 送付先住所
     attributes:
       item:
         name: 商品名
@@ -22,6 +23,40 @@ ja:
         condition: 商品の状態
         image: 商品画像
         status: 出品状態
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        firstname: 名前(名)
+        lastname: 名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        birthday: 誕生日
+        password_confirmation: 確認用パスワード
+      user/addresses:
+        firstname: 名前(名)
+        lastname: 名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        zip: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address_line: 番地
+        building: 建物・ビル名
+        room: 部屋番号
+        telephone: 電話番号
+      address:
+        firstname: 名前(名)
+        lastname: 名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        zip: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address_line: 番地
+        building: 建物・ビル名
+        room: 部屋番号
+        telephone: 電話番号
   enum:
     item:
       condition:
@@ -88,7 +123,6 @@ ja:
         days1_2: 1~2日で発送
         days2_3: 2~3日で発送
         days4_7: 4~7日で発送
-
     attributes:
       user:
         nickname: ニックネーム

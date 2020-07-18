@@ -1,8 +1,7 @@
--# .alert
--#   =render "layouts/error_messages", model: @item
+.top_icon
+  =image_tag "logo.png"
 .contents
   =form_with model: @item, method: :post, local: true do |f|
-
     .item
       .title
         .title__header
