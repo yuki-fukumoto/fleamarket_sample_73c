@@ -56,7 +56,7 @@ main3 = Category.create(name: "本・音楽・ゲーム")
     sub3_2.children.create(name: "同人誌")
 
   sub3_2 = main3.children.create(name: "雑誌")
-  sub3_1.children.create(name: "ファッション")
-  sub3_1.children.create(name: "趣味/スポーツ")
-  sub3_1.children.create(name: "アート/エンタメ/ホビー")
+    sub3_1.children.create(name: "ファッション")
+    sub3_1.children.create(name: "趣味/スポーツ")
+    sub3_1.children.create(name: "アート/エンタメ/ホビー")
 
