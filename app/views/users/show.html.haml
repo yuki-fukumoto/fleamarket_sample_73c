@@ -59,45 +59,48 @@
         %li.group-list__logout 
           =link_to "ログアウト"
 
-  .main-box
-    %h2.main-box__title 佐藤さんのマイページ
-    .main-box__notice
-      .main-box__subtitle 
-        %h3.main-box__important 重要なお知らせ
-      .main-box__body
-        .main-box__inbox
-          .main-box__left
-            =image_tag 'FURIMA_ICON.png', :width =>"31", :height =>"31"
-            %h4.main-box__streetaddres 住所の設定を行ってください。<br>
-            スムーズに購入を進めるために住所の設定を行ってください。
-      .main-box__recently
-        .main-box__subsubtitle 最近見た商品
-        .main-box__body2 
-          %p.main-box__center
-            %p.main-box__text 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
-    .main-box__group
-      .main-box__submenu
-        %h1.main-box__menutitle1 注目ブランド
-        %p.main-box__box__brand
-        %li.main-box__category1
-          =link_to "NIKE"
-        %li.main-box__category2
-          =link_to "GU"
-        %li.main-box__category3
-          =link_to "ZARA"
-      .main-box__submenu
-        %h1.main-box__menutitle1 コンテンツ
-        %li.main-box__category1 
-          =link_to "ブランド一覧"
-        %li.main-box__category2
-          =link_to "カテゴリ一覧"
-        %li.main-box__category3
-          =link_to "キーワード一覧"
-      .main-box__submenu
-        %h1.main-box__menutitle1 ガイド
-        %li.main-box__category1  
-          =link_to "公式ガイド"
-        %li.main-box_category2 
-          =link_to "初めての方へ"
-        %li.main-box__category3 
-          =link_to "お知らせ"
+  -# .main-box
+  -#   %h2.main-box__title 佐藤さんのマイページ
+  -#   .main-box__notice
+  -#     .main-box__subtitle 
+  -#       %h3.main-box__important 重要なお知らせ
+  -#     .main-box__body
+  -#       .main-box__inbox
+  -#         .main-box__left
+  -#           =image_tag 'FURIMA_ICON.png', :width =>"31", :height =>"31"
+  -#           %h4.main-box__streetaddres 住所の設定を行ってください。<br>
+  -#           スムーズに購入を進めるために住所の設定を行ってください。
+  -#     .main-box__recently
+  -#       .main-box__subsubtitle 最近見た商品
+  -#       .main-box__body2 
+  -#         %p.main-box__center
+  -#           %p.main-box__text 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
+  -#   .main-box__group
+  -#     .main-box__submenu
+  -#       %h1.main-box__menutitle1 注目ブランド
+  -#       %p.main-box__box__brand
+  -#       %li.main-box__category1
+  -#         =link_to "NIKE"
+  -#       %li.main-box__category2
+  -#         =link_to "GU"
+  -#       %li.main-box__category3
+  -#         =link_to "ZARA"
+  -#     .main-box__submenu
+  -#       %h1.main-box__menutitle1 コンテンツ
+  -#       %li.main-box__category1 
+  -#         =link_to "ブランド一覧"
+  -#       %li.main-box__category2
+  -#         =link_to "カテゴリ一覧"
+  -#       %li.main-box__category3
+  -#         =link_to "キーワード一覧"
+  -#     .main-box__submenu
+  -#       %h1.main-box__menutitle1 ガイド
+  -#       %li.main-box__category1  
+  -#         =link_to "公式ガイド"
+  -#       %li.main-box_category2 
+  -#         =link_to "初めての方へ"
+  -#       %li.main-box__category3 
+  -#         =link_to "お知らせ"
+
+  .my-page__roguauto
+    %input{:type => "submit", :value => "ログアウト"}
