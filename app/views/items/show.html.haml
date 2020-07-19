@@ -8,7 +8,7 @@
           .itemBox__body
             %ul
               %li
-                -# = image_tag(@item.image) if @item.image.present?
+                -# = image_tag @item.img.url
                 = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
                 %ul
                   %li
@@ -62,19 +62,19 @@
                 %tr
                   %th 商品の状態
                   %td 
-                    = @item.condition
+                    = @item.condition_i18n
                 %tr
                   %th 配送料の負担
                   %td 
-                    = @item.shipping_pay
+                    = @item.shipping_pay_i18n
                 %tr
                   %th 発送元の地域
                   %td 
-                    = @item.shipping_area
+                    = @item.shipping_area_i18n
                 %tr
                   %th 発送日の目安
                   %td
-                    =@item.shipping_period
+                    =@item.shipping_period_i18n
           .optionalArea
             %ul
               %li.optionalBtn.likeBtn#likeBtn
