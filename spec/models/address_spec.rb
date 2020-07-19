@@ -77,9 +77,12 @@ RSpec.describe Address, type: :model do
       end
       context "firstname_readが半角" do
         let(:firstname_read) {"shinsaku"}
-        it {is_expected.to include("は全角で入力してください")}
+        it {is_expected.to include("は全角(ひらがな)で入力してください")}
       end
-    end
+      context "firstname_readが漢字" do
+        let(:firstname_read) {"晋作"}
+        it {is_expected.to include("は全角(ひらがな)で入力してください")}
+      end    end
   end
   describe "lastname_readのバリデーション" do
     let(:address) {FactoryBot.build(:address, lastname_read: lastname_read)}
@@ -101,7 +104,11 @@ RSpec.describe Address, type: :model do
       end
       context "lastname_readが半角" do
         let(:lastname_read) {"takasugi"}
-        it {is_expected.to include("は全角で入力してください")}
+        it {is_expected.to include("は全角(ひらがな)で入力してください")}
+      end
+      context "lastname_readが漢字" do
+        let(:lastname_read) {"高杉"}
+        it {is_expected.to include("は全角(ひらがな)で入力してください")}
       end
     end
   end
