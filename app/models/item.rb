@@ -6,4 +6,8 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand
   has_many :images, dependent: :destroy
+
+  enum status: { sell: 0, buy: 1, trading:2}
+
+  scope :on_sell, -> { where(status: 0)}
 end
