@@ -3,10 +3,12 @@
     .contentRight
       .topContent
         .itemBox
-          %h2.itemBox__name product1
+          %h2.itemBox__name 
+            =@item.name
           .itemBox__body
             %ul
               %li
+                -# = image_tag(@item.image) if @item.image.present?
                 = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
                 %ul
                   %li
@@ -33,35 +35,38 @@
               =link_to "購入画面に進む", new_user_session_path, data: { confirm: '【確認】購入はログインが必要です。移動しますか？' }, class: "btn-block__purchase"  
 
           .itemDetail
-            "親譲りの無鉄砲で小供の時から損ばかりしている。 小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。 なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。 弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰"
+            =@item.explanation
           .table
             %table
               %today
                 %tr
                   %th 出品者
                   %td
-                    = @item.user_id
+                    = @item.user.nickname
                 %tr
                   %th カテゴリー
                   %td
-                    %a(href= "#")レディース
-                    %br
-                    %a(href= "#")トップス
-                    %br
-                    %a(href= "#")Tシャツ/カットソー(半袖/袖なし)
+                    %a(href= "#")
+                      = @item.category.name
+                    -# %br
+                    -# %a(href= "#")トップス
+                    -# %br
+                    -# %a(href= "#")Tシャツ/カットソー(半袖/袖なし)
                 %tr
                   %th ブランド
                   %td
-                    = @item.brand_id
+                    = @item.brand.name
                 %tr
                   %th 商品のサイズ
                   %td
                 %tr
                   %th 商品の状態
-                  %td 新品/未使用
+                  %td 
+                    = @item.condition
                 %tr
                   %th 配送料の負担
-                  %td 送料込み（出品者負担）
+                  %td 
+                    = @item.shipping_pay
                 %tr
                   %th 発送元の地域
                   %td 
