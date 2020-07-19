@@ -97,7 +97,7 @@ RSpec.describe User, type: :model do
       end
       context "firstname_readが半角" do
         let(:firstname_read) {"shinsaku"}
-        it {is_expected.to include("は全角で入力してください")}
+        it {is_expected.to include("は全角(ひらがな)で入力してください")}
       end
     end
   end
@@ -122,7 +122,7 @@ RSpec.describe User, type: :model do
       end
       context "lastname_readが半角" do
         let(:lastname_read) {"takasugi"}
-        it {is_expected.to include("は全角で入力してください")}
+        it {is_expected.to include("は全角(ひらがな)で入力してください")}
       end
     end
   end
