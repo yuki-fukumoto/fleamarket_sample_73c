@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand
   has_many :images, dependent: :destroy
+  has_many :photos, dependent: :destroy
 
   enum status: { sell: 0, buy: 1, trading:2}
 
