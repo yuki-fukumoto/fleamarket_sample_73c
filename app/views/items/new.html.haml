@@ -45,6 +45,14 @@
             必須
         .column.form_category
           = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+      .container.category_1__container
+        .title
+        .column.form_category
+          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"}
+      .container.category_2__container
+        .title
+        .column.form_category
+          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
       .container
         .title
           .title__header
