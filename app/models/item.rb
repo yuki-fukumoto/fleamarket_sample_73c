@@ -5,5 +5,8 @@ class Item < ApplicationRecord
   belongs_to :purchase
   belongs_to :category
   belongs_to :brand
+  has_many :items_category_relations
+  has_many :categories, through: items_category_relations
   has_many :images, dependent: :destroy
+
 end
