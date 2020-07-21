@@ -10,13 +10,14 @@
           必須
       %p.comments
         最大5枚までアップロードできます
-      =f.fields_for :images, @images do |image_f|
-        -# .img
-        =image_f.label :image do
-          = image_f.file_field :image, class: "blind"
-          = image_f.hidden_field :image_cache, class: "image_cache"
-          .image_upload.image_area
-            %p= icon('fas', 'camera')
+      .image_box  
+        =f.fields_for :images, @images do |image_f|
+          .img
+            =image_f.label :image do
+              = image_f.file_field :image, class: "blind"
+              = image_f.hidden_field :image_cache, class: "image_cache"
+              .image_upload.image_area
+                %p= icon('fas', 'camera')
     %hr
     .item
       .title
