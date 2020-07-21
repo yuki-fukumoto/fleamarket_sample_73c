@@ -79,31 +79,43 @@ body {
   margin-top: 16px;
 }
 
-.image_area {
-  height: 200px;
-  width: 100%;
-}
-
-.image_upload {
-  border-radius: 5px;
-  background-color: #eeeeee;
-  border: dashed 1px rgb(204, 204, 204);
+.image_box{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 16px 0 0;
-
-  & p {
-    width: 36px;
-    text-align: center;
-    line-height: 36px;
-    font-size: 36px;
+  .img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+    .image_area {
+      height: 200px;
+      width: 120px;
+    }
+    
+    .image_upload {
+      border-radius: 5px;
+      background-color: #eeeeee;
+      border: dashed 1px rgb(204, 204, 204);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 16px 0 0;
+    
+      & p {
+        width: 36px;
+        text-align: center;
+        line-height: 36px;
+        font-size: 36px;
+      }
+      & :hover {
+        cursor: pointer;
+      }
+    }
   }
-  & :hover {
-    cursor: pointer;
+  .img img {
+    object-fit: contain;
   }
 }
+
 
 .image_message {
   height: 20px;
@@ -230,13 +242,6 @@ hr {
   border: #c5c4c4 solid 1px;
 }
 
-.img {
-  display: flex;
-  flex-wrap: wrap;
-}
-.img img {
-  object-fit: cover;
-}
 
 .bottom_area {
   height: 40px;

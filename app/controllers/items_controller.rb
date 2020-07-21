@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @images = []
+    5.times do |i|
+      image = @item.images.build
+      @images << image
+    end
   end
 
   def create
@@ -27,6 +32,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, image: []).merge(user_id: current_user.id)
+    binding.pry
+    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: :image).merge(user_id: current_user.id)
   end
 end
