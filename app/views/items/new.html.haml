@@ -10,14 +10,14 @@
           必須
       %p.comments
         最大5枚までアップロードできます
-      .image_box  
-        =f.fields_for :images, @images do |image_f|
-          .img
-            =image_f.label :image do
-              = image_f.file_field :image, class: "blind"
-              = image_f.hidden_field :image_cache, class: "image_cache"
-              .image_upload.image_area
-                %p= icon('fas', 'camera')
+      #image-box-1       
+        .item-num-0#image-box__container
+          = f.fields_for :images do |i|
+            .input-area
+              = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+              %label{for: "img-file"}
+                %i.fas.fa-camera
+               
     %hr
     .item
       .title
