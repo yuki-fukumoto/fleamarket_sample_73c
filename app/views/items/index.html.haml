@@ -115,59 +115,59 @@
           %h3.Title 新規投稿商品
       .topiclists
         .topiclist
-          =link_to "/" do
-            .topiclist__img
-              = image_tag(asset_path('molts.png'))
+          - @items.each do |item|
+            =link_to item_path(id: item.id) ,class:"topic__item" do
+            -item.image.first(1).each do |image|
+              = image_tag image.url,class:"topic__item__img" 
             .topiclist__body
-              %h3.name dd
+              = item.name 
               .place
                 %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa-star likeicon"}0
+                  %li 
+                  = item.price
+                  = "円"
                 %p （税込）
 
-        .topiclist
-          =link_to "/" do
-            .topiclist__img
-              = image_tag(asset_path('a004.png'))
-
-
+        -#.topiclist
+          - @items.each do |item|
+            =link_to item_path(id: item.id) ,class:"topic__item" do
+            -item.image.first(1).each do |image|
+              = image_tag image.url,class:"topic__item__img" 
             .topiclist__body
-              %h3.name dd
+              = item.name 
               .place
                 %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa-star likeicon"}0
+                  %li 
+                  = item.price
+                  = "円"
                 %p （税込）
 
-        .topiclist
-          =link_to "/" do
-            .topiclist__img
-              = image_tag(asset_path('a006.png'))
-
+        -#.topiclist
+          - @items.each do |item|
+            =link_to item_path(id: item.id) ,class:"topic__item" do
+            -item.image.first(1).each do |image|
+              = image_tag image.url,class:"topic__item__img" 
             .topiclist__body
-              %h3.name dd
+              = item.name 
               .place
                 %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa-star likeicon"}0
+                  %li 
+                  = item.price
+                  = "円"
                 %p （税込）
 
-        .topiclist
-          =link_to "/" do
-            .topiclist__img
-              = image_tag(asset_path('a007.png'))
-
+        -#.topiclist
+          - @items.each do |item|
+            =link_to item_path(id: item.id) ,class:"topic__item" do
+            -item.image.first(1).each do |image|
+              = image_tag image.url,class:"topic__item__img" 
             .topiclist__body
-              %h3.name dd
+              = item.name 
               .place
                 %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa fa-star likeicon"}0
+                  %li 
+                  = item.price
+                  = "円"
                 %p （税込）
 
   %section.topic_brand
