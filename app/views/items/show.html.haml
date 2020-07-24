@@ -9,10 +9,10 @@
             %ul
               %li
                 = image_tag @item.images.first.image.url
-                -# %ul
-                -#   - @item.images.each do |image|
-                -#   %li
-                -#     = image_tag @image.image.url, class: "image__list"
+                %ul
+                  - @item.images.each do |image|
+                    %li
+                      = image_tag image.image.url
                   
           .itemBox__price
             %span
