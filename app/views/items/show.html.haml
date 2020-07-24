@@ -8,7 +8,12 @@
           .itemBox__body
             %ul
               %li
-                -# = image_tag @item.img.url
+                -# =@item.image[0].url
+                -# = image_tag @item.image.url
+                -# =image_tag @item.image.src
+                -# =image_tag @item.image[]
+                -# = image_tag @item.image_id
+                -# .mainitem_image{style: "background-image: url(#{@item.image[0].url});"}
                 = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
                 %ul
                   %li
@@ -55,7 +60,7 @@
                 %tr
                   %th ブランド
                   %td
-                    = @item.brand.name
+                    -# = @item.brand.name
                 %tr
                   %th 商品のサイズ
                   %td
