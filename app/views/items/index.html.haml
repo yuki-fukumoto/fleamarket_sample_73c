@@ -3,7 +3,7 @@
     .top_page__header__inner
       %h1.icon
         =link_to "/" do
-          = image_tag 'logo.png', alt: 'logo', class: 'img'
+          = image_tag(asset_path('logo.png'), alt: 'logo', class: 'img')
       .search_box
         %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
         %button{type:"submit", class: "search_box__btn"}
@@ -36,9 +36,9 @@
         FURIMAはだれでもかんたんに出品・購入できる 
         %br フリマアプリです
       .Contents__btn
-        =link_to "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8" do
+        =link_to confirm_purchases_path do
           =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
-        =link_to "https://play.google.com/store" do
+        =link_to item_path(id: 0) do
           =image_tag "google-play-badge.png", class: 'google_btn'
 
 
@@ -117,7 +117,7 @@
         .topiclist
           =link_to item_path(6), method: :get do
             .topiclist__img
-              =image_tag 'molts.png'
+              = image_tag(asset_path('molts.png'))
             .topiclist__body
               %h3.name dd
               .place
@@ -130,7 +130,7 @@
         .topiclist
           =link_to item_path(12), method: :get do
             .topiclist__img
-              = image_tag 'a004.png'
+              = image_tag(asset_path('a004.png'))
 
               
             .topiclist__body
@@ -145,7 +145,7 @@
         .topiclist
           =link_to item_path(13), method: :get do
             .topiclist__img
-              = image_tag 'a006.png'
+              = image_tag(asset_path('a006.png'))
 
             .topiclist__body
               %h3.name dd
@@ -159,7 +159,7 @@
         .topiclist
           =link_to item_path(14), method: :get do
             .topiclist__img
-              = image_tag 'a007.png'
+              = image_tag(asset_path('a007.png'))
 
             .topiclist__body
               %h3.name dd
@@ -180,7 +180,7 @@
         .topiclist
           =link_to item_path(15), method: :get do
             .topiclist__img
-              = image_tag 'a004.png'
+              = image_tag(asset_path('a004.png'))
             .topiclist__body
               %h3.name dd
               .place
@@ -193,7 +193,7 @@
         .topiclist
           =link_to item_path(17), method: :get do
             .topiclist__img
-              = image_tag 'a006.png'
+              = image_tag(asset_path('a006.png'))
 
 
             .topiclist__body
@@ -208,7 +208,7 @@
         .topiclist
           =link_to item_path(20), method: :get do
             .topiclist__img
-              = image_tag 'molts.png'
+              = image_tag(asset_path('molts.png'))
 
             .topiclist__body
               %h3.name dd
@@ -222,7 +222,7 @@
         .topiclist
           =link_to item_path(6), method: :get do
             .topiclist__img
-              = image_tag 'a004.png'
+              = image_tag(asset_path('a004.png'))
 
 
             .topiclist__body
@@ -287,8 +287,8 @@
               お知らせ
     .FURIMA_LOGO
       =link_to "/" do
-        = image_tag '/assets/logo-white.png', alt: 'logo', class: 'img'
-        
+        = image_tag"logo-white.png", alt: 'logo'
+
     %p.copyright © FURIMA
 
     .puts_up

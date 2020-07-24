@@ -1,5 +1,5 @@
 .top_icon
-  =image_tag "logo.png"
+  =image_tag(asset_path("logo.png"))
 .contents
   =form_with model: @item, method: :post, local: true do |f|
     .item
@@ -10,12 +10,14 @@
           必須
       %p.comments
         最大5枚までアップロードできます
-      .img
-      =f.label :image do
-        = f.file_field :image, multiple: true, class: "blind"
-        = f.hidden_field :image_cache, class: "image_cache"
-        .image_upload.image_area
-          %p= icon('fas', 'camera')
+      #image-box-1       
+        .item-num-0#image-box__container
+          = f.fields_for :images do |i|
+            .input-area
+              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+              %label{for: "img-file"}
+                %i.fas.fa-camera
+               
     %hr
     .item
       .title
@@ -45,6 +47,14 @@
             必須
         .column.form_category
           = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+      .container.category_1__container
+        .title
+        .column.form_category
+          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"}
+      .container.category_2__container
+        .title
+        .column.form_category
+          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
       .container
         .title
           .title__header
@@ -115,3 +125,4 @@
         =link_to "もどる", root_path
     .notice
       禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+.bottom_area
