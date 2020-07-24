@@ -1,5 +1,5 @@
 .top_icon
-  =image_tag "logo.png"
+  =image_tag(asset_path("logo.png"))
 %main.wrapper-sign-in
   %article.wrapper-sign-in__article
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

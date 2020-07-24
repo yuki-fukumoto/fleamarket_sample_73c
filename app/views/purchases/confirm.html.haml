@@ -1,19 +1,19 @@
 .top_icon
-  =image_tag "logo.png"
+  =image_tag(asset_path("logo.png"))
 .confirm_contents
   .content_top_message
     購入内容の確認
   .items
     .items__image
-      = image_tag "images.jpeg"
+      = image_tag(asset_path("example.jpg"))
     .items__title
       .items__title__bar
         vintage1920年代martinウクレレstyle3k
       .items__title__price
         .items__title__price__board
-          ¥7000 
+          ¥7000
         .items__title__price__comment
-          (送料込) 
+          (送料込)
   %hr
   .payment_amount
     .payment_amount__title
@@ -36,9 +36,9 @@
           12/23
       .credit_card__company
         VISA
-  %hr      
+  %hr
   .confirm_adress
-    .confirm_adress__title  
+    .confirm_adress__title
       .confirm_adress__title__bar
         配送先
       =link_to "変更する >", class: "change"
@@ -49,13 +49,13 @@
     .confirm_adress__name
       矢沢永吉
   %hr
-  .content_bottom  
-    郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。    
-  
+  .content_bottom
+    郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+
   .confirm_btn
     .confirm_btn__buy
       %button{ onclick: "#", type: "submit", value: ""}購入する
-    .confirm_btn__cancel 
+    .confirm_btn__cancel
       =link_to "やめる", root_path
 
 .bottom_area

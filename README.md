@@ -69,17 +69,22 @@
 
 ### table
 
-| column       | type    | option                         |
-| ------------ | ------- | ------------------------------ |
-| name         | string  | null: false                    |
-| explanation  | text    | null: false                    |
-| price        | integer | null: false                    |
-| shipping_fee | integer | null: false                    |
-| condition    | integer | null: false                    |
-| user_id      | integer | null: false, foreign_key: true |
-| category_id  | integer | null: false, foreign_key: true |
-| brand_id     | integer | foreign_key: true              |
-| purchase_id  | integer | null: false, foreign_key: true |
+| column          | type    | option                         |
+| --------------- | ------- | ------------------------------ |
+| name            | string  | null: false                    |
+| explanation     | text    | null: false                    |
+| price           | integer | null: false                    |
+| shipping_fee    | integer | null: false                    | -> delete |
+| shipping_pay    | integer | null: false, default: 0        | -> add |
+| shipping_area   | integer | null: false, default: 0        | -> add |
+| shipping_period | integer | null: false, default: 0        | -> add |
+| condition       | integer | null: false, default: 0        |
+| image           | string  | null: false                    |
+| status          | string  | null: false, default: 0        |
+| user_id         | integer | null: false, foreign_key: true |
+| category_id     | integer | null: false, foreign_key: true |
+| brand_id        | integer | foreign_key: true              |
+| purchase_id     | integer | null: false, foreign_key: true |
 
 ### association
 

@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth , if: :production?
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
   private
+
   def production?
     Rails.env.production?
   end
@@ -12,4 +14,23 @@ class ApplicationController < ActionController::Base
       password == Rails.application.credentials[:basic_auth][:pass]
     end
   end
+
+  def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to @event, notice: 'Event was successfully created.'
+    else
+      render :new
+    end
+  end
+
+
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
+  end
+
+
 end
+
+
