@@ -24,7 +24,7 @@
             - if user_signed_in? && current_user.id == @item.user_id 
               =link_to "商品を編集する", "/", method: :get, class: "btn-block__edit"
               =link_to "商品を削除する", item_path(@item.id), data: { confirm: '【確認】本当に削除しますか？' }, method: :delete, class: "btn-block__delete" 
-            -# - elsif user_signed_in? && カード未登録
+              -# - elsif user_signed_in? && カード未登録
               -# =link_to "購入画面に進む", "/", data: { confirm: '【確認】クレジットカード登録が必要です。登録画面に移動しますか？' }, class: "btn-block__purchase"
             - elsif user_signed_in?   
               =link_to "購入画面に進む", "/purchases/confirm", method: :post, class: "btn-block__purchase"
