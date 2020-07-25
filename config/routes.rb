@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :items, except: :index
   get 'categories/get_child', to: "categories#get_child"
 
+  resources :creditcards, only: [:new, :create]
+
   resources :purchases do
     collection do
       get :confirm

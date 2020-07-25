@@ -1,0 +1,11 @@
+= form_with model: @creditcard, method: :post, local: true do |f|
+  カード番号
+  = f.number_field :number, id: "card_number"
+  cvc
+  = f.number_field :cvc, id: "cvv"
+  期限(年)
+  = f.number_field :valid_year, id: "exp_year"
+  期限(月)
+  = f.number_field :valid_month, id: "exp_month"
+  = f.hidden_field :token, id: "card_token"
+  = f.submit "登録", id: "token"
