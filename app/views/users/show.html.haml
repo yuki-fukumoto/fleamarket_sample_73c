@@ -2,8 +2,20 @@
   .top_page__header
     .top_page__header__inner
       %h1.icon
-        =image_tag 'FURIMA＿ROGO.svg'
-      %h2{class: "top_page__header__inner__registration"}クレジットカード登録
+        =image_tag 'FURIMA＿ROGO.svg' 
+      %h2{class:"top_page__header__inner__registration"} クレジットカード情報管理
+
+.main_container 
+  %h3{class: "main-container__title"}クレジットカード情報の登録
+
+  .main_container__table
+    %h4{class:"main_container__table__title1"} クレジットカード情報
+    %h5{class:"main_container__table__title2"} カード会社
+-# .top_page
+-#   .top_page__header
+-#     .top_page__header__inner
+-#       %h1.icon
+-#         =image_tag 'FURIMA＿ROGO.svg'
 -#       .search_box
 -#         %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
 -#         %button{type:"submit", class: "search_box__btn"}
@@ -61,7 +73,7 @@
 -#           =link_to "ログアウト"
 
 -#   .main-box
--#     %h2.main-box__title 佐藤さんのマイページ
+-#     %h2.main-box__title 佐藤さんのマイページ 
 -#     .main-box__notice
 -#       .main-box__subtitle 
 -#         %h3.main-box__important 重要なお知らせ
