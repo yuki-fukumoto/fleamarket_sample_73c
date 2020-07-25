@@ -30,6 +30,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
   end
 
+  def confirm_user_signed_in?
+    if user_signed_in?
+    else
+      redirect_to root_path, notice: 'ログイン後、操作してください'
+    end
+  end
 
 end
 
