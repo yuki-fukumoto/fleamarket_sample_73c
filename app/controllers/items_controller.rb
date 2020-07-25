@@ -23,7 +23,16 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    # binding.pry
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+  end
+  
 
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
@@ -35,4 +44,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image]).merge(user_id: current_user.id)
   end
+
 end
