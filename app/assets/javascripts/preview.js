@@ -45,6 +45,8 @@ $(document).on("turbolinks:load", function () {
     });
     //削除ボタンをクリックすると発火するイベント
     $(document).on("click", '.item-image__operetion--delete', function(){
+      //querySelectorでfile_fieldを取得
+      var file_field = document.querySelector('input[type=file]')
       //削除を押されたプレビュー要素を取得
       var target_image = $(this).parent().parent()
       //削除を押されたプレビューimageのfile名を取得
@@ -54,7 +56,6 @@ $(document).on("turbolinks:load", function () {
         //inputタグに入ったファイルを削除
         $('input[type=file]').val(null)
         dataBox.clearData();
-        console.log(dataBox)
       }else{
         //プレビューが複数の場合
         $.each(file_field.files, function(i,input){
@@ -72,6 +73,9 @@ $(document).on("turbolinks:load", function () {
       var num = $('.item-image').length
       $('#image-box__container').show()
       $('#image-box__container').attr('class', `item-num-${num}`)
+      //inputタグに入ったファイルを削除
+      $('input[type=file]').val(null)
+        dataBox.clearData();
     })
   });
 
