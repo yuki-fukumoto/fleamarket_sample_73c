@@ -115,18 +115,18 @@
           %h3.Title 新規投稿商品
       .topiclists
         .topiclist
-        - @items.each do |item|
-          =link_to item_path(id: item.id) ,class:"topic__item" do
-            -item.images.first(1).each do |image|
-              = image_tag image.image.url, class:"topic__item__img"
-            .topiclist__body
-              = item.name 
-              .place
-                %ul
-                  = item.price
-                  %li
-                    %i{class:"fa fa-star likeicon"}0
-                %p （税込） 
+          - @items.each do |item|
+            =link_to item_path(id: item.id) ,class:"topiclist__item" do
+              -item.images.first(1).each do |image|
+                = image_tag image.image.url, class:"topiclist__item__img"
+              .topiclist__body
+                = item.name 
+                .place
+                  %ul
+                    = item.price
+                    %li
+                      %i{class:"fa fa-star likeicon"}0
+                  %p （税込） 
 
   %section.topic_brand
     %h2.topic_head ピックアップブランド
