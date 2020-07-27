@@ -68,4 +68,8 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
   has_one :purchase
+
+  enum status: {sell: 0, buy: 1, trading:2}, _prefix: :status
+
+  scope :on_sell, -> { where(status: 0) }
 end

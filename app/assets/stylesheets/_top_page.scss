@@ -251,9 +251,11 @@ body {
     width: 780px;
     margin: 0 auto;
     justify-content: space-around;
+    overflow-x: scroll;
     .topiclist {
       width: 220px;
       background-color: #fff;
+      min-width: 2200px;
       &__img img {
         height: 150px;
         width: 220px;
