@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :confirm_user_signed_in?, except: [:index, :show]
 
   def index
-    @items = Item.all
+    @items = Item.on_sell.includes([:images]).order(created_at: :desc)
   end
 
   def new
