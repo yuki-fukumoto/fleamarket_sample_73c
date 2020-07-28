@@ -7,10 +7,87 @@
 
 .main_container 
   %h3{class: "main-container__title"}クレジットカード情報の登録
-
-  .main_container__table
-    %h4{class:"main_container__table__title1"} クレジットカード情報
-    %h5{class:"main_container__table__title2"} カード会社
+  .main_container__title__table
+    .main_container__title__table__group1 
+      クレジットカード情報
+    .main_container__title__table__group2 
+      .group
+        .main_container__title__table__group2__name1
+          カード会社
+        %select{name: "credit_card_id", class: "main_container__title__table__group2__credit" }
+          %option{value: "0" } 選択してください
+          %option{value: "1" } VISA
+          %option{value: "2" } MASTER
+          %option{value: "3" } JCB
+          %option{value: "4" } Diners
+          %option{value: "5" } AMEX
+    .main_container__title__table__group3 
+      .main_container__title__table__group3__name2
+        カード番号
+      .main_container__title__table__group3__data2
+    .main_container__title__table__group4 
+      .main_container__title__table__group4__name2
+        カード有効期限
+      .main_container__title__table__group4
+        .main_container__title__table__group4__data3
+          「月」/「年」の順に選択します。カード上の表記にご注意ください。
+          .main_container__title__table__group4__data3__block
+            %select{name: "credit_card_line", class: "main_container__title__table__group4__data3__block__mouth" }
+              %option{value: "0" } -
+              %option{value: "1" } 01
+              %option{value: "2" } 02
+              %option{value: "3" } 03
+              %option{value: "4" } 04
+              %option{value: "5" } 05
+              %option{value: "6" } 06
+              %option{value: "7" } 07
+              %option{value: "8" } 08
+              %option{value: "9" } 09
+              %option{value: "10" } 10
+              %option{value: "11" } 11
+              %option{value: "12" } 12
+            .main_container__title__table__group4__data3__block__label
+              月
+            %select{name: "credit_card_year", class: "main_container__title__table__group4__data3__block__year" }
+              %option{value: "0" } -
+              %option{value: "2020" } 20
+              %option{value: "2021" } 21
+              %option{value: "2022" } 22
+              %option{value: "2023" } 23
+              %option{value: "2024" } 24
+              %option{value: "2025" } 25
+              %option{value: "2026" } 26
+              %option{value: "2027" } 27
+              %option{value: "2028" } 28
+              %option{value: "2029" } 29
+              %option{value: "2030" } 30
+              %option{value: "2031" } 31
+              %option{value: "2032" } 32
+              %option{value: "2033" } 33
+              %option{value: "2034" } 34
+              %option{value: "2035" } 35
+              %option{value: "2036" } 36
+              %option{value: "2037" } 37
+              %option{value: "2038" } 38
+              %option{value: "2039" } 39
+              %option{value: "2040" } 40
+            .main_container__title__table__group4__data3__block__year2
+              年
+    .main_container__title__table__group5
+      .main_container__title__table__group5__name2
+        カード名義人
+      .main_container__title__table__group5__box3
+        .main_container__title__table__group5__data4
+          ご本人様名義のみ有効。ご家族の名義などでは登録できません。
+        %input{type: "text", name: "card_owner", class: "main_container__title__table__group5__owner"}
+    .main_container__title__table__group6 
+      .main_container__title__table__group6__name2  
+        通常使うカード
+      .main_container__title__table__group6__data5
+        2枚以上のカードを登録しているときは,通常使うカード」が優先的に選ばれます。
+        %br
+        このカードは現在「お買い物で通常使うカード」です.
+          
 -# .top_page
 -#   .top_page__header
 -#     .top_page__header__inner
