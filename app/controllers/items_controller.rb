@@ -31,6 +31,15 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to root_path
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item.update(update_params)
+    redirect_to root_path, notice: '商品を編集しました'
+  end
   
 
   def collection_child_categories
