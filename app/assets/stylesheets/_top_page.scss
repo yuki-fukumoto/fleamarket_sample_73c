@@ -251,9 +251,9 @@ body {
     width: 780px;
     margin: 0 auto;
     overflow-x: scroll;
+    background-color: #fff;
     .topiclist {
       width: 220px;
-      background-color: #fff;
       min-width: 220px;
       display: flex;
       &__item__img{
