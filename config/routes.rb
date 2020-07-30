@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :creditcards, only: [:new, :create]
 
-  resources :purchases do
+  resources :purchases, only: :create do
     collection do
       get :confirm
     end

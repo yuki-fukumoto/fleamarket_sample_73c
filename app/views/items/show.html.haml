@@ -51,11 +51,13 @@
                   %td 送料込み（出品者負担）
                 %tr
                   %th 発送元の地域
-                  %td 
+                  %td
                     = link_to '青森県',"#"
                 %tr
                   %th 発送日の目安
                   %td 1-2日で配送
+          .purchase
+            =link_to "購入", confirm_purchases_path(id: @item)
           .optionalArea
             %ul
               %li.optionalBtn.likeBtn#likeBtn
@@ -78,3 +80,4 @@
           %button.commentBtn-show{name: "button", type: "submit"}
             %i.fa.fa-comment
             コメントする
+

@@ -1,5 +1,5 @@
 class CreditcardsController < ApplicationController
-
+  include JsHelper
   def new
     @creditcard = Creditcard.new
   end
@@ -8,12 +8,14 @@ class CreditcardsController < ApplicationController
     if creditcard = Creditcard.create_card(creditcard_params)
       redirect_to root_path, notice: 'クレジットカードを登録しました'
     else
-      render :new
+      respond_to do |format|
+        format.json
+      end
     end
   end
 
   private
     def creditcard_params
-      params.require(:creditcard).permit(:card_id).merge(user_id: current_user.id)
+      params.require(:creditcard).permit(:token).merge(user_id: current_user.id)
     end
 end

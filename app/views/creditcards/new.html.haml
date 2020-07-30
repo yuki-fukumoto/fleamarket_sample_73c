@@ -1,4 +1,4 @@
-= form_with model: @creditcard, method: :post, local: true do |f|
+= form_with model: @creditcard, method: :post, local: true, id: "new_creditcard" do |f|
   カード番号
   = f.number_field :number, id: "card_number"
   cvc

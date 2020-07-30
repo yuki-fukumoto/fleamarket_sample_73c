@@ -8,7 +8,7 @@
       = image_tag(asset_path("example.jpg"))
     .items__title
       .items__title__bar
-        vintage1920年代martinウクレレstyle3k
+        =@item.name
       .items__title__price
         .items__title__price__board
           ¥7000
@@ -54,6 +54,7 @@
 
   .confirm_btn
     .confirm_btn__buy
+      =link_to "購入する", purchases_path, method: :post
       %button{ onclick: "#", type: "submit", value: ""}購入する
     .confirm_btn__cancel
       =link_to "やめる", root_path
