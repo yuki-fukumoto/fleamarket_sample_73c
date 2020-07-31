@@ -18,7 +18,7 @@
       %ul.list__right
         - if user_signed_in?
           %li.list__right__log_in
-            =link_to "マイページ",
+            =link_to "マイページ", user_path(current_user.id)
           %li.list__right__log_in
             =link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
@@ -31,9 +31,9 @@
   %section.top_visual
 
     .Contents
-      %h2.Contents__title 人生を変えるフリマアプリ 
+      %h2.Contents__title 人生を変えるフリマアプリ
       %p.Contents__subtitle
-        FURIMAはだれでもかんたんに出品・購入できる 
+        FURIMAはだれでもかんたんに出品・購入できる
         %br フリマアプリです
       .Contents__btn
         =link_to confirm_purchases_path do
@@ -120,13 +120,13 @@
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
               .topiclist__body
-                = item.name 
+                = item.name
                 .place
                   %ul
                     = item.price
                     %li
                       %i{class:"fa fa-star likeicon"}0
-                  %p （税込） 
+                  %p （税込）
 
   %section.topic_brand
     %h2.topic_head ピックアップブランド
@@ -146,7 +146,7 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                %p （税込） 
+                %p （税込）
 
         .topiclist
           =link_to item_path(17), method: :get do
@@ -161,7 +161,7 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                %p （税込） 
+                %p （税込）
 
         .topiclist
           =link_to item_path(20), method: :get do
@@ -175,7 +175,7 @@
                   %li 1000円
                   %li
                     %i{class:"fa fa-star likeicon"}0
-                %p （税込） 
+                %p （税込）
 
         .topiclist
           =link_to item_path(15), method: :get do
@@ -189,8 +189,8 @@
                 %ul
                   %li 1000円
                   %li
-                    %i{class:"fa fa-star likeicon"}0  
-                %p （税込） 
+                    %i{class:"fa fa-star likeicon"}0
+                %p （税込）
 
   .banner
     .foot
@@ -208,39 +208,39 @@
       %li.content
         %h2.content__head FURIMAについて
         %ul
-          %li 
+          %li
             =link_to "/" do
               会社概要（運営会社）
-          %li 
+          %li
             =link_to "/" do
               プライバシーポリシー
-          %li 
+          %li
             =link_to "/" do
               FURIMA利用規約
-          %li 
+          %li
             =link_to "/" do
               ポイントに関する特約
 
       %li.content
         %h2.content__head FURIMAを見る
         %ul
-          %li 
+          %li
             =link_to "/" do
               カテゴリー一覧
-          %li 
+          %li
             =link_to "/" do
               ブランド一覧
 
       %li.content
         %h2.content__head  ヘルプ＆ガイド
         %ul
-          %li 
+          %li
             =link_to "/" do
               FURIMAガイド
-          %li 
+          %li
             =link_to "/" do
               FURIMAロゴ利用ガイドライン
-          %li 
+          %li
             =link_to "/" do
               お知らせ
     .FURIMA_LOGO
