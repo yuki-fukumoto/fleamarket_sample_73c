@@ -9,3 +9,6 @@
   = f.number_field :valid_month, id: "exp_month"
   = f.hidden_field :token, id: "card_token"
   = f.submit "登録", id: "token"
+  = f.hidden_field :token
+  = f.hidden_field :error
+

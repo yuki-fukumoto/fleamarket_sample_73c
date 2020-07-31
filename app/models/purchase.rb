@@ -8,7 +8,6 @@ class Purchase < ApplicationRecord
   Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
 
   def self.create_charge(params, item)
-    binding.pry
     creditcard = Creditcard.find(params[:creditcard_id])
     charge = Payjp::Charge.create(
       amount: item.price,

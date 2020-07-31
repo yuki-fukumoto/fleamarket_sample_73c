@@ -17,6 +17,9 @@ class PurchasesController < ApplicationController
     user = User.find(current_user.id)
     @address = user.addresses.first
     @creditcard = user.creditcards.first
+    if @creditcard.blank?
+      redirect_to new_creditcard_path, notice: "購入前にクレジットカードをご登録ください"
+    end
   end
 
   private

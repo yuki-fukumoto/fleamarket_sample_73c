@@ -2,13 +2,7 @@
 document.addEventListener("DOMContentLoaded", (e) => {
   Payjp.setPublicKey("pk_test_91e3960108d6cf0addff2d8c");
 
-  // ボタンのイベントハンドリング
-  const btn = $("#token");
-  // var preventEvent = true;
-
-  $("#new_creditcard").on("submit", function (e) {
-    e.preventDefault();
-
+  $("#new_creditcard").submit(function (e) {
     // カード情報生成
     let card = {
       number: document.getElementById("card_number").value,
@@ -17,36 +11,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
       exp_year: document.getElementById("exp_year").value,
     };
 
-    console.log(card);
-
-    // トークン生成
+    // トークン生成のためのAPI通信の実行
     Payjp.createToken(card, (status, response) => {
+      console.log(status);
+      console.log(response);
       if (status === 200) {
-        $.ajax({
-          type: "post",
-          url: "/creditcards",
-          data: {
-            creditcard: {
-              token: response.id,
-            },
-          },
-        });
+        // トークン生成 成功時：トークンIDをフォームに代入
+        $("#creditcard_token").val(response.id);
       } else {
-        $.ajax({
-          type: "post",
-          url: "/creditcards",
-          data: {
-            creditcard: {
-              token: response.id,
-            },
-          },
-          dataType: "json",
-        }).done(function () {
-          $("#token").prop("disabled", false);
-          $(".notice").empty();
-          $(".notice").append("クレジットカードの登録に失敗しました");
-        });
+        // トークン生成 失敗時：エラーコードをフォームに代入
+        $("#creditcard_error").val(response.error.code);
       }
+      // フォーム送信
+      $("#new_creditcard").off("submit");
+      $("#new_creditcard").submit();
     });
+    return false;
   });
 });

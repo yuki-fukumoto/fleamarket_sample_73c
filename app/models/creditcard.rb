@@ -1,4 +1,6 @@
 class Creditcard < ApplicationRecord
+  attr_accessor :token, :error
+
   validates :customer_id, :card_id, presence: true
 
   belongs_to :user
