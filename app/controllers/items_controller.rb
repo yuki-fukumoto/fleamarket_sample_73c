@@ -1,15 +1,16 @@
 class ItemsController < ApplicationController
+  before_action :confirm_user_signed_in?, except: [:index, :show]
+
   def index
-    @items = Item.all
+    @items = Item.on_sell.includes([:images]).order(created_at: :desc)
   end
 
   def new
     @item = Item.new
     @images = []
-    5.times do |i|
-      image = @item.images.build
-      @images << image
-    end
+    
+    image = @item.images.build
+    @images << image
   end
 
   def create
@@ -25,6 +26,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
+  end
+  
+
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
@@ -32,6 +40,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image]).merge(user_id: current_user.id)
   end
+
 end

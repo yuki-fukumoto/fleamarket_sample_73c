@@ -13,6 +13,7 @@ module FleamarketSample73c
     config.time_zone = 'Asia/Tokyo'
     config.active_record.default_timezone = :local
     config.i18n.default_locale = :ja
+    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
 
     config.generators do |g|
       g.test_framework :rspec,

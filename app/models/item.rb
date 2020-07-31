@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  # validates :image, presence: {message: "は1枚以上は登録してください"}
+  validates_associated :images, presence: {message: "は1枚以上は登録してください"}
   validates :name, presence: {message: "が空欄です"}, length: {maximum: 40, message: "は40文字以内で入力してください"}
   validates :explanation, presence: {message: "が空欄です"}, length: {maximum: 1000, message: "は1000文字以内で入力してください"}
   validates :category_id, presence: {message: "は少なくともメイングループから1つ選択してください"}
@@ -66,6 +66,10 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand, optional: true
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images, reject_if: proc{|attributes| attributes["image"].blank?}
+  accepts_nested_attributes_for :images
   has_one :purchase
+
+  enum status: {sell: 0, buy: 1, trading:2}, _prefix: :status
+
+  scope :on_sell, -> { where(status: 0) }
 end
