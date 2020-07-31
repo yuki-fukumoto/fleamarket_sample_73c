@@ -72,4 +72,7 @@ class Item < ApplicationRecord
   enum status: {sell: 0, buy: 1, trading:2}, _prefix: :status
 
   scope :on_sell, -> { where(status: 0) }
+
+  has_many :favorites, dependent: :destroy
+  has_many :favorites, through: :favorites, source: :user
 end

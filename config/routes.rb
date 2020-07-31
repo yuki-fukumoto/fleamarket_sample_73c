@@ -9,4 +9,7 @@ Rails.application.routes.draw do
       post :confirm 
     end
   end
+  resources :items do
+    resources :favorites, only: [:index, :create, :destroy]
+  end
 end
