@@ -3,61 +3,75 @@
     .contentRight
       .topContent
         .itemBox
-          %h2.itemBox__name product1
+          %h2.itemBox__name 
+            =@item.name
           .itemBox__body
             %ul
               %li
-                = image_tag src = "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
+                = image_tag @item.images.first.image.url, class: "main_image"
                 %ul
-                  %li
-                    = image_tag src ="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-                  %li
-                    =image_tag src ="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"
-                  %li
-                    =image_tag src ="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
-
+                  - @item.images.each do |image|
+                    %li
+                      = image_tag image.image.url, class: "thumbnails"
+                  
           .itemBox__price
-            %span ¥10,000
+            %span
+              = "#{@item.price}円"
             .itemBox__price-detail
               %span (税込)
-              %span 送料込
+              %span 送料込   
+          .btn-block   
+            - if user_signed_in? && current_user.id == @item.user_id 
+              =link_to "商品を編集する", "/", method: :get, class: "btn-block__edit"
+              =link_to "商品を削除する", item_path(@item.id), data: { confirm: '【確認】本当に削除しますか？' }, method: :delete, class: "btn-block__delete" 
+              -# - elsif user_signed_in? && カード未登録
+              -# =link_to "購入画面に進む", "/", data: { confirm: '【確認】クレジットカード登録が必要です。登録画面に移動しますか？' }, class: "btn-block__purchase"
+            - elsif user_signed_in?   
+              =link_to "購入画面に進む", "/purchases/confirm", method: :post, class: "btn-block__purchase"
+            - else 
+              =link_to "購入画面に進む", new_user_session_path, data: { confirm: '【確認】購入はログインが必要です。移動しますか？' }, class: "btn-block__purchase"  
+
           .itemDetail
-            "親譲りの無鉄砲で小供の時から損ばかりしている。 小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。 なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。 弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰"
+            =@item.explanation
           .table
             %table
               %today
                 %tr
                   %th 出品者
-                  %td hoge
+                  %td
+                    = @item.user.nickname
                 %tr
                   %th カテゴリー
                   %td
-                    %a(href= "#")レディース
-                    %br
-                    %a(href= "#")トップス
-                    %br
-                    %a(href= "#")Tシャツ/カットソー(半袖/袖なし)
+                    %a(href= "#")
+                      = @item.category.name
+                    -# %br
+                    -# %a(href= "#")トップス
+                    -# %br
+                    -# %a(href= "#")Tシャツ/カットソー(半袖/袖なし)
                 %tr
                   %th ブランド
                   %td
+                    -# = @item.brand.name
                 %tr
                   %th 商品のサイズ
                   %td
                 %tr
                   %th 商品の状態
-                  %td 新品/未使用
+                  %td 
+                    = @item.condition_i18n
                 %tr
                   %th 配送料の負担
-                  %td 送料込み（出品者負担）
+                  %td 
+                    = @item.shipping_pay_i18n
                 %tr
                   %th 発送元の地域
-                  %td
-                    = link_to '青森県',"#"
+                  %td 
+                    = @item.shipping_area_i18n
                 %tr
                   %th 発送日の目安
-                  %td 1-2日で配送
-          .purchase
-            =link_to "購入", confirm_purchases_path(id: @item)
+                  %td
+                    =@item.shipping_period_i18n
           .optionalArea
             %ul
               %li.optionalBtn.likeBtn#likeBtn
