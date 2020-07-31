@@ -20,7 +20,7 @@
           %li.list__right__log_in
             =link_to "マイページ", "#"
           %li.list__right__log_in
-            =link_to "ログアウト", destroy_user_session_path, method: :delete
+            =link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"}
         - else
           %li.list__right__log_in
             =link_to "ログイン", new_user_session_path
@@ -127,7 +127,6 @@
                     %li
                       %i{class:"fa fa-star likeicon"}0
                   %p （税込） 
-          = paginate(@items) 
 
   %section.topic_brand
     %h2.topic_head ピックアップブランド
