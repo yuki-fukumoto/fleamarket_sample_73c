@@ -58,10 +58,10 @@ body {
       height: 32px;
       line-height: 32px;
 
-        a {
-        text-decoration: none;
-        color: #333;
-        }
+      // a {
+      //   text-decoration: none;
+      //   color: #333;
+      //   }
 
       &__left {
         position: relative;
@@ -96,63 +96,66 @@ body {
   }
 }  
 
-.side-box {
+.side {
   display: flex;
-  margin: 20px 150px ;
-  padding: 20px;  
-}
+  
+  .side-box {
+    display: flex;
+    margin: 20px 150px ;
+    padding: 20px;  
 
-.side-menu {
-  padding: 8px 0 0;
-  font-size: 15px;
-  position: relative;
-  min-height: 1px;
-  padding-left: 4px;
-  padding-right: 20px;
-  width: 210px;
-  max-width: 1000;
+    .side-menu {
+      padding: 8px 0 0;
+      font-size: 15px;
+      position: relative;
+      min-height: 1px;
+      padding-left: 4px;
+      padding-right: 20px;
+      width: 210px;
+      max-width: 1000;
 
-  &__title {
-    margin: 0 0 8px;
-    padding: 0 8px 8px;
-    font-size: 16px;
-    font-weight: bold;
-    box-sizing: border-box;
+      &__title {
+        margin: 0 0 8px;
+        padding: 0 8px 8px;
+        font-size: 16px;
+        font-weight: bold;
+        box-sizing: border-box;
+      }
+
+      .group-list {
+        margin-bottom: 20px;
+        padding-left: 0;
+      }
+
+      .group-list li {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        line-height: 1.7;
+      }
+    }
   }
-
-  .group-list {
-    margin-bottom: 20px;
-    padding-left: 0;
-  }
-
-  .group-list li {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    line-height: 1.7;
-  }
-}
-
-.my-page__logout {
-  height: 50px;
-  padding: 120px 250px;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 20px;
-  border-color: #e5e5e5;
-  background-color: white;
-  padding-top: 80px;
-
-  input { 
-    background-color: #3CCACE;
-    color: #f5f5f5;
-    font-size: 14px;
-    border-width: 3px;
+  .side-logout {
+    height: 50px;
+    padding: 120px 250px;
     border-style: solid;
+    border-width: 3px;
+    border-radius: 20px;
     border-color: #e5e5e5;
-    padding: 10px 150px;
+    background-color: white;
+    padding-top: 80px;
+
+    input { 
+      background-color: #3CCACE;
+      color: #f5f5f5;
+      font-size: 14px;
+      border-width: 3px;
+      border-style: solid;
+      border-color: #e5e5e5;
+      padding: 10px 150px;
+    }
   }
 }
