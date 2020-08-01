@@ -45,7 +45,8 @@ body {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     background-color: #f5f5f5;
-    color: black;;
+    color: black;
+    border: solid 1px #ABABAB;
   }
 
   &__explanation {
@@ -154,7 +155,7 @@ body {
 
     &__data3 {
       font-size: small;
-      padding: 10px;
+      padding: 8px;
       padding-bottom: 5px;
       width: 650px;
       border-top: solid 1px #ABABAB;
@@ -168,7 +169,6 @@ body {
         &__mouth  {
           font-size: small;
           padding-bottom: 2px;
-          margin-left: 8px;
         }
 
         &__label {
@@ -212,7 +212,7 @@ body {
     
     &__data4 {
       font-size: small;
-      padding: 10px;
+      padding: 8px;
       padding-bottom: 5px;
     }
 
@@ -220,13 +220,50 @@ body {
       padding: 1px;
       width: 400px;
       height: 25px;
-      margin-left: 10px;
-      margin-bottom: 1px;
+      margin-left: 8px;
+      margin-bottom: 3px;
       font-size: small;
     }
   }
 
   &__group6 {
+    background-color: #f5f5f5;
+    color: black; 
+    line-height: 1.7;
+    display: flex;
+    padding: 0px;
+    border-top: 1px solid #ABABAB;
+    border-right: 1px solid #ABABAB;
+
+    &__name2 {
+      background-color: #f5f5f5;
+      color: black;
+      border-right: 1px solid #ABABAB; 
+      line-height: 1.7;
+      width: 200px;
+      padding: 20px 5px;
+      border-left: 1px solid #ABABAB;
+    }
+
+    &__box {
+      padding: 0px;
+
+      &__code {
+        font-size: smaller;
+        margin-top: 8px;
+        margin-left: 8px;
+      }
+
+      &__securitycode {
+        margin: 8px;
+        width: 180px;
+        height: 25px;
+        font-size: small;
+      }
+    }
+  }
+
+  &__group7 {
     background-color: #f5f5f5;
     color: black; 
     line-height: 1.7;
@@ -290,8 +327,7 @@ body {
       padding: 40px;
     }
   }
-}
- 
+} 
 
 
     
