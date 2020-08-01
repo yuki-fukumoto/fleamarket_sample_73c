@@ -12,10 +12,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
   %body
-    .notice
-      =notice
-    .alert
-      =alert
+    = render 'layouts/notifications'
     = yield
 
 

@@ -69,7 +69,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   has_one :purchase
 
-  enum status: {sell: 0, buy: 1, trading:2}, _prefix: :status
+  enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 
   scope :on_sell, -> { where(status: 0) }
 end
