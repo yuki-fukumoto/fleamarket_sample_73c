@@ -96,4 +96,3 @@ end
   gem 'carrierwave'
   gem 'fog'
   gem 'enum_help'
-  
