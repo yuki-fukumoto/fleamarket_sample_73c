@@ -6,6 +6,144 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      item: 商品
+      brand: ブランド
+      address: 送付先住所
+    attributes:
+      item:
+        name: 商品名
+        explanation: 商品説明
+        price: 価格
+        category: 商品カテゴリ
+        brand: ブランド
+        shipping_pay: 送料負担先
+        shipping_area: 発送元の地域
+        shipping_period: 発送までの日数
+        condition: 商品の状態
+        image: 商品画像
+        status: 出品状態
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        firstname: 名前(名)
+        lastname: 名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        birthday: 誕生日
+        password_confirmation: 確認用パスワード
+      user/addresses:
+        firstname: 名前(名)
+        lastname: 名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        zip: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address_line: 番地
+        building: 建物・ビル名
+        room: 部屋番号
+        telephone: 電話番号
+      address:
+        firstname: 名前(名)
+        lastname: 名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        zip: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address_line: 番地
+        building: 建物・ビル名
+        room: 部屋番号
+        telephone: 電話番号
+  enum:
+    item:
+      condition:
+        yyy: 商品の状態を選ぶ
+        brand_new: 新品、未使用
+        mint: 未使用に近い
+        bit_damaged: 目立った傷や汚れなし
+        slight_damaged: やや傷や汚れあり
+        damaged: 傷や汚れあり
+        junk: 全体的に状態が悪い
+      shipping_pay:
+        exhibitor: 送料込み(出品者負担)
+        customer: 着払い(購入者負担)
+      shipping_area:
+        xxx: 発送元の地域を選ぶ
+        hokkaido: 北海道
+        aomori: 青森県
+        iwate: 岩手県
+        miyagi: 宮城県
+        akita: 秋田県
+        yamagata: 山形県
+        fukushima: 福島県
+        ibaraki: 茨城県
+        tochigi: 栃木県
+        gunma: 群馬県
+        saitama: 埼玉県
+        chiba: 千葉県
+        tokyo: 東京都
+        kanagawa: 神奈川県
+        niigata: 新潟県
+        toyama: 富山県
+        ishikawa: 石川県
+        fukui: 福井県
+        yamanashi: 山梨県
+        nagano: 長野県
+        gifu: 岐阜県
+        shizuoka: 静岡県
+        aichi: 愛知県
+        mie: 三重県
+        shiga: 滋賀県
+        kyoto: 京都府
+        osaka: 大阪府
+        hyogo: 兵庫県
+        nara: 奈良県
+        wakayama: 和歌山県
+        tottori: 鳥取県
+        shimane: 島根県
+        okayama: 岡山県
+        hiroshima: 広島県
+        yamaguchi: 山口県
+        tokushima: 徳島県
+        kagawa: 香川県
+        ehime: 愛媛県
+        kochi: 高知県
+        fukuoka: 福岡県
+        saga: 佐賀県
+        nagasaki: 長崎県
+        kumamoto: 熊本県
+        oita: 大分県
+        miyazaki: 宮崎県
+        kagoshima: 鹿児島県
+        okinawa: 沖縄県
+      shipping_period:
+        days1_2: 1~2日で発送
+        days2_3: 2~3日で発送
+        days4_7: 4~7日で発送
+    attributes:
+      user:
+        nickname: ニックネーム
+        firstname: お名前(名)
+        lastname: お名前(姓)
+        firstname_read: ふりがな(名)
+        lastname_read: ふりがな(姓)
+        birthday: 誕生日
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認入力パスワード
+      addresses:
+        firstname: 送付先のお名前(名)
+        lastname: 送付先のお名前(姓)
+        firstname_read: 送付先のふりがな(名)
+        lastname_read: 送付先のふりがな(姓)
+        zip: 送付先の郵便番号
+        telephone: 送付先の電話番号
+        prefecture: 都道府県
+        city: 市区町村
+        address_line: 番地
   date:
     abbr_day_names:
       - 日
@@ -211,6 +349,7 @@ ja:
       unconfirmed: "本登録を行ってください"
       locked: "アカウントはロックされています"
       invalid: "メールアドレスまたはパスワードが違います"
+      not_found_in_database: "メールアドレスもしくはパスワードが違います"
       invalid_token: "認証キーが不正です"
       timeout: "一定時間が経過したため、再度ログインが必要です"
       inactive: "アカウントがまだ有効になっていません"
@@ -249,3 +388,69 @@ ja:
         subject: "パスワードの再設定"
       unlock_instructions:
         subject: "アカウントのロック解除"
+  enums:
+    item:
+      condition:
+        yyy: 商品の状態を選ぶ
+        brand_new: 新品、未使用
+        mint: 未使用に近い
+        bit_damaged: 目立った傷や汚れなし
+        slight_damaged: やや傷や汚れあり
+        damaged: 傷や汚れあり
+        junk: 全体的に状態が悪い
+      shipping_pay:
+        exhibitor: 送料込み(出品者負担)
+        customer: 着払い(購入者負担)
+      shipping_area:
+        xxx: 発送元の地域を選ぶ
+        hokkaido: 北海道
+        aomori: 青森県
+        iwate: 岩手県
+        miyagi: 宮城県
+        akita: 秋田県
+        yamagata: 山形県
+        fukushima: 福島県
+        ibaraki: 茨城県
+        tochigi: 栃木県
+        gunma: 群馬県
+        saitama: 埼玉県
+        chiba: 千葉県
+        tokyo: 東京都
+        kanagawa: 神奈川県
+        niigata: 新潟県
+        toyama: 富山県
+        ishikawa: 石川県
+        fukui: 福井県
+        yamanashi: 山梨県
+        nagano: 長野県
+        gifu: 岐阜県
+        shizuoka: 静岡県
+        aichi: 愛知県
+        mie: 三重県
+        shiga: 滋賀県
+        kyoto: 京都府
+        osaka: 大阪府
+        hyogo: 兵庫県
+        nara: 奈良県
+        wakayama: 和歌山県
+        tottori: 鳥取県
+        shimane: 島根県
+        okayama: 岡山県
+        hiroshima: 広島県
+        yamaguchi: 山口県
+        tokushima: 徳島県
+        kagawa: 香川県
+        ehime: 愛媛県
+        kochi: 高知県
+        fukuoka: 福岡県
+        saga: 佐賀県
+        nagasaki: 長崎県
+        kumamoto: 熊本県
+        oita: 大分県
+        miyazaki: 宮崎県
+        kagoshima: 鹿児島県
+        okinawa: 沖縄県
+      shipping_period:
+        days1_2: 1~2日で発送
+        days2_3: 2~3日で発送
+        days4_7: 4~7日で発送

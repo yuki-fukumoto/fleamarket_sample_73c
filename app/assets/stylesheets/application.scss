@@ -2,3 +2,39 @@
 @import "font-awesome";
 @import "modules/shows";
 @import "reset";
+@import "top_page";
+@import "items/show";
+@import "items/new.scss";
+@import "users/registration.scss";
+@import "users/session.scss";
+@import "purchases/confirm";
+
+.field_with_errors {
+  display: contents;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.pagination>.active>a{
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
+.notice {
+  background-color: #696969;
+  color: white;
+  text-align: center;
+}
+
+.alert {
+  background-color: #ff0066;
+  color: white;
+  text-align: center;
+}

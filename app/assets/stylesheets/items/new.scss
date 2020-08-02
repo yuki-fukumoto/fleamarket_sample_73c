@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeeee;
+  min-width: 700px;
+}
+
+.top_icon img {
+  height: 40px;
+}
+
+.top_icon {
+  text-align: center;
+  padding: 40px 0 20px;
+  background-color: #eeeeee;
+}
+
+
+.contents {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.item {
+  padding: 40px 50px;
+}
+
+.button_area {
+  margin: 30px 170px 32px;
+}
+
+.notice {
+  font-size: 12px;
+}
+
+.title {
+  display: flex;
+  &__header {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  &__require {
+    margin-left: 8px;
+    font-size: 12px;
+    background-color: #ce403c;
+    color: white;
+    height: 22px;
+    width: 42px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 3px;
+  }
+  &__any {
+    margin-left: 8px;
+    font-size: 12px;
+    background-color: #3ccace;
+    color: white;
+    height: 22px;
+    width: 42px;
+    text-align: center;
+    line-height: 22px;
+    border-radius: 3px;
+  }
+  &__nav {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 24px;
+  }
+}
+
+.comments {
+  font-size: 14px;
+  margin: 16px 0 10px;
+}
+
+#image-box-1{
+  display: flex;
+  height: 150px;
+  width: 600px;
+  img{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+  .item-num-0#image-box__container{
+    display: flex;
+    .item-num-0{
+      width: 100%;
+    }
+  } 
+  .item-num-1#image-box__container{
+    display: flex; 
+    width: 480px; 
+  } 
+  .item-num-2#image-box__container{
+    display: flex; 
+    width: 360px;
+  }
+  .item-num-3#image-box__container{
+    display: flex;  
+    width: 240px;
+  }
+  .item-num-4#image-box__container{
+    display: flex;  
+    width: 120px;
+  }  
+  .input-area{
+    background-color: #f5f5f5;
+    width: 600px;
+    height: 150px;
+    font-size: 30px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px dashed black;
+  }
+}
+.item-image__operetion--delete{
+  text-align: center;
+}
+.item-image{
+  border-radius: 10px;
+  border: 1px dashed black;
+  background-color: #f5f5f5;
+  &__operetion{
+    margin-top: -5px;
+    &--delete{
+      border: solid 1px black;
+      border-radius: 7px;
+      width: 50%;
+      margin: 0 auto;
+      background-color: white;
+    }
+  }
+}
+
+.item_text {
+  height: 48px;
+  width: 100%;
+  margin: 16px 0 16px;
+}
+
+.explanation_text {
+}
+
+.column {
+  height: 48px;
+  width: 50%;
+  margin-top: -12px;
+  line-height: 48px;
+}
+
+.price_text {
+  height: 48px;
+  width: 50%;
+  margin-top: -12px;
+  display: flex;
+  line-height: 48px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.container.bottom_container {
+  margin: 0;
+}
+
+.text_box {
+  height: 100%;
+  width: 100%;
+  padding: 0 16px;
+  border: #c5c4c4 solid 1px;
+}
+
+.big_text_box {
+  height: 154px;
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 16px;
+  border: #c5c4c4 solid 1px;
+  resize: none;
+}
+
+.price_text .text_box {
+  text-align: right;
+  margin-left: 10px;
+}
+
+input {
+  border: none;
+}
+
+.puts_up_btn input {
+  height: 48px;
+  width: 100%;
+  background-color: #ce403c;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: (1px 1px 3px black);
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+}
+
+.save_btn button {
+  height: 48px;
+  width: 100%;
+  background-color: #cccccc;
+  color: black;
+  font-size: 17px;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-weight: 600;
+  margin-top: 24px;
+  border-radius: 4px;
+  &:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+}
+
+.button_area {
+  margin: 30px 170px 32px;
+}
+
+.return {
+  text-align: center;
+  margin-top: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+hr {
+  width: calc(100% - 80px);
+  border: #c5c4c4 solid 1px;
+}
+
+
+.bottom_area {
+  height: 40px;
+}
+
+.return a {
+  text-decoration: none;
+}
+
+.bar1 {
+  width: calc(100% - 80px);
+  border: #c5c4c4 solid 1px;
+}
