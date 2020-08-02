@@ -60,7 +60,7 @@ class Item < ApplicationRecord
     :kagoshima,
     :okinawa]
   enum shipping_period: [:days1_2, :days2_3, :days4_7]
-  enum status: [:sell, :draft, :sold]
+  #enum status: [:sell, :draft, :sold]
 
   belongs_to :user
   belongs_to :category
