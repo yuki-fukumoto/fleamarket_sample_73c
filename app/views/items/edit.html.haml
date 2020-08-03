@@ -63,16 +63,44 @@
             カテゴリー
           .title__require
             必須
-        .column.form_category
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
-      .container.category_1__container
-        .title
-        .column.form_category
-          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"}
-      .container.category_2__container
-        .title
-        .column.form_category
-          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+        .category-wrapper-box
+          .category-wrapper-select
+            .category-wrapper-select__box
+              = f.select :parent_name, @category_parent_array, {selected:@item.category.parent.parent.name}, { class: 'category-wrapper__category form-control', id: 'parent_category'}
+          .category-wrapper-select#children_wrapper
+            .category-wrapper-select__box
+              = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_category'}
+          .category-wrapper-select#grandchildren_wrapper
+            .category-wrapper-select__box
+              = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_category'}    
+        
+      -#   .column.form_category
+      -#     = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+      -# .container.category_1__container
+      -#   .title
+      -#   .column.form_category
+      -#     = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"}
+      -# .container.category_2__container
+      -#   .title
+      -#   .column.form_category
+      -#     = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+      
+      -# .container.category_0__container
+      -#   .title
+      -#     .title__header
+      -#       = f.label 'カテゴリー'
+      -#       .title__require 必須
+      -#   .column.form_category
+      -#     .column.form_category--edit
+      -#       = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @item.category}, {class: 'column.form_category--edit__parent--select', id: 'parent_category_edit', name: "" }
+      -# .container.category_1__container
+      -#   .title  
+      -#   .column.form_category
+      -#     = f.collection_select :category_id, @item.category.children, :id, :name ,{prompt: "選択してください", selected: @item.category}, {class: 'column.form_category--edit__child--select', id: 'child_category_edit', name: "" }
+      -# .container.category_2__container
+      -#   .title
+      -#   .column.form_category
+      -#     = f.collection_select :category_id, @item.category.children, :id, :name ,{prompt: "選択してください", selected: @item.category}, {class: 'column.form_category--edit__grandchild--select', id: 'grandchild_category_edit', name: "product[category_id]" }
       .container
         .title
           .title__header

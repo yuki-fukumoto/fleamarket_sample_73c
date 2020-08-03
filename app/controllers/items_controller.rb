@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :confirm_user_signed_in?, except: [:index, :show]
+  before_action :set_item
 
   def index
     @items = Item.on_sell.includes([:images]).order(created_at: :desc)
@@ -31,6 +32,25 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+
   end
 
   def update
@@ -43,6 +63,18 @@ class ItemsController < ApplicationController
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
+  end
+
+  # def get_category_children
+  #   @category_children = Category.find(params[:category_id]).children
+  # end
+
+  # def get_category_grandchildren
+  #   @category_grandchildren = Category.find("#{params[:child_id]}").children
+  # end
+  
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   private

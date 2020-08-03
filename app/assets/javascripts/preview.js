@@ -137,7 +137,7 @@ $(document).on('turbolinks:load', function(){
       }
     });
   });
-  以下各項目が空ならsubmitボタンが押せない
+  // 以下各項目が空ならsubmitボタンが押せない
   $("#submit").on("click", function () {
     if ($("#img-file").val() === "" ) {
       alert("画像を1枚以上入力してください！");
