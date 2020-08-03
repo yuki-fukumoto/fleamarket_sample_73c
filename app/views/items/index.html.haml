@@ -114,8 +114,8 @@
         =link_to "/" do
           %h3.Title 新規投稿商品
       .topiclists
-        .topiclist
-          - @items.each do |item|
+        - @items.each do |item|
+          .topiclist
             =link_to item_path(id: item.id) ,class:"topiclist__item" do
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
@@ -127,7 +127,7 @@
                     %li
                       %i{class:"fa fa-star likeicon"}0
                   %p （税込） 
-          = paginate(@items) 
+        = paginate(@items) 
 
   %section.topic_brand
     %h2.topic_head ピックアップブランド
