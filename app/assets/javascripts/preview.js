@@ -101,6 +101,16 @@ $(document).on("turbolinks:load", function () {
       $(this).focus();
       return false;
     }
+    if ($(".category_1").val() === "") {
+      alert("カテゴリーを選択してください！");
+      $(this).focus();
+      return false;
+    }
+    if ($(".category_2").val() === "") {
+      alert("カテゴリーを選択してください！");
+      $(this).focus();
+      return false;
+    }
     if ($(".condition").val() === "yyy") {
       alert("コンディションを選択してください！");
       $(this).focus();

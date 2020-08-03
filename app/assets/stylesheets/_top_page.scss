@@ -5,9 +5,11 @@ body {
   min-width: 940px;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
     "メイリオ", "Meiryo", sans-serif;
+  background-color: #eeeeee;
 }
 .top_page {
   padding: 0 60px;
+  background-color: #eeeeee;
   &__header {
     max-width: 1040px;
     margin: 0 auto;
@@ -22,6 +24,7 @@ body {
       .search_box {
         display: flex;
         width: 100%;
+        margin-top: 23px;
         &__input {
           height: 36px;
           width: 100%;
@@ -42,7 +45,6 @@ body {
     .list {
       font-size: 14px;
       display: flex;
-      margin-bottom: 10px;
       justify-content: space-between;
       height: 32px;
       line-height: 32px;
@@ -98,6 +100,7 @@ body {
 }
 .reason {
   padding: 60px 20px;
+  background-color: #eeeeee;
   &__title {
     text-align: center;
     height: 50px;
@@ -180,6 +183,7 @@ body {
 }
 .buyAndsell {
   padding: 60px 100px;
+  background-color: #eeeeee;
   &__title {
     text-align: center;
     height: 50px;
@@ -248,14 +252,14 @@ body {
   }
   .topiclists {
     display: flex;
-    width: 780px;
+    width: 880px;
     margin: 0 auto;
     overflow-x: scroll;
-    background-color: #fff;
     .topiclist {
       width: 220px;
       min-width: 220px;
       display: flex;
+      background-color: #fff;
       &__item__img{
         height: 150px;
         width:220px;
