@@ -8,10 +8,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @images = []
-    
-    image = @item.images.build
-    @images << image
+    @images = @item.images.build
   end
 
   def create
