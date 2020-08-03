@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :purchases, only: :create do
     collection do
-      post :confirm 
+      get :confirm
     end
   end
 end
