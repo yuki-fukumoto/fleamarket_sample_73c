@@ -102,12 +102,12 @@ $(document).on("turbolinks:load", function () {
       return false;
     }
     if ($(".category_1").val() === "") {
-      alert("カテゴリーを選択してください！");
+      alert("サブカテゴリー１を選択してください！");
       $(this).focus();
       return false;
     }
     if ($(".category_2").val() === "") {
-      alert("カテゴリーを選択してください！");
+      alert("サブカテゴリー２を選択してください！");
       $(this).focus();
       return false;
     }
