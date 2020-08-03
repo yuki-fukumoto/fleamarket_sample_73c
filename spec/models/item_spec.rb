@@ -105,7 +105,7 @@ RSpec.describe Item, type: :model do
       end
       context "categoryが入力されていない" do
         let(:category_id) {nil}
-        it {is_expected.to include("は少なくともメイングループから1つ選択してください")}
+        it {is_expected.to include("を選択してください")}
       end
     end
   end
