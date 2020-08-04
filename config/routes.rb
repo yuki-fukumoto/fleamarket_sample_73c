@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items, except: :index
   get 'categories/get_child', to: "categories#get_child"
-  resources :users, only: :show
+
   resources :purchases do
     collection do
       post :confirm 
