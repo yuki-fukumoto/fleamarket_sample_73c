@@ -36,10 +36,12 @@
         FURIMAはだれでもかんたんに出品・購入できる
         %br フリマアプリです
       .Contents__btn
-        =link_to confirm_purchases_path do
+        -# =link_to confirm_purchase_path(@purchase) do
+        =link_to "#" do
           =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
-        =link_to new_creditcard_path do
+        =link_to "https://www.google.com/" do
           =image_tag "google-play-badge.png", class: 'google_btn'
+          
 
 
   %section.reason
