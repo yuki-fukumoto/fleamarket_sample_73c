@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_update_params)
+    @item.update(item_params)
     redirect_to root_path, notice: '商品を編集しました' 
   end
   
@@ -68,10 +68,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image,:id]).merge(user_id: current_user.id)
-  end
-
-  def item_update_params
     params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
