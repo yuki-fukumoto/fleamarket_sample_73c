@@ -8,11 +8,11 @@
           .itemBox__body
             %ul
               %li
-                = image_tag @item.images.first.image.url
+                = image_tag @item.images.first.image.url, class: "main_image"
                 %ul
                   - @item.images.each do |image|
                     %li
-                      = image_tag image.image.url
+                      = image_tag image.image.url, class: "thumbnails"
                   
           .itemBox__price
             %span

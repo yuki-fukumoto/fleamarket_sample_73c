@@ -139,7 +139,7 @@ $(document).on('turbolinks:load', function(){
   });
   // 以下各項目が空ならsubmitボタンが押せない
   $("#submit").on("click", function () {
-    if ($("#img-file").val() === "" ) {
+    if ($("#label-box--0").val() === "" ) {
       alert("画像を1枚以上入力してください！");
       $(this).focus();
       return false;
@@ -155,12 +155,22 @@ $(document).on('turbolinks:load', function(){
       return false;
     }
     if ($(".category_0").val() === "") {
-      alert("カテゴリーを選択してください！");
+      alert("メインカテゴリーを選択してください！");
+      $(this).focus();
+      return false;
+    }
+    if ($(".category_1").val() === "") {
+      alert("サブカテゴリー１を選択してください！");
+      $(this).focus();
+      return false;
+    }
+    if ($(".category_2").val() === "") {
+      alert("サブカテゴリー２を選択してください！");
       $(this).focus();
       return false;
     }
     if ($(".condition").val() === "yyy") {
-      alert("コンディションを選択してください！");
+      alert("商品の状態を選択してください！");
       $(this).focus();
       return false;
     }

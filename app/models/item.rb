@@ -60,7 +60,7 @@ class Item < ApplicationRecord
     :kagoshima,
     :okinawa]
   enum shipping_period: [:days1_2, :days2_3, :days4_7]
-  enum status: [:sell, :draft, :sold]
+  #enum status: [:sell, :draft, :sold]
 
   belongs_to :user
   belongs_to :category
@@ -69,7 +69,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
 
-  enum status: {sell: 0, buy: 1, trading:2}, _prefix: :status
+  enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 
   scope :on_sell, -> { where(status: 0) }
 end
