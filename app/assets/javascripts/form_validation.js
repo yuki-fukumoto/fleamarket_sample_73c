@@ -1,7 +1,7 @@
 // 各項目が空ならsubmitボタンが押せない
 $(document).on('turbolinks:load', function(){
   $("#submit").on("click", function () {
-    if ($("#label-box--0").val() === "" ) {
+    if ($("#label-box").val() === "" ) {
       alert("画像を1枚以上入力してください！");
       $(this).focus();
       return false;
