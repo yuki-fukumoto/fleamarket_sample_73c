@@ -7,7 +7,7 @@
       購入内容の確認
     .items
       .items__image
-        = image_tag(asset_path("example.jpg"))
+        = image_tag @item.images.first.image.url
       .items__title
         .items__title__bar
           =@item.name
@@ -58,7 +58,7 @@
 
     .confirm_btn
       .confirm_btn__buy
-        =f.submit "購入する"
+        -# =f.submit "購入する"
         %button{ onclick: "#", type: "submit", value: ""}購入する
       .confirm_btn__cancel
         =link_to "やめる", root_path
