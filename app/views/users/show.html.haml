@@ -1,0 +1,102 @@
+.top_page
+  .top_page__header
+    .top_page__header__inner
+      %h1.icon
+        =image_tag 'logo.png'
+      .search_box
+        %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
+        %button{type:"submit", class: "search_box__btn"}
+          %i.fas.fa-search{class: "search_box__btn__icon"}
+        %ul{class:"search--result"}
+    .list
+      %ul.list__left
+        %li.list__left__category
+          =link_to "カテゴリ-", 'http://google.co.jp'
+        %li.list__left__brand
+          =link_to "ブランド", 'http://google.co.jp'
+      %ul.list__right
+        %li.list__right__log_in
+          =link_to "ログイン", '/users/sign_in'
+        %li.list__right__new
+          =link_to "新規会員登録", '/users/sign_up'
+.side-box
+  .side-menu
+    %group
+      %h2.side-menu__title マイページメニュー
+      .group-list
+        %li.group-list__notice 
+          =link_to "お知らせ"
+        %li.group-list__likes 
+          =link_to "いいねした商品"
+    %group
+      %h2.side-menu__title 商品を出品する
+      .group-list
+        %li.group-list__item 
+          =link_to "商品を出品"
+        %li.group-list__sellitem 
+          =link_to "出品した商品"
+        %li.group-list__shop 
+          = link_to "自分のショップを見る"
+    %group
+      %h2.side-menu__title 商品を購入する
+      .group-list
+        %li.group-list__buy 
+          =link_to "購入した商品"
+        %li.group-list__watch  
+          =link_to "最近見た商品"         
+        %li.group-list__comment 
+          =link_to "コメントした商品"
+    %group
+      %h2.side-menu__title 設定・ヘルプ・その他
+      .group-list
+        %li.group-list__inquiry 
+          =link_to "お問い合わせ"
+        %li.group-list__credit 
+          =link_to "クレジットカード登録"
+        %li.group-list__management 
+          =link_to "ポイント管理"
+        %li.group-list__logout 
+          =link_to "ログアウト"
+
+  .main-box
+    %h2.main-box__title 佐藤さんのマイページ 
+    .main-box__notice
+      .main-box__subtitle 
+        %h3.main-box__important 重要なお知らせ
+      .main-box__body
+        .main-box__inbox
+          .main-box__left
+            -# =image_tag 'FURIMA_ICON.png', :width =>"31", :height =>"31"
+            %h4.main-box__streetaddres 住所の設定を行ってください。<br>
+            スムーズに購入を進めるために住所の設定を行ってください。
+      .main-box__recently
+        .main-box__subsubtitle 最近見た商品
+        .main-box__body2 
+          %p.main-box__center
+            %p.main-box__text 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
+    .main-box__group
+      .main-box__submenu
+        %h1.main-box__menutitle1 注目ブランド
+        %p.main-box__box__brand
+        %li.main-box__category1
+          =link_to "NIKE"
+        %li.main-box__category2
+          =link_to "GU"
+        %li.main-box__category3
+          =link_to "ZARA"
+      .main-box__submenu
+        %h1.main-box__menutitle1 コンテンツ
+        %li.main-box__category1 
+          =link_to "ブランド一覧"
+        %li.main-box__category2
+          =link_to "カテゴリ一覧"
+        %li.main-box__category3
+          =link_to "キーワード一覧"
+      .main-box__submenu
+        %h1.main-box__menutitle1 ガイド
+        %li.main-box__category1  
+          =link_to "公式ガイド"
+        %li.main-box_category2 
+          =link_to "初めての方へ"
+        %li.main-box__category3 
+          =link_to "お知らせ"

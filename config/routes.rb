@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items, except: :index
   get 'categories/get_child', to: "categories#get_child"
-
   resources :creditcards, only: [:new, :create]
+  get 'users', to: "users#show"
 
   resources :purchases do
     collection do
