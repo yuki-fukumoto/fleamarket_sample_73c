@@ -13,7 +13,7 @@
           =@item.name
         .items__title__price
           .items__title__price__board
-            ¥7000
+            = "#{@item.price}円"
           .items__title__price__comment
             (送料込)
     %hr
@@ -21,7 +21,7 @@
       .payment_amount__title
         支払い金額
       .payment_amount__price
-        ¥7000
+        = "#{@item.price}円"
     %hr
     .payment_method
       =f.hidden_field :creditcard_id, value: @creditcard.id
