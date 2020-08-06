@@ -32,10 +32,8 @@ body {
           width: 37px;
           background-color: #3ccace;
           border: none;
-          &__icon {
-            color: white;
-            font-size: 20px;
-          }
+          font-size: 20px;
+          color: white;
         }
       }
     }
@@ -251,37 +249,38 @@ body {
     width: 780px;
     margin: 0 auto;
     overflow-x: scroll;
-    background-color: #fff;
-    .topiclist {
-      width: 220px;
-      min-width: 220px;
-      display: flex;
-      &__item__img{
-        height: 150px;
-        width:220px;
-        object-fit: contain;
+  }
+}
+
+.topiclist {
+  width: 220px;
+  min-width: 220px;
+  display: flex;
+  background-color: #fff;
+  &__item__img{
+    height: 150px;
+    width:220px;
+    object-fit: contain;
+  }
+  &__img img {
+    height: 150px;
+    width: 220px;
+    object-fit: contain;
+  }
+  &__body {
+    padding: 16px;
+    font-size: 16px;
+    color: #333333;
+    .place {
+      ul {
+        display: flex;
+        justify-content: space-between;
       }
-      &__img img {
-        height: 150px;
-        width: 220px;
-        object-fit: contain;
-      }
-      &__body {
-        padding: 16px;
-        font-size: 16px;
-        color: #333333;
-        .place {
-          ul {
-            display: flex;
-            justify-content: space-between;
-          }
-        }
-      }
-    }
-    .topiclist:hover {
-      opacity: 0.7;
     }
   }
+}
+.topiclist:hover {
+  opacity: 0.7;
 }
 
 .banner {
