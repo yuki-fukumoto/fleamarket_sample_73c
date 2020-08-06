@@ -3,14 +3,14 @@
   min-height: 200px;
   position: relative;
   padding: 40px;
-  background-color: white;
+  background-color: #f8f8f8;
   justify-content: space-between;
 	flex-wrap: wrap;
   .search_list {
     width: 220px;
     min-width: 220px;
     display: flex;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     margin: 10px;
     &__item__img{
       height: 150px;
