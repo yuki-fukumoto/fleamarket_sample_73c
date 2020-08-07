@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   describe "全属性のバリデーション" do
+    # it "てすと" do
+    #   @item = FactoryBot.create(:item)
+    #   puts "カテゴリ：#{@item.category.ancestry}、名前：#{@item.name}"
+    # end
     let(:item) {FactoryBot.build(:item)}
     subject{item}
     context "すべての情報が入力されている場合" do
@@ -9,26 +13,7 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  describe "imageのバリデーション" do
-    let(:item) {FactoryBot.build(:item, image: image)}
-    context "登録される" do
-      subject{item}
-      context "画像が入力されている" do
-        let(:image) {[ Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/_test.jpg'), 'spec/factories/_test.jpg') ]}
-        it {is_expected.to be_valid}
-      end
-    end
-    context "登録されない" do
-      subject{item.errors[:image]}
-      before do
-        item.valid?
-      end
-      context "画像が１枚も入力されていない" do
-        let(:image) {nil}
-        it {is_expected.to include("は1枚以上は登録してください")}
-      end
-    end
-  end
+
 
   describe "nameのバリデーション" do
     let(:item) {FactoryBot.build(:item, name: name)}
@@ -88,27 +73,6 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  describe "categoryのバリデーション" do
-    let(:item) {FactoryBot.build(:item, category_id: category_id)}
-    category = FactoryBot.create(:category)
-    context "登録される" do
-      subject{item}
-      context "categoryが入力されている" do
-        let(:category_id) {category.id}
-        it {is_expected.to be_valid}
-      end
-    end
-    context "登録されない" do
-      subject{item.errors[:category_id]}
-      before do
-        item.valid?
-      end
-      context "categoryが入力されていない" do
-        let(:category_id) {nil}
-        it {is_expected.to include("は少なくともメイングループから1つ選択してください")}
-      end
-    end
-  end
 
   describe "conditionのバリデーション" do
     let(:item) {FactoryBot.build(:item, condition: condition)}
