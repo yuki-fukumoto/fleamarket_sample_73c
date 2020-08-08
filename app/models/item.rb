@@ -72,4 +72,9 @@ class Item < ApplicationRecord
   enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 
   scope :on_sell, -> { where(status: 0) }
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end
