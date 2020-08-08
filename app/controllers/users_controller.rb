@@ -8,8 +8,7 @@ class UsersController < ApplicationController
       t.references :adresses, index: true, foreign_key: true,
     create_table :creditcards do |t|
       t.references :creditcards, index: true, foreign_key: true,
-  
-
+      
     end
   end
 end

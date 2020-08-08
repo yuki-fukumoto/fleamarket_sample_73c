@@ -1,4 +1,7 @@
 class PurchasesController < ApplicationController
+  require 'payjp'
+  Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+  
   def create
     @item = Item.find(params[:item_id])
     if @purchase = Purchase.create_charge(purchase_params, @item)
@@ -17,6 +20,8 @@ class PurchasesController < ApplicationController
     user = User.find(current_user.id)
     @address = user.addresses.first
     @creditcard = user.creditcards.first
+    customer = Payjp::Customer.retrieve(@creditcard.customer_id)
+    @creditcard_payjp = customer.cards.retrieve(@creditcard.card_id)
     if @creditcard.blank?
       redirect_to new_creditcard_path, notice: "購入前にクレジットカードをご登録ください"
     end

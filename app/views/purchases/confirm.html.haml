@@ -31,12 +31,14 @@
         =link_to "変更する >", class: "change"
       .credit_card
         .credit_card__no
-          1234567890
+        = @creditcard_payjp.last4
+        -# = current_user.creditcards[0].card_id.last4
         .credit_card__expiration
           .credit_card__expiration__title
             有効期限
           .credit_card__expiration__date
-            12/23
+            = @creditcard_payjp.exp_year
+            = @creditcard_payjp.exp_month
         .credit_card__company
           VISA
     %hr
