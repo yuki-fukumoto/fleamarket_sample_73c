@@ -10,6 +10,8 @@
 @import "users/session.scss";
 @import "purchases/confirm";
 @import "users.scss";
+@import "_sign_out.scss";
+@import "credit.scss";
 
 .field_with_errors {
   display: contents;
