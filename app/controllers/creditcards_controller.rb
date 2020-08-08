@@ -12,6 +12,9 @@ class CreditcardsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
     def creditcard_params
       params.require(:creditcard).permit(:card_id).merge(user_id: current_user.id)
