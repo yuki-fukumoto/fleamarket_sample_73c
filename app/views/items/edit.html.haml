@@ -1,7 +1,7 @@
 .top_icon
   =image_tag(asset_path("logo.png"))
 .contents
-  =form_with model: @item, method: :post, local: true do |f|
+  =form_with model: @item, local: true do |f|
     .item
       .title
         .title__header
@@ -9,20 +9,31 @@
         .title__require
           必須
       %p.comments
-        最大5枚までアップロードできます
+        最大5枚までアップロードできます 
       .post__drop__box__container
         .prev-content
+          - @item.images.each do |image|
+            .preview-box
+              .upper-box
+                = image_tag image.image.url, alt: "preview"
+              .lower-box
+                .delete-box
+                  .delete-btn
+                    %span 削除
         .label-content
-          %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
-            %pre.label-box__text-visible
+
+          = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+            %pre.label-box__text-visible 
               %i.fas.fa-camera
         .hidden-content
           = f.fields_for :images do |i|
+
             = i.file_field :image, class: "hidden-field"
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-            %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+            = i.check_box:_destroy, class: "hidden-checkbox"
+
+          - @item.images.length.upto(4) do |i|
+            %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}     
+          
     %hr
     .item
       .title
@@ -50,16 +61,18 @@
             カテゴリー
           .title__require
             必須
+
         .column.form_category
-          = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
-      .container.category_1__container
-        .title
+          = f.collection_select :parent_name, Category.where(ancestry: nil), :id, :name, {selected:@item.category.parent.parent.id}, {class: "category_0 text_box"}
+      .container.category_1__container 
+        .title 
         .column.form_category
-          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"}
-      .container.category_2__container
-        .title
-        .column.form_category
-          = f.collection_select :category_id, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+          = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category_1 text_box'}
+      .container.category_2__container 
+        .title 
+        .column.form_category   
+          = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category_2 text_box' }    
+
       .container
         .title
           .title__header
@@ -121,7 +134,7 @@
           = f.number_field :price, class: "price text_box", placeholder: "0", min:"300", max:"9999999", type: "number"
     .button_area
       .puts_up_btn
-        =f.submit "出品する", id: "submit"
+        =f.submit "変更する", id: "submit"
       -# .save_btn
       -#   =f.submit "下書きに保存", name: "draft"
       -# .save_btn
