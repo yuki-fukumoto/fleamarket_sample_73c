@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
-    # binding.pry
   end
 
   def destroy
