@@ -226,10 +226,12 @@ RSpec.describe Item, type: :model do
   describe '#search' do
 
     before do
-      @item             = build(:item)
-      @item.save
-      @other_item       = build(:other_item)
-      @other_item.save
+      # @item             = build(:item)
+      # @item.save
+      # @other_item       = build(:other_item)
+      # @other_item.save
+      @item = FactoryBot.create(:item, name: "バッグ")
+      @other_item = FactoryBot.create(:item, name: "かばん")
     end
 
     # "バッグ"で検索した場合
@@ -243,7 +245,7 @@ RSpec.describe Item, type: :model do
 
     # # "カバン"で検索した場合
     it "検索結果がないこと" do
-      expect(Item.search("かばん")).to be_empty
+      expect(Item.search("カバン")).to be_empty
     end
 
     # # 検索していない場合
