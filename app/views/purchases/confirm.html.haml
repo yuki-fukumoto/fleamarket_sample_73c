@@ -47,11 +47,15 @@
           配送先
         =link_to "変更する >", class: "change"
       .confirm_adress__zip_code
-        〒123-4567
+        = current_user.addresses[0].zip
       .confirm_adress__code
-        兵庫県芦屋市六麓荘19-16
+        = current_user.addresses[0].prefecture
+        = current_user.addresses[0].city
+        = current_user.addresses[0].address_line
+        = current_user.addresses[0].building
       .confirm_adress__name
-        矢沢永吉
+        = current_user.addresses[0].firstname
+        = current_user.addresses[0].lastname
     %hr
     .content_bottom
       郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
