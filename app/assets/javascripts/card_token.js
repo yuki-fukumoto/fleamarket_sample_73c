@@ -1,10 +1,9 @@
 // DOM読み込みが完了したら実行
-document.addEventListener("DOMContentLoaded", (e) => {
+$(document).on("turbolinks:load", function () {
   Payjp.setPublicKey("pk_test_91e3960108d6cf0addff2d8c");
-  
-  $("#new_creditcard").on("submit", function (e) {
-
   $("#new_creditcard").submit(function (e) {
+    console.log("submit");
+
     // カード情報生成
     let card = {
       number: document.getElementById("card_number").value,
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       $("#new_creditcard").off("submit");
       $("#new_creditcard").submit();
     });
-    // return false;
     return false;
   });
 });

@@ -2,21 +2,19 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
   resources :users, only: :show
   root 'items#index'
-  resources :creditcards, only: [:new, :create, :edit]
-  
+  resources :creditcards, only: [:new, :create, :show, :destroy]
+
   get 'users', to: "users#show"
   get 'categories/get_child', to: "categories#get_child"
   resources :items, except: :index do
     collection do
       get 'search'
     end
-  end  
-
-  resources :creditcards, only: [:new, :create]
+  end
 
   resources :purchases, only: :create do
     member do
-      get :confirm 
+      get :confirm
     end
   end
 end

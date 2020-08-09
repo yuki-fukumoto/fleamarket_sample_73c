@@ -1,7 +1,7 @@
 module PayjpHelper
   def set_token_error_in_flash(error)
     if error == "invalid_number"
-      flash[:notice] = "カード番号が一致しません"
+      flash[:notice] = "カード番号が正しくありません"
     elsif error == "invalid_cvc"
       flash[:notice] = "cvcが一致しません"
     elsif error == "invalid_expiration_date"
@@ -20,4 +20,5 @@ module PayjpHelper
       flash[:notice] = "例外エラーが発生しました。事務局に通報してください"
     end
   end
+
 end

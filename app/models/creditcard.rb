@@ -1,6 +1,5 @@
 class Creditcard < ApplicationRecord
   attr_accessor :token, :error
-
   validates :customer_id, :card_id, presence: true
 
   belongs_to :user
@@ -18,4 +17,10 @@ class Creditcard < ApplicationRecord
       false
     end
   end
+
+  def get_card_data
+    customer = Payjp::Customer.retrieve(self.customer_id)
+    customer.cards.retrieve(self.card_id)
+  end
+
 end
