@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :confirm_user_signed_in?, except: [:index, :show]
 
   def index
-    @items = Item.on_sell.includes([:images]).order(created_at: :desc)
-    @items = Item.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
+    @items = Item.on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
     @random = Item.order("RAND()").limit(4)
     # @purchase = Purchase.find(params[:purchase_id])
   end
@@ -58,9 +57,9 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    redirect_to root_path, notice: '商品を編集しました' 
+    redirect_to root_path, notice: '商品を編集しました'
   end
-  
+
 
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
