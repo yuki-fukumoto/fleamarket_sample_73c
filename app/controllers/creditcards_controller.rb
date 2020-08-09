@@ -5,6 +5,7 @@ class CreditcardsController < ApplicationController
   end
 
   def create
+    binding.pry
     if creditcard = Creditcard.create_card(creditcard_params)
       redirect_to root_path, notice: 'クレジットカードを登録しました'
     else
