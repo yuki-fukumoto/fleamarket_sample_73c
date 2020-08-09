@@ -20,9 +20,10 @@ class PurchasesController < ApplicationController
     user = User.find(current_user.id)
     @address = user.addresses.first
     @creditcard = user.creditcards.first
-    customer = Payjp::Customer.retrieve(@creditcard.customer_id)
-    @creditcard_payjp = customer.cards.retrieve(@creditcard.card_id)
-    if @creditcard.blank?
+    if @creditcard.presence
+      customer = Payjp::Customer.retrieve(@creditcard.customer_id)
+      @creditcard_payjp = customer.cards.retrieve(@creditcard.card_id)
+    else @creditcard.blank?
       redirect_to new_creditcard_path, notice: "購入前にクレジットカードをご登録ください"
     end
   end
