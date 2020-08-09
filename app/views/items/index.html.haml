@@ -1,3 +1,4 @@
+
 .top_page
   .top_page__header
     .top_page__header__inner
@@ -18,7 +19,7 @@
       %ul.list__right
         - if user_signed_in?
           %li.list__right__log_in
-            =link_to "マイページ", user_path(current_user.id)
+            =link_to "マイページ", users_path
           %li.list__right__log_in
             =link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"}
         - else
@@ -26,6 +27,7 @@
             =link_to "ログイン", new_user_session_path
           %li.list__right__new
             =link_to "新規会員登録", new_user_registration_path
+// = render partial: 'layouts/header'
 
 .top_view
   %section.top_visual
@@ -116,8 +118,8 @@
         =link_to "/" do
           %h3.Title 新規投稿商品
       .topiclists
-        .topiclist
-          - @items.each do |item|
+        - @items.each do |item|
+          .topiclist
             =link_to item_path(id: item.id) ,class:"topiclist__item" do
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
@@ -129,71 +131,28 @@
                     %li
                       %i{class:"fa fa-star likeicon"}0
                   %p （税込） 
-          = paginate(@items) 
+        = paginate(@items) 
 
   %section.topic_brand
-    %h2.topic_head ピックアップブランド
+    %h2.topic_head ピックアップアイテム
     .topicBox
       .topicBox__head
         =link_to "/" do
-          %h3.Title アーカイバー
+          %h3.Title 注目のアイテム
       .topiclists
-        .topiclist
-          =link_to item_path(15), method: :get do
-            .topiclist__img
-              = image_tag(asset_path('a004.png'))
-            .topiclist__body
-              %h3.name dd
-              .place
-                %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa fa-star likeicon"}0
-                %p （税込）
-
-        .topiclist
-          =link_to item_path(17), method: :get do
-            .topiclist__img
-              = image_tag(asset_path('a006.png'))
-
-
-            .topiclist__body
-              %h3.name dd
-              .place
-                %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa fa-star likeicon"}0
-                %p （税込）
-
-        .topiclist
-          =link_to item_path(20), method: :get do
-            .topiclist__img
-              = image_tag(asset_path('molts.png'))
-
-            .topiclist__body
-              %h3.name dd
-              .place
-                %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa fa-star likeicon"}0
-                %p （税込）
-
-        .topiclist
-          =link_to item_path(15), method: :get do
-            .topiclist__img
-              = image_tag(asset_path('a004.png'))
-
-
-            .topiclist__body
-              %h3.name dd
-              .place
-                %ul
-                  %li 1000円
-                  %li
-                    %i{class:"fa fa-star likeicon"}0
-                %p （税込）
+        - @random.each do |item|
+          .topiclist
+            =link_to item_path(id: item.id) ,class:"topiclist__item" do
+              -item.images.first(1).each do |image|
+                = image_tag image.image.url, class:"topiclist__item__img"
+              .topiclist__body
+                = item.name 
+                .place
+                  %ul
+                    = item.price
+                    %li
+                      %i{class:"fa fa-star likeicon"}0
+                  %p （税込）
 
   .banner
     .foot
@@ -250,10 +209,6 @@
       =link_to "/" do
         = image_tag"logo-white.png", alt: 'logo'
 
-    %p.copyright © FURIMA
+//= render partial: 'layouts/footer'
 
-    .puts_up
-      =link_to new_item_path do
-        .puts_up__text
-          出品する
-          = icon('fas', 'camera', class: 'puts_up__icon')
+= render partial: 'layouts/puts_up'

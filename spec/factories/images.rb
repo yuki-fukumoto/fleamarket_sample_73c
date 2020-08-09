@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :image do
-    image "MyString"
+    image {"MyString"}
   end
 end

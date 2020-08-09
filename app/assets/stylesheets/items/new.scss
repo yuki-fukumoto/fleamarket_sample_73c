@@ -32,7 +32,7 @@ body {
   margin: 30px 170px 32px;
 }
 
-.notice {
+.notice_bottom {
   font-size: 12px;
 }
 
@@ -76,66 +76,6 @@ body {
   margin: 16px 0 10px;
 }
 
-#image-box-1{
-  display: flex;
-  height: 150px;
-  width: 600px;
-  img{
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-  }
-  .item-num-0#image-box__container{
-    display: flex;
-    .item-num-0{
-      width: 100%;
-    }
-  } 
-  .item-num-1#image-box__container{
-    display: flex; 
-    width: 480px; 
-  } 
-  .item-num-2#image-box__container{
-    display: flex; 
-    width: 360px;
-  }
-  .item-num-3#image-box__container{
-    display: flex;  
-    width: 240px;
-  }
-  .item-num-4#image-box__container{
-    display: flex;  
-    width: 120px;
-  }  
-  .input-area{
-    background-color: #f5f5f5;
-    width: 600px;
-    height: 150px;
-    font-size: 30px;
-    line-height: 150px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px dashed black;
-  }
-}
-.item-image__operetion--delete{
-  text-align: center;
-}
-.item-image{
-  border-radius: 10px;
-  border: 1px dashed black;
-  background-color: #f5f5f5;
-  &__operetion{
-    margin-top: -5px;
-    &--delete{
-      border: solid 1px black;
-      border-radius: 7px;
-      width: 50%;
-      margin: 0 auto;
-      background-color: white;
-    }
-  }
-}
 
 .item_text {
   height: 48px;
@@ -264,3 +204,85 @@ hr {
   width: calc(100% - 80px);
   border: #c5c4c4 solid 1px;
 }
+
+//image投稿欄のCSS
+.post__drop__box__container{
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  //プレビュー表示欄のCSS
+  .prev-content {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 120px;
+      margin-bottom: 10px;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 120px;
+          height: 120px;
+          object-fit: contain;
+        }
+      }
+      .lower-box {
+        .delete-box {
+          width: 50%;
+          height: 30px;
+          line-height: 30px;
+          background: white;
+          cursor: pointer;
+          margin: 15px auto;
+          border: solid 1px black;
+          border-radius: 7px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  //投稿クリックエリアのCSS
+  .label-content{
+    margin-bottom: 10px;
+    width: 600px;
+    display: flex;
+    .label-box {
+      display: block;
+      border: 1px dashed #ccc;
+      position: relative;
+      background: #f5f5f5;
+      width: 100%;
+      height: 162px;
+      cursor: pointer;
+      &__text-visible {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        right: 16px;
+        text-align: center;
+        font-size: 30px;
+        line-height: 1.5;
+        font-weight: bold;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        pointer-events: none;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  // file_fieldのcss
+  .hidden-content {
+    .hidden-field {
+      display: none;
+    }
+    .hidden-checkbox {
+      display: none;
+    }
+  }
+}
+

@@ -66,10 +66,15 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand, optional: true
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
 
   enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 
   scope :on_sell, -> { where(status: 0) }
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end

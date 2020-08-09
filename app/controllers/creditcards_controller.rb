@@ -6,6 +6,9 @@ class CreditcardsController < ApplicationController
   end
 
   def create
+    if creditcard = Creditcard.create_card(creditcard_params)
+      redirect_to root_path, notice: 'クレジットカードを登録しました'
+    else
     # API通信時にエラーが発生していた場合の処理
     if params[:creditcard][:error].presence
       set_token_error_in_flash(params[:creditcard][:error])
@@ -16,8 +19,10 @@ class CreditcardsController < ApplicationController
     # その他のエラー
     else
       flash.now[:notice] = "例外エラーが発生しました。事務局に通報してください"
-      render :new
     end
+  end
+
+  def edit
   end
 
   private
