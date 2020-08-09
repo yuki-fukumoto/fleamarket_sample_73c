@@ -27,7 +27,7 @@
               -# - elsif user_signed_in? && カード未登録
               -# =link_to "購入画面に進む", "/", data: { confirm: '【確認】クレジットカード登録が必要です。登録画面に移動しますか？' }, class: "btn-block__purchase"
             - elsif user_signed_in?
-              =link_to "購入画面に進む",  confirm_purchases_path(@item.id), class: "btn-block__purchase"
+              =link_to "購入画面に進む", confirm_purchase_path(@item), class: "btn-block__purchase"
             - else
               =link_to "購入画面に進む", new_user_session_path, data: { confirm: '【確認】購入はログインが必要です。移動しますか？' }, class: "btn-block__purchase"
 

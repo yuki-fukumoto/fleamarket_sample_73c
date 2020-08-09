@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :creditcards, only: [:new, :create]
 
   resources :purchases, only: :create do
-    collection do
-      get :confirm
+    member do
+      get :confirm 
     end
   end
 end
