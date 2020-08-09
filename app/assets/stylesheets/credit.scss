@@ -95,6 +95,7 @@ body {
       height: 25px;
       margin: 5px 8px;
       font-size: small;
+      border: 1px solid #ABABAB;  
     }
 
   }
@@ -126,7 +127,7 @@ body {
         margin-bottom: 5px;
       }
 
-      &__form {
+      input {
         margin: 8px;
         margin-top: 5px;
         width: 400px;
@@ -167,17 +168,21 @@ body {
         display: flex;
         padding-top: 5px;
       
-        &__mouth  {
+        &__mouth {
           font-size: small;
           padding-bottom: 2px;
+          width: 40px;
+          border: 1px solid #ABABAB;  
         }
 
         &__label {
           padding-left: 8px;
         }
 
-        &__year {
+        input {
           margin-left: 8px;
+          width: 40px;
+          border: 1px solid #ABABAB;
         }
 
         &__year2 {
