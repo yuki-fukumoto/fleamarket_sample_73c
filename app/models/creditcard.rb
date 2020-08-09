@@ -1,4 +1,6 @@
 class Creditcard < ApplicationRecord
+  attr_accessor :token, :error
+
   validates :customer_id, :card_id, presence: true
 
   belongs_to :user
@@ -9,8 +11,11 @@ class Creditcard < ApplicationRecord
   Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
 
   def self.create_card(params)
-    binding.pry
-    customer = Payjp::Customer.create
-    self.create(customer_id: customer.id, card_id: params[:card_id], user_id: params[:user_id])
+    if params[:token].present?
+      customer = Payjp::Customer.create(card: params[:token])
+      self.create(customer_id: customer.id, card_id: customer.default_card, user_id: params[:user_id])
+    else
+      false
+    end
   end
 end

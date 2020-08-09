@@ -33,15 +33,17 @@
   %section.top_visual
 
     .Contents
-      %h2.Contents__title 人生を変えるフリマアプリ 
+      %h2.Contents__title 人生を変えるフリマアプリ
       %p.Contents__subtitle
-        FURIMAはだれでもかんたんに出品・購入できる 
+        FURIMAはだれでもかんたんに出品・購入できる
         %br フリマアプリです
       .Contents__btn
-        =link_to confirm_purchases_path do
+        -# =link_to confirm_purchase_path(@purchase) do
+        =link_to "#" do
           =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
-        =link_to new_creditcard_path do
+        =link_to "https://www.google.com/" do
           =image_tag "google-play-badge.png", class: 'google_btn'
+          
 
 
   %section.reason
@@ -122,7 +124,7 @@
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
               .topiclist__body
-                = item.name 
+                = item.name
                 .place
                   %ul
                     = item.price
@@ -152,6 +154,61 @@
                       %i{class:"fa fa-star likeicon"}0
                   %p （税込）
 
-= render partial: 'layouts/footer'
+  .banner
+    .foot
+      %h2.foot__title だれでもかんたん、人生を変えるフリマアプリ
+      %p.foot__text 今すぐ無料ダウンロード！
+      .foot__btn
+        =link_to "https://apps.apple.com/us/app/google-chrome/id535886823?mt=8" do
+          =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
+        =link_to "https://play.google.com/store" do
+          =image_tag "google-play-badge.png", class: 'google_btn'
+
+
+  .footer
+    %ul.footer__contens
+      %li.content
+        %h2.content__head FURIMAについて
+        %ul
+          %li
+            =link_to "/" do
+              会社概要（運営会社）
+          %li
+            =link_to "/" do
+              プライバシーポリシー
+          %li
+            =link_to "/" do
+              FURIMA利用規約
+          %li
+            =link_to "/" do
+              ポイントに関する特約
+
+      %li.content
+        %h2.content__head FURIMAを見る
+        %ul
+          %li
+            =link_to "/" do
+              カテゴリー一覧
+          %li
+            =link_to "/" do
+              ブランド一覧
+
+      %li.content
+        %h2.content__head  ヘルプ＆ガイド
+        %ul
+          %li
+            =link_to "/" do
+              FURIMAガイド
+          %li
+            =link_to "/" do
+              FURIMAロゴ利用ガイドライン
+          %li
+            =link_to "/" do
+              お知らせ
+    .FURIMA_LOGO
+      =link_to "/" do
+        = image_tag"logo-white.png", alt: 'logo'
+
+//= render partial: 'layouts/footer'
 
 = render partial: 'layouts/puts_up'

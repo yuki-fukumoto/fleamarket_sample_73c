@@ -1,12 +1,10 @@
 // DOM読み込みが完了したら実行
 document.addEventListener("DOMContentLoaded", (e) => {
   Payjp.setPublicKey("pk_test_91e3960108d6cf0addff2d8c");
-  console.log("reload");
-
+  
   $("#new_creditcard").on("submit", function (e) {
-    console.log("hakka");
 
-    e.preventDefault();
+  $("#new_creditcard").submit(function (e) {
     // カード情報生成
     let card = {
       number: document.getElementById("card_number").value,
@@ -14,8 +12,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       exp_month: document.getElementById("exp_month").value,
       exp_year: document.getElementById("exp_year").value,
     };
-    console.log("token_send");
-
     // トークン生成のためのAPI通信の実行
     Payjp.createToken(card, (status, response) => {
       console.log(status);
@@ -32,5 +28,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
       $("#new_creditcard").submit();
     });
     // return false;
+    return false;
   });
 });

@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
     @items = Item.on_sell.includes([:images]).order(created_at: :desc)
     @items = Item.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
     @random = Item.order("RAND()").limit(4)
+    # @purchase = Purchase.find(params[:purchase_id])
   end
 
   def new
@@ -65,7 +66,6 @@ class ItemsController < ApplicationController
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
   end
-
 
   def search
     @items = Item.search(params[:keyword]).order(created_at: :desc)
