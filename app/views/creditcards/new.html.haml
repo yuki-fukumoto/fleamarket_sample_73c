@@ -29,10 +29,11 @@
           .main_container__title__table__group4__data3
             「月」/「年」の順に選択します。カード上の表記にご注意ください。
             .main_container__title__table__group4__data3__block
-              = f.number_field :exp_month, id: "exp_month", class: "main_container__title__table__group4__data3__block__mouth"
+              = f.select(:exp_month, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 ,12], class: "main_container__title__table__group4__data3__block__mouth")
               .main_container__title__table__group4__data3__block__label
                 月
-              = f.number_field :valid_year, id: "exp_year",class: "main_container__title__table__group4__data3__block_year"
+              = f.select(:exp_year, [2020, 2021, 2022, 2023, 2024, 2025], class: "main_container__title__table__group4__data3__block_year")
+
               .main_container__title__table__group4__data3__block__year2
                 年
       .main_container__title__table__group6

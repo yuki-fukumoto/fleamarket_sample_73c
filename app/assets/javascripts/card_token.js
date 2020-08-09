@@ -8,9 +8,11 @@ $(document).on("turbolinks:load", function () {
     let card = {
       number: document.getElementById("card_number").value,
       cvc: document.getElementById("cvv").value,
-      exp_month: document.getElementById("exp_month").value,
-      exp_year: document.getElementById("exp_year").value,
+      exp_month: document.getElementById("creditcard_exp_month").value,
+      exp_year: document.getElementById("creditcard_exp_year").value,
     };
+
+    console.log(card.year);
     // トークン生成のためのAPI通信の実行
     Payjp.createToken(card, (status, response) => {
       console.log(status);
