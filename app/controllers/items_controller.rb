@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.on_sell.includes([:images]).order(created_at: :desc)
     @items = Item.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
+    @random = Item.order("RAND()").limit(4)
   end
 
   def new
@@ -65,7 +66,11 @@ class ItemsController < ApplicationController
     render json: @categories
   end
 
-  
+
+  def search
+    @items = Item.search(params[:keyword]).order(created_at: :desc)
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
