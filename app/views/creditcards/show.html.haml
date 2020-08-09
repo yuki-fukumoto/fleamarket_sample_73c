@@ -57,5 +57,4 @@
       = link_to "クレジットカード情報を削除する", creditcard_path(@creditcard.id), method: :delete, class: "main_container__title__table__register__btn1"
     .main_container__title__table__top
       %li.main_container__title__table__top__page
-        =link_to "トップページへ戻る", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"}
-
+        =link_to "トップページへ戻る", root_path
