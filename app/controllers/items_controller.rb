@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
   before_action :confirm_user_signed_in?, except: [:index, :show]
 
   def index
-    @items = Item.on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
-    @random = Item.order("RAND()").limit(4)
+    @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
+    @random = Item.order("RAND()").get_on_sell.limit(4)
     # @purchase = Purchase.find(params[:purchase_id])
   end
 
@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword]).order(created_at: :desc)
+    @items = Item.search(params[:keyword]).get_on_sell.order(created_at: :desc)
   end
 
   private
