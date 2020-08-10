@@ -3,7 +3,7 @@ class Creditcard < ApplicationRecord
   validates :customer_id, :card_id, presence: true
 
   belongs_to :user
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
 
 
   require 'payjp'

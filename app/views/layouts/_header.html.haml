@@ -8,7 +8,7 @@
         = f.text_field :keyword, class: "search_box__input", placeholder: "キーワードを入力してください"
         = f.button type: "submit", class: "search_box__btn" do
           %i.fas.fa-search
-          
+
     .list
       %ul.list__left
         %li.list__left__category
@@ -18,7 +18,7 @@
       %ul.list__right
         - if user_signed_in?
           %li.list__right__log_in
-            =link_to "マイページ", "#"
+            =link_to "マイページ", users_path
           %li.list__right__log_in
             =link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"}
         - else
