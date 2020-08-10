@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'users', to: "users#show"
   get 'categories/get_child', to: "categories#get_child"
+
   resources :items, except: :index do
     collection do
       get 'search'

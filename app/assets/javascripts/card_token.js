@@ -2,8 +2,6 @@
 $(document).on("turbolinks:load", function () {
   Payjp.setPublicKey("pk_test_91e3960108d6cf0addff2d8c");
   $("#new_creditcard").submit(function (e) {
-    console.log("submit");
-
     // カード情報生成
     let card = {
       number: document.getElementById("card_number").value,
@@ -12,11 +10,8 @@ $(document).on("turbolinks:load", function () {
       exp_year: document.getElementById("creditcard_exp_year").value,
     };
 
-    console.log(card.year);
     // トークン生成のためのAPI通信の実行
     Payjp.createToken(card, (status, response) => {
-      console.log(status);
-      console.log(response);
       if (status === 200) {
         // トークン生成 成功時：トークンIDをフォームに代入
         $("#creditcard_token").val(response.id);

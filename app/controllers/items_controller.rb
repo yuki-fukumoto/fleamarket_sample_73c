@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   def index
     @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
     @random = Item.order("RAND()").get_on_sell.limit(4)
-    # @purchase = Purchase.find(params[:purchase_id])
   end
 
   def new
