@@ -1,6 +1,6 @@
 class Creditcard < ApplicationRecord
   attr_accessor :token, :error
-  validates :customer_id, :card_id, presence: true
+  validates :customer_id, :card_id, presence: {message: "：システムエラー"}
 
   belongs_to :user
   has_many :purchases, dependent: :destroy

@@ -206,10 +206,6 @@ RSpec.describe Item, type: :model do
   describe '#search' do
 
     before do
-      # @item             = build(:item)
-      # @item.save
-      # @other_item       = build(:other_item)
-      # @other_item.save
       @item = FactoryBot.create(:item, name: "バッグ")
       @other_item = FactoryBot.create(:item, name: "かばん")
     end
@@ -233,4 +229,6 @@ RSpec.describe Item, type: :model do
       expect(Item.search("")).to include(@item, @other_item)
     end
   end
+
+
 end
