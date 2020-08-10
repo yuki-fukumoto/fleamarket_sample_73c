@@ -66,9 +66,9 @@ class ItemsController < ApplicationController
     render json: @categories
   end
 
-  def search
-    @items = Item.search(params[:keyword]).order(created_at: :desc)
-  end
+  # def search
+  #   @items = Item.search(params[:keyword]).order(created_at: :desc)
+  # end
 
   private
 

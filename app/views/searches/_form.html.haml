@@ -1,0 +1,40 @@
+.detail_search
+  = search_form_for(@q,url: detail_search_searches_path) do |f|
+    .detail_search_sort
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { onchange: 'this.form.submit()'} )
+    .detail_search_form
+      .detail_search__title
+        %h3 詳細検索
+      .detail_search__group
+        .detail_search__group--label
+          -# = fa_icon "search"
+          %p キーワードを追加する
+        = f.search_field :name_cont, placeholder: "例）値下げ"
+      .detail_search__group
+        .detail_search__group--label
+          -# = fa_icon "search"
+          %p 価格
+        .detail_search__group--forms
+          = f.search_field :price_gteq, placeholder: "¥ Min"
+          %p 〜
+          = f.search_field :price_lteq, placeholder: "¥ Max"
+      -# .detail_search__group
+      -#   .detail_search__group--label
+      -#     -# = fa_icon "search"
+      -#     %p 商品の状態
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       %input{type: "checkbox"}
+      -#       = 'すべて'
+        -# .detail_search__group--checkbox
+        -#   %label
+        -#     = f.check_box :state_in, '1', nil
+        -#     = '新品、未使用'
+        -# .detail_search__group--checkbox
+        -#   %label
+        -#     = f.check_box :state_in, '2', nil
+        -#     = '未使用に近い'
+      .detail_search__btns
+        .detail_search__btn--grey
+          = link_to "クリア", "/searches",type: "button"
+        = f.submit "完了"
