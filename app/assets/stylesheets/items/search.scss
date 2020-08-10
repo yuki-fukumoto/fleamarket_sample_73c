@@ -34,7 +34,7 @@
         &--grey{
           background-color: #3CCACE;
           font-weight: bolder;
-          color: black;
+          color: white;
           width: 60px;
           text-align: center;
           border-radius: 6px;
@@ -139,4 +139,8 @@
   height: 30px;
   padding: 0;
   margin-bottom: 5px;
+}
+
+.detail_search__form__btn--grey a{
+  color: white;
 }
