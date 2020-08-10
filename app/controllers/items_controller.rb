@@ -23,6 +23,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @sub1_category = @item.category.parent
+    @main_category = @sub1_category.parent
+    # binding.pry
   end
 
   def destroy
