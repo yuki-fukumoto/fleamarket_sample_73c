@@ -38,7 +38,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_root_if_item_is_sold(item)
-    binding.pry
     if item.status == "sold"
       redirect_to root_path, notice: "不正なアクセス：取引終了している商品です"
     end
