@@ -1,12 +1,71 @@
 .search_view{
+  display: flex;
+  background-color: #f8f8f8;
+  padding: 40px 40px 40px 60px;
+  .detail_search{
+    margin: 10px 30px 0 0;
+    #q_sorts{
+      height: 30px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    &__form{
+      &__title{
+        font-weight: bold;
+        font-size: 20px;
+      }
+      &__group{
+        &--label{
+          
+        }
+        &--forms p{
+          // display: flex;
+          margin: 0;
+        }
+       
+      }
+      &__btn{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        height: 30px;
+        line-height: 30px;
+        &--grey{
+          background-color: #3CCACE;
+          font-weight: bolder;
+          color: black;
+          width: 60px;
+          text-align: center;
+          border-radius: 6px;
+        }
+        &--red{
+          background-color: #CE403C;
+          font-weight: bolder;
+          color: white;
+          width: 60px;
+          text-align: center;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+  .search_results{
+    .search_result{
+      margin-top: 10px;
+      display: flex;
+      &--head{
+        font-weight: bolder;
+      }
+    }
+  }
   .search_lists{
     display: flex;
     min-height: 200px;
     position: relative;
     background-color: #f8f8f8;
     flex-wrap: wrap;
-    padding: 40px;
-    margin: 0 auto;
+    // padding: 40px;
+    // margin: 0 auto;
     .search_list {
       width: 220px;
       min-width: 220px;
@@ -55,4 +114,19 @@
       }
     }
   }
+}
+
+#q_name_cont{
+  height: 30px;
+  // width: 100%;
+}
+
+#q_price_gteq{
+  height: 30px;
+  // width: 100%;
+}
+
+#q_price_lteq{
+  height: 30px;
+  // width: 100%;
 }
