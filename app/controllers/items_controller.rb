@@ -23,6 +23,8 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     redirect_to_root_if_item_is_sold(@item)
+    @sub1_category = @item.category.parent
+    @main_category = @sub1_category.parent
   end
 
   def destroy
