@@ -4,6 +4,8 @@ class PurchasesController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
+    redirect_to_root_if_item_is_sold(@item)
+
     if @purchase = Purchase.create_charge(purchase_params, @item)
       @item[:status] = "sold"
       @item.save
@@ -15,8 +17,10 @@ class PurchasesController < ApplicationController
   end
 
   def confirm
-    @purchase = Purchase.new
     @item = Item.find(params[:id])
+    redirect_to_root_if_item_is_sold(@item)
+    @purchase = Purchase.new
+
     user = User.find(current_user.id)
     @address = user.addresses.first
     @creditcard = user.creditcards.first
