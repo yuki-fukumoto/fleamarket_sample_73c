@@ -21,18 +21,16 @@
               = "#{@item.price}円"
             .itemBox__price-detail
               %span (税込)
-              %span 送料込   
-          .btn-block   
-            - if user_signed_in? && current_user.id == @item.user_id 
+              %span 送料込
+          .btn-block
+            - if user_signed_in? && current_user.id == @item.user_id
               =link_to "商品を編集する", edit_item_path(@item.id), method: :get, class: "btn-block__edit"
-              =link_to "商品を削除する", item_path(@item.id), data: { confirm: '【確認】本当に削除しますか？' }, method: :delete, class: "btn-block__delete" 
+              =link_to "商品を削除する", item_path(@item.id), data: { confirm: '【確認】本当に削除しますか？' }, method: :delete, class: "btn-block__delete"
 
-              -# - elsif user_signed_in? && カード未登録
-              -# =link_to "購入画面に進む", "/", data: { confirm: '【確認】クレジットカード登録が必要です。登録画面に移動しますか？' }, class: "btn-block__purchase"
             - elsif user_signed_in?
               =link_to "購入画面に進む", confirm_purchase_path(@item), class: "btn-block__purchase"
             - else
-              =link_to "購入画面に進む", new_user_session_path, data: { confirm: '【確認】購入はログインが必要です。移動しますか？' }, class: "btn-block__purchase"
+              =link_to "購入画面に進む", new_user_session_path, class: "btn-block__purchase"
 
           .itemDetail
             =@item.explanation

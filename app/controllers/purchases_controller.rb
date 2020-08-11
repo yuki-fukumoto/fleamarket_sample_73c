@@ -21,9 +21,8 @@ class PurchasesController < ApplicationController
     redirect_to_root_if_item_is_sold(@item)
     @purchase = Purchase.new
 
-    user = User.find(current_user.id)
-    @address = user.addresses.first
-    @creditcard = user.creditcards.first
+    @address = current_user.addresses.first
+    @creditcard = current_user.creditcards.first
 
 
     if @creditcard.presence

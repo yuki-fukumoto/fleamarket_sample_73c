@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :confirm_user_signed_in?, except: [:index, :show]
+  before_action :confirm_user_signed_in?, except: [:index, :show, :edit, :update]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
@@ -21,21 +22,17 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     redirect_to_root_if_item_is_sold(@item)
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
   end
 
   def destroy
-    item = Item.find(params[:id])
     item.destroy
     redirect_to root_path
   end
 
   def edit
-    @item = Item.find(params[:id])
-
     grandchild_category = @item.category
     child_category = grandchild_category.parent
 
@@ -57,7 +54,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
     redirect_to root_path, notice: '商品を編集しました'
   end
@@ -75,6 +71,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 
