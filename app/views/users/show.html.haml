@@ -1,4 +1,3 @@
--# マイページ
 .top_page
   .top_page__header
     .top_page__header__inner
@@ -74,21 +73,21 @@
     %h2.main-box__title
       ="#{@user.nickname}さんのマイページ"
     .main-box__notice
-      .main-box__subtitle
-        %h3.main-box__important 重要なお知らせ
-      .main-box__body
-        .main-box__inbox
-          .main-box__left
-            %h4.main-box__streetaddres 住所の設定を行ってください。<br>
+      .main-box__notice__subtitle
+        %h3.main-box__subtitle__important 重要なお知らせ
+      .main-box__notice__body
+        .main-box__notice__body__inbox
+          .main-box__notice__body__inbox__left
+            %h4.main-box__notice__body__inbox__streetaddres 住所の設定を行ってください。<br>
             スムーズに購入を進めるために住所の設定を行ってください。
-      .main-box__recently
-        .main-box__subsubtitle 最近見た商品
-        .main-box__body2
+      .main-box__notice__recently
+        .main-box__notice__recently__subsubtitle 最近見た商品
+        .main-box__notice__recently__body2
           %p.main-box__center
             %p.main-box__text 商品を閲覧するとここに履歴が表示されます。お気に入りの商品を見つけましょう！
     .main-box__group
-      .main-box__submenu
-        %h1.main-box__menutitle1 注目ブランド
+      .submenu
+        %h4.main-box__menutitle 注目ブランド
         %p.main-box__box__brand
         %li.main-box__category1
           =link_to "NIKE"
@@ -96,7 +95,7 @@
           =link_to "GU"
         %li.main-box__category3
           =link_to "ZARA"
-      .main-box__submenu
+      .submenu
         %h1.main-box__menutitle1 コンテンツ
         %li.main-box__category1
           =link_to "ブランド一覧"
@@ -104,7 +103,7 @@
           =link_to "カテゴリ一覧"
         %li.main-box__category3
           =link_to "キーワード一覧"
-      .main-box__submenu
+      .submenu
         %h1.main-box__menutitle1 ガイド
         %li.main-box__category1
           =link_to "公式ガイド"
@@ -112,4 +111,3 @@
           =link_to "初めての方へ"
         %li.main-box__category3
           =link_to "お知らせ"
-
