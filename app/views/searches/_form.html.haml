@@ -18,9 +18,9 @@
         .detail_search__form__group--label
           %p 価格
         .detail_search__form__group--forms
-          = f.search_field :price_gteq, placeholder: "¥ Min"
+          = f.number_field :price_gteq, placeholder: "¥ Min"
           %p 〜
-          = f.search_field :price_lteq, placeholder: "¥ Max"
+          = f.number_field :price_lteq, placeholder: "¥ Max"
       
       -# カテゴリーによる絞り込み
       .detail_search__group
@@ -69,6 +69,11 @@
           %label
             = f.check_box(:condition_in,{:multiple=>true},"6",nil)
             = '全体的に状態が悪い' 
+            
+        -# .detail_search__group--checkbox
+        -#   - Post.tags_i18n.each do |tag|
+        -#     = check_box_tag('q[tag_eq_any][]', Post.tags[tag.first], params[:q].present?&&params[:q]["tag_eq_any"].present?&&params[:q]["tag_eq_any"].include?("#{Post.tags[tag.first]}")
+        -#     = tag.last    
             
       -# 送料負担の絞り込み      
       .detail_search__group
