@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :confirm_user_signed_in?, except: [:index, :show, :edit, :update]
-  before_action :set_item, only: [:show, :destroy]
+  before_action :confirm_user_signed_in?, except: [:index, :show, :search]
+  before_action :set_item, only: [:edit, :show, :destroy]
 
   def index
     @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
@@ -33,6 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    binding.pry
     grandchild_category = @item.category
     child_category = grandchild_category.parent
 
@@ -58,7 +59,6 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: '商品を編集しました'
   end
 
-
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
@@ -76,7 +76,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
-
-
 end
