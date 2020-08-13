@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :confirm_user_signed_in?, except: [:index, :show, :search]
-  before_action :set_item, only: [:edit, :show, :destroy]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
 
   def index
     @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
