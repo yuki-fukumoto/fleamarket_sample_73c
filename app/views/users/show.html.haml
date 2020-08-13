@@ -1,74 +1,6 @@
-.top_page
-  .top_page__header
-    .top_page__header__inner
-      %h1.icon
-        =link_to "/" do
-          = image_tag(asset_path('logo.png'), alt: 'logo', class: 'img')
-      .search_box
-        %input{class:"search_box__input", placeholder:"キーワードを入力してください"}
-        %button{type:"submit", class: "search_box__btn"}
-          %i.fas.fa-search{class: "search_box__btn__icon"}
-        %ul.search--result
-    .list
-      %ul.list__left
-        %li.list__left__category
-          =link_to "カテゴリー", 'http://google.co.jp'
-        %li.list__left__brand
-          =link_to "ブランド", 'http://google.co.jp'
-      %ul.list__right
-        - if user_signed_in?
-          %li.list__right__log_in
-            =link_to "マイページ", user_path(current_user)
-          %li.list__right__log_in
-            =link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"}
-        - else
-          %li.list__right__log_in
-            =link_to "ログイン", new_user_session_path
-          %li.list__right__new
-            =link_to "新規会員登録", new_user_registration_path
-
-.side-box
-  .side-menu
-    %group
-      %h2.side-menu__title マイページメニュー
-      .group-list
-        %li.group-list__notice
-          =link_to "お知らせ"
-        %li.group-list__likes
-          =link_to "いいねした商品"
-    %group
-      %h2.side-menu__title 商品を出品する
-      .group-list
-        %li.group-list__item
-          =link_to "商品を出品"
-        %li.group-list__sellitem
-          =link_to "出品した商品"
-        %li.group-list__shop
-          = link_to "自分のショップを見る"
-    %group
-      %h2.side-menu__title 商品を購入する
-      .group-list
-        %li.group-list__buy
-          =link_to "購入した商品"
-        %li.group-list__watch
-          =link_to "最近見た商品"
-        %li.group-list__comment
-          =link_to "コメントした商品"
-    %group
-      %h2.side-menu__title 設定・ヘルプ・その他
-      .group-list
-        %li.group-list__inquiry
-          =link_to "お問い合わせ"
-        %li.group-list__credit
-          - if current_user.creditcards.empty?
-            =link_to "クレジットカード情報の登録", new_creditcard_path
-          -else
-            =link_to "クレジットカード情報の管理", creditcard_path(current_user.creditcards.first.id)
-        %li.group-list__management
-          =link_to "ポイント管理"
-        %li.group-list__logout
-          =link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトします。よろしいですか？"}
-
+= render partial: 'layouts/header'
+.contents__mypage
+  = render partial: 'layouts/sidemenu'
   .main-box
     %h2.main-box__title
       ="#{current_user.nickname}さんのマイページ"
@@ -111,3 +43,4 @@
           =link_to "初めての方へ"
         %li.main-box__category3
           =link_to "お知らせ"
+= render partial: 'layouts/footer'

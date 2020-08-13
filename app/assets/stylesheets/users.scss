@@ -99,8 +99,9 @@ a {
   color: black;
 }
 
-.side-box {
+.contents__mypage {
   display: flex;
+  align-items: stretch;
   margin: 20px 150px;
   padding: 20px;
 }
