@@ -9,26 +9,7 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  describe "imageのバリデーション" do
-    let(:item) {FactoryBot.build(:item, image: image)}
-    context "登録される" do
-      subject{item}
-      context "画像が入力されている" do
-        let(:image) {[ Rack::Test::UploadedFile.new(Rails.root.join('spec/factories/_test.jpg'), 'spec/factories/_test.jpg') ]}
-        it {is_expected.to be_valid}
-      end
-    end
-    context "登録されない" do
-      subject{item.errors[:image]}
-      before do
-        item.valid?
-      end
-      context "画像が１枚も入力されていない" do
-        let(:image) {nil}
-        it {is_expected.to include("は1枚以上は登録してください")}
-      end
-    end
-  end
+
 
   describe "nameのバリデーション" do
     let(:item) {FactoryBot.build(:item, name: name)}
@@ -90,11 +71,10 @@ RSpec.describe Item, type: :model do
 
   describe "categoryのバリデーション" do
     let(:item) {FactoryBot.build(:item, category_id: category_id)}
-    category = FactoryBot.create(:category)
     context "登録される" do
       subject{item}
       context "categoryが入力されている" do
-        let(:category_id) {category.id}
+        let(:category_id) {FactoryBot.create(:category).id}
         it {is_expected.to be_valid}
       end
     end
@@ -226,31 +206,30 @@ RSpec.describe Item, type: :model do
   describe '#search' do
 
     before do
-      # @item             = build(:item)
-      # @item.save
-      # @other_item       = build(:other_item)
-      # @other_item.save
       @item = FactoryBot.create(:item, name: "バッグ")
       @other_item = FactoryBot.create(:item, name: "かばん")
     end
 
-    # "バッグ"で検索した場合
-    it "@itemが検索結果に出てくること" do
-      expect(Item.search("バッグ")).to include(@item)
+    context  "バッグで検索した場合" do
+      it "@itemが検索結果に出てくること" do
+        expect(Item.search("バッグ")).to include(@item)
+      end
+
+      it "@other_itemが検索結果に出てこないこと" do
+        expect(Item.search("バッグ")).to_not include(@other_item)
+      end
     end
 
-    it "@other_itemが検索結果に出てこないこと" do
-      expect(Item.search("バッグ")).to_not include(@other_item)
+    context "カバンで検索した場合" do
+      it "検索結果がないこと" do
+        expect(Item.search("カバン")).to be_empty
+      end
     end
 
-    # # "カバン"で検索した場合
-    it "検索結果がないこと" do
-      expect(Item.search("カバン")).to be_empty
-    end
-
-    # # 検索していない場合
-    it "検索ワードがない場合、全レコードを出力すること" do
-      expect(Item.search("")).to include(@item, @other_item)
+    context "検索していない場合" do
+      it "検索ワードがない場合、全レコードを出力すること" do
+        expect(Item.search("")).to include(@item, @other_item)
+      end
     end
   end
 end

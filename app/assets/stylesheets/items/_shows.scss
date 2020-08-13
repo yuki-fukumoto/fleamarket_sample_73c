@@ -1,13 +1,37 @@
-// クレカ登録
-
+// クレカ登録ページ
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f5f5f5;
+  width: 100%;
 }
 
+.top_page {
+  padding: 0 150px;
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+
+  &__header {
+    padding: 0px;
+
+    &__inner {
+      display: flex;
+      padding-top: 15px;
+
+      img {
+        height: 40px;
+        width: 140px;
+        margin-right: 10px; 
+      }
+
+      &__registration { 
+        margin-top: 5px;
+        font-size: 20px; 
+      }
+    }
+  }
+}
 .main_container {
   width: 850px;
   margin: auto;

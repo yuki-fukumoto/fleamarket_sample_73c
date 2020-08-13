@@ -20,21 +20,21 @@
     display: flex;
     padding: 32px 16px;
     &__image img{
-      height: 80px;
-      width: 80px;
+      height: 100px;
+      // width: 80px;
       object-fit: contain;
     }
     &__title{
       text-align: right;
       &__bar{
-        font-size: 14px;
+        font-size: 22px;
       }  
       &__price{
         &__board{
-        font-size: 15px;
+        font-size: 20px;
         }
         &__comment{
-        font-size: 12px;
+        font-size: 16px;
         }
       } 
     }  
