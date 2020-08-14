@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 body {
   min-width: 940px;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
@@ -257,9 +254,9 @@ body {
   min-width: 220px;
   display: flex;
   background-color: #fff;
-  &__item__img{
+  &__item__img {
     height: 150px;
-    width:220px;
+    width: 220px;
     object-fit: contain;
   }
   &__img img {
@@ -341,10 +338,6 @@ body {
 
 .copyright {
   text-align: center;
-}
-
-a {
-  text-decoration: none;
 }
 
 .list a {

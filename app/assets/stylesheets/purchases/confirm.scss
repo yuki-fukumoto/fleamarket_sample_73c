@@ -1,126 +1,120 @@
-* {
-  box-sizing: border-box;
-}
-
-.confirm_contents{
+.confirm_contents {
   max-width: 700px;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
   padding: 40px 162.5px;
   margin-bottom: 30px;
 
-  .content_top_message{
+  .content_top_message {
     text-align: center;
     margin-bottom: 40px;
     font-size: 20px;
     font-weight: bold;
-  }  
+  }
 
-  .items{
+  .items {
     display: flex;
     padding: 32px 16px;
-    &__image img{
+    &__image img {
       height: 100px;
       // width: 80px;
       object-fit: contain;
     }
-    &__title{
+    &__title {
       text-align: right;
-      &__bar{
+      &__bar {
         font-size: 22px;
-      }  
-      &__price{
-        &__board{
-        font-size: 20px;
+      }
+      &__price {
+        &__board {
+          font-size: 20px;
         }
-        &__comment{
-        font-size: 16px;
+        &__comment {
+          font-size: 16px;
         }
-      } 
-    }  
-  } 
-  
-  .payment_amount{
+      }
+    }
+  }
+
+  .payment_amount {
     display: flex;
     padding: 32px 16px;
     justify-content: space-between;
-    &__title{
+    &__title {
       font-size: 16px;
       font-weight: bold;
     }
-    &__price{
+    &__price {
       font-size: 24px;
       font-weight: bold;
     }
   }
 
-  .payment_method{
+  .payment_method {
     padding: 32px 16px;
     font-size: 14px;
-    &__title{
+    &__title {
       display: flex;
       justify-content: space-between;
       margin-bottom: 16px;
-      &__bar{
+      &__bar {
         font-weight: bold;
       }
-      a{
+      a {
         color: #0095ee;
         text-decoration: none;
       }
     }
-    .credit_card{
-      &__no{
+    .credit_card {
+      &__no {
       }
-      &__expiration{
-        &__title{
+      &__expiration {
+        &__title {
         }
-        &__date{
+        &__date {
         }
       }
-      &__company{
+      &__company {
         margin-top: 8px;
       }
     }
   }
 
-  .confirm_adress{
+  .confirm_adress {
     padding: 32px 16px;
     font-size: 14px;
-    &__title{
+    &__title {
       display: flex;
       justify-content: space-between;
       margin-bottom: 16px;
-      &__bar{
+      &__bar {
         font-weight: bold;
       }
-      a{
+      a {
         color: #0095ee;
         text-decoration: none;
       }
     }
-    &__zip_code{
-
+    &__zip_code {
     }
-    &__code{
-
+    &__code {
     }
-    &__name{
+    &__name {
       margin-top: 8px;
     }
   }
 
-  .content_bottom{
+  .content_bottom {
     padding: 32px 16px;
     color: #888888;
     font-size: 14px;
   }
-  
-  .confirm_btn{
+
+  .confirm_btn {
     margin: 0 auto;
-    &__buy button{
+    &__buy button {
       margin-bottom: 18px;
-      background-color: #CE403C;
+      background-color: #ce403c;
       height: 50px;
       width: 100%;
       border-radius: 5px;
@@ -135,8 +129,8 @@
         box-shadow: none;
       }
     }
-    &__cancel{
-      background-color: #3CCACE;
+    &__cancel {
+      background-color: #3ccace;
       height: 50px;
       width: 100%;
       border-radius: 5px;
@@ -148,12 +142,12 @@
         transform: translate(1px, 1px);
         box-shadow: none;
       }
-      a{
+      a {
         color: white;
         text-decoration: none;
         font-size: 14px;
         font-weight: bold;
       }
     }
-  }  
+  }
 }
