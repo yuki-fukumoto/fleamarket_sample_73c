@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.on_sell.includes([:images]).order(created_at: :desc)
-    @items = Item.includes([:images]).order(created_at: :desc).page(params[:page]).without_count.per(5)
+    @items = Item.includes([:images]).order(created_at: :desc).page(params[:page]).without_count.per(1)
   end
 
   def new
