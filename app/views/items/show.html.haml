@@ -94,7 +94,7 @@
           %ul.commentContents
             - if current_user
               = form_with(model: [@item, @comment], local: true) do |form|
-                = form.text_area :text, placeholder: "コメントする", rows: "2"
+                = form.text_area :text, placeholder: "コメントする", rows: "2", style: "width 600px;"
                 = form.submit "SEND"
             - else
               %strong
@@ -108,32 +108,7 @@
                       = link_to comment.user.nickname, "/users/#{comment.user_id}"
                       ：
                     = comment.text
-          -#   %form#new_comment.new_comment{ action: "#",method: "post"}
-          -# %input{name: "utf8", type: "hidden", value: "✓"}/
-          -# %input{name:  "authenticity_token", type: "hidden", value: "UZaji94lj/rTfLW3DcSaCXs2HPv6Ic+zHxCyGaZhfKQcIpGKWGwWxX9gCQcYcZ2SdCqU5NyBOUL3tc3504qWYA=="}
-          -# %textarea#comment_body{name: "comment[body]", required: "required"}
-          -# -# %p.noticeMsg
-          -#   相手のことを考え丁寧なコメントを心がけましょう。
-          -#   %br/
-          -#   不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          -# %br/
-          -# .container
-          -#   - if current_user
-          -#     = form_with(model: [@item, @comment], local: true) do |form|
-          -#       = form.text_area :text, placeholder: "コメントする", rows: "2"
-          -#       = form.submit "SEND"
-          -#   - else
-          -#     %strong
-          -#       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-          -#   .comments
-          -#     %h4 ＜コメント一覧＞
-          -#     - if @comments
-          -#       - @comments.each do |comment|
-          -#         %p
-          -#           %strong
-          -#             = link_to comment.user.nickname, "/users/#{comment.user_id}"
-          -#             ：
-          -#           = comment.text
+          
 //= render partial: 'layouts/footer'
 
 //= render partial: 'layouts/puts_up'
