@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+.side-box {
+=======
 * {
   box-sizing: border-box;
 }
@@ -100,6 +103,7 @@ a {
 }
 
 .contents__mypage {
+>>>>>>> master
   display: flex;
   align-items: stretch;
   margin: 20px 150px;
@@ -121,7 +125,6 @@ a {
     padding: 0 8px 8px;
     font-size: 16px;
     font-weight: bold;
-    box-sizing: border-box;
   }
 
   .group-list {
@@ -204,7 +207,6 @@ a {
     margin: 60px 0 8px;
     padding: 0 8px 8px;
     font-size: 16px;
-    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
   }
@@ -214,7 +216,6 @@ a {
     padding: 0 8px 8px;
     font-size: 16px;
     font-weight: bold;
-    box-sizing: border-box;
     display: inline-block;
   }
 
