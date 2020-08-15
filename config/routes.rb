@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   root 'items#index'
-
+  resources :items do
+    resources :comments, only: :create
+  end
   resources :items, except: :index do
     collection do
       get 'search'
