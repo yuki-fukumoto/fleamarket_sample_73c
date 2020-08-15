@@ -1,5 +1,7 @@
 .top_icon
   =image_tag(asset_path("logo.png"))
+- breadcrumb :item_edit
+= render "layouts/breadcrumbs"
 .contents
   =form_with model: @item, local: true do |f|
     .item
@@ -9,7 +11,7 @@
         .title__require
           必須
       %p.comments
-        最大5枚までアップロードできます 
+        最大5枚までアップロードできます
       .post__drop__box__container
         .prev-content
           - @item.images.each do |image|
@@ -23,7 +25,7 @@
         .label-content
 
           = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
-            %pre.label-box__text-visible 
+            %pre.label-box__text-visible
               %i.fas.fa-camera
         .hidden-content
           = f.fields_for :images do |i|
@@ -32,8 +34,8 @@
             = i.check_box:_destroy, class: "hidden-checkbox"
 
           - @item.images.length.upto(4) do |i|
-            %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}     
-          
+            %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
     %hr
     .item
       .title
@@ -64,14 +66,14 @@
 
         .column.form_category
           = f.collection_select :parent_name, Category.where(ancestry: nil), :id, :name, {selected:@item.category.parent.parent.id}, {class: "category_0 text_box"}
-      .container.category_1__container 
-        .title 
+      .container.category_1__container
+        .title
         .column.form_category
           = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category_1 text_box'}
-      .container.category_2__container 
-        .title 
-        .column.form_category   
-          = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category_2 text_box' }    
+      .container.category_2__container
+        .title
+        .column.form_category
+          = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category_2 text_box' }
 
       .container
         .title

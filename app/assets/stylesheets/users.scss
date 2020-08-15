@@ -1,7 +1,13 @@
+.wrapper_mypage {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
 .contents__mypage {
   display: flex;
   align-items: stretch;
-  margin: 20px 150px;
+  margin: 0 150px;
   padding: 20px;
 }
 

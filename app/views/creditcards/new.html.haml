@@ -1,5 +1,7 @@
 
 = render partial: 'layouts/header'
+- breadcrumb :creditcard_new
+= render "layouts/breadcrumbs"
 = form_with model: @creditcard, method: :post, local: true, id: "new_creditcard" do |f|
 
   .contents__mypage
