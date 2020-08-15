@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_012851) do
     t.bigint "creditcard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "charge_id", null: false
     t.index ["address_id"], name: "index_purchases_on_address_id"
     t.index ["creditcard_id"], name: "index_purchases_on_creditcard_id"
     t.index ["item_id"], name: "index_purchases_on_item_id"
