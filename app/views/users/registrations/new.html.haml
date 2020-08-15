@@ -16,6 +16,10 @@
           .wrapper-sign-up__article__section__form-area__form
             =f.text_field :nickname, class: "wrapper-sign-up__article__section__form-area__form--style"
         .wrapper-sign-up__article__section__form-area
+          - if @user.errors.any?
+            - if @user.errors[:nickname]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[0]
           .wrapper-sign-up__article__section__form-area__name
             メールアドレス
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -23,6 +27,10 @@
           .wrapper-sign-up__article__section__form-area__form
             =f.email_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
         .wrapper-sign-up__article__section__form-area
+          - if @user.errors.any?
+            - if @user.errors[:email]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[12]
           .wrapper-sign-up__article__section__form-area__name
             パスワード
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -30,6 +38,12 @@
           .wrapper-sign-up__article__section__form-area__form
             =f.password_field :password, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "7文字以上"
         .wrapper-sign-up__article__section__form-area
+          - if @user.errors.any?
+            - if @user.errors[:password]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[9]
+                = @user.errors.full_messages[10]
+                = @user.errors.full_messages[11]
           .wrapper-sign-up__article__section__form-area__name
             パスワード(確認用)
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -52,6 +66,16 @@
               .wrapper-sign-up__article__section__form-area__form__divide__text 名
               =f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角"
         .wrapper-sign-up__article__section__form-area
+          - if @user.errors.any?
+            - if @user.errors[:lastname]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[3]
+                = @user.errors.full_messages[4]
+          - if @user.errors.any?
+            - if @user.errors[:fastname]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[1]
+                = @user.errors.full_messages[2]
           .wrapper-sign-up__article__section__form-area__name
             ふりがな
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -64,6 +88,16 @@
               .wrapper-sign-up__article__section__form-area__form__divide__text 名
               =f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角"
         .wrapper-sign-up__article__section__form-area
+          - if @user.errors.any?
+            - if @user.errors[:lastname_read]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[7]
+                = @user.errors.full_messages[8]
+          - if @user.errors.any?
+            - if @user.errors[:fastname_read]
+              .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[5]
+                = @user.errors.full_messages[6]
           .wrapper-sign-up__article__section__form-area__name
             誕生日
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -87,6 +121,16 @@
                 .wrapper-sign-up__article__section__form-area__form__divide__text 名
                 =address_f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
+            - if @user.errors.any?
+              - if @user.errors[:lastname]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[3]
+                  = @user.errors.full_messages[4]
+            - if @user.errors.any?
+              - if @user.errors[:fastname]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[1]
+                  = @user.errors.full_messages[2]
             .wrapper-sign-up__article__section__form-area__name
               ふりがな
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -99,6 +143,16 @@
                 .wrapper-sign-up__article__section__form-area__form__divide__text 名
                 =address_f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
+            - if @user.errors.any?
+              - if @user.errors[:lastname_read]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[7]
+                  = @user.errors.full_messages[8]
+            - if @user.errors.any?
+              - if @user.errors[:fastname_read]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[5]
+                  = @user.errors.full_messages[6]
             .wrapper-sign-up__article__section__form-area__name
               郵便番号
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -108,6 +162,14 @@
               .wrapper-sign-up__article__section__form-area__form--zip-divide -
               =address_f.text_field :last_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second", maxlength: "4"
           .wrapper-sign-up__article__section__form-area
+            - if @user.errors.any?
+              - if @user.errors[:first_zip]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[23]
+            - if @user.errors.any?
+              - if @user.errors[:last_zip]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[23]
             .wrapper-sign-up__article__section__form-area__name
               都道府県
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -115,6 +177,10 @@
             .wrapper-sign-up__article__section__form-area__form
               =address_f.text_field :prefecture, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
+            - if @user.errors.any?
+              - if @user.errors[:prefecture]
+                .wrapper-sign-up__article__section__form-area
+                  = @user.errors.full_messages[0]
             .wrapper-sign-up__article__section__form-area__name
               市区町村
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -122,6 +188,10 @@
             .wrapper-sign-up__article__section__form-area__form
               =address_f.text_field :city, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
+            - if @user.errors.any?
+              - if @user.errors[:city]
+                .wrapper-sign-up__article__section__form-area
+                = @user.errors.full_messages[0]
             .wrapper-sign-up__article__section__form-area__name
               番地
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -129,6 +199,9 @@
             .wrapper-sign-up__article__section__form-area__form
               =address_f.text_field :address_line, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
+            - if @user.errors.any?
+              - if @user.errors[:address_line]
+                = @user.errors.full_messages[0]
             .wrapper-sign-up__article__section__form-area__name
               建物名
               .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
