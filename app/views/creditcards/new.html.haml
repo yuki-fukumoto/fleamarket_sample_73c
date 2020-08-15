@@ -1,0 +1,49 @@
+
+= render partial: 'layouts/header'
+= form_with model: @creditcard, method: :post, local: true, id: "new_creditcard" do |f|
+
+  .contents__mypage
+    = render partial: 'layouts/sidemenu'
+    .main_container
+      %h3{class: "main_container__title"}クレジットカード情報の登録
+      .main_container__explanation
+        以下の項目を入力し、「このクレジットカード情報を登録する」または「このクレジットカード情報を削除する」ボタンを押してください。
+        %br
+        （ご家族など、本人以外の情報はご登録いただけません。）
+
+      %table{class: "main_container__table"}
+        %tr
+          %th{colspan: 2, class: "main_container__table--title"} クレジットカード情報
+        %tr
+          %td カード番号
+          %td
+            = f.number_field :number, id: "card_number", class: "main_container__table__form"
+        %tr
+          %td カード有効期限
+          %td
+            「月」/「年」の順に選択します。カード上の表記にご注意ください。
+            .main_container__table__forms
+              = f.select(:exp_month, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 ,12], class: "main_container__table__forms--month")
+              月
+              = f.select(:exp_year, [2020, 2021, 2022, 2023, 2024, 2025], class: "main_container__table__forms--year")
+              年
+        %tr
+          %td セキュリティコード
+          %td
+            .main_container__table__text セキュリティコードとは、クレジットカードの裏面に印字されている３桁または４桁の番号です。
+            = f.number_field :cvc, id: "cvv", class: "main_container__table__form-cvv", placeholder: "(例1)123 (例2)4567"
+        %tr
+          %td 通常使うカード
+          %td
+            .main_container__table__text 上記の内容で登録・変更される場合は、「このクレジットカード情報を変更する」または
+            .main_container__table__text 「このクレジットカード情報を削除する」ボタンを押してください。
+            .main_container__table__text 入力された個人情報は個人情報保護方針に基づき取り扱われることに同意するものとします。
+
+      .main_container__title__table__register
+        = f.hidden_field :token, id: "creditcard_token"
+        = f.hidden_field :error, id: "creditcard_error"
+        = f.submit "このクレジットカード情報を登録する", id: "token", class: "main_container__title__table__register__btn1"
+      .main_container__title__table__top
+        %li.main_container__title__table__top__page
+          =link_to "トップページへ戻る", root_path
+= render partial: 'layouts/footer'

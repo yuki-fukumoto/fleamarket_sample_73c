@@ -60,16 +60,23 @@ class Item < ApplicationRecord
     :kagoshima,
     :okinawa]
   enum shipping_period: [:days1_2, :days2_3, :days4_7]
-  #enum status: [:sell, :draft, :sold]
 
   belongs_to :user
   belongs_to :category
   belongs_to :brand, optional: true
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
 
   enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 
-  scope :on_sell, -> { where(status: 0) }
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
+
+  def self.get_on_sell
+    self.where(status: 0)
+  end
+
 end

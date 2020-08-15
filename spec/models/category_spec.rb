@@ -29,6 +29,7 @@ RSpec.describe Category, type: :model do
       context "ancestryが入力されていない" do
         let(:ancestry) {nil}
         it {is_expected.to be_valid}
+
       end
     end
   end
