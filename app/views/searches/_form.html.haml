@@ -1,8 +1,9 @@
 .detail_search
   = search_form_for(@q,url: detail_search_searches_path) do |f|
+
     -#  並び替え
     .detail_search__sort
-      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { onchange: 'this.form.submit()'} )
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { onchange: 'this.form.submit()',selected: @sorts} )
     
     -# キーワード検索
     .detail_search__form
@@ -27,20 +28,26 @@
         .detail_search__group--label
           %p カテゴリー
         .detail_search__group--checkbox
-          
           %label
-            -# = f.collection_select :parent_name_eq, Category.where(ancestry: nil), :id, :name, {selected:@item.category.parent.parent.id}, {class: "category_0 text_box"}
-            -# = f.select :child_id_eq, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'category_1 text_box'}
-            -# = f.select :category_id_eq, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'category_2 text_box' } 
-            
-            = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
-            = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
-            = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
-            
+            - if params[:q].present?
+              - if params[:q][:category_id_eq].present?
+                = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {selected:@parent.id}, {class: "category_0 text_box"}
+                = f.collection_select :category_id_eq, [@child], :id, :name, {prompt: "メインカテゴリを選んでください", onchange: 'this.form.submit()', selected: @child}, {class: "category_1 text_box"}
+                = f.collection_select :category_id_eq, [@grandchild], :id, :name, {prompt: "メインカテゴリを選んでください", onchange: 'this.form.submit()', selected: @grandchild}, {class: "category_2 text_box"}
+              - else
+                = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+                = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
+                = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+            - else
+              = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+              = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
+              = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+      
       -# 状態の絞り込み     
       .detail_search__group
         .detail_search__group--label
           %p 商品の状態
+
         .detail_search__group--checkbox
           %label
             %input{type: "checkbox"}
@@ -49,31 +56,92 @@
           %label
             = f.check_box(:condition_in,{:multiple=>true},"1",nil)
             = '新品、未使用'
+            -# - if params[:q].present?
+            -#   - if params[:q][:condition_in].include?("1")
+            -#     = f.check_box(:condition_in,{checked: true},"1",nil)
+            -#     = '新品、未使用'
+            -#   - elsif params[:q][:condition_in].include?("1,2")
+            -#     = f.check_box(:condition_in,{checked: true},"1",nil)
+            -#     = '新品、未使用'
+            -#   - else
+            -#     = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+            -#     = '新品、未使用'
+            -# - else
+            -#   = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+            -#   = '新品、未使用'
         .detail_search__group--checkbox
           %label
             = f.check_box(:condition_in,{:multiple=>true},"2",nil)
             = '未使用に近い'
+            -# - if params[:q].present?
+            -#   - if params[:q][:condition_in].include?("2")
+            -#     = f.check_box(:condition_in,{checked: true},"2",nil)
+            -#     = '未使用に近い'
+            -#   - elsif params[:q][:condition_in].include?("1,2")
+            -#     = f.check_box(:condition_in,{checked: true},"2",nil)
+            -#     = '未使用に近い'
+            -#   - else
+            -#     = f.check_box(:condition_in,{:multiple=>true},"2",nil)
+            -#     = '未使用に近い'
+            -# - else
+            -#   = f.check_box(:condition_in,{:multiple=>true},"2",nil)
+            -#   = '未使用に近い'
         .detail_search__group--checkbox
           %label
             = f.check_box(:condition_in,{:multiple=>true},"3",nil)
             = '目立った傷や汚れなし'
+            -# - if params[:q].present?
+            -#   - if params[:q][:condition_in].include?("3")
+            -#     = f.check_box(:condition_in,{checked: true},"3",nil)
+            -#     = '目立った傷や汚れなし'
+            -#   - else
+            -#     = f.check_box(:condition_in,{:multiple=>true},"3",nil)
+            -#     = '目立った傷や汚れなし'
+            -# - else
+            -#   = f.check_box(:condition_in,{:multiple=>true},"3",nil)
+            -#   = '目立った傷や汚れなし'
         .detail_search__group--checkbox
           %label
             = f.check_box(:condition_in,{:multiple=>true},"4",nil)
             = 'やや傷や汚れあり'
+        -#     - if params[:q].present?
+        -#       - if params[:q][:condition_in].include?("4")
+        -#         = f.check_box(:condition_in,{checked: true},"4",nil)
+        -#         = 'やや傷や汚れあり'
+        -#       - else
+        -#         = f.check_box(:condition_in,{:multiple=>true},"4",nil)
+        -#         = 'やや傷や汚れあり'
+        -#     - else
+        -#       = f.check_box(:condition_in,{:multiple=>true},"4",nil)
+        -#       = 'やや傷や汚れあり'
         .detail_search__group--checkbox
           %label
             = f.check_box(:condition_in,{:multiple=>true},"5",nil)
             = '傷や汚れあり'
+            -# - if params[:q].present?
+            -#   - if params[:q][:condition_in].include?("5")
+            -#     = f.check_box(:condition_in,{checked: true},"5",nil)
+            -#     = '傷や汚れあり'
+            -#   - else
+            -#     = f.check_box(:condition_in,{:multiple=>true},"5",nil)
+            -#     = '傷や汚れあり'
+            -# - else
+            -#   = f.check_box(:condition_in,{:multiple=>true},"5",nil)
+            -#   = '傷や汚れあり'
         .detail_search__group--checkbox
           %label
             = f.check_box(:condition_in,{:multiple=>true},"6",nil)
-            = '全体的に状態が悪い' 
-            
-        -# .detail_search__group--checkbox
-        -#   - Post.tags_i18n.each do |tag|
-        -#     = check_box_tag('q[tag_eq_any][]', Post.tags[tag.first], params[:q].present?&&params[:q]["tag_eq_any"].present?&&params[:q]["tag_eq_any"].include?("#{Post.tags[tag.first]}")
-        -#     = tag.last    
+            = '全体的に状態が悪い'
+            -# - if params[:q].present?
+            -#   - if params[:q][:condition_in].include?("6")
+            -#     = f.check_box(:condition_in,{checked: true},"6",nil)
+            -#     = '全体的に状態が悪い'
+            -#   - else
+            -#     = f.check_box(:condition_in,{:multiple=>true},"6",nil)
+            -#     = '全体的に状態が悪い'
+            -# - else
+            -#   = f.check_box(:condition_in,{:multiple=>true},"6",nil)
+            -#   = '全体的に状態が悪い' 
             
       -# 送料負担の絞り込み      
       .detail_search__group
