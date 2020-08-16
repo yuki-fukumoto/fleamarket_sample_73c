@@ -42,106 +42,87 @@
               = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
               = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
               = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
-      
-      -# 状態の絞り込み     
+
+      -# 状態の絞り込み (仮)     
       .detail_search__group
         .detail_search__group--label
           %p 商品の状態
-
         .detail_search__group--checkbox
           %label
-            %input{type: "checkbox"}
+            = f.radio_button :condition_eq, '', {:checked => true}
             = 'すべて'
         .detail_search__group--checkbox
           %label
-            = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+            = f.radio_button :condition_eq, "1"
             = '新品、未使用'
-            -# - if params[:q].present?
-            -#   - if params[:q][:condition_in].include?("1")
-            -#     = f.check_box(:condition_in,{checked: true},"1",nil)
-            -#     = '新品、未使用'
-            -#   - elsif params[:q][:condition_in].include?("1,2")
-            -#     = f.check_box(:condition_in,{checked: true},"1",nil)
-            -#     = '新品、未使用'
-            -#   - else
-            -#     = f.check_box(:condition_in,{:multiple=>true},"1",nil)
-            -#     = '新品、未使用'
-            -# - else
-            -#   = f.check_box(:condition_in,{:multiple=>true},"1",nil)
-            -#   = '新品、未使用'
         .detail_search__group--checkbox
           %label
-            = f.check_box(:condition_in,{:multiple=>true},"2",nil)
+            = f.radio_button :condition_eq, "2"
             = '未使用に近い'
-            -# - if params[:q].present?
-            -#   - if params[:q][:condition_in].include?("2")
-            -#     = f.check_box(:condition_in,{checked: true},"2",nil)
-            -#     = '未使用に近い'
-            -#   - elsif params[:q][:condition_in].include?("1,2")
-            -#     = f.check_box(:condition_in,{checked: true},"2",nil)
-            -#     = '未使用に近い'
-            -#   - else
-            -#     = f.check_box(:condition_in,{:multiple=>true},"2",nil)
-            -#     = '未使用に近い'
-            -# - else
-            -#   = f.check_box(:condition_in,{:multiple=>true},"2",nil)
-            -#   = '未使用に近い'
         .detail_search__group--checkbox
           %label
-            = f.check_box(:condition_in,{:multiple=>true},"3",nil)
+            = f.radio_button :condition_eq, "3"
             = '目立った傷や汚れなし'
-            -# - if params[:q].present?
-            -#   - if params[:q][:condition_in].include?("3")
-            -#     = f.check_box(:condition_in,{checked: true},"3",nil)
-            -#     = '目立った傷や汚れなし'
-            -#   - else
-            -#     = f.check_box(:condition_in,{:multiple=>true},"3",nil)
-            -#     = '目立った傷や汚れなし'
-            -# - else
-            -#   = f.check_box(:condition_in,{:multiple=>true},"3",nil)
-            -#   = '目立った傷や汚れなし'
         .detail_search__group--checkbox
           %label
-            = f.check_box(:condition_in,{:multiple=>true},"4",nil)
+            = f.radio_button :condition_eq, "4"
             = 'やや傷や汚れあり'
-        -#     - if params[:q].present?
-        -#       - if params[:q][:condition_in].include?("4")
-        -#         = f.check_box(:condition_in,{checked: true},"4",nil)
-        -#         = 'やや傷や汚れあり'
-        -#       - else
-        -#         = f.check_box(:condition_in,{:multiple=>true},"4",nil)
-        -#         = 'やや傷や汚れあり'
-        -#     - else
-        -#       = f.check_box(:condition_in,{:multiple=>true},"4",nil)
-        -#       = 'やや傷や汚れあり'
         .detail_search__group--checkbox
           %label
-            = f.check_box(:condition_in,{:multiple=>true},"5",nil)
+            = f.radio_button :condition_eq, "5"
             = '傷や汚れあり'
-            -# - if params[:q].present?
-            -#   - if params[:q][:condition_in].include?("5")
-            -#     = f.check_box(:condition_in,{checked: true},"5",nil)
-            -#     = '傷や汚れあり'
-            -#   - else
-            -#     = f.check_box(:condition_in,{:multiple=>true},"5",nil)
-            -#     = '傷や汚れあり'
-            -# - else
-            -#   = f.check_box(:condition_in,{:multiple=>true},"5",nil)
-            -#   = '傷や汚れあり'
         .detail_search__group--checkbox
           %label
-            = f.check_box(:condition_in,{:multiple=>true},"6",nil)
+            = f.radio_button :condition_eq, "6"
             = '全体的に状態が悪い'
-            -# - if params[:q].present?
-            -#   - if params[:q][:condition_in].include?("6")
-            -#     = f.check_box(:condition_in,{checked: true},"6",nil)
-            -#     = '全体的に状態が悪い'
-            -#   - else
-            -#     = f.check_box(:condition_in,{:multiple=>true},"6",nil)
-            -#     = '全体的に状態が悪い'
-            -# - else
-            -#   = f.check_box(:condition_in,{:multiple=>true},"6",nil)
-            -#   = '全体的に状態が悪い' 
+
+
+      -# -# 状態の絞り込み  チェックボックスの条件保持がうまくいかないので一旦保留   
+      -# .detail_search__group
+      -#   .detail_search__group--label
+      -#     %p 商品の状態
+
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       %input{type: "checkbox"}
+      -#       = 'すべて'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+      -#       = '新品、未使用'
+      -#       -# - if params[:q].present?
+      -#       -#   - if params[:q][:condition_in].include?("1")
+      -#       -#     = f.check_box(:condition_in,{checked: true},"1",nil)
+      -#       -#     = '新品、未使用'
+      -#       -#   - elsif params[:q][:condition_in].include?("1,2")
+      -#       -#     = f.check_box(:condition_in,{checked: true},"1",nil)
+      -#       -#     = '新品、未使用'
+      -#       -#   - else
+      -#       -#     = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+      -#       -#     = '新品、未使用'
+      -#       -# - else
+      -#       -#   = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+      -#       -#   = '新品、未使用'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"2",nil)
+      -#       = '未使用に近い'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"3",nil)
+      -#       = '目立った傷や汚れなし'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"4",nil)
+      -#       = 'やや傷や汚れあり'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"5",nil)
+      -#       = '傷や汚れあり'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"6",nil)
+      -#       = '全体的に状態が悪い' 
             
       -# 送料負担の絞り込み      
       .detail_search__group
