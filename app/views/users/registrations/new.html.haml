@@ -17,7 +17,7 @@
             =f.text_field :nickname, class: "wrapper-sign-up__article__section__form-area__form--style"
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
-            - if @user.errors[:nickname]
+            - if @user.errors[:nickname].present?
               .wrapper-sign-up__article__section__form-area_color
                 ニックネーム
                 = @user.errors.messages[:nickname][0]
@@ -29,7 +29,7 @@
             =f.email_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
-            - if @user.errors[:email]
+            - if @user.errors[:email].present?
               .wrapper-sign-up__article__section__form-area_color
                 メールアドレス
                 = @user.errors.messages[:email][0]
@@ -41,7 +41,7 @@
             =f.password_field :password, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "7文字以上"
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
-            - if @user.errors[:password]
+            - if @user.errors[:password].present?
               .wrapper-sign-up__article__section__form-area_color
                 パスワード
                 = @user.errors.messages[:password][1]
@@ -67,17 +67,16 @@
               .wrapper-sign-up__article__section__form-area__form__divide__text 名
               =f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角"
         .wrapper-sign-up__article__section__form-area
-          - if @user.errors.any?
-            - if @user.errors[:lastname]
+          -if @user.errors.any?
+            - if @user.errors[:lastname].present?
               .wrapper-sign-up__article__section__form-area_color
                 名前(姓)
-                = @user.errors.messages[:lastname][1]
+                = @user.errors.messages[:lastname][0]
           - if @user.errors.any?
-            - if @user.errors[:fastname]
+            - if @user.errors[:firstname].present?
               .wrapper-sign-up__article__section__form-area_color
                 名前(名)
-                = @user.errors.messages[:firstname][1]
-                
+                = @user.errors.messages[:firstname][0]  
           .wrapper-sign-up__article__section__form-area__name
             ふりがな
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -91,12 +90,12 @@
               =f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角"
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
-            - if @user.errors[:lastname_read]
+            - if @user.errors[:lastname_read].present?
               .wrapper-sign-up__article__section__form-area_color
                 ふりがな(姓)
                 = @user.errors.messages[:lastname_read][1]
           - if @user.errors.any?
-            - if @user.errors[:fastname_read]
+            - if @user.errors[:firstname_read].present?
               .wrapper-sign-up__article__section__form-area_color
                 ふりがな(名)
                 = @user.errors.messages[:firstname_read][1]    
@@ -124,15 +123,15 @@
                 =address_f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
-              - if @user.errors[:lastname]
+              - if @user.errors[:"addresses.lastname"].present?
                 .wrapper-sign-up__article__section__form-area_color
-                  名前(姓)
-                  = @user.errors.messages[:lastname][1]
+                  名前（姓）
+                  = @user.errors.messages[:"addresses.lastname"][0]
             - if @user.errors.any?
-              - if @user.errors[:fastname]
+              - if @user.errors[:"addresses.firstname"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   名前(名)
-                  = @user.errors.messages[:firstname][1]                 
+                  = @user.errors.messages[:"addresses.firstname"][0]                 
             .wrapper-sign-up__article__section__form-area__name
               ふりがな
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -146,15 +145,15 @@
                 =address_f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
-              - if @user.errors[:lastname_read]
+              - if @user.errors[:"addresses.lastname_read"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   ふりがな(姓)
-                  = @user.errors.messages[:lastname_read][1]
+                  = @user.errors.messages[:"addresses.lastname_read"][1]
             - if @user.errors.any?
-              - if @user.errors[:fastname_read]
+              - if @user.errors[:"addresses.firstname_read"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   ふりがな(名)
-                  = @user.errors.messages[:firstname_read][1] 
+                  = @user.errors.messages[:"addresses.firstname_read"][1] 
             .wrapper-sign-up__article__section__form-area__name
               郵便番号
               .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -165,7 +164,7 @@
               =address_f.text_field :last_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second", maxlength: "4"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
-              - if @user.errors[:first_zip]
+              - if @user.errors[:"addresses.zip"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   郵便番号
                   = @user.errors.messages[:"addresses.zip"][0]
@@ -177,7 +176,7 @@
               =address_f.text_field :prefecture, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
-              - if @user.errors[:prefecture]
+              - if @user.errors[:"addresses.prefecture"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   都道府県
                   = @user.errors.messages[:"addresses.prefecture"][0]
@@ -189,7 +188,7 @@
               =address_f.text_field :city, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
-              - if @user.errors[:city]
+              - if @user.errors[:"addresses.city"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   市町村
                   = @user.errors.messages[:"addresses.city"][0]
@@ -201,7 +200,7 @@
               =address_f.text_field :address_line, class: "wrapper-sign-up__article__section__form-area__form--style"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
-              - if @user.errors[:address_line]
+              - if @user.errors[:"addresses.address_line"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   番地
                   = @user.errors.messages[:"addresses.address_line"][0]
