@@ -19,9 +19,9 @@
         .detail_search__form__group--label
           %p 価格
         .detail_search__form__group--forms
-          = f.number_field :price_gteq, placeholder: "¥ Min"
+          = f.number_field :price_gteq, min: "0", max: "10000000",placeholder: "¥ Min"
           %p 〜
-          = f.number_field :price_lteq, placeholder: "¥ Max"
+          = f.number_field :price_lteq, min: "0", max: "10000000", placeholder: "¥ Max"
       
       -# カテゴリーによる絞り込み
       .detail_search__group
