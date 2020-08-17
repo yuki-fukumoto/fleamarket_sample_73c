@@ -1,5 +1,7 @@
 .top_icon
   =image_tag(asset_path("logo.png"))
+- breadcrumb :item_new
+= render "layouts/breadcrumbs"
 .contents
   =form_with model: @item, method: :post, local: true do |f|
     .item

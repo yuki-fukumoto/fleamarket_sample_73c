@@ -10,22 +10,38 @@
 @import "users/registration.scss";
 @import "users/session.scss";
 @import "purchases/confirm";
+@import "users.scss";
+@import "creditcards.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeeee;
+  min-width: 700px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
 
 .field_with_errors {
   display: contents;
 }
 
-.pagination>li>a {
+.pagination > li > a {
   border: none;
   color: #696969;
 }
 
-.pagination>.active>a{
+.pagination > .active > a {
   background: #93c9ff;
   border-radius: 15px;
 }
 
-.pagination>li>a:hover {
+.pagination > li > a:hover {
   border-radius: 15px;
 }
 
@@ -39,4 +55,10 @@
   background-color: #ff0066;
   color: white;
   text-align: center;
+}
+
+.breadcrumbs-list {
+  padding: 0 60px;
+  border: solid #dddddd;
+  border-width: 1px 0;
 }

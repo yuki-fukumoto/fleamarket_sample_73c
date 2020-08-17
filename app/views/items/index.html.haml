@@ -4,15 +4,17 @@
   %section.top_visual
 
     .Contents
-      %h2.Contents__title 人生を変えるフリマアプリ 
+      %h2.Contents__title 人生を変えるフリマアプリ
       %p.Contents__subtitle
-        FURIMAはだれでもかんたんに出品・購入できる 
+        FURIMAはだれでもかんたんに出品・購入できる
         %br フリマアプリです
       .Contents__btn
-        =link_to confirm_purchases_path do
+        -# =link_to confirm_purchase_path(@purchase) do
+        =link_to "#" do
           =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
-        =link_to item_path(id: 0) do
+        =link_to "https://www.google.com/" do
           =image_tag "google-play-badge.png", class: 'google_btn'
+
 
 
   %section.reason
@@ -93,14 +95,14 @@
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
               .topiclist__body
-                = item.name 
+                = item.name
                 .place
                   %ul
                     = item.price
                     %li
                       %i{class:"fa fa-star likeicon"}0
-                  %p （税込） 
-        = paginate(@items) 
+                  %p （税込）
+        = paginate(@items)
 
   %section.topic_brand
     %h2.topic_head ピックアップアイテム
@@ -115,7 +117,7 @@
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
               .topiclist__body
-                = item.name 
+                = item.name
                 .place
                   %ul
                     = item.price
