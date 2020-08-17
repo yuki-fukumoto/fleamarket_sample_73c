@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  validates :nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, :password, presence: true
-  validates :firstname_read, :lastname_read, format: { with: /\A[ぁ-んー－]+\z/, message: "は全角(ひらがな)で入力してください"}
+  validates :nickname, :firstname_read, :lastname_read, :birthday, :password, presence: true
+  validates :firstname, :lastname, format: {with:/[一-龥ぁ-ん]/, message: "漢字で入力してください"}
+  validates :firstname_read, :lastname_read, format: { with: /\A[ぁ-んー－]+\z/, message: "ひらがなで入力してください"}
   validates :password, length: { minimum:7, message: "は7文字以上で入力してください"}, confirmation: {message: "の値が一致しません"}
-  validates :email, presence: {message: "が空欄です"}
+  validates :email, presence: {message:"が空欄です"}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
