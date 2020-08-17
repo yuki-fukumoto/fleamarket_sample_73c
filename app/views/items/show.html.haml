@@ -94,7 +94,7 @@
           %ul.commentContents
             - if current_user
               = form_with(model: [@item, @comment], local: true) do |form|
-                = form.text_area :text, placeholder: "コメントする", rows: "2", style: "width 600px;"
+                = form.text_area :text, placeholder: "コメントする", rows: "2"
                 = form.submit "SEND"
             - else
               %strong
@@ -105,9 +105,12 @@
                 - @comments.each do |comment|
                   %p
                     %strong
-                      = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                      = link_to comment.user.nickname, "/users/#{comment.user}"
                       ：
                     = comment.text
+
+                   
+
           
 //= render partial: 'layouts/footer'
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :items do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :new]
   end
   resources :items, except: :index do
     collection do
