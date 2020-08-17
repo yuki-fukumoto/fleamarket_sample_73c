@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :show, :destroy]
 
   def index
-    @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).without_count.per(1)
+    @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).without_count.per(4)
     @random = Item.order("RAND()").get_on_sell.limit(4)
   end
 

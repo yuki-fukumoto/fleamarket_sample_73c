@@ -1,9 +1,9 @@
-$(document).on('turbolinks:load', function() {
-  $('.topiclists').jscroll({
-    contentSelector: '.jscroll',
-    nextSelector: 'a.next',
+$(document).on('turbolinks:load', function(){
+  $('.topiclists.no1').jscroll({
     loadingHtml: 'now loading',
     autoTrigger: true,
+    nextSelector: 'a.next',
+    contentSelector: '.jscroll',
     padding: 20,
   });
 });
