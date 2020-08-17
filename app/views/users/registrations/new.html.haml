@@ -51,6 +51,12 @@
               必須
           .wrapper-sign-up__article__section__form-area__form
             =f.password_field :password_confirmation, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "7文字以上"
+        .wrapper-sign-up__article__section__form-area
+          - if @user.errors.any?
+            - if @user.errors[:password].present?
+              .wrapper-sign-up__article__section__form-area_color
+                パスワード
+                = @user.errors.messages[:password][1]
         %hr
       %section.wrapper-sign-up__article__section
         %h2.wrapper-sign-up__article__section--title 本人確認情報
@@ -204,8 +210,8 @@
                 .wrapper-sign-up__article__section__form-area_color
                   番地
                   = @user.errors.messages[:"addresses.address_line"][0]
-              .wrapper-sign-up__article__section__form-area__name
-                建物名
+            .wrapper-sign-up__article__section__form-area__name
+              建物名
               .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
                 任意
             .wrapper-sign-up__article__section__form-area__form
