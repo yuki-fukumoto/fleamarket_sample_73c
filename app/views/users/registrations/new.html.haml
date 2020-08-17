@@ -172,7 +172,7 @@
             - if @user.errors.any?
               - if @user.errors[:"addresses.zip"].present?
                 .wrapper-sign-up__article__section__form-area_color
-                  郵便番号
+                  -# 郵便番号
                   = @user.errors.messages[:"addresses.zip"][0]
             .wrapper-sign-up__article__section__form-area__name
               都道府県
