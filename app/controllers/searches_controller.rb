@@ -7,8 +7,6 @@ class SearchesController < ApplicationController
   end
 
   def detail_search
-    @search = params[:search]
-    @search_item = Item.ransack(params[:q])
     @sorts = params[:q][:sorts]
     if params[:q][:category_id_eq].present?
       @grandchild = Category.find(params[:q][:category_id_eq])
@@ -16,8 +14,7 @@ class SearchesController < ApplicationController
       @parent = @child.parent
     end
     
-    @condition_in = params[:q][:condition_in]
-    @items = @search_item.result.page(params[:page]).get_on_sell 
+    @items = @q.result.page(params[:page]).get_on_sell 
   end
 
   private
