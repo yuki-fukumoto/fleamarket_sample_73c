@@ -57,6 +57,14 @@ a {
   text-align: center;
 }
 
+.jscroll{
+  display: flex;
+}
+
+.scroll{
+  display: none;
+}
+
 .breadcrumbs-list {
   padding: 0 60px;
   border: solid #dddddd;
