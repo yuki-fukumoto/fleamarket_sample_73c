@@ -2,6 +2,8 @@
   =f.hidden_field :item_id, value: @item.id
   .top_icon
     =image_tag(asset_path("logo.png"))
+  - breadcrumb :purchase_confirm
+  = render "layouts/breadcrumbs"
   .confirm_contents
     .content_top_message
       購入内容の確認
