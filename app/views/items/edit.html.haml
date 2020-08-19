@@ -12,29 +12,41 @@
           必須
       %p.comments
         最大5枚までアップロードできます
-      .post__drop__box__container
-        .prev-content
-          - @item.images.each do |image|
-            .preview-box
-              .upper-box
-                = image_tag image.image.url, alt: "preview"
-              .lower-box
-                .delete-box
-                  .delete-btn
-                    %span 削除
-        .label-content
+      -# .post__drop__box__container
+      -#   .prev-content
+      -#     - @item.images.each do |image|
+      -#       .preview-box
+      -#         .upper-box
+      -#           = image_tag image.image.url, alt: "preview"
+      -#         .lower-box
+      -#           .delete-box
+      -#             .delete-btn
+      -#               %span 削除
+      -#   .label-content
 
-          = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
-            %pre.label-box__text-visible
-              %i.fas.fa-camera
-        .hidden-content
-          = f.fields_for :images do |i|
+      -#     = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+      -#       %pre.label-box__text-visible
+      -#         %i.fas.fa-camera
+      -#   .hidden-content
+      -#     = f.fields_for :images do |i|
 
-            = i.file_field :image, class: "hidden-field"
-            = i.check_box:_destroy, class: "hidden-checkbox"
+      -#       = i.file_field :image, class: "hidden-field"
+      -#       = i.check_box:_destroy, class: "hidden-checkbox"
 
-          - @item.images.length.upto(4) do |i|
-            %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+      -#     - @item.images.length.upto(4) do |i|
+      -#       %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+      #image-box
+        = f.fields_for :images do |image|
+          .js-file_group{"data-index" => "#{image.index}"}
+            = image.file_field :image, class: 'js-file'
+            %br/
+            %span.js-remove 削除
+          - if @item.persisted?
+            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+        - if @item.persisted?
+          .js-file_group{"data-index" => "#{@item.images.count}"}
+            = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+            .js-remove 削除
 
     %hr
     .item

@@ -1,11 +1,11 @@
 // 各項目が空ならsubmitボタンが押せない
 $(document).on('turbolinks:load', function(){
   $("#submit").on("click", function () {
-    if ($('.preview-box').length === 0 ) {
-      alert("画像を1枚以上入力してください！");
-      $(this).focus();
-      return false;
-    }
+    // if ($('.preview-box').length === 0 ) {
+    //   alert("画像を1枚以上入力してください！");
+    //   $(this).focus();
+    //   return false;
+    // }
     if ($(".titlename").val() === "") {
       alert("商品名を入力してください！");
       $(this).focus();
