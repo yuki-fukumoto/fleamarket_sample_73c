@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :items, except: :index do
+  end  
+
+  resources :searches do
     collection do
-      get 'search'
+      get 'detail_search'
     end
   end
 

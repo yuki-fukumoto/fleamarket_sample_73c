@@ -63,10 +63,6 @@ class ItemsController < ApplicationController
     render json: @categories
   end
 
-  def search
-    @items = Item.search(params[:keyword]).get_on_sell.order(created_at: :desc)
-  end
-
   private
   def item_params
     params.require(:item).permit(:name, :explanation, :price, :shipping_pay, :shipping_area, :shipping_period, :condition, :category_id, :brand_id, :status, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
