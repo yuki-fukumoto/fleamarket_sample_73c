@@ -1,4 +1,4 @@
-$(function() { 
+$(document).on('turbolinks:load', function(){  
   //プレビュー用のhtmlを定義
   function buildHTML(index, url) {
     var html = `<div class="preview_image_box" id="preview_image_box__${index}">
