@@ -1,5 +1,6 @@
 .top_icon
-  =image_tag(asset_path("logo.png"))
+  =link_to "/" do
+    =image_tag(asset_path("logo.png"))
 - breadcrumb :item_new
 = render "layouts/breadcrumbs"
 .contents
