@@ -25,7 +25,8 @@
                     %span 削除
         %label{for: "item_images_attributes_0_image", class: "image_input_btn", id: "image_input_btn--0"} 
           #posts.post_form
-            =image_tag('icon_camera.png', class: "image_input_btn_camera")
+            .image_input_btn_camera
+              %i.fas.fa-camera
             .image_input_btn_text クリックしてファイルをアップロード
         .hidden_post_form
           =f.fields_for :images do |image|          

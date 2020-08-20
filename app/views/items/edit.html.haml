@@ -27,7 +27,8 @@
           -# プレビューの数に合わせてforオプションを指定
           %label{for: "item_images_attributes_#{@item.images.count}_image", class: "image_input_btn", id: "image_input_btn--#{@item.images.count}"} 
             #posts.post_form
-              =image_tag('icon_camera.png', class: "image_input_btn_camera")
+              .image_input_btn_camera
+                %i.fas.fa-camera
               .image_input_btn_text クリックしてファイルをアップロード
           .hidden_post_form
             = f.fields_for :images do |image|
