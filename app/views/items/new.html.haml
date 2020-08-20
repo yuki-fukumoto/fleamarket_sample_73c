@@ -12,37 +12,29 @@
           必須
       %p.comments
         最大5枚までアップロードできます
-      -# .post__drop__box__container
-      -#   .prev-content
-      -#   .label-content
-      -#     %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
-      -#       %pre.label-box__text-visible
-      -#         %i.fas.fa-camera
-      -#   .hidden-content
-      -#     = f.fields_for :images do |i|
-      -#       = i.file_field :image, class: "hidden-field"
-      -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-      -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-      -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-      -#       %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-      #image-box
-        #previews
-          - if @item.persisted?
-            - @item.images.each_with_index do |image, i|
-              = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-        = f.fields_for :images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            = image.file_field :image, class: 'js-file'
-            %br/
-            %span.js-remove 削除
-          - if @item.persisted?
-            = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-        - if @item.persisted?
-          .js-file_group{"data-index" => "#{@item.images.count}"}
-            = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-            .js-remove 削除
+      #image-box.post-image-list__box
+        #previews.preview_list
+          -# バリデーションエラー時cacheに値がセットされている場合は画像を表示
+          -if @item.images[0].image.url.present?
+            -@item.images.each_with_index do |image, i|
+              .preview_image_box{id: "preview_image_box__#{i}"}
+                .upper-box
+                  =image_tag image.image.url, alt:"preview", width: "120", height: '120', class: "preview_image", id: "preview_image"
+                .update_box
+                  .js-remove{id: "delete_btn_#{i}"}
+                    %span 削除
+        %label{for: "item_images_attributes_0_image", class: "image_input_btn", id: "image_input_btn--0"} 
+          #posts.post_form
+            =image_tag('icon_camera.png', class: "image_input_btn_camera")
+            .image_input_btn_text クリックしてファイルをアップロード
+        .hidden_post_form
+          =f.fields_for :images do |image|          
+            -# 画像がビルドされた際に振られるidを取得
+            %div{ data: {index: "#{image.index}" }, class: "js-file_group" }
+              =image.file_field :image, class:"js-file" 
+              -# cacheを使用するためにhidden_fieldを設置
+              =image.hidden_field :image_cache
 
-    
     %hr
     .item
       .title
