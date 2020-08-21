@@ -2,24 +2,28 @@
   height: 100%;
   width: 100%;
   background-color: #f8f8f8;
+  display: flex;
+  padding-left: 100px;
 }
 
 .contents__mypage {
   display: flex;
   align-items: stretch;
-  margin: 0 150px;
-  padding: 0 20px;
+  // margin: 0 150px;
+  // padding: 0 20px;
 }
 
 .side-menu {
-  padding: 8px 0 0;
+  padding-top: 40px;
+  // margin-right: 10px;
   font-size: 15px;
   position: relative;
-  min-height: 1px;
-  padding-left: 4px;
-  padding-right: 20px;
+  // min-height: 1px;
+  // padding-left: 4px;
+  // padding-right: 20px;
   width: 210px;
-  max-width: 1000;
+  min-width: 210px;
+  // max-width: 1000;
 
   &__title {
     margin: 0 0 8px;
@@ -46,7 +50,7 @@
 
 .main-box {
   padding: 0.5em 1em;
-  margin: 1em 0;
+  margin: 40px 0 0 30px;
   width: calc(100% - 210px);
   font-weight: bold;
   color: black;
