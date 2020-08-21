@@ -6,4 +6,11 @@ $(document).on('turbolinks:load', function(){
     contentSelector: '.jscroll',
     padding: 20,
   });
+  $('.search_lists').jscroll({
+    contentSelector: '.item_jscroll',
+    loadingHtml: 'now loading',
+    autoTrigger: true,
+    nextSelector: 'a.next',
+    padding: 20
+  });
 });
