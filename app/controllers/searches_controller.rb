@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
   before_action :set_ransack
 
   def index
-    @items = Item.search(params[:search]).get_on_sell.order(created_at: :desc)
+    @items = Item.search(params[:search]).get_on_sell.order(created_at: :desc).page(params[:page]).without_count.per(4)
     @search = params[:search]
   end
 
@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
       @parent = @child.parent
     end
     
-    @items = @q.result.page(params[:page]).get_on_sell 
+    @items = @q.result.page(params[:page]).get_on_sell.page(params[:page]).without_count.per(4)
   end
 
   private
