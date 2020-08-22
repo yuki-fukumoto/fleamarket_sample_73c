@@ -3,7 +3,6 @@
   width: 100%;
   background-color: #f8f8f8;
   display: flex;
-  // padding: 0 0 40px 100px;
 }
 
 .contents__mypage {
@@ -64,41 +63,17 @@
   &__notice {
     margin-bottom: 22px;
     background-color: #fff;
-    // border: 1px solid transparent;
-    // border-radius: 4px;
-    // -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-
-    .main-box__body {
-      // padding: 15px;
-      // border: 1px solid #e5e5e5;
-
-      &__inbox {
-        // padding-top: 0px 10px 0px 0px;
-
-        &__left {
-          // display: table-cell;
-          // vertical-align: to;
-        }
-
-        h4.main-box__streetaddres {
-          // font-weight: bold;
-          // margin-top: 4px;
-        }
-      }
-    }
     &__recently {
       background-color: #fff;
-      // border-radius: 4px;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-
       &__body2 {
-        // padding: 55px;
         border: 1px solid #e5e5e5;
-
         p.main-box__text {
           text-align: center;
           color: #757575;
+          min-height: 250px;
+          line-height: 250px;
+          font-size: 20px;
         }
       }
     }
@@ -145,7 +120,6 @@
     background-color: #f5f5f5;
     color: #757575;
   }
-
 }
 
 .main-box h3.main-box__important {
