@@ -3,13 +3,11 @@ class CommentsController < ApplicationController
     @item = Item.find(params[:item_id])
     @comment = Comment.new(comment_params)
     
-    if @comment.invalid?
-      redirect_to (@item),alert: @comment.errors.full_messages
-    else
-      @comment.save!
+    if @comment.save
       redirect_to (@item), notice: 'コメントが投稿されました'
+    else
+      redirect_to (@item), notice: 'コメントを入力してください'
     end
-   
   end
     
 private
