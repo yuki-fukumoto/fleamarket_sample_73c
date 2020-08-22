@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
-  resources :users, only: [:index, :show]
+  resources :users, only: [:show] do
+    collection do
+      get 'sale_items'
+    end
+  end  
 
   root 'items#index'
 
