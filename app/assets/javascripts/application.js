@@ -16,4 +16,3 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.jscroll.min.js 
-//= require js.cookie
