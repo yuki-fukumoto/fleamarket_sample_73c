@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :new]
   end
   resources :items, except: :index do
+  end  
+
+  resources :searches do
     collection do
-      get 'search'
+      get 'detail_search'
     end
   end
 

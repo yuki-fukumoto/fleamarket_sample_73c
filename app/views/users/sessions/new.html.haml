@@ -1,5 +1,7 @@
 .top_icon
   =image_tag(asset_path("logo.png"))
+- breadcrumb :sign_in
+= render "layouts/breadcrumbs"
 %main.wrapper-sign-in
   %article.wrapper-sign-in__article
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

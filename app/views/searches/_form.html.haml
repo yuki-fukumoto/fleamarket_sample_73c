@@ -1,0 +1,147 @@
+.detail_search
+  = search_form_for(@q,url: detail_search_searches_path) do |f|
+
+    -#  並び替え
+    .detail_search__sort
+      = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { onchange: 'this.form.submit()',selected: @sorts} )
+    
+    -# キーワード検索
+    .detail_search__form
+      .detail_search__form__title
+        %h3 詳細検索
+      .detail_search__form__group
+        .detail_search__form__group--label
+          %p キーワード
+        = f.search_field :name_cont, placeholder: "キーワードを入力"
+      
+      -# 価格の絞り込み
+      .detail_search__form__group
+        .detail_search__form__group--label
+          %p 価格
+        .detail_search__form__group--forms
+          = f.number_field :price_gteq, min: "0", max: "10000000",placeholder: "¥ Min"
+          %p 〜
+          = f.number_field :price_lteq, min: "0", max: "10000000", placeholder: "¥ Max"
+      
+      -# カテゴリーによる絞り込み
+      .detail_search__group
+        .detail_search__group--label
+          %p カテゴリー
+        .detail_search__group--checkbox
+          %label
+            - if params[:q].present?
+              - if params[:q][:category_id_eq].present?
+                = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {selected:@parent.id}, {class: "category_0 text_box"}
+                = f.collection_select :category_id_eq, [@child], :id, :name, {prompt: "メインカテゴリを選んでください", onchange: 'this.form.submit()', selected: @child}, {class: "category_1 text_box"}
+                = f.collection_select :category_id_eq, [@grandchild], :id, :name, {prompt: "メインカテゴリを選んでください", onchange: 'this.form.submit()', selected: @grandchild}, {class: "category_2 text_box"}
+              - else
+                = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+                = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
+                = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+            - else
+              = f.collection_select :category_id_eq, Category.where(ancestry: nil), :id, :name, {prompt: "メインカテゴリを選ぶ"}, {class: "category_0 text_box"}
+              = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
+              = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
+
+      -# 状態の絞り込み (仮)     
+      .detail_search__group
+        .detail_search__group--label
+          %p 商品の状態
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, '', {:checked => true}
+            = 'すべて'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, "1"
+            = '新品、未使用'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, "2"
+            = '未使用に近い'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, "3"
+            = '目立った傷や汚れなし'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, "4"
+            = 'やや傷や汚れあり'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, "5"
+            = '傷や汚れあり'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :condition_eq, "6"
+            = '全体的に状態が悪い'
+
+
+      -# -# 状態の絞り込み  チェックボックスの条件保持がうまくいかないので一旦保留   
+      -# .detail_search__group
+      -#   .detail_search__group--label
+      -#     %p 商品の状態
+
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       %input{type: "checkbox"}
+      -#       = 'すべて'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+      -#       = '新品、未使用'
+      -#       -# - if params[:q].present?
+      -#       -#   - if params[:q][:condition_in].include?("1")
+      -#       -#     = f.check_box(:condition_in,{checked: true},"1",nil)
+      -#       -#     = '新品、未使用'
+      -#       -#   - elsif params[:q][:condition_in].include?("1,2")
+      -#       -#     = f.check_box(:condition_in,{checked: true},"1",nil)
+      -#       -#     = '新品、未使用'
+      -#       -#   - else
+      -#       -#     = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+      -#       -#     = '新品、未使用'
+      -#       -# - else
+      -#       -#   = f.check_box(:condition_in,{:multiple=>true},"1",nil)
+      -#       -#   = '新品、未使用'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"2",nil)
+      -#       = '未使用に近い'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"3",nil)
+      -#       = '目立った傷や汚れなし'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"4",nil)
+      -#       = 'やや傷や汚れあり'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"5",nil)
+      -#       = '傷や汚れあり'
+      -#   .detail_search__group--checkbox
+      -#     %label
+      -#       = f.check_box(:condition_in,{:multiple=>true},"6",nil)
+      -#       = '全体的に状態が悪い' 
+            
+      -# 送料負担の絞り込み      
+      .detail_search__group
+        .detail_search__group--label
+          %p 送料の負担
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :shipping_pay_eq, '', {:checked => true}
+            = 'すべて'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :shipping_pay_eq, "0"
+            = '送料込み(出品者負担)'
+        .detail_search__group--checkbox
+          %label
+            = f.radio_button :shipping_pay_eq, "1"
+            = '着払い(購入者負担)'
+
+      .detail_search__form__btn
+        .detail_search__form__btn--grey
+          = link_to "クリア", "/searches",type: "button"
+        = f.submit "検索", class:"detail_search__form__btn--red"

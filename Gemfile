@@ -97,3 +97,5 @@ end
   gem 'fog'
   gem 'enum_help'
   gem 'kaminari'
+  gem 'ransack'
+  gem 'gretel'

@@ -3,13 +3,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :show, :destroy]
 
   def index
-    @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).per(5)
+    @items = Item.get_on_sell.includes([:images]).order(created_at: :desc).page(params[:page]).without_count.per(4)
     @random = Item.order("RAND()").get_on_sell.limit(4)
   end
 
   def new
     @item = Item.new
-    @images = @item.images.build
+    @item.images.new
   end
 
   def create
@@ -64,10 +64,6 @@ class ItemsController < ApplicationController
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
-  end
-
-  def search
-    @items = Item.search(params[:keyword]).get_on_sell.order(created_at: :desc)
   end
 
   private
