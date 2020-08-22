@@ -26,12 +26,11 @@
             .wrapper-sign-up__article__section__form-area__name__attribute--box
               必須
           .wrapper-sign-up__article__section__form-area__form
-            =f.email_field :email, class: "wrapper-sign-up__article__section__form-area__form--style"
+            =f.email_field :email, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "半角英数"
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:email].present?
               .wrapper-sign-up__article__section__form-area_color
-                メールアドレス
                 = @user.errors.messages[:email][0]
           .wrapper-sign-up__article__section__form-area__name
             パスワード
@@ -97,11 +96,11 @@
           - if @user.errors.any?
             - if @user.errors[:lastname_read].present?
               .wrapper-sign-up__article__section__form-area_color
-                = @user.errors.messages[:lastname_read][0]
+                = @user.errors.messages[:lastname_read][1]
           - if @user.errors.any?
             - if @user.errors[:firstname_read].present?
               .wrapper-sign-up__article__section__form-area_color
-                = @user.errors.messages[:firstname_read][0]    
+                = @user.errors.messages[:firstname_read][1]    
           .wrapper-sign-up__article__section__form-area__name
             誕生日
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -148,11 +147,11 @@
             - if @user.errors.any?
               - if @user.errors[:"addresses.lastname_read"].present?
                 .wrapper-sign-up__article__section__form-area_color
-                  = @user.errors.messages[:"addresses.lastname_read"][0]
+                  = @user.errors.messages[:"addresses.lastname_read"][1]
             - if @user.errors.any?
               - if @user.errors[:"addresses.firstname_read"].present?
                 .wrapper-sign-up__article__section__form-area_color
-                  = @user.errors.messages[:"addresses.firstname_read"][0] 
+                  = @user.errors.messages[:"addresses.firstname_read"][1] 
             .wrapper-sign-up__article__section__form-area__name
               郵便番号
               .wrapper-sign-up__article__section__form-area__name__attribute--box
