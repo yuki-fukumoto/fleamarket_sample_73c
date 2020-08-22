@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @recently_visit = cookies[:item].split(',') if cookies[:item]
-    @items = Item.search(params[:search]).get_on_sell.order(created_at: :desc).limit(4)
+    @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').limit(4)
+    @sale_items = @items.get_on_sell
   end
-  
+
   def change
   end
 end
