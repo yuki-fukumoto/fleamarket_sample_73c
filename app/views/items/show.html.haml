@@ -94,7 +94,7 @@
           %ul.commentContents
             - if current_user
               = form_with(model: [@item, @comment], local: true) do |form|
-                = form.text_area :text, placeholder: "コメントする", rows: "2"
+                = form.text_area :text, placeholder: "コメントする(150文字まで入力可能）", rows: "2", maxlength: "150"
                 = form.submit "SEND"
             - else
               %strong
