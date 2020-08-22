@@ -11,6 +11,8 @@ ja:
       brand: ブランド
       address: 送付先住所
     attributes:
+      comment:
+        text: コメント 
       item:
         name: 商品名
         explanation: 商品説明
@@ -454,3 +456,4 @@ ja:
         days1_2: 1~2日で発送
         days2_3: 2~3日で発送
         days4_7: 4~7日で発送
+
