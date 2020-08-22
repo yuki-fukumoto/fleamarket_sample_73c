@@ -9,21 +9,14 @@
 .contents__mypage {
   display: flex;
   align-items: stretch;
-  // margin: 0 150px;
-  // padding: 0 20px;
 }
 
 .side-menu {
   padding-top: 40px;
-  // margin-right: 10px;
   font-size: 15px;
   position: relative;
-  // min-height: 1px;
-  // padding-left: 4px;
-  // padding-right: 20px;
   width: 210px;
   min-width: 210px;
-  // max-width: 1000;
 
   &__title {
     margin: 0 0 8px;
