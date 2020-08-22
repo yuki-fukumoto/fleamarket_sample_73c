@@ -1,5 +1,6 @@
 = render partial: 'layouts/header'
-
+- breadcrumb :item_show
+= render "layouts/breadcrumbs"
 .main
   .showmain
     .contentRight
@@ -55,7 +56,7 @@
                 %tr
                   %th ブランド
                   %td
-                    -# = @item.brand.name
+                    = @item.brand.name if @item.brand.present?
                 %tr
                   %th 商品のサイズ
                   %td
@@ -76,7 +77,6 @@
                   %td
                     =@item.shipping_period_i18n
                     .purchase
-          -# =link_to "購入",  confirm_purchase_path(@item)
           .optionalArea
             %ul
               %li.optionalBtn.likeBtn#likeBtn
@@ -112,7 +112,6 @@
 
                    
 
-          
-//= render partial: 'layouts/footer'
-
-//= render partial: 'layouts/puts_up'
+         
+= render partial: 'layouts/footer'
+= render partial: 'layouts/puts_up'

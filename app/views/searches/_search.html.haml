@@ -1,0 +1,35 @@
+= render partial: 'layouts/header'
+
+.search_view
+  = render partial: 'searches/form'
+
+  .search_results
+    .search_result
+      %h2.search_result--head
+        検索結果
+    .search_lists 
+      - if @items.present?
+        .item_jscroll
+          - @items.each do |item|
+            .search_list
+              =link_to item_path(id: item.id) ,class:"search_list__item" do
+                -item.images.first(1).each do |image|
+                  = image_tag image.image.url, class:"search_list__item__img"
+                .search_list__body
+                  = item.name 
+                  .place
+                    %ul
+                      = item.price
+                      %li
+                        %i{class:"fa fa-star likeicon"}0
+                    %p （税込）
+          .item_scroll
+            = link_to_prev_page @items, '前', class: "prev"
+            = link_to_next_page @items, '次', class: "next"                       
+      - else
+        .nothing 
+          .nothing__message 商品がありません      
+        
+= render partial: 'layouts/footer'
+
+= render partial: 'layouts/puts_up' 
