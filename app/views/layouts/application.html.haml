@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %script{type: "text/javascript", src: "https://js.pay.jp/"}
     %title FleamarketSample73c
     = csrf_meta_tags
     = csp_meta_tag
@@ -14,7 +15,3 @@
     .alert
       =alert
     = yield
-
-
-
-

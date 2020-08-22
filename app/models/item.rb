@@ -6,8 +6,7 @@ class Item < ApplicationRecord
   validates :condition, presence: {message: "が空欄です：システムエラーのため管理者に連絡してください"}, exclusion: {in: %w(yyy), message: "が選択されていません"}
   validates :shipping_area, presence: {message: "が空欄です：システムエラーのため管理者に連絡してください"}, exclusion: {in: %w(xxx), message: "が選択されていません"}
   validates :shipping_pay, :shipping_period, presence: {message: "が空欄です：システムエラーのため管理者に連絡してください"}
-  validates :price, presence: {message: "を入力してください"}, inclusion: {in: 300..9999999, message: "価格は¥300~9,999,999の範囲で設定してください"}
-
+  validates :price, presence: {message: "を入力してください"}, inclusion: {in: 300..9999999, message: "価格は¥300~9,999,999の範囲で設定してください"} 
   enum condition: [:yyy, :brand_new, :mint, :bit_damaged, :slight_damaged, :damaged, :junk]
   enum shipping_pay: [:exhibitor, :customer]
   enum shipping_area: [
@@ -60,19 +59,23 @@ class Item < ApplicationRecord
     :kagoshima,
     :okinawa]
   enum shipping_period: [:days1_2, :days2_3, :days4_7]
-  enum status: [:sell, :draft, :sold]
-
   belongs_to :user
   belongs_to :category
   belongs_to :brand, optional: true
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
+  has_many :comments
 
-  enum status: {sell: 0, buy: 1, trading:2}, _prefix: :status
+  enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 
-  scope :on_sell, -> { where(status: 0) }
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 
-  has_many :favorites, dependent: :destroy
-  has_many :favorites, through: :favorites, source: :user
+  def self.get_on_sell
+    self.where(status: 0)
+  end
+
 end

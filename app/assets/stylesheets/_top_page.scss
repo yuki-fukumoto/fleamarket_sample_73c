@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 body {
   min-width: 940px;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic",
@@ -32,10 +29,8 @@ body {
           width: 37px;
           background-color: #3ccace;
           border: none;
-          &__icon {
-            color: white;
-            font-size: 20px;
-          }
+          font-size: 20px;
+          color: white;
         }
       }
     }
@@ -248,12 +243,15 @@ body {
   }
   .topiclists {
     display: flex;
-    width: 780px;
+    width: 880px;
     margin: 0 auto;
     overflow-x: scroll;
+    background-color: #fff;
+    .jscroll-inner{
+      display: flex;
+    }
     .topiclist {
-      width: 220px;
-      background-color: #fff;
+      width: 221px;
       min-width: 220px;
       display: flex;
       &__item__img{
@@ -281,7 +279,11 @@ body {
     .topiclist:hover {
       opacity: 0.7;
     }
+
   }
+}
+.topiclist:hover {
+  opacity: 0.7;
 }
 
 .banner {
@@ -342,10 +344,6 @@ body {
 
 .copyright {
   text-align: center;
-}
-
-a {
-  text-decoration: none;
 }
 
 .list a {

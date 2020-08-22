@@ -1,5 +1,8 @@
 .top_icon
-  =image_tag(asset_path("logo.png"))
+  =link_to "/" do
+    =image_tag(asset_path("logo.png"))
+- breadcrumb :item_new
+= render "layouts/breadcrumbs"
 .contents
   =form_with model: @item, method: :post, local: true do |f|
     .item
@@ -10,14 +13,30 @@
           必須
       %p.comments
         最大5枚までアップロードできます
-      #image-box-1       
-        .item-num-0#image-box__container
-          = f.fields_for :images do |i|
-            .input-area
-              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-              %label{for: "img-file"}
-                %i.fas.fa-camera
-               
+      #image-box.post-image-list__box
+        #previews.preview_list
+          -# バリデーションエラー時cacheに値がセットされている場合は画像を表示
+          -if @item.images[0].image.url.present?
+            -@item.images.each_with_index do |image, i|
+              .preview_image_box{id: "preview_image_box__#{i}"}
+                .upper-box
+                  =image_tag image.image.url, alt:"preview", width: "120", height: '120', class: "preview_image", id: "preview_image"
+                .update_box
+                  .js-remove{id: "delete_btn_#{i}"}
+                    %span 削除
+        %label{for: "item_images_attributes_0_image", class: "image_input_btn", id: "image_input_btn--0"} 
+          #posts.post_form
+            .image_input_btn_camera
+              %i.fas.fa-camera
+            .image_input_btn_text クリックしてファイルをアップロード
+        .hidden_post_form
+          =f.fields_for :images do |image|          
+            -# 画像がビルドされた際に振られるidを取得
+            %div{ data: {index: "#{image.index}" }, class: "js-file_group" }
+              =image.file_field :image, class:"js-file" 
+              -# cacheを使用するためにhidden_fieldを設置
+              =image.hidden_field :image_cache
+
     %hr
     .item
       .title
@@ -123,6 +142,6 @@
       -#   %button{ onclick: "#", type: "submit", value: ""}下書きに保存
       .return
         =link_to "もどる", root_path
-    .notice
+    .notice_bottom
       禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 .bottom_area
