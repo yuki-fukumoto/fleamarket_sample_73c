@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
     redirect_to_root_if_item_is_sold(@item)
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
+    @recently_visit = cookies[:item_name].split(',') if cookies[:item_name]
   end
 
   def destroy

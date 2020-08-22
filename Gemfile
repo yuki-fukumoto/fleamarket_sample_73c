@@ -99,3 +99,4 @@ end
   gem 'kaminari'
   gem 'ransack'
   gem 'gretel'
+  gem 'js_cookie_rails'
