@@ -25,6 +25,8 @@ class ItemsController < ApplicationController
     redirect_to_root_if_item_is_sold(@item)
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def destroy
@@ -58,6 +60,7 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: '商品を編集しました'
   end
 
+
   def collection_child_categories
     @categories = Category.get_categories(params[:selected_id])
     render json: @categories
@@ -72,3 +75,4 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 end
+

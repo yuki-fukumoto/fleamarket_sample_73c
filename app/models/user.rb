@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :creditcards, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :purchases, dependent: :destroy
+  has_many :comments
 
 
 
