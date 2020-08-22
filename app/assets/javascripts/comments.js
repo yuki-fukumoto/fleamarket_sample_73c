@@ -1,4 +1,4 @@
-$(function () {
+$(document).on("turbolinks:load", function () {
 
   var count = $(".js-text").text().replace(/\n/g, "改行").length;
   var now_count = 150 - count;
