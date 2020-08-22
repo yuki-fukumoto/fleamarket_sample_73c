@@ -76,19 +76,6 @@
             %ul
               %li#favoriteBtn
                 = render partial: 'favorites/favorite', locals: {item: @item}
-                - if @favorites.present?
-                  %ul
-                    - @favorites.each do |favorite|
-                      %li
-                        = link_to item_path(favorite.item.id) do
-                          .item-image
-                            = image_tag (favorite.item.images[0].src.url)
-                          .item-body
-                            .item-name
-                              = favorite.item.item_name
-                            .item-price
-                              = "¥#{favorite.item.price}"
-                -#%i.fa.fa-star お気に入り 1
             %ul.optional
               %li.optionalBtn
                 = link_to "#" do
