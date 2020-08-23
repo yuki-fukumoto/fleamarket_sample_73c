@@ -8,21 +8,47 @@
       %h2.main-box__title
         ="#{current_user.nickname}さんのマイページ"
       .main-box__notice
-        .main-box__notice__subtitle
-          %h3.main-box__subtitle__important 重要なお知らせ
-        .main-box__notice__body
-          .main-box__notice__body__inbox
-            .main-box__notice__body__inbox__left
-              %h4.main-box__notice__body__inbox__streetaddres 住所の設定を行ってください。<br>
-              スムーズに購入を進めるために住所の設定を行ってください。
+      
+        -# .main-box__notice__subtitle
+        -#   %h3.main-box__subtitle__important 重要なお知らせ
+        -# .main-box__notice__body
+        -#   .main-box__notice__body__inbox
+        -#     .main-box__notice__body__inbox__left
+        -#       %h4.main-box__notice__body__inbox__streetaddres 住所の設定を行ってください。<br>
+        -#       スムーズに購入を進めるために住所の設定を行ってください。
+        
+        .main-box__notice__recently
+          .main-box__notice__recently__titles
+            .main-box__notice__recently__titles__title
+              最近SOLD OUTになった商品 
+            =link_to "もっと見る >", sold_items_users_path, class: "see_more"
+          .main-box__notice__recently__body2
+            - if @sold_items.present?
+              .topicBox
+                .topiclists   
+                  - @sold_items.each do |item|
+                    .topiclist
+                      =link_to item_path(id: item.id) ,class:"topiclist__item" do
+                        -item.images.first(1).each do |image|
+                          = image_tag image.image.url, class:"topiclist__item__img"
+                        .topiclist__body
+                          = item.name
+                          .place
+                            %ul
+                              = item.price
+                              %li
+                                %i{class:"fa fa-star likeicon"}0
+                            %p （税込）
+            - else
+              %p.main-box__text                 
+                =link_to "SOLD OUTになった商品はありません。商品を出品しましょう！ ", new_item_path
+        
         .main-box__notice__recently
           .main-box__notice__recently__titles
             .main-box__notice__recently__titles__title
               最近出品した商品 
             =link_to "もっと見る >", sale_items_users_path, class: "see_more"
           .main-box__notice__recently__body2
-            
-            -# 仮表示
             - if @sale_items.present?
               .topicBox
                 .topiclists   
