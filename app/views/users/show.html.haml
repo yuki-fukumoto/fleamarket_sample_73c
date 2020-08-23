@@ -8,7 +8,7 @@
       %h2.main-box__title
         ="#{current_user.nickname}さんのマイページ"
       .main-box__notice
-      
+
         -# .main-box__notice__subtitle
         -#   %h3.main-box__subtitle__important 重要なお知らせ
         -# .main-box__notice__body
@@ -36,6 +36,7 @@
                           .place
                             %ul
                               = item.price
+                              円
                               %li
                                 %i{class:"fa fa-star likeicon"}0
                             %p （税込）
@@ -62,6 +63,7 @@
                           .place
                             %ul
                               = item.price
+                              円
                               %li
                                 %i{class:"fa fa-star likeicon"}0
                             %p （税込）
