@@ -24,7 +24,7 @@
               %span (税込)
               %span 送料込
           .btn-block
-            -if @item.status == 'sold' && user_signed_in? && current_user.id == @item.user_id
+            -if @item.status == 'sold'
               .btn-block__purchase SOLD OUT
 
             - elsif user_signed_in? && current_user.id == @item.user_id
