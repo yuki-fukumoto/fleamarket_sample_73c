@@ -267,6 +267,7 @@ body {
       &__body {
         padding: 16px;
         font-size: 16px;
+        font-weight: normal;
         color: #333333;
         .place {
           ul {
@@ -281,9 +282,6 @@ body {
     }
 
   }
-}
-.topiclist:hover {
-  opacity: 0.7;
 }
 
 .banner {

@@ -6,8 +6,12 @@ class UsersController < ApplicationController
   
   def destroy
   end
+
   def show
+    @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').limit(4)
+    @sale_items = @items.get_on_sell
   end
+
   def change
   end
 end
