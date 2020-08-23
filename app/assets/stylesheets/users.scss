@@ -66,6 +66,13 @@
     &__recently {
       background-color: #fff;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      &__titles{
+        display: flex;
+        justify-content: space-between;
+        .see_more{
+          color: #0095ee;
+        }
+      }
       &__body2 {
         border: 1px solid #e5e5e5;
         p.main-box__text {

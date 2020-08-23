@@ -16,7 +16,10 @@
               %h4.main-box__notice__body__inbox__streetaddres 住所の設定を行ってください。<br>
               スムーズに購入を進めるために住所の設定を行ってください。
         .main-box__notice__recently
-          .main-box__notice__recently__subsubtitle 最近出品した商品
+          .main-box__notice__recently__titles
+            .main-box__notice__recently__titles__title
+              最近出品した商品 
+            =link_to "もっと見る >", sale_items_users_path, class: "see_more"
           .main-box__notice__recently__body2
             
             -# 仮表示
