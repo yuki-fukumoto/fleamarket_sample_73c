@@ -31,6 +31,7 @@
           - if @user.errors.any?
             - if @user.errors[:email].present?
               .wrapper-sign-up__article__section__form-area_color
+                メールアドレス
                 = @user.errors.messages[:email][0]
           .wrapper-sign-up__article__section__form-area__name
             パスワード
@@ -75,10 +76,12 @@
           -if @user.errors.any?
             - if @user.errors[:lastname].present?
               .wrapper-sign-up__article__section__form-area_color
+                名前
                 = @user.errors.messages[:lastname][0]
           - if @user.errors.any?
             - if @user.errors[:firstname].present?
               .wrapper-sign-up__article__section__form-area_color
+                名前
                 = @user.errors.messages[:firstname][0]  
           .wrapper-sign-up__article__section__form-area__name
             ふりがな
@@ -171,13 +174,14 @@
               .wrapper-sign-up__article__section__form-area__name__attribute--box
                 必須
             .wrapper-sign-up__article__section__form-area__form
-              =address_f.text_field :prefecture, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角"
+              -# =address_f.text_field :prefecture, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors[:"addresses.prefecture"].present?
                 .wrapper-sign-up__article__section__form-area_color
                   都道府県
                   = @user.errors.messages[:"addresses.prefecture"][0]
+            = address_f.collection_select :prefucture_id, Prefecture.all, :id, :name, {prompt: "県名を選ぶ"}, {class: "category_0 text_box"}
             .wrapper-sign-up__article__section__form-area__name
               市区町村
               .wrapper-sign-up__article__section__form-area__name__attribute--box

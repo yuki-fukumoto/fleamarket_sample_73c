@@ -5,7 +5,8 @@ class Address < ApplicationRecord
   validates :firstname, :lastname, :prefecture, :city, format: { with: /\A[一-龥ぁ-ん]/, message: "は全角で入力してください"}
   validates :firstname_read, :lastname_read, format: { with:/[ぁ-ん]/, message: "ひらがなで入力してください"}
 
-
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
   attr_accessor :first_zip, :last_zip, :first_telephone, :second_telephone, :third_telephone
   before_validation :set_zip
   before_validation :set_telephone
