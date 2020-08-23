@@ -247,6 +247,7 @@ body {
     margin: 0 auto;
     overflow-x: scroll;
     background-color: #fff;
+    position: relative;
     .jscroll-inner{
       display: flex;
     }
@@ -274,6 +275,24 @@ body {
             display: flex;
             justify-content: space-between;
           }
+        }
+      }
+      .sold_tag{
+        width: 0;
+        height: 0;
+        border-top: 40px solid #3CCACE;
+        border-right: 40px solid transparent;
+        border-bottom: 40px solid transparent;
+        border-left: 40px solid #3CCACE;
+        z-index:100;
+        position: absolute;
+        top: 0px;
+        &__inner{
+          color: #fff;
+          transform: rotate(-45deg);
+          font-size: 20px;
+          margin:-15px 0px 0px -35px;
+          font-weight: bold;
         }
       }
     }
