@@ -155,28 +155,11 @@
       .optionalArea {
         display: flex;
         justify-content: space-between;
-        ul {
+        li#favoriteBtn {
           margin: 10px 0 0;
           display: flex;
           list-style: none;
-          li.likeBtn {
-            margin-right: auto;
-            padding: 6px 10px;
-            border-radius: 40px;
-            color: #3ccace;
-            border: 1px solid #ffb340;
-            i {
-              display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
-              text-rendering: auto;
-              -webkit-font-smoothing: antialliased;
-            }
-            i:before {
-              content: "\f005";
-              font-weight: 400;
-              font-family: "Font Awesome 5 Free";
-            }
-          }
+          
         }
         ul.optional {
           margin: 10px 0 0;

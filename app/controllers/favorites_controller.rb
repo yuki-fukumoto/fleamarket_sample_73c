@@ -1,9 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_product, only: [:create, :destoroy]
-
-  def index
-    @favorites = Favorite.where(user_id: current_user.id)
-  end
+  before_action :set_item, only: [:create, :destroy]
 
   def create
     @favorite = Favorite.new(
@@ -13,18 +9,19 @@ class FavoritesController < ApplicationController
     @favorite.save
   end
 
-  def destoroy
+  def destroy
     @favorite = Favorite.find_by(
       user_id: current_user.id,
       item_id: @item.id
     )
-    @favorite.destoroy
+    @favorite.destroy
   end
 
   private
 
   def set_item
-    @item = item.find(params[:item_id])
+    @item = Item.find(params[:item_id])
   end
+
 end
 
