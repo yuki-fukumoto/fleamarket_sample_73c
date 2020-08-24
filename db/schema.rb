@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_081141) do
+ActiveRecord::Schema.define(version: 2020_08_24_074625) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "firstname", null: false
@@ -34,6 +34,24 @@ ActiveRecord::Schema.define(version: 2020_08_14_081141) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "browsing_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_browsing_histories_on_item_id"
+    t.index ["user_id"], name: "index_browsing_histories_on_user_id"
+  end
+
+  create_table "browsinghistories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_browsinghistories_on_item_id"
+    t.index ["user_id"], name: "index_browsinghistories_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,6 +147,8 @@ ActiveRecord::Schema.define(version: 2020_08_14_081141) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "browsinghistories", "items"
+  add_foreign_key "browsinghistories", "users"
   add_foreign_key "creditcards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
