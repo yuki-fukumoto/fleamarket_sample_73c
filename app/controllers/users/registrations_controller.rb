@@ -8,7 +8,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-    @addresses = @user.build_address
+    @user.build_address
+    # @user.address.build
   end
 
   # POST /resource
@@ -18,6 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sign_in @user
       redirect_to root_path, notice: "ユーザ登録が完了しました"
     else
+      # @addresses = @user.build_address
       render :new
       # redirect_to new_user_registration_path
     end
@@ -33,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, addresses_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture_id, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone]).merge(encrypted_password: Devise::Encryptor.digest(User, params[:user][:password]))
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture_id, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone]).merge(encrypted_password: Devise::Encryptor.digest(User, params[:user][:password]))
   end
 end  
   # GET /resource/edit

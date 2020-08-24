@@ -1,4 +1,6 @@
 class Address < ApplicationRecord
+
+
   validates :firstname_read, :lastname_read, :prefecture, :city, :address_line, presence: true
   validates :zip, format: { with: /\A\d{3}\-?\d{4}\z/,  message: "郵便番号は半角数字７桁で入力してくだい"} 
   validates :firstname, :lastname, format: {with:/[一-龥ぁ-ん]/, message: "名前を入力してください"}
@@ -21,5 +23,4 @@ class Address < ApplicationRecord
   def set_telephone
     self.telephone = [@first_telephone, @second_telephone, @third_telephone].join
   end
-
 end
