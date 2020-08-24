@@ -43,6 +43,35 @@
               %p.main-box__text                 
                 =link_to "最近の出品したアイテムを表示します。商品を出品しましょう！ ", new_item_path
 
+        .main-box__notice__recently
+          .main-box__notice__recently__titles
+            .main-box__notice__recently__titles__title
+              最近見た商品 
+            =link_to "もっと見る >", browsing_histories_path, class: "see_more"
+          .main-box__notice__recently__body2
+            - if @history.present?
+              .topicBox
+                .topiclists   
+                  - @history.each do |history|
+                    -if history.item.status == "sell"
+                      .topiclist
+                        =link_to item_path(history.item_id) ,class:"topiclist__item" do
+                          -history.item.images.first(1).each do |image|
+                            = image_tag image.image.url, class:"topiclist__item__img"
+                          .topiclist__body
+                            = history.item.name
+                            .place
+                              %ul
+                                = history.item.price
+                                %li
+                                  %i{class:"fa fa-star likeicon"}0
+                              %p （税込）
+            - else
+              %p.main-box__text                 
+                =link_to "最近見たアイテムを表示します。商品を探しましょう！ ", searches_path
+
+
+
       .main-box__group
         .main-box__submenu
           %h1.main-box__menutitle1 注目ブランド

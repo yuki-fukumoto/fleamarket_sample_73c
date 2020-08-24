@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').limit(4)
     @sale_items = @items.get_on_sell
+    @history = BrowsingHistory.where(user_id: current_user.id).order('created_at DESC').limit(4)
   end
 
   def change
