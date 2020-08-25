@@ -78,9 +78,8 @@
                     =@item.shipping_period_i18n
                     .purchase
           .optionalArea
-            %ul
-              %li#favoriteBtn
-                = render partial: 'favorites/favorite', locals: {item: @item}
+            %ul#favoriteBtn
+              = render partial: 'favorites/favorite', locals: {item: @item}
             %ul.optional
               %li.optionalBtn
                 = link_to "#" do
