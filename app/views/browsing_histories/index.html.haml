@@ -25,7 +25,23 @@
                             = history.item.price
                             %li
                               %i{class:"fa fa-star likeicon"}0
-                          %p （税込）                       
+                          %p （税込）
+                - else
+                  .search_list
+                    =link_to item_path(history.item_id) ,class:"search_list__item" do
+                      -history.item.images.first(1).each do |image|
+                        = image_tag image.image.url, class:"search_list__item__img"
+                      .search_list__body
+                        = history.item.name 
+                        .place
+                          %ul
+                            = history.item.price
+                            %li
+                              %i{class:"fa fa-star likeicon"}0
+                          %p （税込）
+                      .sold_tag
+                        .sold_tag__inner
+                          SOLD                           
           - else
             .nothing 
               .nothing__message 商品がありません      
