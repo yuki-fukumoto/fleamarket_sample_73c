@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    redirect_to_root_if_item_is_sold(@item)
+    # redirect_to_root_if_item_is_sold(@item)
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
     @comment = Comment.new
