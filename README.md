@@ -25,6 +25,7 @@
 - has_many :creditcards, dependent: :destroy
 - has_many :items, dependent: :destroy
 - has_many :purchases, dependent: :destroy
+- has_many :browsing_histories, dependent: :destroy
 
 ## addresses
 
@@ -93,6 +94,7 @@
 - belongs_to :category
 - belongs_to :brand
 - has_many :images, dependent: :destroy
+- has_many :browsing_histories, dependent: :destroy
 
 ## images
 
@@ -149,3 +151,17 @@
 - belongs_to :item
 - belongs_to :address
 - belongs_to :creditcard
+
+## browsing_histories
+
+### table
+
+| name          | type    | option      |
+| ------------- | ------- | ----------- |
+| item_id       | integer | null: false |
+| user_id       | integer | null: false |
+
+### association
+
+- belongs_to :user
+- belongs_to :item
