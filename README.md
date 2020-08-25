@@ -2,7 +2,7 @@
 
 ## ER diagram
 
-![ER diagram](https://user-images.githubusercontent.com/62494531/90950463-971c7380-e48c-11ea-8748-a9d4378d3387.png)
+![ER diagram](./public/images/fleamarket_sample_73c.png)
 
 ## users
 
@@ -172,10 +172,10 @@
 
 ### table
 
-| name          | type    | option      |
-| ------------- | ------- | ----------- |
-| item_id       | integer | null: false |
-| user_id       | integer | null: false |
+| name          | type    | option                         |
+| ------------- | ------- | ------------------------------ |
+| item_id       | integer | null: false, foreign_key: true |
+| user_id       | integer | null: false, foreign_key: true |
 
 ### association
 
