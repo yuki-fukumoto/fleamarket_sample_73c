@@ -3,6 +3,11 @@ class UsersController < ApplicationController
     @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').page(params[:page]).without_count.per(4)
     @sale_items = @items.get_on_sell
   end
+
+  def sold_items
+    @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').page(params[:page]).without_count.per(4)
+    @sold_items = @items.where(status: "2")
+  end
   
   def destroy
   end
@@ -10,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').limit(4)
     @sale_items = @items.get_on_sell
+    @sold_items = @items.where(status: "2")
   end
 
   def change

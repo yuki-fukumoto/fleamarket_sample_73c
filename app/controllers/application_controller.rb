@@ -37,11 +37,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def redirect_to_root_if_item_is_sold(item)
-    if item.status == "sold"
-      redirect_to root_path, notice: "不正なアクセス：取引終了している商品です"
-    end
-  end
+  # 販売済アイテムのアクセス禁止の記述。消すかは一旦保留
+  # def redirect_to_root_if_item_is_sold(item)
+  #   if item.status == "sold"
+  #     redirect_to root_path, notice: "不正なアクセス：取引終了している商品です"
+  #   end
+  # end
 end
 
 
