@@ -2,7 +2,7 @@
 
 ## ER diagram
 
-![ER diagram](https://user-images.githubusercontent.com/62494531/90950463-971c7380-e48c-11ea-8748-a9d4378d3387.png)
+![ER diagram](./public/images/fleamarket_sample_73c.png)
 
 ## users
 
@@ -25,6 +25,7 @@
 - has_many :creditcards, dependent: :destroy
 - has_many :items, dependent: :destroy
 - has_many :purchases, dependent: :destroy
+- has_many :browsing_histories, dependent: :destroy
 - has_many :comments
 
 ## addresses
@@ -93,6 +94,7 @@
 - belongs_to :category
 - belongs_to :brand
 - has_many :images, dependent: :destroy
+- has_many :browsing_histories, dependent: :destroy
 - has_many :comments
 
 ## images
@@ -165,3 +167,17 @@
 - belongs_to :item
 - belongs_to :address
 - belongs_to :creditcard
+
+## browsing_histories
+
+### table
+
+| name          | type    | option                         |
+| ------------- | ------- | ------------------------------ |
+| item_id       | integer | null: false, foreign_key: true |
+| user_id       | integer | null: false, foreign_key: true |
+
+### association
+
+- belongs_to :user
+- belongs_to :item

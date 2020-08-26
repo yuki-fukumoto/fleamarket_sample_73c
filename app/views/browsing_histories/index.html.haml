@@ -1,0 +1,38 @@
+= render partial: 'layouts/header'
+- breadcrumb :user_show
+= render "layouts/breadcrumbs"
+.wrapper_mypage
+  .contents__mypage
+    = render partial: 'layouts/sidemenu'
+    .search_view
+      .search_results
+        .search_result
+          %h2.search_result--head
+            最近見た商品
+        .search_lists 
+          - if @history.present?
+            .item_jscroll
+              - @history.each do |history|
+                
+                .search_list
+                  =link_to item_path(history.item_id) ,class:"search_list__item" do
+                    -history.item.images.first(1).each do |image|
+                      = image_tag image.image.url, class:"search_list__item__img"
+                    .search_list__body
+                      = history.item.name 
+                      .place
+                        %ul
+                          = history.item.price
+                          %li
+                            %i{class:"fa fa-star likeicon"}0
+                        %p （税込）
+                    -if history.item.status == "sold"
+                      .sold_tag
+                        .sold_tag__inner
+                          SOLD                           
+          - else
+            .nothing 
+              .nothing__message 商品がありません      
+        
+= render partial: 'layouts/footer'
+= render partial: 'layouts/puts_up' 

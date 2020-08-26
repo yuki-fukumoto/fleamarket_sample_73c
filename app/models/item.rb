@@ -66,6 +66,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   has_one :purchase
   has_many :comments
+  has_many :browsing_histories, dependent: :destroy
 
   enum status: {sell: 0, draft: 1, sold:2}, _prefix: :status
 

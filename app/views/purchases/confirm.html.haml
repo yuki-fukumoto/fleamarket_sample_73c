@@ -1,7 +1,8 @@
 =form_with url: purchases_path, method: :post, local: true do |f|
   =f.hidden_field :item_id, value: @item.id
   .top_icon
-    =image_tag(asset_path("logo.png"))
+    =link_to "/" do
+      =image_tag(asset_path("logo.png"))
   - breadcrumb :purchase_confirm
   = render "layouts/breadcrumbs"
   .confirm_contents
@@ -49,7 +50,8 @@
         .confirm_adress__title__bar
           配送先
         =link_to "変更する >", class: "change"
-      .confirm_adress__zip_code
+      .confirm_adress__zip_code 
+        〒
         = current_user.addresses[0].zip
       .confirm_adress__code
         = current_user.addresses[0].prefecture

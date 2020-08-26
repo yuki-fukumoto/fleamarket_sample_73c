@@ -30,4 +30,6 @@ Rails.application.routes.draw do
       get :confirm
     end
   end
+
+  resources :browsing_histories, only: :index
 end
