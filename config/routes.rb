@@ -31,6 +31,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :browsing_histories do
-  end
+  resources :browsing_histories
 end

@@ -84,32 +84,19 @@
               .topicBox
                 .topiclists   
                   - @history.each do |history|
-                    -if history.item.status == "sell"
-                      .topiclist
-                        =link_to item_path(history.item_id) ,class:"topiclist__item" do
-                          -history.item.images.first(1).each do |image|
-                            = image_tag image.image.url, class:"topiclist__item__img"
-                          .topiclist__body
-                            = history.item.name
-                            .place
-                              %ul
-                                = history.item.price
-                                %li
-                                  %i{class:"fa fa-star likeicon"}0
-                              %p （税込）
-                    - else
-                      .topiclist
-                        =link_to item_path(history.item_id) ,class:"topiclist__item" do
-                          -history.item.images.first(1).each do |image|
-                            = image_tag image.image.url, class:"topiclist__item__img"
-                          .topiclist__body
-                            = history.item.name
-                            .place
-                              %ul
-                                = history.item.price
-                                %li
-                                  %i{class:"fa fa-star likeicon"}0
-                              %p （税込）
+                    .topiclist
+                      =link_to item_path(history.item_id) ,class:"topiclist__item" do
+                        -history.item.images.first(1).each do |image|
+                          = image_tag image.image.url, class:"topiclist__item__img"
+                        .topiclist__body
+                          = history.item.name
+                          .place
+                            %ul
+                              = history.item.price
+                              %li
+                                %i{class:"fa fa-star likeicon"}0
+                            %p （税込）
+                        -if history.item.status == "sold"
                           .sold_tag
                             .sold_tag__inner
                               SOLD
