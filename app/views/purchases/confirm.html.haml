@@ -13,7 +13,7 @@
         = image_tag @item.images.first.image.url
       .items__title
         .items__title__bar
-          =@item.name
+          =@item.name.truncate(15)
         .items__title__price
           .items__title__price__board
             = "#{@item.price}円"
