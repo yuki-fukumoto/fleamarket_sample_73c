@@ -29,6 +29,12 @@ class UsersController < ApplicationController
     @history = BrowsingHistory.where(user_id: current_user.id).order('created_at DESC').limit(4)
     # @history_items = @history.get_on_sell
 
+    @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC').limit(4)
+    @buy_items = []
+    @buyer.each do |buyer|
+      @buy_items << buyer.item
+    end
+
   end
 
   def change

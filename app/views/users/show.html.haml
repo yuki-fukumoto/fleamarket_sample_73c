@@ -50,6 +50,36 @@
         .main-box__notice__recently
           .main-box__notice__recently__titles
             .main-box__notice__recently__titles__title
+              最近購入した商品
+            =link_to "もっと見る >", buy_items_users_path, class: "see_more"
+          .main-box__notice__recently__body2
+            - if @buy_items.present?
+              .topicBox
+                .topiclists   
+                  - @buy_items.each do |item|
+                    .topiclist
+                      =link_to item_path(id: item.id) ,class:"topiclist__item" do
+                        -item.images.first(1).each do |image|
+                          = image_tag image.image.url, class:"topiclist__item__img"
+                        .topiclist__body
+                          = item.name
+                          .place
+                            %ul
+                              = item.price
+                              円
+                              %li
+                                %i{class:"fa fa-star likeicon"}0
+                            %p （税込）
+                        .buy_tag
+                          .buy_tag__inner
+                            BUY
+            - else
+              %p.main-box__text                 
+                =link_to "購入した商品はありません。商品を探しましょう！ ", searches_path
+        
+        .main-box__notice__recently
+          .main-box__notice__recently__titles
+            .main-box__notice__recently__titles__title
               最近出品した商品 
             =link_to "もっと見る >", sale_items_users_path, class: "see_more"
           .main-box__notice__recently__body2
