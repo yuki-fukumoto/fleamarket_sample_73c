@@ -11,16 +11,6 @@ class UsersController < ApplicationController
 
   def buy_items
     @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).without_count.per(4)
-    # @buy_items = []
-    # @buyer.each do |buyer|
-    #   @buy_items << buyer.item
-    # end
-    
-    # @buy_items = @buy_items.page(params[:page]).without_count.per(4)
-  end
-
-  
-  def destroy
   end
 
   def show
@@ -29,7 +19,6 @@ class UsersController < ApplicationController
     @sold_items = @items.where(status: "2")
     
     @history = BrowsingHistory.where(user_id: current_user.id).order('created_at DESC').limit(4)
-    # @history_items = @history.get_on_sell
 
     @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC').limit(4)
     @buy_items = []
@@ -37,8 +26,5 @@ class UsersController < ApplicationController
       @buy_items << buyer.item
     end
 
-  end
-
-  def change
   end
 end

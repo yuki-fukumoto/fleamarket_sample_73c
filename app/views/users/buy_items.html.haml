@@ -12,9 +12,7 @@
         .search_lists 
           - if @buyer.present?
             .item_jscroll
-               
               - @buyer.each do |buyer|
-                -# = buyer.item
                 .search_list
                   =link_to item_path(id: buyer.item.id) ,class:"search_list__item" do
                     -buyer.item.images.first(1).each do |image|
