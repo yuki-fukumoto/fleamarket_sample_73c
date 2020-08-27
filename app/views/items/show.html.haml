@@ -79,7 +79,7 @@
                     .purchase
           .optionalArea
             %ul#favoriteBtn
-              = render partial: 'favorites/favorite', locals: {item: @item}
+              = render "favorites/favorite", item: @item
             %ul.optional
               %li.optionalBtn
                 = link_to "#" do
