@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
     resources :comments, only: [:create, :new]
+    resources :favorites, only: [:index, :create, :destroy]
   end
   resources :items, except: :index do
   end  
@@ -28,8 +29,5 @@ Rails.application.routes.draw do
     member do
       get :confirm
     end
-  end
-  resources :items do
-    resources :favorites, only: [:index, :create, :destroy]
   end
 end

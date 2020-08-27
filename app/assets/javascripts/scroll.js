@@ -13,11 +13,4 @@ $(document).on('turbolinks:load', function(){
     nextSelector: 'a.next',
     padding: 20
   });
-  $('.favorites_lists').jscroll({
-    contentSelector: '.favorites_jscroll',
-    loadingHtml: 'now loading',
-    autoTrigger: true,
-    nextSelector: 'a.next',
-    padding: 20
-  });
 });

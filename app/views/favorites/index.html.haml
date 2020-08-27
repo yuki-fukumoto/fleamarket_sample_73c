@@ -1,32 +1,36 @@
 = render partial: 'layouts/header'
+- breadcrumb :user_show
+= render "layouts/breadcrumbs"
 
-.favorites_view
-  .favorites_results
-    .favorites_result
-      %h2.favorites_result--head
-        お気に入り
-    .favorites_lists
-      - if @favorites.present?
-        .favorites_jscroll
-          - @favorites.each do |favorite|
-            .favorites_list
-              = link_to item_path(favorite.item.id) ,class:"favorites_list__item" do
-                .favorites-image
-                  = image_tag (favorite.item.images[0].image.url), class:"favorites_list__item__img"
-                .favorites_list__body
-                  = favorite.item.name
-                  %ul.item-price
-                    = "￥#{favorite.item.price}"
-                    %li
-                      %i{class:"fa fa-star likeicon"}0
-                  %p  (税込）
-              .favorites_scroll
+.wrapper_mypage
+  .contents__mypage
+    = render partial: 'layouts/sidemenu'
+    .search_view
+      .search_results
+        .search_result
+          %h2.search_result--head
+            お気に入り
+        .search_lists 
+          - if @favorites.present?
+            .item_jscroll
+              - @favorites.each do |favorite|
+                .search_list
+                  = link_to item_path(favorite.item.id) ,class:"search_list__item" do
+                    = image_tag (favorite.item.images[0].image.url), class:"search_list__item__img"
+                    .search_list__body
+                      = favorite.item.name 
+                      .place
+                        %ul
+                          = "￥#{favorite.item.price}"
+                          %li
+                            %i{class:"fa fa-star likeicon"}0
+                        %p （税込）
+              .item_scroll
                 = link_to_prev_page @favorites, '前', class: "prev"
-                = link_to_next_page @favorites, '次', class: "next"            
-      - else 
-        .nothing 
-          .nothing__message お気に入りに追加した商品はありません
-
+                = link_to_next_page @favorites, '次', class: "next"                       
+          - else
+            .nothing 
+              .nothing__message 商品がありません      
+        
 = render partial: 'layouts/footer'
-
-= render partial: 'layouts/puts_up'
+= render partial: 'layouts/puts_up' 
