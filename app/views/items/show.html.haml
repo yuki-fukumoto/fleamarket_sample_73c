@@ -107,11 +107,15 @@
               %h4 ＜コメント一覧＞
               - if @comments
                 - @comments.each do |comment|
-                  %p
-                    %strong
-                      = link_to comment.user.nickname, "/users/#{comment.user}"
-                      ：
-                    = comment.text
+                  -# %p
+                    -# %strong
+                  .comment_area
+                    .comment_name
+                      = comment.user.nickname
+                    .comment_date  
+                      = comment.created_at.strftime("%m/%d %H:%M")
+                      .comment_text
+                        = comment.text
          
 = render partial: 'layouts/footer'
 = render partial: 'layouts/puts_up'
