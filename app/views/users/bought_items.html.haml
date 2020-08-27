@@ -10,18 +10,18 @@
           %h2.search_result--head
             購入した商品
         .search_lists 
-          - if @buyer.present?
+          - if @purchase.present?
             .item_jscroll
-              - @buyer.each do |buyer|
+              - @purchase.each do |purchase|
                 .search_list
-                  =link_to item_path(id: buyer.item.id) ,class:"search_list__item" do
-                    -buyer.item.images.first(1).each do |image|
+                  =link_to item_path(id: purchase.item.id) ,class:"search_list__item" do
+                    -purchase.item.images.first(1).each do |image|
                       = image_tag image.image.url, class:"search_list__item__img"
                     .search_list__body
-                      = buyer.item.name 
+                      = purchase.item.name 
                       .place
                         %ul
-                          = buyer.item.price
+                          = purchase.item.price
                           円
                           %li
                             %i{class:"fa fa-star likeicon"}0
@@ -30,8 +30,8 @@
                       .sold_tag__inner
                         SOLD
               .item_scroll
-                = link_to_prev_page @buyer, '前', class: "prev"
-                = link_to_next_page @buyer, '次', class: "next"                       
+                = link_to_prev_page @purchase, '前', class: "prev"
+                = link_to_next_page @purchase, '次', class: "next"                       
           - else
             .nothing 
               .nothing__message 商品がありません      

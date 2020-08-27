@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     @sold_items = @items.where(status: "2")
   end
 
-  def buy_items
-    @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).without_count.per(4)
+  def bought_items
+    @purchase = Purchase.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).without_count.per(4)
   end
 
   def show
