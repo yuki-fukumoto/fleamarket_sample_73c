@@ -114,24 +114,6 @@
             font-weight: bold;
           }
         }
-        .buy_tag{
-          width: 0;
-          height: 0;
-          border-top: 40px solid #CE403C;
-          border-right: 40px solid transparent;
-          border-bottom: 40px solid transparent;
-          border-left: 40px solid #CE403C;
-          z-index:100;
-          position: absolute;
-          top: 0px;
-          &__inner{
-            color: #fff;
-            transform: rotate(-45deg);
-            font-size: 20px;
-            margin:-15px 0px 0px -35px;
-            font-weight: bold;
-          }
-        } 
       }  
       .topiclist:hover {
         opacity: 0.7;
