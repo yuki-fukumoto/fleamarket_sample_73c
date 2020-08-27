@@ -63,7 +63,6 @@
       display: flex;
       min-height: 200px;
       min-width: 1000px;
-      position: relative;
       background-color: #f8f8f8;
       .item_jscroll{
         display: flex;
@@ -74,6 +73,7 @@
           display: flex;
           background-color: #ffffff;
           margin: 10px;
+          position: relative;
           &__item__img{
             height: 150px;
             width:220px;
@@ -105,7 +105,7 @@
           border-left: 40px solid #3CCACE;
           z-index:100;
           position: absolute;
-          top: 10px;
+          top: 0px;
           &__inner{
             color: #fff;
             transform: rotate(-45deg);
