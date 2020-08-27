@@ -10,11 +10,13 @@ class UsersController < ApplicationController
   end
 
   def buy_items
-    @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC')
-    @buy_items = []
-    @buyer.each do |buyer|
-      @buy_items << buyer.item
-    end
+    @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).without_count.per(4)
+    # @buy_items = []
+    # @buyer.each do |buyer|
+    #   @buy_items << buyer.item
+    # end
+    
+    # @buy_items = @buy_items.page(params[:page]).without_count.per(4)
   end
 
   
