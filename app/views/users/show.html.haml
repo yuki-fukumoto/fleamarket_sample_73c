@@ -50,6 +50,36 @@
         .main-box__notice__recently
           .main-box__notice__recently__titles
             .main-box__notice__recently__titles__title
+              最近購入した商品
+            =link_to "もっと見る >", bought_items_users_path, class: "see_more"
+          .main-box__notice__recently__body2
+            - if @buy_items.present?
+              .topicBox
+                .topiclists   
+                  - @buy_items.each do |item|
+                    .topiclist
+                      =link_to item_path(id: item.id) ,class:"topiclist__item" do
+                        -item.images.first(1).each do |image|
+                          = image_tag image.image.url, class:"topiclist__item__img"
+                        .topiclist__body
+                          = item.name.truncate(13)
+                          .place
+                            %ul
+                              = item.price
+                              円
+                              %li
+                                %i{class:"fa fa-star likeicon"}0
+                            %p （税込）
+                        .sold_tag
+                          .sold_tag__inner
+                            SOLD
+            - else
+              %p.main-box__text                 
+                =link_to "購入した商品はありません。商品を探しましょう！ ", searches_path
+        
+        .main-box__notice__recently
+          .main-box__notice__recently__titles
+            .main-box__notice__recently__titles__title
               最近出品した商品 
             =link_to "もっと見る >", sale_items_users_path, class: "see_more"
           .main-box__notice__recently__body2
@@ -93,6 +123,7 @@
                           .place
                             %ul
                               = history.item.price
+                              円
                               %li
                                 %i{class:"fa fa-star likeicon"}0
                             %p （税込）
@@ -105,31 +136,32 @@
                 =link_to "最近見たアイテムを表示します。商品を探しましょう！ ", searches_path
 
 
+      -# 2020.08.28現在機能を持ち合わせてないためコメントアウト
+      -# .main-box__group
+      -#   .main-box__submenu
+      -#     %h1.main-box__menutitle1 注目ブランド
+      -#     %li.main-box__category1
+      -#       =link_to "NIKE"
+      -#     %li.main-box__category2
+      -#       =link_to "GU"
+      -#     %li.main-box__category3
+      -#       =link_to "ZARA"
+      -#   .main-box__submenu
+      -#     %h1.main-box__menutitle1 コンテンツ
+      -#     %li.main-box__category1
+      -#       =link_to "ブランド一覧"
+      -#     %li.main-box__category2
+      -#       =link_to "カテゴリ一覧"
+      -#     %li.main-box__category3
+      -#       =link_to "キーワード一覧"
+      -#   .main-box__submenu
+      -#     %h1.main-box__menutitle1 ガイド
+      -#     %li.main-box__category1
+      -#       =link_to "公式ガイド"
+      -#     %li.main-box_category2
+      -#       =link_to "初めての方へ"
+      -#     %li.main-box__category3
+      -#       =link_to "お知らせ"
 
-      .main-box__group
-        .main-box__submenu
-          %h1.main-box__menutitle1 注目ブランド
-          %li.main-box__category1
-            =link_to "NIKE"
-          %li.main-box__category2
-            =link_to "GU"
-          %li.main-box__category3
-            =link_to "ZARA"
-        .main-box__submenu
-          %h1.main-box__menutitle1 コンテンツ
-          %li.main-box__category1
-            =link_to "ブランド一覧"
-          %li.main-box__category2
-            =link_to "カテゴリ一覧"
-          %li.main-box__category3
-            =link_to "キーワード一覧"
-        .main-box__submenu
-          %h1.main-box__menutitle1 ガイド
-          %li.main-box__category1
-            =link_to "公式ガイド"
-          %li.main-box_category2
-            =link_to "初めての方へ"
-          %li.main-box__category3
-            =link_to "お知らせ"
 = render partial: 'layouts/footer'
 = render partial: 'layouts/puts_up'
