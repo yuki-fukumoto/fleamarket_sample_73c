@@ -1,3 +1,42 @@
+# アプリ概要
+
+ユーザが自由に出品、購入ができるフリーマーケットアプリです。
+
+# 使用技術・言語
+
+- フロントエンド(javascript, jQuery, HTML/CSS, HAML, Sass)
+- バックエンド(Ruby on Rails, 外部 API)
+- テスト(Rspec)
+- web サーバ(nginx, unicorn)
+- データベース(MySQL)
+- AWS(VPC, EC2, S3)
+- 開発環境(VScode, Git, GitHub, Capistrano)
+
+# 機能一覧
+
+- 商品出品・編集(Carriewave, enum, 画像プレビュー, 詳細カテゴリの動的表示)
+- 商品購入(API)
+- 商品検索(キーワード + 条件検索)
+- 商品閲覧
+- 商品削除
+- クレジットカード登録(API)
+- ユーザ・住所登録
+- ユーザ認証
+- コメント
+- お気に入り機能
+- 購入履歴一覧
+- 販売商品一覧
+- 売却商品一覧
+- 閲覧履歴一覧
+- カテゴリ機能(ancestry)
+- ブランド機能
+- 無限スクロール
+- パンくずナビゲーション
+- rspec によるモデルテスト
+- エラーハンドリング
+- AWS 本番環境
+- 自動デプロイ
+
 # table_setting
 
 ## ER diagram
@@ -172,10 +211,10 @@
 
 ### table
 
-| name          | type    | option                         |
-| ------------- | ------- | ------------------------------ |
-| item_id       | integer | null: false, foreign_key: true |
-| user_id       | integer | null: false, foreign_key: true |
+| name    | type    | option                         |
+| ------- | ------- | ------------------------------ |
+| item_id | integer | null: false, foreign_key: true |
+| user_id | integer | null: false, foreign_key: true |
 
 ### association
 
