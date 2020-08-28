@@ -107,8 +107,6 @@
               %h4 ＜コメント一覧＞
               - if @comments
                 - @comments.each do |comment|
-                  -# %p
-                    -# %strong
                   .comment_area
                     .comment_name
                       = comment.user.nickname
