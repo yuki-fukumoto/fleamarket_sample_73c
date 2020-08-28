@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'sale_items'
       get 'sold_items'
+      get 'bought_items'
     end
   end  
 

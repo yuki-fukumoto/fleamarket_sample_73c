@@ -8,29 +8,30 @@
       .search_results
         .search_result
           %h2.search_result--head
-            最近見た商品
+            購入した商品
         .search_lists 
-          - if @history.present?
+          - if @purchase.present?
             .item_jscroll
-              - @history.each do |history|
-                
+              - @purchase.each do |purchase|
                 .search_list
-                  =link_to item_path(history.item_id) ,class:"search_list__item" do
-                    -history.item.images.first(1).each do |image|
+                  =link_to item_path(id: purchase.item.id) ,class:"search_list__item" do
+                    -purchase.item.images.first(1).each do |image|
                       = image_tag image.image.url, class:"search_list__item__img"
                     .search_list__body
-                      = history.item.name.truncate(13)
+                      = purchase.item.name.truncate(13)
                       .place
                         %ul
-                          = history.item.price
+                          = purchase.item.price
                           円
                           %li
                             %i{class:"fa fa-star likeicon"}0
                         %p （税込）
-                    -if history.item.status == "sold"
-                      .sold_tag
-                        .sold_tag__inner
-                          SOLD                           
+                    .sold_tag
+                      .sold_tag__inner
+                        SOLD
+              .item_scroll
+                = link_to_prev_page @purchase, '前', class: "prev"
+                = link_to_next_page @purchase, '次', class: "next"                       
           - else
             .nothing 
               .nothing__message 商品がありません      
