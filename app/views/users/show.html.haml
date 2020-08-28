@@ -32,7 +32,7 @@
                         -item.images.first(1).each do |image|
                           = image_tag image.image.url, class:"topiclist__item__img"
                         .topiclist__body
-                          = item.name
+                          = item.name.truncate(13)
                           .place
                             %ul
                               = item.price
@@ -92,7 +92,7 @@
                         -item.images.first(1).each do |image|
                           = image_tag image.image.url, class:"topiclist__item__img"
                         .topiclist__body
-                          = item.name
+                          = item.name.truncate(13)
                           .place
                             %ul
                               = item.price
@@ -119,7 +119,7 @@
                         -history.item.images.first(1).each do |image|
                           = image_tag image.image.url, class:"topiclist__item__img"
                         .topiclist__body
-                          = history.item.name
+                          = history.item.name.truncate(13)
                           .place
                             %ul
                               = history.item.price
