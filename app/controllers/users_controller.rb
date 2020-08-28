@@ -20,10 +20,10 @@ class UsersController < ApplicationController
     
     @history = BrowsingHistory.where(user_id: current_user.id).order('created_at DESC').limit(4)
 
-    @buyer = Purchase.where(user_id: current_user.id).order('created_at DESC').limit(4)
-    @buy_items = []
-    @buyer.each do |buyer|
-      @buy_items << buyer.item
+    @purchase = Purchase.where(user_id: current_user.id).order('created_at DESC').limit(4)
+    @bought_items = []
+    @purchase.each do |purchase|
+      @bought_items << purchase.item
     end
 
   end
