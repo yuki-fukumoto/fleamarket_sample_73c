@@ -180,6 +180,7 @@
             - if @user.address.errors.any?
               - if @user.address.errors[:prefecture].present?
                 .wrapper-sign-up__article__section__form-area_color
+                  都道府県
                   = @user.address.errors.messages[:prefecture][0]
             .wrapper-sign-up__article__section__form-area__name
               市区町村
