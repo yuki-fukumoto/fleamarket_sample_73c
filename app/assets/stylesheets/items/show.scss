@@ -260,12 +260,20 @@
         h4{
           font-size: 18px;
         }
-        .comment_area{
+        &__area{
           font-size: 16px;
           margin-top: 16px;
-          .comment_name{
-            font-size: 18px;
-            font-weight: bold;
+          .comment_creater{
+            display: flex;
+            .comment_name{
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            .comment_date{
+              margin: 0 0 5px 10px;
+              line-height: 25px;
+            }
           }
         }
       } 
