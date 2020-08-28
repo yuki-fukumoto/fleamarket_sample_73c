@@ -18,7 +18,7 @@
                   = link_to item_path(favorite.item.id) ,class:"search_list__item" do
                     = image_tag (favorite.item.images[0].image.url), class:"search_list__item__img"
                     .search_list__body
-                      = favorite.item.name 
+                      = favorite.item.name.truncate(13)
                       .place
                         %ul
                           = "￥#{favorite.item.price}"

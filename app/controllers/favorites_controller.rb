@@ -1,9 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :set_item, only: [:create, :destroy]
 
-  def index
-    @favorites = Favorite.where(user_id: current_user.id).page(params[:page]).without_count.per(4)
-  end
   
   def create
     @favorite = Favorite.new(
