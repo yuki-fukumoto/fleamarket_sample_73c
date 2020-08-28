@@ -22,28 +22,28 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # redirect_to_root_if_item_is_sold(@item)
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
     
-    new_history = @item.browsing_histories.new
-    new_history.user_id = current_user.id
+    if user_signed_in?
+      new_history = @item.browsing_histories.new
+      new_history.user_id = current_user.id
 
-    if current_user.browsing_histories.exists?(item_id: "#{params[:id]}")
-      old_history = current_user.browsing_histories.find_by(item_id: "#{params[:id]}")
-      old_history.destroy
+      if current_user.browsing_histories.exists?(item_id: "#{params[:id]}")
+        old_history = current_user.browsing_histories.find_by(item_id: "#{params[:id]}")
+        old_history.destroy
+      end
+
+      new_history.save
+
+      histories_stock_limit = 20
+      histories = current_user.browsing_histories.all
+      if histories.count > histories_stock_limit
+        histories[0].destroy
+      end
     end
-
-    new_history.save
-
-    histories_stock_limit = 20
-    histories = current_user.browsing_histories.all
-    if histories.count > histories_stock_limit
-      histories[0].destroy
-    end
-    
   end
 
   def destroy
