@@ -53,10 +53,10 @@
               最近購入した商品
             =link_to "もっと見る >", bought_items_users_path, class: "see_more"
           .main-box__notice__recently__body2
-            - if @buy_items.present?
+            - if @bought_items.present?
               .topicBox
                 .topiclists   
-                  - @buy_items.each do |item|
+                  - @bought_items.each do |item|
                     .topiclist
                       =link_to item_path(id: item.id) ,class:"topiclist__item" do
                         -item.images.first(1).each do |image|

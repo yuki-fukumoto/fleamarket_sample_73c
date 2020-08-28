@@ -19,6 +19,7 @@
         text-align: center;
         font-weight: bold;
         font-size: 24px;
+        word-break: break-all;
       }
       &__body {
         margin: 16px 0 0;
@@ -254,28 +255,26 @@
       }
       
       .comments {
-        font-size: 14px;
         margin: 16px 0 10px;
         text-align: left;
-
-
         h4{
           font-size: 18px;
-          font-weight: normal;
-          text-align: left;
-          color: #777777;
         }
-        
-        p{
-          font-size: 15px;
+        &__area{
+          font-size: 16px;
           margin-top: 16px;
-          text-align: left;
-          color: #777777;
-          white-space: normal;
-        }
-
-        a{
-          color: #3ccace;
+          .comment_creater{
+            display: flex;
+            .comment_name{
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+            .comment_date{
+              margin: 0 0 5px 10px;
+              line-height: 25px;
+            }
+          }
         }
       } 
     }

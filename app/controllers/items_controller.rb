@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
     @sub1_category = @item.category.parent
     @main_category = @sub1_category.parent
     @comment = Comment.new
-    @comments = @item.comments.includes(:user)
+    @comments = @item.comments.includes(:user).order(created_at: :desc)
     
     new_history = @item.browsing_histories.new
     new_history.user_id = current_user.id
