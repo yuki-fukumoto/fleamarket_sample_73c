@@ -62,7 +62,7 @@
                         -item.images.first(1).each do |image|
                           = image_tag image.image.url, class:"topiclist__item__img"
                         .topiclist__body
-                          = item.name
+                          = item.name.truncate(13)
                           .place
                             %ul
                               = item.price
