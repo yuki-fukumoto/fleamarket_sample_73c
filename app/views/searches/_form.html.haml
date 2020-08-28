@@ -43,6 +43,14 @@
               = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_1 text_box"} 
               = f.collection_select :category_id_eq, {}, :id, :name, {prompt: "メインカテゴリを選んでください"}, {class: "category_2 text_box"}
 
+      -# ブランドで絞り込み
+      .detail_search__group
+        .detail_search__group--label
+          %p ブランド
+        .detail_search__group--checkbox
+          %label
+            = f.collection_select :brand_id_eq, Brand.all, :id, :name, {prompt: "ブランドを選ぶ"}, {class: "brand_select text_box"}
+
       -# 状態の絞り込み (仮)     
       .detail_search__group
         .detail_search__group--label
