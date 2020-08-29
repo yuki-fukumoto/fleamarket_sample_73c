@@ -12,7 +12,7 @@ ja:
       address: 送付先住所
     attributes:
       comment:
-        text: コメント 
+        text: コメント
       item:
         name: 商品名
         explanation: 商品説明
@@ -29,17 +29,17 @@ ja:
         nickname: ニックネーム
         email: メールアドレス
         password: パスワード
-        firstname: 名前(名)
-        lastname: 名前(姓)
-        firstname_read: ふりがな(名)
-        lastname_read: ふりがな(姓)
+        firstname: ユーザ登録情報 名前(名)
+        lastname: ユーザ登録情報 名前(姓)
+        firstname_read: ユーザ登録情報 ふりがな(名)
+        lastname_read: ユーザ登録情報 ふりがな(姓)
         birthday: 誕生日
         password_confirmation: 確認用パスワード
       user/addresses:
-        firstname: 名前(名)
-        lastname: 名前(姓)
-        firstname_read: ふりがな(名)
-        lastname_read: ふりがな(姓)
+        firstname: 送付先住所 名前(名)
+        lastname: 送付先住所 名前(姓)
+        firstname_read: 送付先住所 ふりがな(名)
+        lastname_read: 送付先住所 ふりがな(姓)
         zip: 郵便番号
         prefecture: 都道府県
         city: 市区町村
@@ -456,4 +456,3 @@ ja:
         days1_2: 1~2日で発送
         days2_3: 2~3日で発送
         days4_7: 4~7日で発送
-

@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Address, type: :model do
 
+
   describe "全属性のバリデーション" do
     let(:address) {FactoryBot.build(:address)}
     subject{address}
-    context "name, place, email, passwordがある場合" do
+    context "値がすべて入力されている場合" do
       it {is_expected.to be_valid}
     end
   end
@@ -15,6 +16,10 @@ RSpec.describe Address, type: :model do
       subject{address}
       context "firstnameが全角で入力されている" do
         let(:firstname) {"晋作"}
+        it {is_expected.to be_valid}
+      end
+      context "firstnameの文字数が30文字" do
+        let(:firstname) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
         it {is_expected.to be_valid}
       end
     end
@@ -31,6 +36,10 @@ RSpec.describe Address, type: :model do
         let(:firstname) {"shinsaku"}
         it {is_expected.to include("は全角で入力してください")}
       end
+      context "firstnameの文字数が31文字" do
+        let(:firstname) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
     end
   end
   describe "lastnameのバリデーション" do
@@ -39,6 +48,10 @@ RSpec.describe Address, type: :model do
       subject{address}
       context "lastnameが全角で入力されている" do
         let(:lastname) {"高杉"}
+        it {is_expected.to be_valid}
+      end
+      context "lastnameの文字数が30文字" do
+        let(:lastname) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
         it {is_expected.to be_valid}
       end
     end
@@ -55,6 +68,10 @@ RSpec.describe Address, type: :model do
         let(:lastname) {"takasugi"}
         it {is_expected.to include("は全角で入力してください")}
       end
+      context "lastnameの文字数が31文字" do
+        let(:lastname) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
     end
   end
   describe "firstname_readのバリデーション" do
@@ -63,6 +80,10 @@ RSpec.describe Address, type: :model do
       subject{address}
       context "firstname_readが全角で入力されている" do
         let(:firstname_read) {"しんさく"}
+        it {is_expected.to be_valid}
+      end
+      context "firstname_readの文字数が30文字" do
+        let(:firstname_read) {"あいうえおかきくけこさしすてそたちつてとなになぬねのはひふへ"}
         it {is_expected.to be_valid}
       end
     end
@@ -82,7 +103,12 @@ RSpec.describe Address, type: :model do
       context "firstname_readが漢字" do
         let(:firstname_read) {"晋作"}
         it {is_expected.to include("は全角(ひらがな)で入力してください")}
-      end    end
+      end
+      context "firstname_readの文字数が31文字" do
+        let(:firstname_read) {"あいうえおかきくけこさしすてそたちつてとなになぬねのはひふへあ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
+    end
   end
   describe "lastname_readのバリデーション" do
     let(:address) {FactoryBot.build(:address, lastname_read: lastname_read)}
@@ -90,6 +116,10 @@ RSpec.describe Address, type: :model do
       subject{address}
       context "lastname_readが全角で入力されている" do
         let(:lastname_read) {"たかすぎ"}
+        it {is_expected.to be_valid}
+      end
+      context "lastname_readの文字数が30文字" do
+        let(:lastname_read) {"あいうえおかきくけこさしすてそたちつてとなになぬねのはひふへ"}
         it {is_expected.to be_valid}
       end
     end
@@ -109,6 +139,10 @@ RSpec.describe Address, type: :model do
       context "lastname_readが漢字" do
         let(:lastname_read) {"高杉"}
         it {is_expected.to include("は全角(ひらがな)で入力してください")}
+      end
+      context "lastname_readの文字数が31文字" do
+        let(:lastname_read) {"あいうえおかきくけこさしすてそたちつてとなになぬねのはひふへあ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
       end
     end
   end
@@ -152,6 +186,10 @@ RSpec.describe Address, type: :model do
         let(:prefecture) {"山口県"}
         it {is_expected.to be_valid}
       end
+      context "prefectureの文字数が30文字" do
+        let(:prefecture) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to be_valid}
+      end
     end
     context "登録されない" do
       subject{address.errors[:prefecture]}
@@ -166,6 +204,10 @@ RSpec.describe Address, type: :model do
         let(:prefecture) {"yamaguchi-prefecture"}
         it {is_expected.to include("は全角で入力してください")}
       end
+      context "prefectureの文字数が31文字" do
+        let(:prefecture) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
     end
   end
   describe "cityのバリデーション" do
@@ -174,6 +216,10 @@ RSpec.describe Address, type: :model do
       subject{address}
       context "cityが全角で入力されている" do
         let(:city) {"萩市"}
+        it {is_expected.to be_valid}
+      end
+      context "cityの文字数が30文字" do
+        let(:city) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
         it {is_expected.to be_valid}
       end
     end
@@ -190,6 +236,10 @@ RSpec.describe Address, type: :model do
         let(:city) {"hagi-city"}
         it {is_expected.to include("は全角で入力してください")}
       end
+      context "cityの文字数が31文字" do
+        let(:city) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
     end
   end
   describe "address_lineのバリデーション" do
@@ -198,6 +248,10 @@ RSpec.describe Address, type: :model do
       subject{address}
       context "address_lineが入力されている" do
         let(:address_line) {"椿東1537"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineの文字数が30文字" do
+        let(:address_line) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
         it {is_expected.to be_valid}
       end
     end
@@ -210,6 +264,10 @@ RSpec.describe Address, type: :model do
         let(:address_line) {nil}
         it {is_expected.to include("が空欄です")}
       end
+      context "address_lineの文字数が31文字" do
+        let(:address_line) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
     end
   end
   describe "buildingのバリデーション" do
@@ -219,6 +277,20 @@ RSpec.describe Address, type: :model do
       context "buildingが空欄" do
         let(:building) {nil}
         it {is_expected.to be_valid}
+      end
+      context "buildingの文字数が30文字" do
+        let(:building) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{address.errors[:building]}
+      before do
+        address.valid?
+      end
+      context "buildingの文字数が31文字" do
+        let(:building) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
       end
     end
   end
@@ -230,15 +302,49 @@ RSpec.describe Address, type: :model do
         let(:room) {nil}
         it {is_expected.to be_valid}
       end
+      context "roomの文字数が30文字" do
+        let(:room) {"をザソざうマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{address.errors[:room]}
+      before do
+        address.valid?
+      end
+      context "roomの文字数が31文字" do
+        let(:room) {"をザソざうあマひぢにベぼミぷこルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
     end
   end
   describe "telephoneのバリデーション" do
-    let(:address) {FactoryBot.build(:address, telephone: telephone)}
+    let(:address) {FactoryBot.build(:address, first_telephone: first_telephone, second_telephone: second_telephone, third_telephone: third_telephone)}
     context "登録される" do
       subject{address}
       context "telephoneが空欄" do
-        let(:telephone) {nil}
+        let(:first_telephone) {nil}
+        let(:second_telephone) {nil}
+        let(:third_telephone) {nil}
         it {is_expected.to be_valid}
+      end
+      context "telephoneが11桁で入力されている" do
+        let(:first_telephone) {"010"}
+        let(:second_telephone) {"2345"}
+        let(:third_telephone) {"6789"}
+        it {is_expected.to be_valid}
+      end
+    end
+    context "登録されない" do
+      subject{address.errors[:telephone]}
+      before do
+        address.valid?
+      end
+      context "telephoneが12桁で入力されている" do
+        let(:first_telephone) {"0101"}
+        let(:second_telephone) {"2345"}
+        let(:third_telephone) {"6789"}
+        it {is_expected.to include("は11桁以下で入力してください")}
       end
     end
   end
