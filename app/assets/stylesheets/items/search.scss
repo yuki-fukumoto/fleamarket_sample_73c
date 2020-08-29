@@ -51,6 +51,7 @@
   }
   .search_results{
     width: 100%;
+    position: relative;
     .search_result{
       margin-top: 10px;
       display: flex;
@@ -63,7 +64,6 @@
       display: flex;
       min-height: 200px;
       min-width: 1000px;
-      position: relative;
       background-color: #f8f8f8;
       .item_jscroll{
         display: flex;
