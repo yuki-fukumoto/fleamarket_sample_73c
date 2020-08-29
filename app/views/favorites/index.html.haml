@@ -25,6 +25,10 @@
                           %li
                             %i{class:"fa fa-star likeicon"}0
                         %p （税込）
+                    -if favorite.item.status == "sold"  
+                      .sold_tag
+                        .sold_tag__inner
+                          SOLD    
               .item_scroll
                 = link_to_prev_page @favorites, '前', class: "prev"
                 = link_to_next_page @favorites, '次', class: "next"                       
