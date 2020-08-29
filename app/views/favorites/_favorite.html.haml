@@ -1,10 +1,11 @@
-- if Favorite.find_by(user_id: current_user.id, item_id: item.id)
-  =link_to(item_favorite_path(@item, item.id), method: :delete, remote: true) do
-    .optionalBtn.already
-      = icon('fa', 'star')
-      お気に入り済み！
--else
-  =link_to(item_favorites_path(@item), method: :post, remote: true) do
-    .optionalBtn.none
-      = icon('fa', 'star')
-      お気に入りへ!
+- if user_signed_in?
+  - if Favorite.find_by(user_id: current_user.id, item_id: item.id)
+    =link_to(item_favorite_path(@item, item.id), method: :delete, remote: true) do
+      .optionalBtn.already
+        = icon('fa', 'star')
+        お気に入り済み！
+  -else
+    =link_to(item_favorites_path(@item), method: :post, remote: true) do
+      .optionalBtn.none
+        = icon('fa', 'star')
+        お気に入りへ!
