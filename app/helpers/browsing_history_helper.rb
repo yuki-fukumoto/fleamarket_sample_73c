@@ -1,0 +1,2 @@
+module BrowsingHistoryHelper
+end

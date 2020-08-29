@@ -8,11 +8,11 @@
       .search_results
         .search_result
           %h2.search_result--head
-            出品中の商品
+            販売済の商品
         .search_lists 
-          - if @sale_items.present?
+          - if @sold_items.present?
             .item_jscroll
-              - @sale_items.each do |item|
+              - @sold_items.each do |item|
                 .search_list
                   =link_to item_path(id: item.id) ,class:"search_list__item" do
                     -item.images.first(1).each do |image|
@@ -26,6 +26,9 @@
                           %li
                             %i{class:"fa fa-star likeicon"}0
                         %p （税込）
+                    .sold_tag
+                      .sold_tag__inner
+                        SOLD
               .item_scroll
                 = link_to_prev_page @items, '前', class: "prev"
                 = link_to_next_page @items, '次', class: "next"                       

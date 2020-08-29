@@ -22,10 +22,15 @@
     }
     &__title {
       text-align: right;
+      width: 100%;
+      position: relative;
       &__bar {
-        font-size: 22px;
+        font-size: 16px;
       }
       &__price {
+        position: absolute;
+        bottom: 0;
+        right: 0;
         &__board {
           font-size: 20px;
         }

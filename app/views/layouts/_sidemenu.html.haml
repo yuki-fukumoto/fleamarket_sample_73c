@@ -3,7 +3,7 @@
     %h2.side-menu__title マイページメニュー
     .group-list
       %li.group-list__notice
-        =link_to "お知らせ"
+        =link_to "お知らせ", user_path(current_user)
       %li.group-list__likes
         =link_to "お気に入り", item_favorites_path(:item_id)
   %group
@@ -14,14 +14,14 @@
       %li.group-list__sellitem
         =link_to "出品中の商品", sale_items_users_path
       %li.group-list__shop
-        = link_to "自分のショップを見る"
+        = link_to "販売済の商品", sold_items_users_path
   %group
     %h2.side-menu__title 商品を購入する
     .group-list
       %li.group-list__buy
-        =link_to "購入した商品"
+        =link_to "購入した商品", bought_items_users_path
       %li.group-list__watch
-        =link_to "最近見た商品"
+        =link_to "最近見た商品", browsing_histories_path
       %li.group-list__comment
         =link_to "コメントした商品"
   %group

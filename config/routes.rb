@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get 'sale_items'
+      get 'sold_items'
+      get 'bought_items'
     end
   end  
 
@@ -30,4 +32,6 @@ Rails.application.routes.draw do
       get :confirm
     end
   end
+
+  resources :browsing_histories, only: :index
 end
