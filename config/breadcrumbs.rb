@@ -24,6 +24,11 @@ crumb :creditcard_show do
   parent :user_show
 end
 
+crumb :favorite_index do
+  link "お気に入り", item_favorites_path
+  parent :user_show
+end
+
 crumb :search_index do
   link "検索結果一覧", searches_path
 end

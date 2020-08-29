@@ -168,6 +168,20 @@
 - belongs_to :address
 - belongs_to :creditcard
 
+## favorites
+
+### table
+
+| column   | type    | option      |
+| -------- | ------  | ----------- |
+| user_id  | intenger| null: false |
+| item_id  | intenger| null: false |
+
+### association
+
+- belongs_to :user
+- belongs_to :item
+
 ## browsing_histories
 
 ### table
