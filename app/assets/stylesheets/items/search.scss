@@ -63,7 +63,6 @@
       display: flex;
       min-height: 200px;
       min-width: 1000px;
-      position: relative;
       background-color: #f8f8f8;
       .item_jscroll{
         display: flex;
@@ -74,6 +73,7 @@
           display: flex;
           background-color: #ffffff;
           margin: 10px;
+          position: relative;
           &__item__img{
             height: 150px;
             width:220px;
@@ -95,8 +95,26 @@
               }
             }
           }
-        }  
-      }
+        } 
+        .sold_tag{
+          width: 0;
+          height: 0;
+          border-top: 40px solid #3CCACE;
+          border-right: 40px solid transparent;
+          border-bottom: 40px solid transparent;
+          border-left: 40px solid #3CCACE;
+          z-index:100;
+          position: absolute;
+          top: 0px;
+          &__inner{
+            color: #fff;
+            transform: rotate(-45deg);
+            font-size: 20px;
+            margin:-15px 0px 0px -35px;
+            font-weight: bold;
+          }
+        }
+      }  
       .topiclist:hover {
         opacity: 0.7;
       }
@@ -148,4 +166,9 @@ a.prev{
 
 .detail_search__form__btn--grey a{
   color: white;
+}
+
+.brand_select.text_box{
+  height: 30px;
+  padding: 0;
 }

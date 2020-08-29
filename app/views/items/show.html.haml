@@ -24,7 +24,10 @@
               %span (税込)
               %span 送料込
           .btn-block
-            - if user_signed_in? && current_user.id == @item.user_id
+            -if @item.status == 'sold'
+              .btn-block__purchase SOLD OUT
+
+            - elsif user_signed_in? && current_user.id == @item.user_id
               =link_to "商品を編集する", edit_item_path(@item.id), method: :get, class: "btn-block__edit"
               =link_to "商品を削除する", item_path(@item.id), data: { confirm: '【確認】本当に削除しますか？' }, method: :delete, class: "btn-block__delete"
 
@@ -57,9 +60,10 @@
                   %th ブランド
                   %td
                     = @item.brand.name if @item.brand.present?
-                %tr
-                  %th 商品のサイズ
-                  %td
+                -# 現状、出品機能にサイズ入力欄が無いためコメントアウト
+                -# %tr
+                -#   %th 商品のサイズ
+                -#   %td
                 %tr
                   %th 商品の状態
                   %td
@@ -103,14 +107,14 @@
               %h4 ＜コメント一覧＞
               - if @comments
                 - @comments.each do |comment|
-                  %p
-                    %strong
-                      = link_to comment.user.nickname, "/users/#{comment.user}"
-                      ：
-                    = comment.text
-
-                   
-
+                  .comments__area
+                    .comment_creater
+                      .comment_name
+                        = comment.user.nickname
+                      .comment_date  
+                        = comment.created_at.strftime("%m/%d %H:%M")
+                    .comment_text
+                      = comment.text
          
 = render partial: 'layouts/footer'
 = render partial: 'layouts/puts_up'

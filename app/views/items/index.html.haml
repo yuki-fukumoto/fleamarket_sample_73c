@@ -9,7 +9,6 @@
         FURIMAはだれでもかんたんに出品・購入できる
         %br フリマアプリです
       .Contents__btn
-        -# =link_to confirm_purchase_path(@purchase) do
         =link_to "#" do
           =image_tag "https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2012-06-28&kind=iossoftware&bubble=ios_apps", class: 'app_btn'
         =link_to "https://www.google.com/" do
@@ -96,13 +95,14 @@
                 -item.images.first(1).each do |image|
                   = image_tag image.image.url, class:"topiclist__item__img"
                 .topiclist__body
-                  = item.name 
+                  = item.name.truncate(13)
                   .place
                     %ul
                       = item.price
+                      円
                       %li
                         %i{class:"fa fa-star likeicon"}0
-                    %p （税込
+                    %p （税込)
           .scroll
             = link_to_prev_page @items, '前', class: "prev"
             = link_to_next_page @items, '次', class: "next"
@@ -119,10 +119,11 @@
               -item.images.first(1).each do |image|
                 = image_tag image.image.url, class:"topiclist__item__img"
               .topiclist__body
-                = item.name
+                = item.name.truncate(13)
                 .place
                   %ul
                     = item.price
+                    円
                     %li
                       %i{class:"fa fa-star likeicon"}0
                   %p （税込）
