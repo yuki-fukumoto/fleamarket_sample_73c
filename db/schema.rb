@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_112448) do
+ActiveRecord::Schema.define(version: 2020_08_29_102919) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "firstname", null: false
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_112448) do
     t.string "firstname_read", null: false
     t.string "lastname_read", null: false
     t.string "zip", null: false
-    t.integer "prefecture_id", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address_line", null: false
     t.string "building"
@@ -36,9 +36,26 @@ ActiveRecord::Schema.define(version: 2020_07_30_112448) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "browsing_histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_browsing_histories_on_item_id"
+    t.index ["user_id"], name: "index_browsing_histories_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

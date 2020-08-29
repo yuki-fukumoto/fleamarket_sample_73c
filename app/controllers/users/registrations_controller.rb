@@ -31,11 +31,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def address_params
-    params.permit(address: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture_id, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone])[:address].merge(user_id: @user.id)
+    params.permit(address: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone])[:address].merge(user_id: @user.id)
   end
 
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture_id, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone]).merge(encrypted_password: Devise::Encryptor.digest(User, params[:user][:password]))
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :birthday, :firstname, :lastname, :firstname_read, :lastname_read, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :first_zip, :last_zip, :prefecture, :city, :address_line, :building, :room, :first_telephone, :second_telephone, :third_telephone]).merge(encrypted_password: Devise::Encryptor.digest(User, params[:user][:password]))
   end
 end  
   # GET /resource/edit

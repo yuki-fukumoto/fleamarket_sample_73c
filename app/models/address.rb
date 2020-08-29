@@ -9,8 +9,8 @@ class Address < ApplicationRecord
   validates :prefecture, format: { with: nil, message: "都道府県を選択して下さい"} 
   validates :address_line, format: { with: /[0-9]/,  message: "半角数字で入力してください"}
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
+  # extend ActiveHash::Associations::ActiveRecordExtensions
+  # belongs_to_active_hash :prefecture
   attr_accessor :first_zip, :last_zip, :first_telephone, :second_telephone, :third_telephone
   before_validation :set_zip
   before_validation :set_telephone
