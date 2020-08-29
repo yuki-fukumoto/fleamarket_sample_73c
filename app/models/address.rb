@@ -6,7 +6,7 @@ class Address < ApplicationRecord
   validates :firstname, :lastname, format: {with:/[一-龥ぁ-ん]/, message: "名前を入力してください"}
   validates :firstname, :lastname, :city, format: { with: /\A[一-龥ぁ-ん]/, message: "は全角で入力してください"}
   validates :firstname_read, :lastname_read, format: { with:/[ぁ-ん]/, message: "ひらがなで入力してください"}
-  validates :prefecture, format: { with: nil, message: "都道府県を選択して下さい"} 
+  validates :prefecture, format: { with: /[一-龥]/ , message: "を入力して下さい"} 
   validates :address_line, format: { with: /[0-9]/,  message: "半角数字で入力してください"}
 
   # extend ActiveHash::Associations::ActiveRecordExtensions
