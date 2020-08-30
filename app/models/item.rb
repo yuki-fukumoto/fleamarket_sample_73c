@@ -80,5 +80,4 @@ class Item < ApplicationRecord
   end
 
   has_many :favorites, dependent: :destroy
-  # has_many :favorites, through: :favorite, source: :user
 end
