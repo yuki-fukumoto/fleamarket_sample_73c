@@ -1,0 +1,40 @@
+= render partial: 'layouts/header'
+- breadcrumb :favorite_index
+= render "layouts/breadcrumbs"
+
+.wrapper_mypage
+  .contents__mypage
+    = render partial: 'layouts/sidemenu'
+    .search_view
+      .search_results
+        .search_result
+          %h2.search_result--head
+            お気に入り一覧
+        .search_lists 
+          - if @favorites.present?
+            .item_jscroll
+              - @favorites.each do |favorite|
+                .search_list
+                  = link_to item_path(favorite.item.id) ,class:"search_list__item" do
+                    = image_tag (favorite.item.images[0].image.url), class:"search_list__item__img"
+                    .search_list__body
+                      = favorite.item.name.truncate(13)
+                      .place
+                        %ul
+                          = "#{favorite.item.price} 円"
+                          %li
+                            %i{class:"fa fa-star likeicon"}0
+                        %p （税込）
+                    -if favorite.item.status == "sold"  
+                      .sold_tag
+                        .sold_tag__inner
+                          SOLD    
+              .item_scroll
+                = link_to_prev_page @favorites, '前', class: "prev"
+                = link_to_next_page @favorites, '次', class: "next"                       
+          - else
+            .nothing 
+              .nothing__message 商品がありません      
+        
+= render partial: 'layouts/footer'
+= render partial: 'layouts/puts_up' 

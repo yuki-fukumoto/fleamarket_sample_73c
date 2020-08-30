@@ -2,7 +2,7 @@
 
 ## ER diagram
 
-![ER diagram](https://user-images.githubusercontent.com/62494531/85916203-4c65ed00-b889-11ea-9436-a83aa16e07ae.jpg)
+![ER diagram](./public/images/fleamarket_sample_73c.png)
 
 ## users
 
@@ -25,6 +25,8 @@
 - has_many :creditcards, dependent: :destroy
 - has_many :items, dependent: :destroy
 - has_many :purchases, dependent: :destroy
+- has_many :browsing_histories, dependent: :destroy
+- has_many :comments
 
 ## addresses
 
@@ -74,10 +76,9 @@
 | name            | string  | null: false                    |
 | explanation     | text    | null: false                    |
 | price           | integer | null: false                    |
-| shipping_fee    | integer | null: false                    | -> delete |
-| shipping_pay    | integer | null: false, default: 0        | -> add |
-| shipping_area   | integer | null: false, default: 0        | -> add |
-| shipping_period | integer | null: false, default: 0        | -> add |
+| shipping_pay    | integer | null: false, default: 0        |
+| shipping_area   | integer | null: false, default: 0        |
+| shipping_period | integer | null: false, default: 0        |
 | condition       | integer | null: false, default: 0        |
 | image           | string  | null: false                    |
 | status          | string  | null: false, default: 0        |
@@ -93,6 +94,8 @@
 - belongs_to :category
 - belongs_to :brand
 - has_many :images, dependent: :destroy
+- has_many :browsing_histories, dependent: :destroy
+- has_many :comments
 
 ## images
 
@@ -132,6 +135,21 @@
 
 - has_many :items
 
+## comments
+
+### table
+
+| name    | type    | option                         |
+| ------- | ------- | ------------------------------ |
+| text    | text    | null: false                    |
+| user_id | integer | null: false, foreign_key: true |
+| item_id | integer | null: false, foreign_key: true |
+
+### association
+
+- belongs_to :user
+- belongs_to :item
+
 ## purchases
 
 ### table
@@ -149,3 +167,31 @@
 - belongs_to :item
 - belongs_to :address
 - belongs_to :creditcard
+
+## favorites
+
+### table
+
+| column   | type    | option      |
+| -------- | ------  | ----------- |
+| user_id  | intenger| null: false |
+| item_id  | intenger| null: false |
+
+### association
+
+- belongs_to :user
+- belongs_to :item
+
+## browsing_histories
+
+### table
+
+| name          | type    | option                         |
+| ------------- | ------- | ------------------------------ |
+| item_id       | integer | null: false, foreign_key: true |
+| user_id       | integer | null: false, foreign_key: true |
+
+### association
+
+- belongs_to :user
+- belongs_to :item

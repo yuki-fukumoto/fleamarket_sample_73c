@@ -1,5 +1,6 @@
-
 = render partial: 'layouts/header'
+- breadcrumb :creditcard_show
+= render "layouts/breadcrumbs"
 .contents__mypage
   = render partial: 'layouts/sidemenu'
   .main_container
@@ -8,49 +9,44 @@
       以下の項目を入力し、「このクレジットカード情報を変更する」または「このクレジットカード情報を削除する」ボタンを押してください。
       %br
       （ご家族など、本人以外の情報はご変更いただけません。）
-    .main_container__title__table
-      .main_container__title__table__group1
-        クレジットカード情報
-      .main_container__title__table__group3
-        .main_container__title__table__group3__name2
-          カード番号
-        .main_container__title__table__group3__box
-          .main_container__title__table__group3__box__data2
-            セキュリティ保護のため、登録済みのカード番号は一部伏字で表示されます。
-            .card_num="************#{@card_data.last4}"
 
-      .main_container__title__table__group4
-        .main_container__title__table__group4__name2
-          カード有効期限
-        .main_container__title__table__group4
-          .main_container__title__table__group4__data3
-            「月」/「年」の順に選択します。カード上の表記にご注意ください。
-            .main_container__title__table__group4__data3__block
-              .exp_data
-                ="月/年: #{sprintf("%02d", @card_data.exp_month)}/#{@card_data.exp_year.to_s.slice(2,3)}"
-      .main_container__title__table__group6
-        .main_container__title__table__group6__name2
-          セキュリティコード
-        .main_container__title__table__group6__box
-          .main_container__title__table__group6__box__code
-            セキュリティコードとは、クレジットカードの裏面に印字されている３桁または４桁の番号です。
-            .cvv ●●●
-      .main_container__title__table__group7
-        .main_container__title__table__group7__name2
-          通常使うカード
-        .main_container__title__table__group7__data5
-          2枚以上のカードを登録しているときは,通常使うカード」が優先的に選ばれます。
-          %br
-          このカードは現在「お買い物で通常使うカード」です.
-      .main_container__title__table__submit
-        上記の内容で登録・変更される場合は、「このクレジットカード情報を変更する」または
-        %br
-        「このクレジットカード情報を削除する」ボタンを押してください。
-        %br
-        入力された個人情報は個人情報保護方針に基づき取り扱われることに同意するものとします。
-      .main_container__title__table__register
-        = link_to "クレジットカード情報を削除する", creditcard_path(@creditcard.id), method: :delete, class: "main_container__title__table__register__btn1"
-      .main_container__title__table__top
-        %li.main_container__title__table__top__page
-          =link_to "トップページへ戻る", root_path
+
+    %table{class: "main_container__table"}
+      %tr
+        %th{colspan: 2, class: "main_container__table--title"} クレジットカード情報
+      %tr
+        %td カード番号
+        %td
+          セキュリティ保護のため、登録済みのカード番号は一部伏字で表示されます。
+          .card_num="************#{@card_data.last4}"
+      %tr
+        %td カード有効期限
+        %td
+          「月」/「年」の順に選択します。カード上の表記にご注意ください。
+          .main_container__title__table__group4__data3__block
+            .exp_data
+              ="月/年: #{sprintf("%02d", @card_data.exp_month)}/#{@card_data.exp_year.to_s.slice(2,3)}"
+      %tr
+        %td セキュリティコード
+        %td
+          セキュリティコードとは、クレジットカードの裏面に印字されている３桁または４桁の番号です。
+          .cvv ●●●
+      %tr
+        %td 通常使うカード
+        %td
+          .main_container__table__text 上記の内容で登録・変更される場合は、「このクレジットカード情報を変更する」または
+          .main_container__table__text 「このクレジットカード情報を削除する」ボタンを押してください。
+          .main_container__table__text 入力された個人情報は個人情報保護方針に基づき取り扱われることに同意するものとします。
+
+    .main_container__title__table__submit
+      上記の内容で登録・変更される場合は、「このクレジットカード情報を変更する」または
+      %br
+      「このクレジットカード情報を削除する」ボタンを押してください。
+      %br
+      入力された個人情報は個人情報保護方針に基づき取り扱われることに同意するものとします。
+    .main_container__title__table__register
+      = link_to "クレジットカード情報を削除する", creditcard_path(@creditcard.id), method: :delete, class: "main_container__title__table__register__btn1"
+    .main_container__title__table__top
+      %li.main_container__title__table__top__page
+        =link_to "トップページへ戻る", root_path
 = render partial: 'layouts/footer'

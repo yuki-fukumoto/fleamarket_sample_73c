@@ -1,6 +1,8 @@
 =render 'layouts/error_messages', model: @user
 .top_icon
   =image_tag(asset_path("logo.png"))
+- breadcrumb :sign_up
+= render "layouts/breadcrumbs"
 %main.wrapper-sign-up
   %article.wrapper-sign-up__article
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
