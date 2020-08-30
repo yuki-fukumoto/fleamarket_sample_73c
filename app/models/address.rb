@@ -6,7 +6,7 @@ class Address < ApplicationRecord
   validates :telephone, length: {maximum: 11, message: "は11桁以下で入力してください"}
   validates :zip, :telephone, format: { with: /\A[0-9]*\z/, message: "は半角数字で入力してください"}
 
-  # フォームに文字数制限をかけているため、30文字以上入力された場合は不正アクセスまたはシステムエラー
+  
   validates :firstname, :lastname, :firstname_read, :lastname_read, :prefecture, :city, :address_line, :building, :room, length: {maximum: 30, message: "システムエラー：文字数オーバー"}
 
   validates :firstname_read, :lastname_read, :prefecture, :city, presence: true
@@ -19,8 +19,6 @@ class Address < ApplicationRecord
   validates :prefecture, length: { maximum:3}
   validates :address_line, format: { with: /[0-9]/,  message: "半角数字で入力してください"}
 
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :prefecture
   attr_accessor :first_zip, :last_zip, :first_telephone, :second_telephone, :third_telephone
   before_validation :set_zip
   before_validation :set_telephone
