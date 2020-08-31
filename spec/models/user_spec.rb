@@ -214,7 +214,7 @@ RSpec.describe User, type: :model do
       end
       context "emailがない" do
         let(:email) {nil}
-        it {is_expected.to include("が空欄です")}
+        it {is_expected.to include("を入力してください")}
       end
       context "すでに登録されているemialの場合" do
         let(:email) {"shokason@school.com"}
@@ -235,6 +235,10 @@ RSpec.describe User, type: :model do
       context "emailの文字数が257文字" do
         let(:email) {"5AyHVDa9QFsyFhh4haT5rXMj1kovY2AMCBrxlxoGulp9Fu9Ocurrrr0GY3yo53Dn6P8fy1WqpdbLKwcjNkIXqv6wNjNNzCcH@XBocDEpYpUjVp5k8gFFyyAEf68RACZsKa05lD95e1N4agyfBOS7VfSWOl3XztJ5Wwk4SdJWFEbjBBcCeUi6xIjfHWBmjscFaCSFZiF1URkLBS53mRSn5NrUqSTCeuaBKr7SiHANhW1RPxoFnWpePRqCODhYLHtGX"}
         it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
+      context "全角文字を含む" do
+        let(:email) {"abc@あいう"}
+        it {is_expected.to include("は半角英数で入力してください")}
       end
     end
   end

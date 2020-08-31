@@ -14,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(user_params)
+    binding.pry
     if @user.save
       sign_in @user
       redirect_to root_path, notice: "ユーザ登録が完了しました"
