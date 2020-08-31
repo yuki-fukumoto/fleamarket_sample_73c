@@ -11,7 +11,9 @@ FactoryBot.define do
     address_line {"椿東1537"}
     building {"松陰神社"}
     room {"102"}
-    telephone {"0123456789"}
+    first_telephone {"010"}
+    second_telephone {"2345"}
+    third_telephone {"6789"}
     association :user
   end
 end
