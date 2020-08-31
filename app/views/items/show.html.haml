@@ -22,7 +22,7 @@
               = "#{@item.price}円"
             .itemBox__price-detail
               %span (税込)
-              %span 送料込
+              -# %span 送料込
           .btn-block
             -if @item.status == 'sold'
               .btn-block__purchase SOLD OUT
@@ -84,10 +84,10 @@
           .optionalArea
             %ul#favoriteBtn
               = render "favorites/favorite", item: @item
-            %ul.optional
-              %li.optionalBtn
-                = link_to "#" do
-                  %i.fa.fa-flag 不適切な商品の通報
+            -# %ul.optional
+            -#   %li.optionalBtn
+            -#     = link_to "#" do
+            -#       %i.fa.fa-flag 不適切な商品の通報
         .commentBox
           %p.noticeMsg
             相手のことを考え丁寧なコメントを心がけましょう。

@@ -23,7 +23,11 @@
                         %ul
                           = "#{favorite.item.price} 円"
                           %li
-                            %i{class:"fa fa-star likeicon"}0
+                            -# %i{class:"fa fa-star likeicon"}0
+                            -if favorite.item.shipping_pay == "exhibitor"
+                              送込
+                            - else
+                              送別
                         %p （税込）
                     -if favorite.item.status == "sold"  
                       .sold_tag

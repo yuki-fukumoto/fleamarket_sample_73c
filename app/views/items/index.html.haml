@@ -101,7 +101,11 @@
                       = item.price
                       円
                       %li
-                        %i{class:"fa fa-star likeicon"}0
+                        -# %i{class:"fa fa-star likeicon"}0
+                        -if item.shipping_pay == "exhibitor"
+                          送込
+                        - else
+                          送別
                     %p （税込)
           .scroll
             = link_to_prev_page @items, '前', class: "prev"
@@ -125,7 +129,11 @@
                     = item.price
                     円
                     %li
-                      %i{class:"fa fa-star likeicon"}0
+                      -# %i{class:"fa fa-star likeicon"}0
+                      -if item.shipping_pay == "exhibitor"
+                        送込
+                      - else
+                        送別
                   %p （税込）
 
 = render partial: 'layouts/footer'

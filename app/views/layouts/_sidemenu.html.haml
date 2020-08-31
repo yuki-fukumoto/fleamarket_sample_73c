@@ -22,13 +22,13 @@
         =link_to "購入した商品", bought_items_users_path
       %li.group-list__watch
         =link_to "最近見た商品", browsing_histories_path
-      %li.group-list__comment
-        =link_to "コメントした商品"
+      -# %li.group-list__comment
+      -#   =link_to "コメントした商品"
   %group
     %h2.side-menu__title 設定・ヘルプ・その他
     .group-list
-      %li.group-list__inquiry
-        =link_to "お問い合わせ"
+      -# %li.group-list__inquiry
+      -#   =link_to "お問い合わせ"
       %li.group-list__credit
         - if current_user.creditcards.empty?
           =link_to "クレジットカード情報の登録", new_creditcard_path
