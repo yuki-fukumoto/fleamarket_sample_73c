@@ -156,17 +156,39 @@
       .optionalArea {
         display: flex;
         justify-content: space-between;
-        ul {
-          margin: 10px 0 0;
-          display: flex;
-          list-style: none;
-          li.likeBtn {
-            margin-right: auto;
-            padding: 6px 10px;
-            border-radius: 40px;
-            color: #3ccace;
-            border: 1px solid #ffb340;
-            i {
+        ul#favoriteBtn {
+            .optionalBtn.none{
+              .fa-star{
+                color: #3ccace;
+              }
+              color: #3ccace;
+              background-color: white;
+              width: auto;
+              margin: 10px 0 0;
+              display: flex;
+              list-style: none;
+              margin-right: auto;
+              padding: 6px 10px;
+              border-radius: 40px;
+              border: 1px solid #ffb340;
+            }
+            
+            .optionalBtn.already{
+              .fa-star{
+                color: white;
+              }
+              color: white;
+              background-color: #3ccace;
+              margin: 10px 0 0;
+              display: flex;
+              list-style: none;
+              margin-right: auto;
+              padding: 6px 10px;
+              border-radius: 40px;
+              border: 1px solid #ffb340;
+              background-color: #3ccace;
+            }
+            a {
               display: inline-block;
               font: normal normal normal 14px/1 FontAwesome;
               text-rendering: auto;
@@ -177,7 +199,6 @@
               font-weight: 400;
               font-family: "Font Awesome 5 Free";
             }
-          }
         }
         ul.optional {
           margin: 10px 0 0;
@@ -280,3 +301,5 @@
     }
   }
 }
+
+

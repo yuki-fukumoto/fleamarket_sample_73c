@@ -20,4 +20,6 @@ class User < ApplicationRecord
   has_many :purchases, dependent: :destroy
   has_many :comments
   has_many :browsing_histories, dependent: :destroy
+
+  has_many :favorites, dependent: :destroy
 end

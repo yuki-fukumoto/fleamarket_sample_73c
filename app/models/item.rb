@@ -79,4 +79,5 @@ class Item < ApplicationRecord
     self.where(status: 0)
   end
 
+  has_many :favorites, dependent: :destroy
 end

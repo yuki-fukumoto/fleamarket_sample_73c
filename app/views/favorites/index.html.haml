@@ -1,6 +1,7 @@
 = render partial: 'layouts/header'
-- breadcrumb :browsing_histories
+- breadcrumb :favorite_index
 = render "layouts/breadcrumbs"
+
 .wrapper_mypage
   .contents__mypage
     = render partial: 'layouts/sidemenu'
@@ -8,29 +9,29 @@
       .search_results
         .search_result
           %h2.search_result--head
-            最近見た商品
+            お気に入り一覧
         .search_lists 
-          - if @history.present?
+          - if @favorites.present?
             .item_jscroll
-              - @history.each do |history|
-                
+              - @favorites.each do |favorite|
                 .search_list
-                  =link_to item_path(history.item_id) ,class:"search_list__item" do
-                    -history.item.images.first(1).each do |image|
-                      = image_tag image.image.url, class:"search_list__item__img"
+                  = link_to item_path(favorite.item.id) ,class:"search_list__item" do
+                    = image_tag (favorite.item.images[0].image.url), class:"search_list__item__img"
                     .search_list__body
-                      = history.item.name.truncate(13)
+                      = favorite.item.name.truncate(13)
                       .place
                         %ul
-                          = history.item.price
-                          円
+                          = "#{favorite.item.price} 円"
                           %li
                             %i{class:"fa fa-star likeicon"}0
                         %p （税込）
-                    -if history.item.status == "sold"
+                    -if favorite.item.status == "sold"  
                       .sold_tag
                         .sold_tag__inner
-                          SOLD                           
+                          SOLD    
+              .item_scroll
+                = link_to_prev_page @favorites, '前', class: "prev"
+                = link_to_next_page @favorites, '次', class: "next"                       
           - else
             .nothing 
               .nothing__message 商品がありません      

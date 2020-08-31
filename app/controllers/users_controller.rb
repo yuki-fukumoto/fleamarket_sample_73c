@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @sale_items = @items.get_on_sell
   end
 
+
   def sold_items
     @items = Item.where(user_id: current_user.id).includes(:images).order('created_at DESC').page(params[:page]).without_count.per(4)
     @sold_items = @items.where(status: "2")

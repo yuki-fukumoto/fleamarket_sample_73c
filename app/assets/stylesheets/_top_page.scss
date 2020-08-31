@@ -58,11 +58,15 @@ body {
         display: flex;
         padding: 0;
         &__log_in {
-          padding-right: 30px;
+          padding-left: 16px;
         }
         &__new {
           display: flex;
           padding-left: 16px;
+        }
+        &__favorite{
+          display: flex;
+          padding-right: 30px;
         }
       }
     }
