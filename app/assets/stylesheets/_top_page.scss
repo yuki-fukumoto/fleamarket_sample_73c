@@ -48,6 +48,18 @@ body {
         &__category {
           padding-right: 30px;
         }
+        .sub{
+          color:#333;
+          text-decoration: none;
+          display: none;
+        }
+        .sub.active
+        .sub2{
+          color:#333;
+          text-decoration: none;
+          display: none;
+        }
+        .sub2.active
         &__brand {
           display: flex;
           padding-left: 16px;

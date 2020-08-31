@@ -12,12 +12,15 @@
     .list
       %ul.list__left
         %li.list__left__category
-          -# =link_to "カテゴリー", 'http://google.co.jp'
-          -#   .a_href="#"レディース
-          -#   .a_href="#"メンズ
-          -#   .a_href="#"ベビー・キッズ
-          -#   .a_href="#"インテリア・住まい
-
+          =link_to "カテゴリー"
+          .sub
+            - @categories.where(ancestry: nil).each do |category|
+              .category=category.name
+              .sub2
+              - Category.where(ancestry: category.id).each do |child|
+                .sub1=child.name
+                - Category.where(ancestry: "#{category.id}/#{child.id}").each do |grandchild|
+                  .sub2=grandchild.name
         %li.list__left__brand
           =link_to "ブランド", 'http://google.co.jp'
       %ul.list__right
@@ -31,14 +34,3 @@
             =link_to "ログイン", new_user_session_path
           %li.list__right__new
             =link_to "新規会員登録", new_user_registration_path
-
-- @categories.where(ancestry: nil).each do |category|
-  .category=category.name
-  .text サブカテゴリ１
-  .sub
-    - Category.where(ancestry: category.id).each do |child|
-      .sub1=child.name
-      .text2 サブカテゴリ2
-      .sub
-        - Category.where(ancestry: "#{category.id}/#{child.id}").each do |grachild|
-          .sub2=grachild.name
