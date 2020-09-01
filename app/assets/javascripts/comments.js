@@ -37,10 +37,10 @@ $(document).on("turbolinks:load", function () {
     $('.commentBox input').prop('disabled', false);
   })
 
-  .fail(function(){
-    alert('コメントを入力してください');
+    .fail(function(){
+      alert('コメントを入力してください');
+    })
   })
-})
 
   var count = $(".js-text").text().replace(/\n/g, "改行").length;
   var now_count = 150 - count;
