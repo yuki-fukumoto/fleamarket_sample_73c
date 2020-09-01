@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'users/registrations'}
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     collection do
       get 'sale_items'
       get 'sold_items'

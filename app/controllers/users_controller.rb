@@ -26,6 +26,18 @@ class UsersController < ApplicationController
     @purchase.each do |purchase|
       @bought_items << purchase.item
     end
-
   end
-end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path, notice: '商品を編集しました'
+    else
+      render :edit
+    end
+  end
+
