@@ -76,16 +76,16 @@
               =f.text_field :firstname, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角", maxlength: "30"
         .wrapper-sign-up__article__section__form-area
           -# -binding.pry
-          -if @user.address.errors.any?
-            - if @user.address.errors[:lastname].present?
+          -if @user.errors.any?
+            - if @user.errors[:lastname].present?
               .wrapper-sign-up__article__section__form-area_color
                 名前(姓)
-                = @user.address.errors.messages[:lastname][0]
-          - if @user.address.errors.any?
-            - if @user.address.errors[:firstname].present?
+                = @user.errors.messages[:lastname][0]
+          - if @user.errors.any?
+            - if @user.errors[:firstname].present?
               .wrapper-sign-up__article__section__form-area_color
                 名前(名)
-                = @user.address.errors.messages[:firstname][0]  
+                = @user.errors.messages[:firstname][0]  
           .wrapper-sign-up__article__section__form-area__name
             ふりがな
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -98,16 +98,16 @@
               .wrapper-sign-up__article__section__form-area__form__divide__text 名
               =f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角", maxlength: "30"
         .wrapper-sign-up__article__section__form-area
-          - if @user.address.errors.any?
-            - if @user.address.errors[:lastname_read].present?
+          - if @user.errors.any?
+            - if @user.errors[:lastname_read].present?
               .wrapper-sign-up__article__section__form-area_color
                 ふりがな(姓)
-                = @user.address.errors.messages[:lastname_read][0]
-          - if @user.address.errors.any?
-            - if @user.address.errors[:firstname_read].present?
+                = @user.errors.messages[:lastname_read][0]
+          - if @user.errors.any?
+            - if @user.errors[:firstname_read].present?
               .wrapper-sign-up__article__section__form-area_color
                 ふりがな(名)  
-                = @user.address.errors.messages[:firstname_read][0]  
+                = @user.errors.messages[:firstname_read][0]  
           .wrapper-sign-up__article__section__form-area__name
             誕生日
             .wrapper-sign-up__article__section__form-area__name__attribute--box
@@ -211,7 +211,7 @@
               - if @user.address.errors.messages[:address_line].present?
                 .wrapper-sign-up__article__section__form-area_color
                   番地  
-                  = @user.address.errors.messages[:city][0]
+                  = @user.address.errors.messages[:address_line][0]
             .wrapper-sign-up__article__section__form-area__name
               建物名
               .wrapper-sign-up__article__section__form-area__name__attribute--box.wrapper-sign-up__article__section__form-area__name__attribute--optional
