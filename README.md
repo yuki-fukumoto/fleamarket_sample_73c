@@ -1,3 +1,47 @@
+# アプリ概要
+
+ユーザが自由に出品、購入ができるフリーマーケットアプリです。
+
+# 使用技術・言語
+
+- フロントエンド(javascript, jQuery, HTML/CSS, HAML, Sass)
+- バックエンド(Ruby on Rails, 外部 API)
+- テスト(Rspec)
+- web サーバ(nginx, unicorn)
+- データベース(MySQL)
+- AWS(VPC, EC2, S3)
+- 開発環境(VScode, Git, GitHub, Capistrano)
+
+# 機能一覧
+
+- 商品出品・編集(Carriewave, enum, 画像プレビュー, 詳細カテゴリの動的表示)
+  　　　　　　　　　　　　　　　　　　担当：井本・加藤
+- 商品購入(API)　　　　　　　　　　　担当：井本
+- 商品検索(ransack, キーワード + 条件検索)
+  　　　　　　　　　　　　　　　　　　担当：加藤
+- 商品閲覧(拡大画像の切替)　　　　　 担当：塩見、加藤、福元
+- 商品削除　　　　　　　　　　　　　　担当：加藤
+- クレジットカード登録(API)　　　　　担当：井本
+- ユーザ・住所登録 　　　　　　　　　担当：井本、森川
+- ユーザ認証　　　　　　　　　　　　　担当：井本
+- コメント　　　　　　　　　　　　　　担当：佐藤、加藤
+- お気に入り機能　　　　　　　　　　　担当：塩見
+- マイページ　　　　　　　　　　　　　担当：佐藤
+- 購入履歴一覧　　　　　　　　　　　　担当：加藤
+- 販売商品一覧　　　　　　　　　　　　担当：加藤
+- 売却商品一覧　　　　　　　　　　　　担当：加藤
+- 閲覧履歴一覧　　　　　　　　　　　　担当：加藤
+- 商品ランダム表示(注目のアイテム)　 担当：加藤
+- カテゴリ機能(ancestry)　　　　　　担当：井本、福元
+- ブランド機能　　　　　　　　　　　　担当：井本、福元
+- 無限スクロール　　　　　　　　　　　担当：塩見、加藤
+- パンくずナビゲーション　　　　　　　担当：井本
+- rspec によるモデルテスト　　　　　担当：井本、加藤
+- エラーハンドリング　　　　　　　　　担当：井本、森川、塩見
+- データベース　　　　　　　　　　　　担当：井本、加藤、佐藤
+- AWS 本番環境　　　　　　　　　　　担当：福元
+- 自動デプロイ　　　　　　　　　　　　担当：福元、井本
+
 # table_setting
 
 ## ER diagram
@@ -186,10 +230,10 @@
 
 ### table
 
-| name          | type    | option                         |
-| ------------- | ------- | ------------------------------ |
-| item_id       | integer | null: false, foreign_key: true |
-| user_id       | integer | null: false, foreign_key: true |
+| name    | type    | option                         |
+| ------- | ------- | ------------------------------ |
+| item_id | integer | null: false, foreign_key: true |
+| user_id | integer | null: false, foreign_key: true |
 
 ### association
 
