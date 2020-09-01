@@ -1,40 +1,40 @@
 $(document).on("turbolinks:load", function () {
   function buildHTML(comment){
     let html =
-    `<div class='comments__area'>
-        <div class='comment_creater'>
-          <div class='comment_name'>${comment.user_nickname}</div>
-          <div class='comment_date'>${comment.created_at}</div>
-        </div>
-        <div class='comment_text'>${comment.text}</div>
-    </div>`
+      `<div class='comments__area'>
+          <div class='comment_creater'>
+            <div class='comment_name'>${comment.user_name}</div>
+            <div class='comment_date'>${comment.created_at}</div>
+          </div>
+          <div class='comment_text'>${comment.text}</div>
+      </div>`
     return html;
-} 
-$('#new_comment').on('submit', function(e){
-  e.preventDefault();
-  let formData = new FormData(this);
-  let url = $(this).attr('action')
+  } 
+  $('#new_comment').on('submit', function(e){
+    e.preventDefault();
+    let formData = new FormData(this);
+    let url = $(this).attr('action')
 
-  $.ajax({
-    url: url,
-    type: "POST",
-    data: formData,
-    dataType: 'json',
-    processData: false,
-    contentType: false
-  })
-  
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    
   .done(function(data){
     
     let html = buildHTML(data);
     
     $('.comments').append(html);
     
-    $('.form-control  js-text').val('');
-    
-    $('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
+    $('.commentBox textarea').val('');
 
-    $('.js-text-count').prop('disabled', false);
+    $('.comments__area').animate({ scrollTop: $('.comments__area')[0].scrollHeight});
+
+    $('.commentBox input').prop('disabled', false);
   })
 
   .fail(function(){

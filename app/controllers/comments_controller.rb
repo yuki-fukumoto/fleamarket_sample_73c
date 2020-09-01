@@ -5,8 +5,8 @@ class CommentsController < ApplicationController
     
     if @comment.save
       respond_to do |format|
-      format.html{redirect_to (@item)}
-      format.json
+        format.html{redirect_to (@item)}
+        format.json
       end
     else
       redirect_to (@item), notice: 'コメントを入力してください'
