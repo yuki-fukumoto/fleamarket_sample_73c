@@ -13,18 +13,17 @@ class User < ApplicationRecord
   # validates :email, length: {maximum: 256, message: "システムエラー：文字数オーバー"}
 
   
-  
-  validates :nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, :password, presence: {message: "が空欄です"}        
+       
   with_options presence: true do
-  validates :nickname, :firstname_read, :lastname_read, :birthday, :password
+  validates :birthday
   validates :firstname, :lastname, format: {with:/[一-龥ぁ-ん]/, message: "名前を入力してください"}
   validates :firstname_read, :lastname_read, format: { with:/[ぁ-ん]/, message: "ひらがなで入力してください"}
-  validates :password, length: { minimum:7, message: "は7文字以上で入力してください"}, confirmation: {message: "の値が一致しません"}
+  validates :password,length: { minimum:7, message: "は7文字以上で入力してください"},confirmation: {message: "の値が一致しません"}
   validates :firstname, :lastname, :firstname_read, :lastname_read, :nickname, :password, length: {maximum: 30, message: "システムエラー：文字数オーバー"}
-
-end
-  validates :email, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "が空欄です"}
   validates :email, length: {maximum: 256, message: "システムエラー：文字数オーバー"}
+end
+  # validates :email, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "が空欄です"}
+
 
 
 
