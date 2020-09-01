@@ -28,20 +28,23 @@ $(document).on("turbolinks:load", function () {
     
     let html = buildHTML(data);
     
-    $('.comments').append(html);
+    $('.comments').prepend(html);
     
     $('.commentBox textarea').val('');
 
     $('.comments__area').animate({ scrollTop: $('.comments__area')[0].scrollHeight});
 
     $('.commentBox input').prop('disabled', false);
+    
+    $('.form-control js-text').replaceWith('.form-control js-text');
+   
   })
 
     .fail(function(){
       alert('コメントを入力してください');
     })
   })
-
+  
   var count = $(".js-text").text().replace(/\n/g, "改行").length;
   var now_count = 150 - count;
   if (count > 150) {

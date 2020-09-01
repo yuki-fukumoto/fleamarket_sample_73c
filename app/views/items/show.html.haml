@@ -100,11 +100,11 @@
                 = form.text_area :text, placeholder: "コメントする(150文字まで入力可能）", rows: "2", maxlength: "150", class: 'form-control  js-text'
                 %p.js-text-count.pull-right
                 = form.submit "SEND"
+              %h4 ＜コメント一覧＞
             - else
               %strong
                 %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
             .comments
-              %h4 ＜コメント一覧＞
               - if @comments
                 - @comments.each do |comment|
                   .comments__area
