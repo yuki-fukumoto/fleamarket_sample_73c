@@ -12,8 +12,22 @@
           
     .list
       %ul.list__left
-        %li.list__left__category
-          =link_to "カテゴリー", 'http://google.co.jp'
+        %ul.list__left__category
+          =link_to "カテゴリー"
+          %ul.sub
+            - @categories.where(ancestry: nil).each do |category|
+              %li.category
+                =category.name
+                %ul.sub1
+                  - Category.where(ancestry: category.id).each do |child|
+                    %li.sub1
+                      =child.name
+                      %ul.sub2
+                        - Category.where(ancestry: "#{category.id}/#{child.id}").each do |grandchild|
+                          %li.sub2
+                            =grandchild.name
+                      
+
         %li.list__left__brand
           =link_to "ブランド", 'http://google.co.jp'
       %ul.list__right
