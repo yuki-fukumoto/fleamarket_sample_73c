@@ -17,7 +17,7 @@ class User < ApplicationRecord
   with_options presence: true do
   validates :birthday
   validates :firstname, :lastname, format: {with:/[一-龥ぁ-ん]/, message: "名前を入力してください"}
-  validates :firstname_read, :lastname_read, format: { with:/[ぁ-ん]/, message: "ひらがなで入力してください"}
+  validates :firstname_read, :lastname_read, format: { with:/\A[ぁ-んー－]+\z/, message: "ひらがなで入力してください"}
   validates :password,length: { minimum:7, message: "は7文字以上で入力してください"},confirmation: {message: "の値が一致しません"}
   validates :firstname, :lastname, :firstname_read, :lastname_read, :nickname, :password, length: {maximum: 30, message: "システムエラー：文字数オーバー"}
   validates :email, length: {maximum: 256, message: "システムエラー：文字数オーバー"}

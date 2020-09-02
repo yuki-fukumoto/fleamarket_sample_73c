@@ -30,7 +30,7 @@
       %li.group-list__inquiry
         =link_to "お問い合わせ"
       %li.group-list__credit
-        - if current_user.creditcards.empty?
+        - if current_user.creditcard.empty?
           =link_to "クレジットカード情報の登録", new_creditcard_path
         -else
           =link_to "クレジットカード情報の管理", creditcard_path(current_user.creditcards.first.id)
