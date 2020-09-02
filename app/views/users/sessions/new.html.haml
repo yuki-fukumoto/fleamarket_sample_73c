@@ -1,5 +1,6 @@
 .top_icon
-  =image_tag(asset_path("logo.png"))
+  =link_to "/" do
+    =image_tag(asset_path("logo.png"))
 - breadcrumb :sign_in
 = render "layouts/breadcrumbs"
 %main.wrapper-sign-in
