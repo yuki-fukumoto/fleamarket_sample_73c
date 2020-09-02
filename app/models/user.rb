@@ -30,9 +30,9 @@ end
 
 
 
-  has_one :address, dependent: :destroy
-  accepts_nested_attributes_for :address
-  has_one :creditcard, dependent: :destroy
+  has_many :addresses, dependent: :destroy
+  accepts_nested_attributes_for :addresses
+  has_many :creditcards, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
