@@ -10,17 +10,21 @@
           %i.fas.fa-search
 
     .list
-      %ul.list__left
-        %li.list__left__category
+      .list__left
+        %ul.list__left__category
           =link_to "カテゴリー"
-          .sub
+          %ul.sub
             - @categories.where(ancestry: nil).each do |category|
-              .category=category.name
-              .sub2
-              - Category.where(ancestry: category.id).each do |child|
-                .sub1=child.name
-                - Category.where(ancestry: "#{category.id}/#{child.id}").each do |grandchild|
-                  .sub2=grandchild.name
+              %li.category
+                =category.name
+                %ul.sub1
+                  - Category.where(ancestry: category.id).each do |child|
+                    %li.sub1
+                      =child.name
+                      %ul.sub2
+                        - Category.where(ancestry: "#{category.id}/#{child.id}").each do |grandchild|
+                          %li.sub2
+                            =grandchild.name
         %li.list__left__brand
           =link_to "ブランド", 'http://google.co.jp'
       %ul.list__right

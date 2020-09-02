@@ -79,6 +79,52 @@ body {
       }
     }
   }
+
+  ul.list__left__category ul{
+    position: relative;
+    width: 135px;
+    display: none;
+  }
+  ul.list__left__category:hover ul{
+    background-color: #ffdddd; 
+    color: #dd0000; 
+    display: block;
+  }
+  ul.list__left__category ul li:hover{
+    background-color: #ffff80;
+    color: #005500;
+  }
+  ul.sub ul li{
+    display: none;
+  }
+  li.category:hover li.sub1{
+    display: block;
+    background-color: #ffdddd; 
+    color: #dd0000;
+  }
+  ul.sub1{
+    position: absolute;
+    top: -1px;
+    left: 100%;
+  }
+  li.category ul.sub1 li:hover{
+    background-color: #ffff80;
+    color: #005500;
+  }
+  li.sub1:hover li.sub2{
+    display: block;
+    background-color: #ffdddd; 
+    color: #dd0000;
+  }
+  ul.sub2{
+    position: absolute;
+    top: -1px;
+    left: 100%;
+  }
+  
+  
+  
+  
 }
 .top_visual {
   background-image: asset-url("bg-mainVisual-pict_pc.jpg");
