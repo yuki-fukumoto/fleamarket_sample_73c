@@ -38,6 +38,9 @@
         margin: 20px 0;
         padding: 3px 10px;
         align-items: center;
+        &_color {
+          color: red;
+        }
         &__name {
           display: flex;
           margin: 5px 0;
