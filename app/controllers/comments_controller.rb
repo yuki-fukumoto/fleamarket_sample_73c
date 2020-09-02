@@ -4,7 +4,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     
     if @comment.save
-      redirect_to (@item), notice: 'コメントが投稿されました'
+      respond_to do |format|
+        format.html{redirect_to (@item)}
+        format.json
+      end
     else
       redirect_to (@item), notice: 'コメントを入力してください'
     end

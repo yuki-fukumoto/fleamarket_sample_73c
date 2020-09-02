@@ -274,13 +274,16 @@
         background-color: #3ccace;
         color: white;
       }
+
+      h4{
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
       
       .comments {
         margin: 16px 0 10px;
         text-align: left;
-        h4{
-          font-size: 18px;
-        }
         &__area{
           font-size: 16px;
           margin-top: 16px;
