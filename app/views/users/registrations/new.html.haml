@@ -117,7 +117,7 @@
         %hr
       %section.wrapper-sign-up__article__section
         %h2.wrapper-sign-up__article__section--title 商品送付先
-        =f.fields_for :address do |address_f|
+        =f.fields_for :addresses do |address_f|
           .wrapper-sign-up__article__section__form-area
             .wrapper-sign-up__article__section__form-area__name
               名前
@@ -172,11 +172,11 @@
               .wrapper-sign-up__article__section__form-area__form--zip-divide -
               =address_f.text_field :last_zip, class: "wrapper-sign-up__article__section__form-area__form--style wrapper-sign-up__article__section__form-area__form--zip-second", maxlength: "4",placeholder: "半角"
           .wrapper-sign-up__article__section__form-area
-            -# - if @user.addresses.errors.any?
-            -#   - if @user.addresses.errors[:zip].present?
+            -# - if @user.errors.any?
+            -#   - if @user.errors[:zip].present?
             -#     .wrapper-sign-up__article__section__form-area_color
             -#       郵便番号
-            -#       = @user.addresses.errors.messages[:zip][0]
+            -#       = @user.errors.messages[:zip][0]
             .wrapper-sign-up__article__section__form-area__name
               都道府県
               .wrapper-sign-up__article__section__form-area__name__attribute--box
