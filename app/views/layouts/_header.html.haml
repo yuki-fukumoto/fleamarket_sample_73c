@@ -11,9 +11,21 @@
           %i.fas.fa-search  
           
     .list
-      %ul.list__left
-        %li.list__left__category
-          =link_to "カテゴリー", 'http://google.co.jp'
+      .list__left
+        %ul.list__left__category
+          =link_to "カテゴリー"
+          %ul.sub
+            - @categories.where(ancestry: nil).each do |category|
+              %li.category
+                =category.name
+                %ul.sub1
+                  - Category.where(ancestry: category.id).each do |child|
+                    %li.sub1
+                      =child.name
+                      %ul.sub2
+                        - Category.where(ancestry: "#{category.id}/#{child.id}").each do |grandchild|
+                          %li.sub2
+                            =grandchild.name
         %li.list__left__brand
           =link_to "ブランド", searches_path
       %ul.list__right

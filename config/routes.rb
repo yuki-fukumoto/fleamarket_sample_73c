@@ -30,6 +30,14 @@ Rails.application.routes.draw do
   resources :purchases, only: :create do
     member do
       get :confirm
+
+  resources :categories, only: [:index] do
+    member do
+      get 'parent'
+      get 'child'
+      get 'grandchild'
+        end
+      end
     end
   end
 
