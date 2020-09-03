@@ -92,10 +92,10 @@
           .wrapper-sign-up__article__section__form-area__form
             .wrapper-sign-up__article__section__form-area__form__divide
               .wrapper-sign-up__article__section__form-area__form__divide__text 姓
-              =f.text_field :lastname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角", maxlength: "30"
+              =f.text_field :lastname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角かな", maxlength: "30"
             .wrapper-sign-up__article__section__form-area__form__divide
               .wrapper-sign-up__article__section__form-area__form__divide__text 名
-              =f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角", maxlength: "30"
+              =f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style", placeholder: "全角かな", maxlength: "30"
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:lastname_read].present?
@@ -147,10 +147,10 @@
             .wrapper-sign-up__article__section__form-area__form
               .wrapper-sign-up__article__section__form-area__form__divide
                 .wrapper-sign-up__article__section__form-area__form__divide__text 姓
-                =address_f.text_field :lastname_read, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角", maxlength: "30"
+                =address_f.text_field :lastname_read, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角かな", maxlength: "30"
               .wrapper-sign-up__article__section__form-area__form__divide
                 .wrapper-sign-up__article__section__form-area__form__divide__text 名
-                =address_f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角", maxlength: "30"
+                =address_f.text_field :firstname_read, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角かな", maxlength: "30"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors[:"addresses.lastname_read"].present?
@@ -205,7 +205,7 @@
               .wrapper-sign-up__article__section__form-area__name__attribute--box
                 必須
             .wrapper-sign-up__article__section__form-area__form
-              =address_f.text_field :address_line, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "半角", maxlength: "30"
+              =address_f.text_field :address_line, class: "wrapper-sign-up__article__section__form-area__form--style", maxlength: "30"
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors.messages[:"addresses.address_line"].present?
