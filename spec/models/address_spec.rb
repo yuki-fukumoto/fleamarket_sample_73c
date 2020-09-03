@@ -208,6 +208,14 @@ RSpec.describe Address, type: :model do
         let(:prefecture) {"淡路島"}
         it {is_expected.to include("は不正な値です")}
       end
+      context "prefectureが47都道府県じゃない" do
+        let(:prefecture) {"東大阪"}
+        it {is_expected.to include("は不正な値です")}
+      end
+      context "prefectureが47都道府県じゃない" do
+        let(:prefecture) {"大阪県"}
+        it {is_expected.to include("は不正な値です")}
+      end
       context "prefectureの文字数が5文字" do
         let(:prefecture) {"和歌山市駅"}
         it {is_expected.to include("は不正な値です")}
