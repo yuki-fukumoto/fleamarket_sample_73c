@@ -20,7 +20,7 @@
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:nickname].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 ニックネーム
                 = @user.errors.messages[:nickname][0]
           .wrapper-sign-up__article__section__form-area__name
@@ -32,7 +32,7 @@
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:email].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 メールアドレス
                 = @user.errors.messages[:email][0]
           .wrapper-sign-up__article__section__form-area__name
@@ -44,7 +44,7 @@
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:password].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 パスワード
                 = @user.errors.messages[:password][0]
           .wrapper-sign-up__article__section__form-area__name
@@ -56,7 +56,7 @@
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:password].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 パスワード
                 = @user.errors.messages[:password][0]
         %hr
@@ -77,12 +77,12 @@
         .wrapper-sign-up__article__section__form-area
           -if @user.errors.any?
             - if @user.errors[:lastname].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 名前(姓)
                 = @user.errors.messages[:lastname][0]
           - if @user.errors.any?
             - if @user.errors[:firstname].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 名前(名)
                 = @user.errors.messages[:firstname][0]  
           .wrapper-sign-up__article__section__form-area__name
@@ -99,12 +99,12 @@
         .wrapper-sign-up__article__section__form-area
           - if @user.errors.any?
             - if @user.errors[:lastname_read].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 ふりがな(姓)
                 = @user.errors.messages[:lastname_read][0]
           - if @user.errors.any?
             - if @user.errors[:firstname_read].present?
-              .wrapper-sign-up__article__section__form-area_color
+              .wrapper-sign-up__article__section__form-area--color
                 ふりがな(名)  
                 = @user.errors.messages[:firstname_read][0]
           .wrapper-sign-up__article__section__form-area__name
@@ -132,12 +132,12 @@
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors[:"addresses.lastname"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   名前(姓)
                   = @user.errors.messages[:"addresses.lastname"][0]
             - if @user.errors.any?
               - if @user.errors[:"addresses.firstname"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   名前(名)
                   = @user.errors.messages[:"addresses.firstname"][0]      
             .wrapper-sign-up__article__section__form-area__name
@@ -154,12 +154,12 @@
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors[:"addresses.lastname_read"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   ふりがな(姓)
                   = @user.errors.messages[:"addresses.lastname_read"][0]
             - if @user.errors.any?
               - if @user.errors[:"addresses.firstname_read"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   ふりがな(名)
                   = @user.errors.messages[:"addresses.firstname_read"][0]
             .wrapper-sign-up__article__section__form-area__name
@@ -173,7 +173,7 @@
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors[:"addresses.zip"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   郵便番号
                   = @user.errors.messages[:"addresses.zip"][0]
             .wrapper-sign-up__article__section__form-area__name
@@ -185,7 +185,7 @@
             =address_f.text_field :prefecture, class: "wrapper-sign-up__article__section__form-area__form--style",placeholder: "全角" , maxlength: "4"
             - if @user.errors.any?
               - if @user.errors[:"addresses.prefecture"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   都道府県
                   = @user.errors.messages[:"addresses.prefecture"][0]
             .wrapper-sign-up__article__section__form-area__name
@@ -197,7 +197,7 @@
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors.messages[:"addresses.city"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   市区町村
                   = @user.errors.messages[:"addresses.city"][0]
             .wrapper-sign-up__article__section__form-area__name
@@ -209,7 +209,7 @@
           .wrapper-sign-up__article__section__form-area
             - if @user.errors.any?
               - if @user.errors.messages[:"addresses.address_line"].present?
-                .wrapper-sign-up__article__section__form-area_color
+                .wrapper-sign-up__article__section__form-area--color
                   番地  
                   = @user.errors.messages[:"addresses.address_line"][0]
             .wrapper-sign-up__article__section__form-area__name
