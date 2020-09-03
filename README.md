@@ -42,6 +42,8 @@
 - AWS 本番環境　　　　　　　　　　　担当：福元
 - 自動デプロイ　　　　　　　　　　　　担当：福元、井本
 
+※担当配分順
+
 # table_setting
 
 ## ER diagram
