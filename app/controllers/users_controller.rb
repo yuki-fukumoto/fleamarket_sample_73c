@@ -35,9 +35,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path, notice: '商品を編集しました'
-    else
-      render :edit
-    end
   end
 
+  private
+  def user_params
+    params.require(:user).permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
+  end
+end

@@ -5,7 +5,7 @@
 = render "layouts/breadcrumbs"
 %main.wrapper-sign-up
   %article.wrapper-sign-up__article
-    =  form_with url: edit_user_path, local: true do |f|
+    =  form_with model:@user,method: :patch, local: true do |f|
       %section.wrapper-sign-up__article__section__title
         %h1.wrapper-sign-up__article__section__title--top ユーザー新規登録
       %section.wrapper-sign-up__article__section
