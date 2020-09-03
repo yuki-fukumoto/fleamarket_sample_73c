@@ -81,6 +81,7 @@ body {
   }
 
   ul.list__left__category ul{
+    z-index: 10;
     position: relative;
     width: 135px;
     display: none;
