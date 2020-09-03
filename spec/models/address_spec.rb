@@ -258,12 +258,40 @@ RSpec.describe Address, type: :model do
     let(:address) {FactoryBot.build(:address, address_line: address_line)}
     context "登録される" do
       subject{address}
-      context "address_lineが数字のみ入力されている" do
+      context "address_lineが半角数字のみ入力されている" do
         let(:address_line) {"1537"}
         it {is_expected.to be_valid}
       end
+      context "address_lineが半角数字のみ入力されている" do
+        let(:address_line) {"1-5-37"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineが半角数字を含み入力されている" do
+        let(:address_line) {"1丁目5番37"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineが全角数字のみ入力されている" do
+        let(:address_line) {"１５３７"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineが全角数字のみ入力されている" do
+        let(:address_line) {"１ー５ー３７"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineが全角数字を含み入力されている" do
+        let(:address_line) {"１丁目５番３７"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineが漢字のみ入力されている" do
+        let(:address_line) {"一丁目二番地三号"}
+        it {is_expected.to be_valid}
+      end
+      context "address_lineが漢数字のみ入力されている" do
+        let(:address_line) {"一二三"}
+        it {is_expected.to be_valid}
+      end
       context "address_lineの文字数が30文字" do
-        let(:address_line) {"123456789012345678901234567890"}
+        let(:address_line) {"をザソざうあマひぢにベぼミぷこルヌあ２せガぇずまなソテつでヌ"}
         it {is_expected.to be_valid}
       end
     end
@@ -276,13 +304,13 @@ RSpec.describe Address, type: :model do
         let(:address_line) {nil}
         it {is_expected.to include("が空欄です")}
       end
-      context "address_lineが数字じゃない" do
-        let(:address_line) {"アイウエオ牡蠣くけこ"}
-        it {is_expected.to include("は半角数字で入力してください")}
-      end
       context "address_lineの文字数が31文字" do
-        let(:address_line) {"1234567890123456789012345678901"}
+        let(:address_line) {"をザソざ３あマひぢにベぼミぷこルヌ６アせガぇずまなソテつでヌソ"}
         it {is_expected.to include("システムエラー：文字数オーバー")}
+      end
+      context "address_lineに数字が含まれない" do
+        let(:address_line) {"ルヌあアせガぇずまなソテつでヌソ"}
+        it {is_expected.to include("は数字を含めて入力してください")}
       end
     end
   end
