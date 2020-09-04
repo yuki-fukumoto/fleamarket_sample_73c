@@ -32,11 +32,11 @@ $(document).on("turbolinks:load", function () {
     
     $('.commentBox textarea').val('');
 
-    $('.comments__area').animate({ scrollTop: $('.comments__area')[0].scrollHeight});
+    //$('.comments').animate({ scrollTop: $('.comments')[0].scrollHeight});
 
     $('.commentBox input').prop('disabled', false);
     
-    $('.form-control js-text').replaceWith('.form-control js-text');
+    //$('150文字').replaceWith('.js-text-count pull-right');
    
   })
 
