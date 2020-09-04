@@ -31,7 +31,7 @@
       .payment_method__title
         .payment_method__title__bar
           クレジットカード
-        =link_to "変更する >", class: "change"
+        =link_to "変更する >", new_creditcard_path, class: "change"
       .credit_card
         .credit_card__no
         = "**** **** **** "+ @creditcard_payjp.last4
@@ -49,7 +49,7 @@
       .confirm_adress__title
         .confirm_adress__title__bar
           配送先
-        =link_to "変更する >", class: "change"
+        =link_to "変更する >", edit_user_path, class: "change"
       .confirm_adress__zip_code 
         〒
         = current_user.addresses[0].zip

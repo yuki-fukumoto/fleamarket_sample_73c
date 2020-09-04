@@ -26,6 +26,19 @@ class UsersController < ApplicationController
     @purchase.each do |purchase|
       @bought_items << purchase.item
     end
+  end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:sign_up, keys: [:nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, address_attributes: [:firstname, :lastname, :firstname_read, :lastname_read, :zip, :prefecture, :city, :address_line, :building, :room, :telephone]])
   end
 end
