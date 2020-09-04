@@ -35,9 +35,11 @@
         font-family: "M PLUS 1p", sans-serif;
       }
       &__form-area {
-        margin: 20px 0;
         padding: 3px 10px;
         align-items: center;
+        &--color {
+          color: red;
+        }
         &__name {
           display: flex;
           margin: 5px 0;

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :nickname, :firstname, :lastname, :firstname_read, :lastname_read, :birthday, :password, presence: {message: "が空欄です"}
+  validates :nickname, :firstname, :lastname, :firstname_read, :lastname_read, :email, :birthday, :password, presence: {message: "が空欄です"}
   validates :firstname, :lastname, format: { with: /\A[一-龥ぁ-ん]/, message: "は全角で入力してください"}
   validates :firstname_read, :lastname_read, format: { with: /\A[ぁ-んー－]+\z/, message: "は全角(ひらがな)で入力してください"}
 
