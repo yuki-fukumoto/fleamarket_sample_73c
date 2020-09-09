@@ -106,17 +106,18 @@
                 %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
             .comments
               - if @comments
-                - @comments.each do |comment|
-                  .comments__area
-                    .comment_creater
-                      .comment_name
-                        = comment.user.nickname
-                      .comment_date  
-                        = comment.created_at.strftime("%m/%d %H:%M")
-                    .comment_text
-                      = comment.text
-                .comment_scroll
-                  = link_to_prev_page @comments, '前のページ', class: "prev"
-                  = link_to_next_page @comments, '次のページ', class: "next"
+                .comments1 
+                  - @comments.each do |comment|
+                    .comments__area
+                      .comment_creater
+                        .comment_name
+                          = comment.user.nickname
+                        .comment_date  
+                          = comment.created_at.strftime("%m/%d %H:%M")
+                      .comment_text
+                        = comment.text
+                  .comment_scroll
+                    = link_to_prev_page @comments, '前のページ', class: "prev"
+                    = link_to_next_page @comments, '次のページ', class: "next"
 = render partial: 'layouts/footer'
 = render partial: 'layouts/puts_up'

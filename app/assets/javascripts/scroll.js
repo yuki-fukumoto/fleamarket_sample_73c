@@ -13,8 +13,8 @@ $(document).on('turbolinks:load', function(){
     nextSelector: 'a.next',
     padding: 20
   });
-  $('.comment_scroll').jscroll({
-    contentSelector: '.item_jscroll',
+  $('.comments').jscroll({
+    contentSelector: '.comments1',
     loadingHtml: 'now loading',
     autoTrigger: true,
     nextSelector: 'a.next',
